@@ -1,0 +1,251 @@
+
+<h2 class="sr-only">HelloFresh business performance dashboard covering Q4 2025, Q1 2026, and full year 2025 revenue by segment and region.</h2>
+
+<div style="padding: 1.5rem 0 0;">
+
+  <div style="margin-bottom: 2rem;">
+    <p style="font-size: 12px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 4px;">HelloFresh Group</p>
+    <p style="font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px;">Business performance overview</p>
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0;">Q4 2025 · Q1 2026 · Full Year 2025</p>
+  </div>
+
+  <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 10px;">Recent quarters at a glance</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 2rem;">
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 16px;">
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 6px; font-weight: 500;">Q4 2025 revenue</p>
+      <p style="font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0;">€1.55B</p>
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 4px 0 0;">Oct – Dec 2025</p>
+    </div>
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 16px;">
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 6px; font-weight: 500;">Q1 2026 revenue</p>
+      <p style="font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0;">€1.68B</p>
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 4px 0 0;">Jan – Mar 2026</p>
+    </div>
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 16px;">
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 6px; font-weight: 500;">Q4 2025 EBITDA</p>
+      <p style="font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0;">€138M</p>
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 4px 0 0;">9.0% margin</p>
+    </div>
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 16px;">
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 6px; font-weight: 500;">Q1 2026 EBITDA</p>
+      <p style="font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0;">€23.6M</p>
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 4px 0 0;">1.4% margin — storm hit</p>
+    </div>
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 16px;">
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 6px; font-weight: 500;">AOV — Q1 2026</p>
+      <p style="font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0;">€71</p>
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 4px 0 0;">Record high avg. order</p>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+
+    <div>
+      <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 10px;">Revenue: Q4 2025 vs Q1 2026</p>
+      <div style="display: flex; gap: 14px; margin-bottom: 8px; font-size: 11px; color: var(--color-text-secondary);">
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#3266ad;display:inline-block;"></span>Q4 2025</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#1d9e75;display:inline-block;"></span>Q1 2026</span>
+      </div>
+      <div style="position:relative;width:100%;height:180px;">
+        <canvas id="revenueQQ" role="img" aria-label="Bar chart comparing Q4 2025 revenue of 1.55 billion euros to Q1 2026 revenue of 1.68 billion euros.">Q4 2025: €1.55B. Q1 2026: €1.68B.</canvas>
+      </div>
+    </div>
+
+    <div>
+      <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 10px;">EBITDA margin: Q4 2025 vs Q1 2026</p>
+      <div style="display: flex; gap: 14px; margin-bottom: 8px; font-size: 11px; color: var(--color-text-secondary);">
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#3266ad;display:inline-block;"></span>Q4 2025</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#1d9e75;display:inline-block;"></span>Q1 2026</span>
+      </div>
+      <div style="position:relative;width:100%;height:180px;">
+        <canvas id="marginQQ" role="img" aria-label="Bar chart comparing EBITDA margin of 9 percent in Q4 2025 to 1.4 percent in Q1 2026 due to winter storms.">Q4 2025: 9.0%. Q1 2026: 1.4% — storm impact.</canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 10px;">Full year 2025 — total revenue: €6.76B</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+
+    <div>
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 8px;">Revenue by segment</p>
+      <div style="display: flex; gap: 14px; margin-bottom: 8px; font-size: 11px; color: var(--color-text-secondary);">
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#3266ad;display:inline-block;"></span>Meal kits — €4.8B (71%)</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#1d9e75;display:inline-block;"></span>RTE (Factor) — €2.0B (29%)</span>
+      </div>
+      <div style="position:relative;width:100%;height:200px;">
+        <canvas id="segmentPie" role="img" aria-label="Donut chart showing 2025 revenue split: Meal Kits 71 percent at 4.8 billion euros, Ready-to-Eat 29 percent at 2.0 billion euros.">Meal Kits: €4.8B (71%). Ready-to-Eat (Factor): €2.0B (29%).</canvas>
+      </div>
+    </div>
+
+    <div>
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 8px;">Revenue by region</p>
+      <div style="display: flex; gap: 14px; margin-bottom: 8px; font-size: 11px; color: var(--color-text-secondary);">
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#3266ad;display:inline-block;"></span>North America — €4.2B (62%)</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#73726c;display:inline-block;"></span>International — €2.55B (38%)</span>
+      </div>
+      <div style="position:relative;width:100%;height:200px;">
+        <canvas id="regionPie" role="img" aria-label="Donut chart showing 2025 revenue split: North America 62 percent at 4.2 billion euros, International 38 percent at 2.55 billion euros.">North America: €4.2B (62%). International: €2.55B (38%).</canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 10px;">Segment EBITDA margin — full year 2025</p>
+  <div style="display: flex; gap: 14px; margin-bottom: 8px; font-size: 11px; color: var(--color-text-secondary);">
+    <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#3266ad;display:inline-block;"></span>Meal kits</span>
+    <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#e24b4a;display:inline-block;"></span>Ready-to-eat (Factor)</span>
+    <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#73726c;display:inline-block;"></span>International region</span>
+  </div>
+  <div style="position:relative;width:100%;height:160px;margin-bottom:2rem;">
+    <canvas id="marginBar" role="img" aria-label="Bar chart showing 2025 EBITDA margins: Meal kits at 13.5 percent, Ready-to-Eat at negative margin, International at 8.2 percent.">Meal Kits: 13.5%. RTE (Factor): negative (bottlenecks). International: 8.2%.</canvas>
+  </div>
+
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 16px 20px; margin-bottom: 1rem;">
+    <p style="font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 10px;">Key context</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div style="display: flex; gap: 8px; align-items: flex-start;">
+        <i class="ti ti-trending-down" aria-hidden="true" style="font-size:16px;color:var(--color-text-secondary);margin-top:2px;flex-shrink:0;"></i>
+        <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0;">Q1 2026 EBITDA was reduced by a one-time €25M hit from severe winter storms across North America</p>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: flex-start;">
+        <i class="ti ti-star" aria-hidden="true" style="font-size:16px;color:var(--color-text-secondary);margin-top:2px;flex-shrink:0;"></i>
+        <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0;">Meal kits achieved their highest EBITDA margin since the pandemic era — 13.5% in FY2025</p>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: flex-start;">
+        <i class="ti ti-map-pin-off" aria-hidden="true" style="font-size:16px;color:var(--color-text-secondary);margin-top:2px;flex-shrink:0;"></i>
+        <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0;">HelloFresh exited Italy and Spain in early 2026 to protect margins and refocus on Germany, UK, and the Nordics</p>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: flex-start;">
+        <i class="ti ti-users" aria-hidden="true" style="font-size:16px;color:var(--color-text-secondary);margin-top:2px;flex-shrink:0;"></i>
+        <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0;">Strategy shift: quality over quantity — deliberately accepting fewer new subscribers to retain higher-value ones</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0;">Sources: HelloFresh Group FY2025 Press Release (March 2026), Q1 2026 Earnings Release</p>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)';
+const labelColor = isDark ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.45)';
+
+const baseOpts = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: { legend: { display: false }, tooltip: { callbacks: {} } }
+};
+
+new Chart(document.getElementById('revenueQQ'), {
+  type: 'bar',
+  data: {
+    labels: ['Q4 2025', 'Q1 2026'],
+    datasets: [{
+      data: [1.55, 1.68],
+      backgroundColor: ['#3266ad', '#1d9e75'],
+      borderWidth: 0,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    ...baseOpts,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => '€' + ctx.parsed.y.toFixed(2) + 'B' } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: labelColor, font: { size: 11 } } },
+      y: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 }, callback: v => '€' + v.toFixed(1) + 'B' }, min: 1.4, max: 1.8 }
+    }
+  }
+});
+
+new Chart(document.getElementById('marginQQ'), {
+  type: 'bar',
+  data: {
+    labels: ['Q4 2025', 'Q1 2026'],
+    datasets: [{
+      data: [9.0, 1.4],
+      backgroundColor: ['#3266ad', '#1d9e75'],
+      borderWidth: 0,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    ...baseOpts,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(1) + '%' } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: labelColor, font: { size: 11 } } },
+      y: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 }, callback: v => v + '%' }, min: 0, max: 11 }
+    }
+  }
+});
+
+new Chart(document.getElementById('segmentPie'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Meal kits', 'Ready-to-eat (Factor)'],
+    datasets: [{
+      data: [4.8, 2.0],
+      backgroundColor: ['#3266ad', '#1d9e75'],
+      borderWidth: 2,
+      borderColor: isDark ? '#1a1a1a' : '#ffffff',
+      hoverOffset: 4
+    }]
+  },
+  options: {
+    ...baseOpts,
+    cutout: '62%',
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.label + ': €' + ctx.parsed.toFixed(1) + 'B (' + Math.round(ctx.parsed / 6.8 * 100) + '%)' } }
+    }
+  }
+});
+
+new Chart(document.getElementById('regionPie'), {
+  type: 'doughnut',
+  data: {
+    labels: ['North America', 'International'],
+    datasets: [{
+      data: [4.21, 2.55],
+      backgroundColor: ['#3266ad', '#73726c'],
+      borderWidth: 2,
+      borderColor: isDark ? '#1a1a1a' : '#ffffff',
+      hoverOffset: 4
+    }]
+  },
+  options: {
+    ...baseOpts,
+    cutout: '62%',
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.label + ': €' + ctx.parsed.toFixed(2) + 'B (' + Math.round(ctx.parsed / 6.76 * 100) + '%)' } }
+    }
+  }
+});
+
+new Chart(document.getElementById('marginBar'), {
+  type: 'bar',
+  data: {
+    labels: ['Meal kits', 'Ready-to-eat (Factor)', 'International region'],
+    datasets: [{
+      data: [13.5, -2.5, 8.2],
+      backgroundColor: ['#3266ad', '#e24b4a', '#73726c'],
+      borderWidth: 0,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    ...baseOpts,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.parsed.y === -2.5 ? 'Negative (production bottlenecks in US)' : ctx.parsed.y.toFixed(1) + '% AEBITDA margin' } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: labelColor, font: { size: 11 } } },
+      y: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 }, callback: v => v + '%' }, min: -5, max: 16 }
+    }
+  }
+});
+</script>
