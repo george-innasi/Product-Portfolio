@@ -1,0 +1,142 @@
+
+<h2 class="sr-only">HelloFresh user segment map showing three primary groups: Meal Kit Subscribers, Ready-to-Eat Users, and Gift and Occasional Users, with sub-segments and their core needs.</h2>
+
+<svg width="100%" viewBox="0 0 680 640" role="img">
+<title>HelloFresh user segment map</title>
+<desc>Three primary user groups branching into six sub-segments, each with a core need statement.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+
+<g class="c-gray">
+  <rect x="240" y="20" width="200" height="44" rx="8" stroke-width="0.5"/>
+  <text class="th" x="340" y="42" text-anchor="middle" dominant-baseline="central">HelloFresh users</text>
+</g>
+
+<line x1="340" y1="64" x2="340" y2="100" class="arr" stroke="var(--s)" stroke-width="0.5" marker-end="none"/>
+<line x1="100" y1="100" x2="580" y2="100" stroke="var(--s)" stroke-width="0.5"/>
+<line x1="100" y1="100" x2="100" y2="130" stroke="var(--s)" stroke-width="0.5"/>
+<line x1="340" y1="100" x2="340" y2="130" stroke="var(--s)" stroke-width="0.5"/>
+<line x1="580" y1="100" x2="580" y2="130" stroke="var(--s)" stroke-width="0.5"/>
+
+<g class="node c-purple" onclick="sendPrompt('Tell me more about Meal Kit Subscribers on HelloFresh')">
+  <rect x="20" y="130" width="200" height="50" rx="8" stroke-width="0.5"/>
+  <text class="th" x="120" y="150" text-anchor="middle" dominant-baseline="central">Meal kit subscribers</text>
+  <text class="ts" x="120" y="168" text-anchor="middle" dominant-baseline="central">Cook, but need planning removed</text>
+</g>
+
+<g class="node c-teal" onclick="sendPrompt('Tell me more about Ready-to-Eat Users on HelloFresh')">
+  <rect x="240" y="130" width="200" height="50" rx="8" stroke-width="0.5"/>
+  <text class="th" x="340" y="150" text-anchor="middle" dominant-baseline="central">Ready-to-eat users</text>
+  <text class="ts" x="340" y="168" text-anchor="middle" dominant-baseline="central">Do not want to cook at all</text>
+</g>
+
+<g class="node c-coral" onclick="sendPrompt('Tell me more about Gift and Occasional Users on HelloFresh')">
+  <rect x="460" y="130" width="200" height="50" rx="8" stroke-width="0.5"/>
+  <text class="th" x="560" y="150" text-anchor="middle" dominant-baseline="central">Gift and occasional users</text>
+  <text class="ts" x="560" y="168" text-anchor="middle" dominant-baseline="central">Buying on behalf of someone else</text>
+</g>
+
+<line x1="120" y1="180" x2="120" y2="220" stroke="#534AB7" stroke-width="0.5"/>
+<line x1="30" y1="220" x2="210" y2="220" stroke="#534AB7" stroke-width="0.5"/>
+<line x1="30"  y1="220" x2="30"  y2="248" stroke="#534AB7" stroke-width="0.5"/>
+<line x1="80"  y1="220" x2="80"  y2="248" stroke="#534AB7" stroke-width="0.5"/>
+<line x1="160" y1="220" x2="160" y2="248" stroke="#534AB7" stroke-width="0.5"/>
+<line x1="210" y1="220" x2="210" y2="248" stroke="#534AB7" stroke-width="0.5"/>
+
+<g class="node c-purple" onclick="sendPrompt('What problems do Busy Professionals and Students face on HelloFresh?')">
+  <rect x="2" y="248" width="112" height="52" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="58" y="266" text-anchor="middle" dominant-baseline="central">Busy professionals</text>
+  <text class="ts" x="58" y="284" text-anchor="middle" dominant-baseline="central">and students</text>
+</g>
+
+<g class="node c-purple" onclick="sendPrompt('What do Health-Conscious Planners need from HelloFresh?')">
+  <rect x="124" y="248" width="112" height="52" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="180" y="266" text-anchor="middle" dominant-baseline="central">Health-conscious</text>
+  <text class="ts" x="180" y="284" text-anchor="middle" dominant-baseline="central">planners</text>
+</g>
+
+<g class="node c-purple" onclick="sendPrompt('What do Family Meal Managers need from HelloFresh?')">
+  <rect x="2" y="316" width="112" height="52" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="58" y="334" text-anchor="middle" dominant-baseline="central">Family meal</text>
+  <text class="ts" x="58" y="352" text-anchor="middle" dominant-baseline="central">managers</text>
+</g>
+
+<g class="node c-purple" onclick="sendPrompt('What do Cooking Learners and Explorers look for on HelloFresh?')">
+  <rect x="124" y="316" width="112" height="52" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="180" y="334" text-anchor="middle" dominant-baseline="central">Cooking learners</text>
+  <text class="ts" x="180" y="352" text-anchor="middle" dominant-baseline="central">and explorers</text>
+</g>
+
+<line x1="30"  y1="300" x2="30"  y2="316" stroke="#534AB7" stroke-width="0.5"/>
+<line x1="80"  y1="300" x2="80"  y2="316" stroke="#534AB7" stroke-width="0.5"/>
+<line x1="160" y1="300" x2="160" y2="316" stroke="#534AB7" stroke-width="0.5"/>
+<line x1="210" y1="300" x2="210" y2="316" stroke="#534AB7" stroke-width="0.5"/>
+
+<line x1="340" y1="180" x2="340" y2="248" stroke="#0F6E56" stroke-width="0.5"/>
+<g class="node c-teal" onclick="sendPrompt('What do Convenience-First Users need from HelloFresh?')">
+  <rect x="276" y="248" width="128" height="52" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="340" y="266" text-anchor="middle" dominant-baseline="central">Convenience-first</text>
+  <text class="ts" x="340" y="284" text-anchor="middle" dominant-baseline="central">users</text>
+</g>
+
+<line x1="560" y1="180" x2="560" y2="248" stroke="#993C1D" stroke-width="0.5"/>
+<g class="node c-coral" onclick="sendPrompt('What do Gift Givers need from HelloFresh?')">
+  <rect x="496" y="248" width="128" height="52" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="560" y="266" text-anchor="middle" dominant-baseline="central">Gift givers</text>
+  <text class="ts" x="560" y="284" text-anchor="middle" dominant-baseline="central">and one-off buyers</text>
+</g>
+
+<line x1="340" y1="300" x2="340" y2="340" stroke="#0F6E56" stroke-width="0.5" stroke-dasharray="3 3"/>
+<g class="c-teal">
+  <rect x="264" y="340" width="152" height="44" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="340" y="358" text-anchor="middle" dominant-baseline="central">Served via Factor brand</text>
+  <text class="ts" x="340" y="374" text-anchor="middle" dominant-baseline="central">— not integrated in app</text>
+</g>
+
+<line x1="560" y1="300" x2="560" y2="340" stroke="#993C1D" stroke-width="0.5" stroke-dasharray="3 3"/>
+<g class="c-coral">
+  <rect x="464" y="340" width="192" height="44" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="560" y="358" text-anchor="middle" dominant-baseline="central">Gift card flow on website</text>
+  <text class="ts" x="560" y="374" text-anchor="middle" dominant-baseline="central">No long-term relationship</text>
+</g>
+
+<line x1="58" y1="368" x2="58" y2="410" stroke="#534AB7" stroke-width="0.5"/>
+<g class="c-purple">
+  <rect x="2" y="410" width="234" height="44" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="119" y="428" text-anchor="middle" dominant-baseline="central">Short path: "I need dinner"</text>
+  <text class="ts" x="119" y="444" text-anchor="middle" dominant-baseline="central">to "dinner is on the table"</text>
+</g>
+
+<line x1="180" y1="368" x2="180" y2="410" stroke="#534AB7" stroke-width="0.5"/>
+<g class="c-purple">
+  <rect x="244" y="410" width="234" height="44" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="361" y="428" text-anchor="middle" dominant-baseline="central">Macro and ingredient control</text>
+  <text class="ts" x="361" y="444" text-anchor="middle" dominant-baseline="central">without the research</text>
+</g>
+
+<line x1="58" y1="368" x2="58" y2="400" stroke="none"/>
+<line x1="119" y1="460" x2="119" y2="490" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="3 3"/>
+<g class="c-purple">
+  <rect x="2" y="490" width="234" height="44" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="119" y="508" text-anchor="middle" dominant-baseline="central">Friction here = lost habit</text>
+  <text class="ts" x="119" y="524" text-anchor="middle" dominant-baseline="central">Largest retention risk group</text>
+</g>
+
+<line x1="361" y1="454" x2="361" y2="490" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="3 3"/>
+<g class="c-purple">
+  <rect x="244" y="490" width="234" height="44" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="361" y="508" text-anchor="middle" dominant-baseline="central">Dietary customisation</text>
+  <text class="ts" x="361" y="524" text-anchor="middle" dominant-baseline="central">and nutritional transparency</text>
+</g>
+
+<line x1="30" y1="368" x2="30" y2="590" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="3 3"/>
+<line x1="210" y1="368" x2="210" y2="590" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="3 3"/>
+<line x1="30" y1="590" x2="210" y2="590" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="3 3"/>
+<line x1="120" y1="590" x2="120" y2="600" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="3 3"/>
+<g class="c-gray">
+  <rect x="2" y="600" width="234" height="32" rx="6" stroke-width="0.5"/>
+  <text class="ts" x="119" y="616" text-anchor="middle" dominant-baseline="central">Family capacity + skill instruction</text>
+</g>
+
+</svg>
