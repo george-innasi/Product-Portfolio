@@ -1,3 +1,58 @@
+<style>
+  :root {
+    --bg: #000000;
+    --s: #444444;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --purple-fill: #2d2560;
+    --purple-stroke: #534AB7;
+    --teal-fill: #0a3d2e;
+    --teal-stroke: #0F6E56;
+    --coral-fill: #4a1f0e;
+    --coral-stroke: #993C1D;
+    --gray-fill: #1a1a1a;
+    --gray-stroke: #555555;
+  }
+  html, body {
+    background: var(--bg);
+    margin: 0;
+    padding: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+  }
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+  }
+  .th {
+    font-size: 11px;
+    font-weight: 600;
+    fill: var(--text-primary);
+  }
+  .ts {
+    font-size: 9px;
+    fill: var(--text-primary);
+  }
+  .c-gray rect  { fill: var(--gray-fill);   stroke: var(--gray-stroke); }
+  .c-gray text  { fill: var(--text-primary); }
+  .c-purple rect { fill: var(--purple-fill);  stroke: var(--purple-stroke); }
+  .c-purple text { fill: var(--text-primary); }
+  .c-teal rect  { fill: var(--teal-fill);   stroke: var(--teal-stroke); }
+  .c-teal text  { fill: var(--text-primary); }
+  .c-coral rect { fill: var(--coral-fill);  stroke: var(--coral-stroke); }
+  .c-coral text { fill: var(--text-primary); }
+  .node { cursor: pointer; }
+  .node:hover rect { opacity: 0.85; }
+  .arr  { stroke: var(--s); }
+</style>
+
 
 <h2 class="sr-only">HelloFresh user segment map showing three primary groups: Meal Kit Subscribers, Ready-to-Eat Users, and Gift and Occasional Users, with sub-segments and their core needs.</h2>
 
