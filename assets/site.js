@@ -39,3 +39,20 @@
     });
   });
 })();
+
+/* Home portrait: click or tap to cycle through the photos. */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var box = document.querySelector('[data-cycle]');
+    if (!box) return;
+    var imgs = box.querySelectorAll('img');
+    var count = box.querySelector('.portrait-count');
+    var i = 0;
+    box.addEventListener('click', function () {
+      imgs[i].classList.remove('on');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('on');
+      if (count) count.textContent = (i + 1) + ' / ' + imgs.length;
+    });
+  });
+})();
