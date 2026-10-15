@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Side Quest, George Innasi</title>
+<meta name="description" content="A student micro-volunteering platform matching Chennai undergraduates to local causes by interest, availability and distance. Live pilot with six users.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body data-accent="violet">
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/">George Innasi <i>product</i></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/work/" aria-current="page">Work</a>
+      <a href="/projects/">Side projects</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <button class="theme-btn" type="button" aria-label="Switch theme"><svg class="ico-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ico-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.2v2M12 19.8v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2.2 12h2M19.8 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="wrap">
+    <a class="back" href="/work/" style="margin-top:26px">&larr; All work</a>
+  </div>
+
+  <header class="cs-hero">
+    <div class="wrap">
+      <p class="kicker">HelloPM Buildathon &middot; Solo 0 to 1 build</p>
+      <h1>Side Quest</h1>
+      <p class="tagline">Volunteering that fits around classes</p>
+      <div class="chips">
+        <span class="chip domain">Consumer / Civic</span>
+        <span class="chip">Next.js</span>
+        <span class="chip">Neon Postgres</span>
+        <span class="chip">Gemini 2.5 Flash</span>
+        <span class="chip">Vercel</span>
+      </div>
+      <div class="actions">
+        <a class="action solid" href="https://v0-side--quest.vercel.app/welcome" target="_blank" rel="noopener">&#9654; Live prototype</a>
+        <a class="action" href="https://drive.google.com/file/d/1vmAdKpUo5kTbHHrJ-sLgkWjJ7TahSlHR/view?usp=sharing" target="_blank" rel="noopener">Buildathon submission</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="row">
+        <div class="shot">Origin: a volunteer's search</div>
+        <div class="row-text">
+          <h3>How it started</h3>
+          <p>A volunteer who had taught value education in Chennai, and still volunteers weekly at a Calgary library, went looking for opportunities back home. It was not a search, it was a slog: site after site, none organised around what she actually cared about.</p>
+          <p>That raised the question the project set out to answer. If someone with a decade of volunteering history finds the way in this hard, how do first and second year students find it at all?</p>
+          <h3 style="margin-top:14px">Overview</h3>
+          <p><strong>Side Quest</strong> is a student micro-volunteering platform for undergraduates in their first to third year in Chennai. It matches them to local causes by interest, availability and travel distance.</p>
+          <p>The problem it addresses is distribution, not supply. Opportunities exist and students want them, but the route in is invisible, so intent decays before any platform returns an answer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap row-wide">
+      <div class="meta-strip">
+        <div><dt>Role</dt><dd>Sole builder and PM</dd></div>
+        <div><dt>Timeline</dt><dd>Aug to Sep 2026</dd></div>
+        <div><dt>Stage</dt><dd>Live pilot, 6 users</dd></div>
+      </div>
+      <div class="row-text" style="max-width:none">
+        <p class="find">What I owned</p>
+        <ul>
+          <li><strong>Discovery.</strong> Survey design, four user interviews, the competitor audit and the problem statement.</li>
+          <li><strong>Product decisions.</strong> The matching model, the onboarding budget, the north star metric and what to cut before the deadline.</li>
+          <li><strong>The build.</strong> Screens, server logic, database and deployment, using self-serve tools rather than an engineering team.</li>
+          <li><strong>The pilot and the pitch.</strong> Recruiting six users, running the feedback round and presenting the result.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Initial Research</h2></div>
+      <div class="row">
+        <div class="row-text">
+          <h3>User interviews and survey</h3>
+          <p class="lede">Four in-depth interviews and 21 survey responses, 17 of them current students, following the Mom Test: no leading questions, and questions about what people had actually done.</p>
+          <p class="find">What did I find?</p>
+          <ul>
+            <li>19 of 21 had never used a dedicated volunteering platform.</li>
+            <li>20 of 21 could not name a single person in their circle who had volunteered in the last two years.</li>
+            <li>5 of 21 searched for opportunities and never converted.</li>
+            <li>Dropouts spike at term resets, because static commitments cannot flex.</li>
+            <li>The gap was discovery, not apathy. Students assumed the opportunities did not exist.</li>
+          </ul>
+        </div>
+        <div class="shot">Survey and interview findings</div>
+      </div>
+
+      <div class="row flip">
+        <div class="row-text">
+          <h3>What actually motivates them</h3>
+          <p class="lede">Published benchmark data on Indian student volunteering puts confidence and self-esteem at 58.4 per cent as the initial trigger, and employment prospects at 3.7 per cent.</p>
+          <p>That reading changed the product. A platform selling volunteering as resume material would be aimed at the smallest motivation in the set. The portable record still matters, but as a by-product rather than the pitch.</p>
+        </div>
+        <div class="shot">Motivation split, 58.4% vs 3.7%</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Competitor Research</h2></div>
+      <div class="row">
+        <div class="cmp-wrap"><table class="cmp">
+          <thead>
+            <tr><th scope="col">&nbsp;</th><th scope="col">MY Bharat</th><th scope="col">NGO aggregators</th><th scope="col">Side Quest</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Organised by student interest</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>Matches to a free schedule</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>Ranks by travel distance</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>Personalised feed</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+          </tbody>
+        </table></div>
+        <div class="row-text">
+          <p class="lede">A live audit of Indian volunteer platforms in September 2026, to see what the incumbents actually do.</p>
+          <p class="find">What did I find?</p>
+          <ul>
+            <li>Built for NGO rosters and CSR reporting, not for a student choosing how to spend a free afternoon.</li>
+            <li>One asked for job title and building number before showing a single listing.</li>
+            <li>Another's Chennai filter returned results in Dadri and Mumbai. A third showed expired 2024 events inside a 2026 window.</li>
+            <li>None organise by student interest, schedule or availability.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Design and Build</h2></div>
+      <div class="row">
+        <div class="row-text">
+          <h3>From onboarding to a matched feed</h3>
+          <p class="lede">Zero profile to a matched local quest in under 180 seconds. Every step that could be deferred was deferred, because if sign-up outlasts the impulse, the intention expires.</p>
+          <p class="find">What a student can do</p>
+          <ul>
+            <li>Set home and college location, which set the travel radius.</li>
+            <li>Tap the causes they care about. No CV, no forms.</li>
+            <li>Pick the days and hours they are actually free.</li>
+            <li>Open a ranked feed where a rules-based score orders quests on fit, then a model reorders and gives a reason for each.</li>
+          </ul>
+        </div>
+        <div class="shot tall">Onboarding and matched feed screens</div>
+      </div>
+
+      <div class="row flip">
+        <div class="row-text">
+          <h3>Why rules run before the model</h3>
+          <p class="lede">A rules-based score across interests, skills, availability and distance renders the board immediately. Gemini 2.5 Flash then reorders it and supplies a reason per quest.</p>
+          <p>The ordering is the decision. The board is useful even when the model is slow or unavailable, and the model improves an answer that already exists rather than being the only path to one. A fallback rate guards it: the rules-based filter takes over when model latency passes 1.5 seconds.</p>
+          <p><strong>North star: verified quest starts.</strong> A student matched, attended, and logged their first civic hour. It sits deliberately past sign-up, because the failure mode in this market is students who register and never turn up.</p>
+        </div>
+        <div class="shot">Matching architecture</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>The Pilot</h2></div>
+      <div class="row">
+        <div class="shot">Pilot feedback, six students</div>
+        <div class="row-text">
+          <h3>What six students reported</h3>
+          <p class="lede">Six students used the deployed app and completed the feedback form between 9 and 11 September 2026.</p>
+          <ul>
+            <li>6 of 6 would open Side Quest again within a month.</li>
+            <li>6 of 6 rated account creation very easy, and nobody abandoned onboarding.</li>
+            <li>4 of 6 found most quests a genuine fit for their interests.</li>
+            <li>Only 1 of 6 said all quests fit the times they are actually free.</li>
+            <li>3 of 6 named a recorded, referenceable volunteer history as their main reason to use it.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row flip">
+        <div class="row-text">
+          <h3>What it exposed</h3>
+          <p class="lede">The two most useful answers were complaints.</p>
+          <ul>
+            <li><strong>The redirect breaks the flow.</strong> A student who has just given Side Quest their interests, availability and location is sent to the organisation's own page to sign up again from scratch. One user asked directly why the details could not be passed through. This is the clearest defect in the product.</li>
+            <li><strong>An unexplained limit.</strong> A user picked nine interests and hit a cap of five with no reason given. A constraint with no stated reason reads as a bug.</li>
+            <li><strong>Availability is the weakest dimension.</strong> Interest matching lands, schedule matching does not. That points at supply rather than the algorithm: 37 quests is too thin for availability filtering to work.</li>
+          </ul>
+        </div>
+        <div class="shot">The redirect, where the flow breaks</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap row-wide">
+      <div class="phase"><h2>What is next</h2></div>
+      <div class="row-text" style="max-width:none">
+        <ul>
+          <li><strong>Direct apply.</strong> Students apply inside Side Quest with no redirect, which closes the defect the pilot found.</li>
+          <li><strong>Live profile matching.</strong> The feed re-ranks as availability and interests change, rather than working from a one-time onboarding snapshot.</li>
+          <li><strong>Close the cohort gaps before adding campuses.</strong> Onboarding friction and match relevance first. No second campus until the first reaches 50 students.</li>
+          <li><strong>AI as the matching engine.</strong> Cut from the pilot over verification risk. It returns only with a verification layer, because an assistant that invents an opportunity sends a student to an address where nothing is happening.</li>
+        </ul>
+        <p class="lede" style="margin-top:10px">Honest status: Side Quest is a working pilot, not a finished product. The listings and organisations are real but were curated from a point-in-time retrieval. Six pilot users is enough to find defects and nowhere near enough to claim product-market fit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="strip">
+        <div class="t">
+          <h3>Next case study</h3>
+          <p>A HelloFresh retention study: 128 survey respondents, four scored problems and one validated P0.</p>
+        </div>
+        <a class="btn btn-primary" href="/work/hellofresh-retention/">Read the retention study</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <span>&copy; 2026 George Innasi</span>
+    <span class="foot-links">
+      <a href="mailto:georgeinnasi@gmail.com">georgeinnasi@gmail.com</a>
+      <a href="https://www.linkedin.com/in/georgeinnasi" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/work/">All work</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

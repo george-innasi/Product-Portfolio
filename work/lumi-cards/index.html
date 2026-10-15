@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lumi Cards, George Innasi</title>
+<meta name="description" content="An AI retrieval assistant giving bank branch staff instant, cited answers on credit card policy. PRD, prototype and graded evaluation.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body data-accent="blue">
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/">George Innasi <i>product</i></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/work/" aria-current="page">Work</a>
+      <a href="/projects/">Side projects</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <button class="theme-btn" type="button" aria-label="Switch theme"><svg class="ico-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ico-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.2v2M12 19.8v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2.2 12h2M19.8 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="wrap">
+    <a class="back" href="/work/" style="margin-top:26px">&larr; All work</a>
+  </div>
+
+  <header class="cs-hero">
+    <div class="wrap">
+      <p class="kicker">HelloPM AI Product Management &middot; Cohort 51 &middot; Sole author</p>
+      <h1>Lumi Cards</h1>
+      <p class="tagline">Instant, cited answers on credit card policy</p>
+      <div class="chips">
+        <span class="chip domain">Financial services</span>
+        <span class="chip">Retrieval</span>
+        <span class="chip">Gemini 2.5 Flash</span>
+        <span class="chip">Hybrid search</span>
+        <span class="chip">Google AI Studio</span>
+      </div>
+      <div class="actions">
+        <a class="action solid" data-href="/assets/lumi-cards-prd.pdf" aria-disabled="true" title="PRD PDF to be added">&#128196; PRD, 11 pages</a>
+        <span class="action" aria-disabled="true" title="Built and tested in Google AI Studio. No public demo.">Prototype, not public</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="row">
+        <div class="shot">The manual lookup, five steps while a client waits</div>
+        <div class="row-text">
+          <h3>How it started</h3>
+          <p>Five years behind a branch desk, the same thing happened every week. A client asks what a card actually covers, and answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
+          <h3 style="margin-top:14px">Overview</h3>
+          <p><strong>Lumi Cards</strong> is a retrieval assistant for personal bankers and tellers, embedded in the portal they already use. It answers credit card policy questions only from approved documents, with an inline citation and an effective date on every value it states.</p>
+          <p>The business problem is cost and exposure at once. Each lookup takes 4 to 6 minutes of live appointment time, leaves no audit trail, and risks misstating a regulated disclosure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap row-wide">
+      <div class="meta-strip">
+        <div><dt>Role</dt><dd>Sole author</dd></div>
+        <div><dt>Timeline</dt><dd>Jul to Sep 2026</dd></div>
+        <div><dt>Graded</dt><dd>87 of 100, 4th of 77</dd></div>
+      </div>
+      <div class="row-text" style="max-width:none">
+        <p class="find">What I owned</p>
+        <ul>
+          <li><strong>Problem and user.</strong> Scoping the roles, sizing the lookup volume, and building the cost model from loaded labour rates.</li>
+          <li><strong>Architecture.</strong> The retrieval path, the metadata filter design, the model choice and the observability schema.</li>
+          <li><strong>Failure analysis.</strong> Six failure modes, each with a detection method and a fix, plus the 50-item golden evaluation set.</li>
+          <li><strong>The spec and the build.</strong> The system prompt, the Must and Should requirements, and running the prototype against them.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>The Problem</h2></div>
+      <div class="row">
+        <div class="row-text">
+          <h3>Who asks, and what it costs</h3>
+          <p class="lede">Personal bankers handle the multi-clause questions where a wrong answer carries compliance exposure. Tellers handle higher-volume, single-fact lookups.</p>
+          <p class="find">What did I find?</p>
+          <ul>
+            <li>A customer-facing staff member sees 20 to 25 clients a week, 6 to 8 of whom raise a specific card policy question.</li>
+            <li>Across a branch team of 11 to 15, that is 60 to 90 lookups per week at 4 to 6 minutes each.</li>
+            <li>No audit trail. The answer is delivered verbally, from memory, with no citation confirming it before it is said.</li>
+            <li>Volume and duration are estimates drawn from five years across three Canadian banks, and are labelled as estimates rather than measurements.</li>
+          </ul>
+        </div>
+        <div class="cmp-wrap">
+          <table class="cmp">
+            <thead><tr><th scope="col">Per branch</th><th scope="col">Now</th><th scope="col">With Lumi</th></tr></thead>
+            <tbody>
+              <tr><td>Hours per month</td><td>32.8</td><td>1.6</td></tr>
+              <tr><td>Loaded cost per month</td><td>$1,059</td><td>$53</td></tr>
+              <tr><td>Loaded cost per year</td><td>$12,715</td><td>$636</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Why Retrieval</h2></div>
+      <div class="row">
+        <div class="cmp-wrap">
+          <table class="cmp">
+            <thead><tr><th scope="col">Alternative</th><th scope="col">Why it fails here</th></tr></thead>
+            <tbody>
+              <tr><td>Better prompting</td><td>No access to the policy corpus. Fabricates citations.</td></tr>
+              <tr><td>Fine-tuning</td><td>Bakes in rates that change monthly, and leaves no document traceability, which fails an audit.</td></tr>
+              <tr><td>Keyword search</td><td>Returns whole documents, not answers. Breaks on vocabulary gaps.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row-text">
+          <p class="lede">Three alternatives were considered and rejected before retrieval was chosen.</p>
+          <p>The vocabulary gap is the concrete one. Staff say "foreign conversion fee" and the document says "FX transaction mark-up", so a keyword search returns nothing useful at the moment it is needed.</p>
+          <p><strong>The decision.</strong> Retrieval is the only approach satisfying both binding constraints: the corpus changes continuously, and every answer must trace back to an approved source document.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>The Design</h2></div>
+      <div class="row">
+        <div class="row-text">
+          <h3>The decision that does most of the work</h3>
+          <p class="lede">Every chunk carries card name, document type, province, effective date, expiry date and source URL. These are applied as filters at query time, not as instructions in the prompt.</p>
+          <p>That is the difference between asking a model not to quote an expired Quebec rate and making that chunk unreachable. Wrong answers are blocked structurally rather than discouraged.</p>
+          <p class="find">Three guards, in order</p>
+          <ul>
+            <li><strong>Before retrieval.</strong> A data loss prevention screen blocks customer data, and an intent classifier blocks out-of-scope queries before any search runs.</li>
+            <li><strong>During retrieval.</strong> Metadata pre-filter, then hybrid dense and sparse search, then a reranker that passes only the top five.</li>
+            <li><strong>After generation.</strong> Every cited chunk ID is checked against the chunks actually supplied. A citation to something absent blocks the response rather than rendering it.</li>
+          </ul>
+        </div>
+        <div class="shot tall">Architecture: ingestion lane and query path</div>
+      </div>
+
+      <div class="row flip">
+        <div class="row-text">
+          <h3>What it refuses</h3>
+          <p class="lede">Three refusal categories, each blocking before retrieval rather than declining afterwards.</p>
+          <ul>
+            <li><strong>Out of scope.</strong> Non-card products are blocked by the intent classifier, which returns the scope statement and links to the right library. The refusal is a redirect, not a dead end.</li>
+            <li><strong>Customer data.</strong> Account numbers and SINs are blocked before embedding, retrieval, generation or logging.</li>
+            <li><strong>Low confidence.</strong> Where reranker confidence falls below threshold, generation is suppressed and the query routes to a human.</li>
+          </ul>
+          <p>Escalation rate is monitored but deliberately not minimised. Reducing refusals means lowering the confidence threshold, which is the exact failure the controls exist to prevent.</p>
+        </div>
+        <div class="shot">Refusal and escalation paths</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Failure Modes and Cost</h2></div>
+      <div class="row">
+        <div class="shot">Six failure modes, detection and fix</div>
+        <div class="row-text">
+          <h3>Six ways it breaks</h3>
+          <p class="lede">Each failure mode is paired with how it is detected and what fixes it, because an undetectable failure is not a managed one.</p>
+          <ul>
+            <li><strong>The worst case is a correct citation with a wrong number.</strong> The model retrieves the right insurance clause and misstates the limit. The citation validates and the link resolves, so staff read a wrong figure with full confidence.</li>
+            <li><strong>The fix is deterministic.</strong> Every figure, rate, percentage and duration in the output must appear verbatim in the retrieved context after normalisation. Anything absent blocks the response.</li>
+            <li><strong>Split clauses are the subtle one.</strong> A coverage limit in one chunk and its exclusions pages away produces an answer that is grounded, cited and materially misleading. Exclusions are linked to their parent clause so retrieving one pulls its siblings.</li>
+            <li><strong>Over-trust is tracked.</strong> Low citation click-through at high usage is the more dangerous reading, not the reassuring one.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row flip">
+        <div class="row-text">
+          <h3>What a query actually costs</h3>
+          <p class="lede">About $0.0024 CAD per query. A 13-person branch team runs under $1.10 a month in tokens.</p>
+          <p><strong>The cost driver is not tokens.</strong> The vector index bills on always-on serving nodes, roughly two orders of magnitude above the entire token bill. The meaningful lever is index topology, not model selection, which is why the architecture specifies a single pinned regional deployment with minimal node count.</p>
+          <p>Semantic caching is the optimisation. Staff repeat near-identical queries daily, so a similarity score at or above 0.95 returns the cached answer and drops latency from roughly 1.5 seconds to roughly 200ms.</p>
+        </div>
+        <div class="shot">Cost model and caching</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>The Prototype Run</h2></div>
+      <div class="row">
+        <div class="shot tall">Prototype: happy path, refusal, redirect</div>
+        <div class="row-text">
+          <h3>Running the spec</h3>
+          <p class="lede">Built in Google AI Studio on Gemini 2.5 Flash at temperature 0.0, against a nine-document knowledge base.</p>
+          <ul>
+            <li>All three refusal strings reproduced exactly.</li>
+            <li><strong>The most informative pass was a refusal.</strong> The requested purchase APR was in the knowledge base, and the model still refused, because the query carried an account number.</li>
+            <li>A mortgage query was blocked before any vector search ran, returning the scope statement and naming the destination library.</li>
+          </ul>
+          <p class="find">Two spec defects, found by running the spec</p>
+          <ul>
+            <li>The happy-path answer broke the 120-word cap once citation text was counted, which exposed that my own spec never said whether citations counted toward it. Amended to "excluding citation text".</li>
+            <li>The model added a document version to the citation format. That is better than what I specified, so the spec was updated to require it rather than leaving it to the model's discretion.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row flip">
+        <div class="row-text">
+          <h3>What the assessment flagged, and I agree with</h3>
+          <p class="lede">The cost section is the one part of the document a reader cannot check.</p>
+          <ul>
+            <li>The prices carry a date but no publisher.</li>
+            <li>The index cost, which I correctly identify as the larger figure, is never actually computed.</li>
+            <li>The confidence threshold is referenced in three places without ever being given a number.</li>
+          </ul>
+          <p><strong>Scope and disclaimer.</strong> A large Canadian bank is used as a worked example. Every source is publicly available credit card documentation. This is an independent study, not a project of any bank, and is not affiliated with or endorsed by one.</p>
+        </div>
+        <div class="shot">Assessment feedback</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="strip">
+        <div class="t">
+          <h3>Next case study</h3>
+          <p>Side Quest, a student micro-volunteering platform built end to end and piloted with six users.</p>
+        </div>
+        <a class="btn btn-primary" href="/work/side-quest/">Read Side Quest</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <span>&copy; 2026 George Innasi</span>
+    <span class="foot-links">
+      <a href="mailto:georgeinnasi@gmail.com">georgeinnasi@gmail.com</a>
+      <a href="https://www.linkedin.com/in/georgeinnasi" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/work/">All work</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
