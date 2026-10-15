@@ -56,3 +56,20 @@
     });
   });
 })();
+
+/* Email icon: on desktop, open a Gmail compose window addressed to George.
+   The mailto link stays as the fallback, and phones keep using their mail app. */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var link = document.querySelector('a[data-gmail]');
+    if (!link) return;
+    link.addEventListener('click', function (e) {
+      var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+      if (touch || e.ctrlKey || e.metaKey || e.shiftKey || e.button) return;
+      e.preventDefault();
+      var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(link.getAttribute('data-gmail'));
+      var w = window.open(url, '_blank', 'noopener');
+      if (!w) window.location.href = link.getAttribute('href');
+    });
+  });
+})();
