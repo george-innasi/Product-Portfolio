@@ -2,19 +2,53 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": true,
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/projects",
+      "destination": "/work/",
+      "permanent": true
+    },
+    {
+      "source": "/about/experience",
+      "destination": "/qualifications/",
+      "permanent": true
+    },
+    {
+      "source": "/about/education",
+      "destination": "/qualifications/",
+      "permanent": true
+    },
+    {
+      "source": "/about/certifications",
+      "destination": "/qualifications/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, must-revalidate"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
       ]
     }
   ]
