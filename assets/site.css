@@ -33,25 +33,25 @@
 }
 
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#122a20;
+  --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#0d2434;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
 
-  --paper:#08140f; --surface:#0f1e18;
-  --ink:#f9fafb; --muted:#9ca3af; --line:#1d2f27;
+  --paper:#071324; --surface:#0e2036;
+  --ink:#f9fafb; --muted:#9fb3c8; --line:#1c3148;
   --on-accent:#06281c;
-  --chip:#152420; --chip-line:#26382f;
-  --dot:rgba(214,236,228,.09);
+  --chip:#13263c; --chip-line:#254059;
+  --dot:transparent;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
-  --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#122a20;
+  --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#0d2434;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
 
-  --paper:#08140f; --surface:#0f1e18;
-  --ink:#f9fafb; --muted:#9ca3af; --line:#1d2f27;
+  --paper:#071324; --surface:#0e2036;
+  --ink:#f9fafb; --muted:#9fb3c8; --line:#1c3148;
   --on-accent:#06281c;
-  --chip:#152420; --chip-line:#26382f;
-  --dot:rgba(214,236,228,.09);
+  --chip:#13263c; --chip-line:#254059;
+  --dot:transparent;
   color-scheme:dark;
 }
 
@@ -494,18 +494,20 @@ button.portrait img.on{opacity:1}
   :root:not([data-theme="light"]) body::before{
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
     background:
-      radial-gradient(125% 95% at 50% 44%, rgba(3,10,7,0) 34%, rgba(3,10,7,.50) 76%, rgba(2,7,5,.74) 100%),
-      radial-gradient(115% 72% at 50% -4%, rgba(78,168,196,.78) 0%, rgba(38,100,118,.46) 26%, rgba(14,42,40,.16) 55%, rgba(5,14,10,0) 80%),
-      linear-gradient(180deg,#0d2733 0%,#0a211d 32%,#07150f 64%,#040b07 100%);
+      url("/assets/dark/treeline.svg") bottom center / max(1100px,100%) auto no-repeat,
+      url("/assets/dark/stars.svg") top center / cover no-repeat,
+      radial-gradient(100% 58% at 50% -6%, rgba(66,128,184,.42) 0%, rgba(22,54,88,.20) 45%, rgba(3,12,22,0) 76%),
+      linear-gradient(180deg,#0c2340 0%,#091c33 30%,#061627 58%,#06182b 100%);
   }
 }
 :root[data-theme="dark"] body::before{
   content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:
-      radial-gradient(125% 95% at 50% 44%, rgba(3,10,7,0) 34%, rgba(3,10,7,.50) 76%, rgba(2,7,5,.74) 100%),
-      radial-gradient(115% 72% at 50% -4%, rgba(78,168,196,.78) 0%, rgba(38,100,118,.46) 26%, rgba(14,42,40,.16) 55%, rgba(5,14,10,0) 80%),
-      linear-gradient(180deg,#0d2733 0%,#0a211d 32%,#07150f 64%,#040b07 100%);
+      url("/assets/dark/treeline.svg") bottom center / max(1100px,100%) auto no-repeat,
+      url("/assets/dark/stars.svg") top center / cover no-repeat,
+      radial-gradient(100% 58% at 50% -6%, rgba(66,128,184,.42) 0%, rgba(22,54,88,.20) 45%, rgba(3,12,22,0) 76%),
+      linear-gradient(180deg,#0c2340 0%,#091c33 30%,#061627 58%,#06182b 100%);
 }
 /* bands and cards sit on the scene, so keep their own fills honest */
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .flow-fig{background:#07130f}}
-:root[data-theme="dark"] .flow-fig{background:#07130f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .flow-fig{background:#08182a}}
+:root[data-theme="dark"] .flow-fig{background:#08182a}
