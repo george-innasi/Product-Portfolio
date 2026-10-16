@@ -395,14 +395,21 @@ button.portrait img.on{opacity:1}
 /* ---------- company logos ---------- */
 .co-logo{display:block; object-fit:contain; object-position:left center}
 .logo-item .co-logo{height:var(--h,32px); width:auto; max-width:none}
-.cv-item.has-logo{display:grid; grid-template-columns:112px 1fr auto; column-gap:18px; align-items:center}
-.cv-item.has-logo .co-logo{width:auto; max-width:112px; height:40px}
-.cv-item.has-logo .co-spacer{display:block}
+.cv-item.has-logo{display:grid; grid-template-columns:112px 1fr auto; column-gap:20px; align-items:center}
+/* Every mark gets the same box and is centred inside it, so a wide wordmark
+   and a square shield carry the same footprint down the column. --s trims
+   the few that still read heavy at the same scale. */
+.cv-item.has-logo .co-logo{width:112px; height:46px; box-sizing:border-box;
+  object-fit:contain; object-position:center;
+  padding:calc((1 - var(--s,1)) * 21px) calc((1 - var(--s,1)) * 52px)}
+.cv-item.has-logo .co-spacer{display:block; width:112px; height:46px}
 /* Dark theme: the brand marks are dark on transparent, so sit them on a white chip. */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .co-logo{background:#fff; border-radius:9px; padding:5px 9px; box-sizing:content-box}}
 :root[data-theme="dark"] .co-logo{background:#fff; border-radius:9px; padding:5px 9px; box-sizing:content-box}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cv-item.has-logo .co-logo{width:auto; max-width:94px; height:30px}}
-:root[data-theme="dark"] .cv-item.has-logo .co-logo{width:auto; max-width:94px; height:30px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cv-item.has-logo .co-logo{width:112px; height:46px; box-sizing:border-box;
+  padding:calc(6px + (1 - var(--s,1)) * 17px) calc(9px + (1 - var(--s,1)) * 44px)}}
+:root[data-theme="dark"] .cv-item.has-logo .co-logo{width:112px; height:46px; box-sizing:border-box;
+  padding:calc(6px + (1 - var(--s,1)) * 17px) calc(9px + (1 - var(--s,1)) * 44px)}
 @media (max-width:640px){
   .cv-item.has-logo{grid-template-columns:1fr; row-gap:8px; align-items:start}
   .cv-item.has-logo .co-spacer{display:none}
