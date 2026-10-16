@@ -97,7 +97,7 @@
    With a Web3Forms access key the note is emailed to George from the
    visitor's browser; without one it falls back to opening their mail app. */
 (function () {
-  var WEB3FORMS_KEY = ''; // paste the free access key from web3forms.com to enable direct delivery
+  var WEB3FORMS_KEY = '10794bf7-de2e-4d1d-a3d2-cf8e8f299af9'; // Web3Forms public access key (georgeinnasi@gmail.com)
   var INBOX = 'georgeinnasi@gmail.com';
   document.addEventListener('DOMContentLoaded', function () {
     var f = document.getElementById('tform');
