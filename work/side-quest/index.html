@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=11">
+<link rel="stylesheet" href="/assets/site.css?v=12">
 <script src="/assets/site.js?v=5" defer></script>
 </head>
 <body data-accent="violet">
@@ -39,16 +39,23 @@
       <p class="kicker">HelloPM Buildathon &middot; Solo 0 to 1 build</p>
       <h1>Side Quest</h1>
       <p class="tagline">Volunteering that fits around classes</p>
-      <div class="chips">
-        <span class="chip domain">Consumer / Civic</span>
-        <span class="chip-label">Tools</span>
-        <span class="chip tool">Next.js</span>
-        <span class="chip tool">Neon Postgres</span>
-        <span class="chip tool">Gemini 2.5 Flash</span>
-        <span class="chip tool">Vercel</span>
-        <span class="chip-label">Focus</span>
-        <span class="chip">0 to 1</span>
-        <span class="chip">Ranking</span>
+      <div class="chip-rows">
+        <span class="chip-row-lbl">Domain</span>
+        <div class="chip-set">
+          <span class="chip domain">Consumer / Civic</span>
+        </div>
+        <span class="chip-row-lbl">Tools</span>
+        <div class="chip-set">
+          <span class="chip tool">Next.js</span>
+          <span class="chip tool">Neon Postgres</span>
+          <span class="chip tool">Gemini 2.5 Flash</span>
+          <span class="chip tool">Vercel</span>
+        </div>
+        <span class="chip-row-lbl">Focus</span>
+        <div class="chip-set">
+          <span class="chip">0 to 1</span>
+          <span class="chip">Ranking</span>
+        </div>
       </div>
       <div class="actions">
         <a class="action solid" href="https://v0-side--quest.vercel.app/welcome" target="_blank" rel="noopener">&#9654; Live prototype</a>

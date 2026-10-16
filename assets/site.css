@@ -162,8 +162,15 @@ button{font-family:inherit}
 .chip{font-size:.74rem; font-weight:600; padding:4px 11px; border-radius:999px; border:1px solid var(--chip-line); background:var(--chip); color:var(--muted); white-space:nowrap}
 .chip.domain{background:var(--gold-soft); border-color:transparent; color:var(--gold-ink); font-weight:700}
 .chip.tool{background:var(--accent-soft); border-color:transparent; color:var(--accent-ink); font-weight:700}
-.chip-label{align-self:center; font-size:.68rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:0 2px 0 6px}
-.chip-label:first-child{margin-left:0}
+/* labelled chip rows: a title column, chips running left to right */
+.chip-rows{display:grid; grid-template-columns:auto 1fr; gap:11px 16px; align-items:center;
+  width:max-content; max-width:100%; margin-inline:auto; text-align:left}
+.chip-row-lbl{font-size:.68rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); white-space:nowrap}
+.chip-set{display:flex; flex-wrap:wrap; gap:7px}
+@media (max-width:620px){
+  .chip-rows{grid-template-columns:1fr; gap:6px; width:100%}
+  .chip-rows > .chip-row-lbl + .chip-set{margin-bottom:6px}
+}
 
 /* ---------- case study header ---------- */
 .back{display:inline-flex; gap:6px; align-items:center; color:var(--muted); font-weight:600; font-size:.86rem; text-decoration:none; margin-bottom:18px}
@@ -328,6 +335,7 @@ button.portrait img.on{opacity:1}
 .cs-hero h1{font-family:var(--serif); font-weight:600; font-size:clamp(2.6rem,7vw,4.6rem); letter-spacing:-.01em; line-height:1}
 .cs-hero .tagline{font-family:var(--serif); font-style:italic; font-size:clamp(1.1rem,2.4vw,1.45rem); color:var(--muted); margin-top:14px}
 .cs-hero .chips{justify-content:center; margin-top:28px}
+.cs-hero .chip-rows{margin-top:28px}
 .cs-hero .chip{font-size:.85rem; padding:7px 15px}
 .cs-hero .actions{justify-content:center; margin-top:22px}
 .cs-hero .action{padding:12px 20px; font-size:.92rem; border-radius:12px}
