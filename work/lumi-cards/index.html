@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Lumi Cards, George Innasi</title>
-<meta name="description" content="An AI retrieval assistant giving bank branch staff instant, cited answers on credit card policy. PRD, prototype and graded evaluation.">
+<meta name="description" content="An AI assistant that gives bank branch staff instant answers on credit card policy, with a link to the source every time. PRD, prototype and a graded evaluation.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,7 @@
           <h3>How it started</h3>
           <p>Five years behind a branch desk, the same thing happened every week. A client asks what a card actually covers, and answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
           <h3 style="margin-top:14px">Overview</h3>
-          <p><strong>Lumi Cards</strong> is a retrieval assistant for personal bankers and tellers, embedded in the portal they already use. It answers credit card policy questions only from approved documents, with an inline citation and an effective date on every value it states.</p>
+          <p><strong>Lumi Cards</strong> is an AI assistant for personal bankers and tellers, built into the portal they already use. It answers credit card policy questions using only approved documents, and every figure it states carries a link to the source and the date it takes effect.</p>
           <p>The business problem is cost and exposure at once. Each lookup takes 4 to 6 minutes of live appointment time, leaves no audit trail, and risks misstating a regulated disclosure.</p>
         </div>
       </div>
@@ -82,10 +82,10 @@
       <div class="row-text" style="max-width:none">
         <p class="find">What I owned</p>
         <ul>
-          <li><strong>Problem and user.</strong> Scoping the roles, sizing the lookup volume, and building the cost model from loaded labour rates.</li>
-          <li><strong>Architecture.</strong> The retrieval path, the metadata filter design, the model choice and the observability schema.</li>
+          <li><strong>Problem and user.</strong> Deciding which roles it serves, counting how often staff look things up, and costing that time using fully loaded salary rates.</li>
+          <li><strong>Architecture.</strong> How the assistant finds the right document, how results are narrowed down, which model it uses, and what gets logged.</li>
           <li><strong>Failure analysis.</strong> Six failure modes, each with a detection method and a fix, plus the 50-item golden evaluation set.</li>
-          <li><strong>The spec and the build.</strong> The system prompt, the Must and Should requirements, and running the prototype against them.</li>
+          <li><strong>The spec and the build.</strong> The instructions given to the model, the must-have and should-have requirements, and testing the prototype against them.</li>
         </ul>
       </div>
     </div>
@@ -128,14 +128,14 @@
           <table class="cmp">
             <thead><tr><th scope="col">Alternative</th><th scope="col">Why it fails here</th></tr></thead>
             <tbody>
-              <tr><td>Better prompting</td><td>No access to the policy corpus. Fabricates citations.</td></tr>
+              <tr><td>Better instructions to the model</td><td>It cannot reach the policy documents, so it invents sources.</td></tr>
               <tr><td>Fine-tuning</td><td>Bakes in rates that change monthly, and leaves no document traceability, which fails an audit.</td></tr>
               <tr><td>Keyword search</td><td>Returns whole documents, not answers. Breaks on vocabulary gaps.</td></tr>
             </tbody>
           </table>
         </div>
         <div class="row-text">
-          <p class="lede">Three alternatives were considered and rejected before retrieval was chosen.</p>
+          <p class="lede">Three other options were considered and rejected before this approach was chosen.</p>
           <p>The vocabulary gap is the concrete one. Staff say "foreign conversion fee" and the document says "FX transaction mark-up", so a keyword search returns nothing useful at the moment it is needed.</p>
           <p><strong>The decision.</strong> Retrieval is the only approach satisfying both binding constraints: the corpus changes continuously, and every answer must trace back to an approved source document.</p>
         </div>
@@ -149,26 +149,26 @@
       <div class="row">
         <div class="row-text">
           <h3>The decision that does most of the work</h3>
-          <p class="lede">Every chunk carries card name, document type, province, effective date, expiry date and source URL. These are applied as filters at query time, not as instructions in the prompt.</p>
-          <p>That is the difference between asking a model not to quote an expired Quebec rate and making that chunk unreachable. Wrong answers are blocked structurally rather than discouraged.</p>
+          <p class="lede">Every piece of a document is tagged with the card name, document type, province, effective date, expiry date and source link. The system filters on those tags when a question is asked, rather than relying on instructions to the model.</p>
+          <p>That is the difference between asking a model not to quote an expired Quebec rate and putting that document out of its reach altogether. Wrong answers are blocked by design, not merely discouraged.</p>
           <p class="find">Three guards, in order</p>
           <ul>
-            <li><strong>Before retrieval.</strong> A data loss prevention screen blocks customer data, and an intent classifier blocks out-of-scope queries before any search runs.</li>
-            <li><strong>During retrieval.</strong> Metadata pre-filter, then hybrid dense and sparse search, then a reranker that passes only the top five.</li>
-            <li><strong>After generation.</strong> Every cited chunk ID is checked against the chunks actually supplied. A citation to something absent blocks the response rather than rendering it.</li>
+            <li><strong>Before the search.</strong> A privacy check blocks customer data, and a scope check blocks questions the assistant is not meant to answer, both before any search runs.</li>
+            <li><strong>During the search.</strong> The tags narrow the documents first, two search methods then run together, and a final ranking step passes on only the best five results.</li>
+            <li><strong>After the answer is written.</strong> Every source the answer cites is checked against the documents actually supplied. If it cites something that was never there, the answer is blocked instead of shown.</li>
           </ul>
         </div>
-        <div class="shot tall">Architecture: ingestion lane and query path</div>
+        <div class="shot tall">How it works: loading the documents, and answering a question</div>
       </div>
 
       <div class="row flip">
         <div class="row-text">
           <h3>What it refuses</h3>
-          <p class="lede">Three refusal categories, each blocking before retrieval rather than declining afterwards.</p>
+          <p class="lede">Three kinds of question the assistant refuses, each stopped before the search runs rather than declined afterwards.</p>
           <ul>
             <li><strong>Out of scope.</strong> Non-card products are blocked by the intent classifier, which returns the scope statement and links to the right library. The refusal is a redirect, not a dead end.</li>
-            <li><strong>Customer data.</strong> Account numbers and SINs are blocked before embedding, retrieval, generation or logging.</li>
-            <li><strong>Low confidence.</strong> Where reranker confidence falls below threshold, generation is suppressed and the query routes to a human.</li>
+            <li><strong>Customer data.</strong> Account numbers and SINs are blocked before the question is processed, searched, answered or logged.</li>
+            <li><strong>Low confidence.</strong> When the system is not sure enough about what it found, it gives no answer and sends the question to a person.</li>
           </ul>
           <p>Escalation rate is monitored but deliberately not minimised. Reducing refusals means lowering the confidence threshold, which is the exact failure the controls exist to prevent.</p>
         </div>
@@ -186,9 +186,9 @@
           <h3>Six ways it breaks</h3>
           <p class="lede">Each failure mode is paired with how it is detected and what fixes it, because an undetectable failure is not a managed one.</p>
           <ul>
-            <li><strong>The worst case is a correct citation with a wrong number.</strong> The model retrieves the right insurance clause and misstates the limit. The citation validates and the link resolves, so staff read a wrong figure with full confidence.</li>
-            <li><strong>The fix is deterministic.</strong> Every figure, rate, percentage and duration in the output must appear verbatim in the retrieved context after normalisation. Anything absent blocks the response.</li>
-            <li><strong>Split clauses are the subtle one.</strong> A coverage limit in one chunk and its exclusions pages away produces an answer that is grounded, cited and materially misleading. Exclusions are linked to their parent clause so retrieving one pulls its siblings.</li>
+            <li><strong>The worst case is a correct citation with a wrong number.</strong> The assistant finds the right insurance clause but states the limit wrongly. The source checks out and the link works, so staff read a wrong figure with full confidence.</li>
+            <li><strong>The fix is a hard rule.</strong> Every figure, rate, percentage and duration in the answer must appear word for word in the documents it drew from. Anything that does not blocks the answer.</li>
+            <li><strong>Split clauses are the subtle one.</strong> A coverage limit in one part of a document, with its exclusions pages away, produces an answer that is sourced, cited and still seriously misleading. Exclusions are tied to the clause they belong to, so pulling one pulls the rest.</li>
             <li><strong>Over-trust is tracked.</strong> Low citation click-through at high usage is the more dangerous reading, not the reassuring one.</li>
           </ul>
         </div>
@@ -198,10 +198,10 @@
         <div class="row-text">
           <h3>What a query actually costs</h3>
           <p class="lede">About $0.0024 CAD per query. A 13-person branch team runs under $1.10 a month in tokens.</p>
-          <p><strong>The cost driver is not tokens.</strong> The vector index bills on always-on serving nodes, roughly two orders of magnitude above the entire token bill. The meaningful lever is index topology, not model selection, which is why the architecture specifies a single pinned regional deployment with minimal node count.</p>
-          <p>Semantic caching is the optimisation. Staff repeat near-identical queries daily, so a similarity score at or above 0.95 returns the cached answer and drops latency from roughly 1.5 seconds to roughly 200ms.</p>
+          <p><strong>The cost is not in running the model.</strong> The search index sits on servers that stay switched on around the clock, costing roughly a hundred times more than all the model usage put together. The real lever is how that index is set up, not which model is picked, which is why the design keeps it to one region and as few servers as possible.</p>
+          <p>Reusing past answers is where the saving comes from. Staff ask nearly the same questions every day, so a close enough match returns the stored answer and cuts the wait from about 1.5 seconds to about 200 milliseconds.</p>
         </div>
-        <div class="shot">Cost model and caching</div>
+        <div class="shot">What it costs to run, and reusing past answers</div>
       </div>
     </div>
   </section>
@@ -217,11 +217,11 @@
           <ul>
             <li>All three refusal strings reproduced exactly.</li>
             <li><strong>The most informative pass was a refusal.</strong> The requested purchase APR was in the knowledge base, and the model still refused, because the query carried an account number.</li>
-            <li>A mortgage query was blocked before any vector search ran, returning the scope statement and naming the destination library.</li>
+            <li>A mortgage question was blocked before any search ran, returning the scope message and naming the right place to look instead.</li>
           </ul>
           <p class="find">Two spec defects, found by running the spec</p>
           <ul>
-            <li>The happy-path answer broke the 120-word cap once citation text was counted, which exposed that my own spec never said whether citations counted toward it. Amended to "excluding citation text".</li>
+            <li>The happy-path answer broke the 120-word cap once citation text was counted, which exposed that my own spec never said whether citations counted towards it. Amended to "excluding citation text".</li>
             <li>The model added a document version to the citation format. That is better than what I specified, so the spec was updated to require it rather than leaving it to the model's discretion.</li>
           </ul>
         </div>

@@ -36,7 +36,7 @@
 
   <header class="cs-hero">
     <div class="wrap">
-      <p class="kicker">HelloPM Buildathon &middot; Solo 0 to 1 build</p>
+      <p class="kicker">HelloPM Buildathon &middot; Built solo from scratch</p>
       <h1>Side Quest</h1>
       <p class="tagline">Volunteering that fits around classes</p>
       <div class="chip-rows">
@@ -86,7 +86,7 @@
         <p class="find">What I owned</p>
         <ul>
           <li><strong>Discovery.</strong> Survey design, four user interviews, the competitor audit and the problem statement.</li>
-          <li><strong>Product decisions.</strong> The matching model, the onboarding budget, the north star metric and what to cut before the deadline.</li>
+          <li><strong>Product decisions.</strong> How matches are worked out, how long sign-up may take, the one measure of success, and what to drop before the deadline.</li>
           <li><strong>The build.</strong> Screens, server logic, database and deployment, using self-serve tools rather than an engineering team.</li>
           <li><strong>The pilot and the pitch.</strong> Recruiting six users, running the feedback round and presenting the result.</li>
         </ul>
@@ -107,7 +107,7 @@
             <li>20 of 21 could not name a single person in their circle who had volunteered in the last two years.</li>
             <li>5 of 21 searched for opportunities and never converted.</li>
             <li>Dropouts spike at term resets, because static commitments cannot flex.</li>
-            <li>The gap was discovery, not apathy. Students assumed the opportunities did not exist.</li>
+            <li>The gap was finding out, not caring. Students assumed the opportunities simply did not exist.</li>
           </ul>
         </div>
         <div class="shot">Survey and interview findings</div>
@@ -175,8 +175,8 @@
         <div class="row-text">
           <h3>Why rules run before the model</h3>
           <p class="lede">A rules-based score across interests, skills, availability and distance renders the board immediately. Gemini 2.5 Flash then reorders it and supplies a reason per quest.</p>
-          <p>The ordering is the decision. The board is useful even when the model is slow or unavailable, and the model improves an answer that already exists rather than being the only path to one. A fallback rate guards it: the rules-based filter takes over when model latency passes 1.5 seconds.</p>
-          <p><strong>North star: verified quest starts.</strong> A student matched, attended, and logged their first civic hour. It sits deliberately past sign-up, because the failure mode in this market is students who register and never turn up.</p>
+          <p>The order is the decision. The board is useful even when the matching is slow or down, and the matching improves a result that already exists rather than being the only way to get one. A backup guards it: the simple rules-based filter takes over whenever the matching takes longer than 1.5 seconds.</p>
+          <p><strong>The one measure that matters: confirmed quest starts.</strong> A student matched, attended, and logged their first hour of civic work. It sits deliberately past sign-up, because the usual way this fails is students who register and never turn up.</p>
         </div>
         <div class="shot">Matching architecture</div>
       </div>
@@ -223,10 +223,10 @@
         <ul>
           <li><strong>Direct apply.</strong> Students apply inside Side Quest with no redirect, which closes the defect the pilot found.</li>
           <li><strong>Live profile matching.</strong> The feed re-ranks as availability and interests change, rather than working from a one-time onboarding snapshot.</li>
-          <li><strong>Close the cohort gaps before adding campuses.</strong> Onboarding friction and match relevance first. No second campus until the first reaches 50 students.</li>
+          <li><strong>Close the gaps with the first group before adding campuses.</strong> Fix the sign-up hassle and the quality of matches first. No second campus until the first reaches 50 students.</li>
           <li><strong>AI as the matching engine.</strong> Cut from the pilot over verification risk. It returns only with a verification layer, because an assistant that invents an opportunity sends a student to an address where nothing is happening.</li>
         </ul>
-        <p class="lede" style="margin-top:10px">Honest status: Side Quest is a working pilot, not a finished product. The listings and organisations are real but were curated from a point-in-time retrieval. Six pilot users is enough to find defects and nowhere near enough to claim product-market fit.</p>
+        <p class="lede" style="margin-top:10px">Honest status: Side Quest is a working pilot, not a finished product. The listings and organisations are real, but they were gathered by hand at one point in time. Six pilot users is enough to find defects and nowhere near enough to claim product-market fit.</p>
       </div>
     </div>
   </section>
@@ -236,7 +236,7 @@
       <div class="strip">
         <div class="t">
           <h3>Next case study</h3>
-          <p>A HelloFresh retention study: 128 survey respondents, four scored problems and one validated P0.</p>
+          <p>A HelloFresh study on keeping subscribers: 128 survey responses, four problems scored, and the top one confirmed with users.</p>
         </div>
         <a class="btn btn-primary" href="/work/hellofresh-retention/">Read the retention study</a>
       </div>
