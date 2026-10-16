@@ -494,17 +494,17 @@ button.portrait img.on{opacity:1}
   :root:not([data-theme="light"]) body::before{
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
     background:
-      radial-gradient(118% 62% at 50% -12%, rgba(44,104,124,.55) 0%, rgba(20,58,66,.28) 40%, rgba(8,20,15,0) 72%),
-      radial-gradient(80% 45% at 85% 8%, rgba(32,86,96,.22) 0%, rgba(8,20,15,0) 65%),
-      linear-gradient(180deg,#0b1d18 0%,#08150f 52%,#050e0a 100%);
+      radial-gradient(125% 95% at 50% 44%, rgba(3,10,7,0) 34%, rgba(3,10,7,.50) 76%, rgba(2,7,5,.74) 100%),
+      radial-gradient(115% 72% at 50% -4%, rgba(78,168,196,.78) 0%, rgba(38,100,118,.46) 26%, rgba(14,42,40,.16) 55%, rgba(5,14,10,0) 80%),
+      linear-gradient(180deg,#0d2733 0%,#0a211d 32%,#07150f 64%,#040b07 100%);
   }
 }
 :root[data-theme="dark"] body::before{
   content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:
-    radial-gradient(118% 62% at 50% -12%, rgba(44,104,124,.55) 0%, rgba(20,58,66,.28) 40%, rgba(8,20,15,0) 72%),
-    radial-gradient(80% 45% at 85% 8%, rgba(32,86,96,.22) 0%, rgba(8,20,15,0) 65%),
-    linear-gradient(180deg,#0b1d18 0%,#08150f 52%,#050e0a 100%);
+      radial-gradient(125% 95% at 50% 44%, rgba(3,10,7,0) 34%, rgba(3,10,7,.50) 76%, rgba(2,7,5,.74) 100%),
+      radial-gradient(115% 72% at 50% -4%, rgba(78,168,196,.78) 0%, rgba(38,100,118,.46) 26%, rgba(14,42,40,.16) 55%, rgba(5,14,10,0) 80%),
+      linear-gradient(180deg,#0d2733 0%,#0a211d 32%,#07150f 64%,#040b07 100%);
 }
 /* bands and cards sit on the scene, so keep their own fills honest */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .flow-fig{background:#07130f}}
