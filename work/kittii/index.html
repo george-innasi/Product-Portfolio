@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=8">
+<link rel="stylesheet" href="/assets/site.css?v=9">
 <script src="/assets/site.js?v=5" defer></script>
 </head>
 <body data-accent="wine">
@@ -41,13 +41,14 @@
       <p class="tagline">What's yours, found</p>
       <div class="chips">
         <span class="chip domain">Two-sided marketplace</span>
+        <span class="chip-label">Focus</span>
         <span class="chip">Discovery</span>
         <span class="chip">B2B2C</span>
         <span class="chip">Go to market</span>
         <span class="chip">MVP</span>
       </div>
       <div class="actions">
-        <a class="action solid" href="https://kittii.ca/" target="_blank" rel="noopener">&#128269; Product site</a>
+        <a class="action solid" href="https://kittii.ca/" target="_blank" rel="noopener">&#128269; Product site (preview)</a>
       </div>
     </div>
   </header>
@@ -55,7 +56,7 @@
   <section class="band">
     <div class="wrap">
       <div class="row">
-        <div class="shot">Seekers and Sherlocks</div>
+        <figure class="phone-shot"><img src="/assets/kittii/dashboard.webp" width="540" height="1205" alt="Kittii mobile dashboard listing a user's lost items with their status" loading="lazy"></figure>
         <div class="row-text">
           <h3>How it started</h3>
           <p>Kittii began with friends from my post-graduate programme at Cape Breton University. The founder brought the idea to two of us, and it had already been put in front of Volta, the Atlantic Canada startup house, reaching the second round without getting through.</p>
@@ -64,6 +65,25 @@
           <p><strong>Kittii</strong> is an AI-powered lost-and-found marketplace. Seekers report what they have lost, a community of finders called Sherlocks report what they have found, and multimodal AI matching pairs the two.</p>
           <p>The business problem is that recovery today is informal and slow. It depends entirely on whoever happens to be holding the item, and the person who lost it has no way to reach them.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>A gist of the platform</h2></div>
+      <p class="lede" style="text-align:center; max-width:62ch; margin:0 auto">The build reached MVP and stopped there, so these are the screens as they stood: a consumer app for Seekers and Sherlocks, and an admin console where the team validated every claim before a return.</p>
+      <p class="gist-lbl">In the app</p>
+      <div class="shot-gallery phones">
+        <figure><img src="/assets/kittii/report.webp" width="540" height="1205" alt="Report an item screen with value classification and category" loading="lazy"><figcaption>Report a lost or found item</figcaption></figure>
+        <figure><img src="/assets/kittii/item-ai.webp" width="540" height="1205" alt="Item detail with AI analysis tags and a claim button" loading="lazy"><figcaption>AI analysis on every item</figcaption></figure>
+        <figure><img src="/assets/kittii/claim-verify.webp" width="540" height="1205" alt="Claim screen asking an ownership verification question" loading="lazy"><figcaption>Claim with ownership proof</figcaption></figure>
+        <figure><img src="/assets/kittii/found-detail.webp" width="540" height="1205" alt="Found item detail awaiting a match" loading="lazy"><figcaption>A found item, awaiting its match</figcaption></figure>
+      </div>
+      <p class="gist-lbl">The admin console</p>
+      <div class="shot-gallery admin">
+        <figure><img src="/assets/kittii/admin-found.webp" width="936" height="1095" alt="Admin found-item detail with AI analysis and claim details" loading="lazy"><figcaption>A found item and its claim, with a match score</figcaption></figure>
+        <figure><img src="/assets/kittii/admin-queue.webp" width="1280" height="833" alt="Admin queue of lost items grouped by claim status" loading="lazy"><figcaption>The review queue, by claim status</figcaption></figure>
       </div>
     </div>
   </section>
@@ -130,6 +150,23 @@
 
   <section class="band">
     <div class="wrap">
+      <div class="phase"><h2>The two-sided flow</h2></div>
+      <p class="lede" style="text-align:center; max-width:64ch; margin:0 auto 6px">Two journeys meet in the middle. A Seeker reports what they lost, a Sherlock reports what they found, AI pairs them, and the team validates ownership before any return or payment.</p>
+      <div class="flow-grid">
+        <figure class="flow-fig">
+          <figcaption>Seeker flow</figcaption>
+          <img src="/assets/flows/seeker-flow.svg" alt="Seeker flow: item lost, submit report free, AI analyses, view matches with images hidden, submit claim with unique details, team validates, claim approved and fee charged, return coordinated, item returned, optional tip to the finder.">
+        </figure>
+        <figure class="flow-fig">
+          <figcaption>Sherlock flow</figcaption>
+          <img src="/assets/flows/sherlock-flow.svg" alt="Sherlock flow: item found, submit found report, AI scans for matching seeker reports, submit claim, admin receives and validates, claim approved, return coordinated, item returned, feedback form.">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
       <div class="phase"><h2>Go to Market</h2></div>
       <div class="row">
         <div class="row-text">
@@ -172,16 +209,13 @@
   <section class="band">
     <div class="wrap">
       <div class="phase"><h2>What I would do differently</h2></div>
-      <div class="row">
-        <div class="row-text">
+      <div class="row-text row-wide">
           <p class="lede">Two things I would change, both visible only in hindsight.</p>
           <ul>
             <li><strong>We set a revenue target before we had a repeatable way to acquire either side.</strong> A two-sided product has no value until both sides are present in the same place at the same time, and the plan treated supply and demand as sequential problems rather than one problem. The GTM eventually corrected for this, but it came late.</li>
             <li><strong>I would have tested the matching quality much earlier</strong>, against a small real corpus of lost and found reports. AI matching was the differentiator on paper, and it was the part with the least evidence behind it when the build started.</li>
           </ul>
-          <p><strong>Where it stands.</strong> The build reached MVP and stopped there. The go-to-market plan was written but never run, and the revenue target was never tested. The product site remains live.</p>
-        </div>
-        <div class="shot">Kittii MVP screens</div>
+          <p><strong>Where it stands.</strong> The build reached MVP and stopped there. The go-to-market plan was written but never run, and the revenue target was never tested. The product site stays up as a preview, though the product itself never launched.</p>
       </div>
     </div>
   </section>
