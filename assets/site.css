@@ -425,7 +425,6 @@ button.portrait img.on{opacity:1}
 .cc-copy svg{width:18px; height:18px}
 .cc-copy:hover{color:var(--accent-ink); border-color:var(--accent)}
 .cc-copy.copied{color:var(--accent-ink); border-color:var(--accent)}
-.cc-loc{margin-top:16px; font-size:.86rem; color:var(--muted)}
 @media (max-width:420px){.cc-actions{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- thoughts form ---------- */
