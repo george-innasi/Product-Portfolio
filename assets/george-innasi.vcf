@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:George Innasi
+N:Innasi;George;;;
+TITLE:AI-enabled Product Manager
+EMAIL;TYPE=INTERNET,PREF:georgeinnasi@gmail.com
+URL:https://www.linkedin.com/in/georgeinnasi
+URL:https://github.com/george-innasi
+ADR;TYPE=HOME:;;;Vancouver;British Columbia;;Canada
+NOTE:Open to remote and hybrid product roles across Canada.
+END:VCARD

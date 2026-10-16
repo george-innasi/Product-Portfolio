@@ -73,3 +73,77 @@
     });
   });
 })();
+
+/* Copy-to-clipboard buttons (e.g. the contact email). */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-copy');
+        var done = function () {
+          btn.classList.add('copied');
+          btn.setAttribute('aria-label', 'Copied');
+          setTimeout(function () { btn.classList.remove('copied'); btn.setAttribute('aria-label', 'Copy email address'); }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {});
+        }
+      });
+    });
+  });
+})();
+
+/* "Leave me your thoughts" form.
+   With a Web3Forms access key the note is emailed to George from the
+   visitor's browser; without one it falls back to opening their mail app. */
+(function () {
+  var WEB3FORMS_KEY = ''; // paste the free access key from web3forms.com to enable direct delivery
+  var INBOX = 'georgeinnasi@gmail.com';
+  document.addEventListener('DOMContentLoaded', function () {
+    var f = document.getElementById('tform');
+    if (!f) return;
+    var ta = f.querySelector('textarea[name="message"]');
+    var emailEl = f.querySelector('input[name="email"]');
+    var status = document.getElementById('tstatus');
+    var count = document.getElementById('tcount');
+    var btn = f.querySelector('button[type="submit"]');
+
+    if (ta && count) {
+      var sync = function () { count.textContent = ta.value.length; };
+      ta.addEventListener('input', sync); sync();
+    }
+    function set(msg, kind) { if (status) { status.textContent = msg; status.className = 'tform-status' + (kind ? ' ' + kind : ''); } }
+
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = (ta ? ta.value : '').trim();
+      var email = emailEl ? emailEl.value.trim() : '';
+      if (!msg) { set('Please add a short note first.', 'err'); if (ta) ta.focus(); return; }
+
+      if (WEB3FORMS_KEY) {
+        set('Sending...', ''); if (btn) btn.disabled = true;
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: 'New message from your portfolio',
+            from_name: 'Portfolio contact',
+            botcheck: '',
+            message: msg,
+            reply_email: email || 'not provided'
+          })
+        }).then(function (r) { return r.json(); }).then(function (d) {
+          if (d && d.success) { f.reset(); if (count) count.textContent = '0'; set('Thanks, your note is on its way.', 'ok'); }
+          else { set('Something went wrong. You can email me directly instead.', 'err'); }
+        }).catch(function () {
+          set('Something went wrong. You can email me directly instead.', 'err');
+        }).then(function () { if (btn) btn.disabled = false; });
+      } else {
+        var body = msg + (email ? '\n\nReply to: ' + email : '');
+        window.location.href = 'mailto:' + INBOX + '?subject=' + encodeURIComponent('Message from your portfolio') + '&body=' + encodeURIComponent(body);
+        set('Opening your email app to send the note...', 'ok');
+      }
+    });
+  });
+})();
