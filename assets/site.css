@@ -36,22 +36,22 @@
   --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#122a20;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
 
-  --paper:#0f1713; --surface:#16221b;
-  --ink:#f9fafb; --muted:#9ca3af; --line:#223028;
+  --paper:#08140f; --surface:#0f1e18;
+  --ink:#f9fafb; --muted:#9ca3af; --line:#1d2f27;
   --on-accent:#06281c;
-  --chip:#1b2a22; --chip-line:#2b3a31;
-  --dot:rgba(249,250,251,.06);
+  --chip:#152420; --chip-line:#26382f;
+  --dot:rgba(214,236,228,.09);
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
   --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#122a20;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
 
-  --paper:#0f1713; --surface:#16221b;
-  --ink:#f9fafb; --muted:#9ca3af; --line:#223028;
+  --paper:#08140f; --surface:#0f1e18;
+  --ink:#f9fafb; --muted:#9ca3af; --line:#1d2f27;
   --on-accent:#06281c;
-  --chip:#1b2a22; --chip-line:#2b3a31;
-  --dot:rgba(249,250,251,.06);
+  --chip:#152420; --chip-line:#26382f;
+  --dot:rgba(214,236,228,.09);
   color-scheme:dark;
 }
 
@@ -485,3 +485,27 @@ button.portrait img.on{opacity:1}
 .pstatus::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor}
 .pcard-open{margin-top:auto; padding-top:4px; font-weight:700; font-size:.85rem; color:var(--accent-ink)}
 @media (max-width:760px){.pgrid{grid-template-columns:1fr}}
+
+/* ---------- dark atmosphere: under the canopy, clear sky above ----------
+   A fixed layer behind the content so the scene stays put while the page
+   scrolls: a cool sky glow overhead falling away into deep forest green. */
+.sky{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) body::before{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(118% 62% at 50% -12%, rgba(44,104,124,.55) 0%, rgba(20,58,66,.28) 40%, rgba(8,20,15,0) 72%),
+      radial-gradient(80% 45% at 85% 8%, rgba(32,86,96,.22) 0%, rgba(8,20,15,0) 65%),
+      linear-gradient(180deg,#0b1d18 0%,#08150f 52%,#050e0a 100%);
+  }
+}
+:root[data-theme="dark"] body::before{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(118% 62% at 50% -12%, rgba(44,104,124,.55) 0%, rgba(20,58,66,.28) 40%, rgba(8,20,15,0) 72%),
+    radial-gradient(80% 45% at 85% 8%, rgba(32,86,96,.22) 0%, rgba(8,20,15,0) 65%),
+    linear-gradient(180deg,#0b1d18 0%,#08150f 52%,#050e0a 100%);
+}
+/* bands and cards sit on the scene, so keep their own fills honest */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .flow-fig{background:#07130f}}
+:root[data-theme="dark"] .flow-fig{background:#07130f}
