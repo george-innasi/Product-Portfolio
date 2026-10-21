@@ -149,29 +149,24 @@
   <section class="band">
     <div class="wrap">
       <div class="phase"><h2>Design and Build</h2></div>
-      <div class="row">
-        <div class="row-text">
-          <h3>From onboarding to a matched feed</h3>
-          <p class="lede">Zero profile to a matched local quest in under 180 seconds. Every step that could be deferred was deferred, because if sign-up outlasts the impulse, the intention expires.</p>
-          <p class="find">What a student can do</p>
-          <ul>
-            <li>Set home and college location, which set the travel radius.</li>
-            <li>Tap the causes they care about. No CV, no forms.</li>
-            <li>Pick the days and hours they are actually free.</li>
-            <li>Open a ranked feed where a rules-based score orders quests on fit, then a model reorders and gives a reason for each.</li>
-          </ul>
+      <div class="evidence">
+        <div class="shot" data-lightbox><img src="/assets/side-quest/architecture-slide.png" alt="How Side Quest was built: rules-based matching first, AI reordering on top. Five stages from sign-in through baseline ranking to model re-rank, with a tools breakdown by stage." width="1200" height="675" loading="lazy"></div>
+        <div class="ev-text">
+          <h3>How Side Quest was built</h3>
+          <p>Rules-based matching first; AI reordering on top. A baseline score across interests, skills, availability and distance renders the quest board immediately. Gemini 2.5 Flash then reorders it and supplies a reason per quest.</p>
+          <p>The ordering matters: the board is useful even when the model is slow or unavailable. A fallback takes over whenever model latency exceeds 1.5 seconds.</p>
+          <p><strong>North star: confirmed quest starts.</strong> A student matched, attended, and logged their first civic hour. It sits past sign-up on purpose, because the usual failure is students who register and never turn up.</p>
         </div>
-        <div class="shot tall">Onboarding and matched feed screens</div>
       </div>
 
-      <div class="row flip">
-        <div class="row-text">
-          <h3>Why rules run before the model</h3>
-          <p class="lede">A rules-based score across interests, skills, availability and distance renders the board immediately. Gemini 2.5 Flash then reorders it and supplies a reason per quest.</p>
-          <p>The order is the decision. The board is useful even when the matching is slow or down, and the matching improves a result that already exists rather than being the only way to get one. A backup guards it: the simple rules-based filter takes over whenever the matching takes longer than 1.5 seconds.</p>
-          <p><strong>The one measure that matters: confirmed quest starts.</strong> A student matched, attended, and logged their first hour of civic work. It sits deliberately past sign-up, because the usual way this fails is students who register and never turn up.</p>
+      <div class="evidence">
+        <div class="shot" data-lightbox><img src="/assets/side-quest/quest-log.png" alt="Quest Log: a shareable student profile card showing interests, impact hours, quests completed, quest lines, earned badges, and organisations worked with." width="600" height="1067" loading="lazy"></div>
+        <div class="ev-text">
+          <h3>Quest Log</h3>
+          <p>A shareable profile card that students can send to friends, family or prospective employers. It consolidates everything that matters into one portable record.</p>
+          <p><strong>What it shows:</strong> causes the student is questing for, personal motivations, impact hours logged, quests completed, quest lines across organisations, and earned badges.</p>
+          <p>The insight behind it: hours, milestones and verified badges should aggregate into one cross-organisational log rather than sitting as PDF certificates inside one NGO. A student who volunteers across three organisations should not need three separate proofs.</p>
         </div>
-        <div class="shot">Matching architecture</div>
       </div>
     </div>
   </section>
