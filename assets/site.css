@@ -366,7 +366,8 @@ button.portrait img.on{opacity:1}
 .shot{border:1px dashed var(--chip-line); border-radius:18px; background:var(--surface-2); min-height:300px;
   display:grid; place-items:center; text-align:center; padding:26px; color:var(--muted); font-size:.95rem}
 .shot.tall{min-height:430px; max-width:320px; margin-inline:auto; border-radius:28px}
-.shot img{border-radius:inherit}
+.shot:has(img){border-style:solid; border-color:var(--line); padding:0; min-height:auto; background:transparent}
+.shot img{border-radius:inherit; width:100%; height:auto; display:block}
 
 .cmp-wrap{overflow-x:auto}
 .cmp{width:100%; min-width:400px; border-collapse:collapse; font-size:.95rem}
