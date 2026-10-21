@@ -104,6 +104,7 @@
     });
 
     closeBtn.addEventListener('click', close);
+    lbImg.addEventListener('click', close);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   });
