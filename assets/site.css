@@ -563,29 +563,20 @@ button.portrait img.on{opacity:1}
 @media (prefers-reduced-motion:reduce){.cap-tog summary::before{transition:none}}
 @media (max-width:860px){.cap-grid{grid-template-columns:1fr; gap:26px}}
 
-/* ---------- Side Quest page theme (pitch-deck indigo-gold) ---------- */
-[data-page="side-quest"]{
-  --paper:#2a2c42; --surface:#33354d;
-  --ink:#f0ede8; --muted:#b0adc0; --line:#3e405a;
-  --on-accent:#2a2c42;
-  --chip:#3a3c55; --chip-line:#4a4c65;
-  --dot:transparent;
-  --accent:#d4a843; --accent-ink:#e5b84f; --accent-soft:rgba(212,168,67,.15); --surface-2:#33354d;
-  --gold:#d4a843; --gold-ink:#e5b84f; --gold-soft:rgba(212,168,67,.15);
-  --emerald:#d4a843; --emerald-ink:#e5b84f; --emerald-soft:rgba(212,168,67,.15); --emerald-tint:#33354d;
-  color-scheme:dark;
-}
-/* keep indigo-gold in forced dark mode too */
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="side-quest"],
-[data-page="side-quest"]{ --paper:#2a2c42; --surface:#33354d; --ink:#f0ede8; --muted:#b0adc0; --line:#3e405a; --on-accent:#2a2c42; --chip:#3a3c55; --chip-line:#4a4c65; --dot:transparent; --accent:#d4a843; --accent-ink:#e5b84f; --accent-soft:rgba(212,168,67,.15); --surface-2:#33354d; --gold:#d4a843; --gold-ink:#e5b84f; --gold-soft:rgba(212,168,67,.15); --emerald:#d4a843; --emerald-ink:#e5b84f; --emerald-soft:rgba(212,168,67,.15); --emerald-tint:#33354d; color-scheme:dark; }}
+/* ---------- Side Quest page theme (pitch-deck indigo-gold, dark mode only) ---------- */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="side-quest"]{ --paper:#2a2c42; --surface:#33354d; --ink:#f0ede8; --muted:#b0adc0; --line:#3e405a; --on-accent:#2a2c42; --chip:#3a3c55; --chip-line:#4a4c65; --dot:transparent; --accent:#d4a843; --accent-ink:#e5b84f; --accent-soft:rgba(212,168,67,.15); --surface-2:#33354d; --gold:#d4a843; --gold-ink:#e5b84f; --gold-soft:rgba(212,168,67,.15); --emerald:#d4a843; --emerald-ink:#e5b84f; --emerald-soft:rgba(212,168,67,.15); --emerald-tint:#33354d; color-scheme:dark; }}
 :root[data-theme="dark"] [data-page="side-quest"]{ --paper:#2a2c42; --surface:#33354d; --ink:#f0ede8; --muted:#b0adc0; --line:#3e405a; --on-accent:#2a2c42; --chip:#3a3c55; --chip-line:#4a4c65; --dot:transparent; --accent:#d4a843; --accent-ink:#e5b84f; --accent-soft:rgba(212,168,67,.15); --surface-2:#33354d; --gold:#d4a843; --gold-ink:#e5b84f; --gold-soft:rgba(212,168,67,.15); --emerald:#d4a843; --emerald-ink:#e5b84f; --emerald-soft:rgba(212,168,67,.15); --emerald-tint:#33354d; color-scheme:dark; }
-/* Side Quest nav override: blend with indigo bg */
-[data-page="side-quest"] .nav{background:color-mix(in srgb,#2a2c42 88%,transparent); border-bottom-color:#3e405a}
-/* Side Quest comparison table */
-[data-page="side-quest"] .cmp{background:#33354d; color:var(--ink)}
-[data-page="side-quest"] .cmp th{color:var(--accent)}
-[data-page="side-quest"] .tick.yes{color:#4ade80}
-[data-page="side-quest"] .tick.no{color:#f87171}
+/* Side Quest nav/table overrides (dark mode only) */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="side-quest"] .nav{background:color-mix(in srgb,#2a2c42 88%,transparent); border-bottom-color:#3e405a}}
+:root[data-theme="dark"] [data-page="side-quest"] .nav{background:color-mix(in srgb,#2a2c42 88%,transparent); border-bottom-color:#3e405a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="side-quest"] .cmp{background:#33354d; color:var(--ink)}}
+:root[data-theme="dark"] [data-page="side-quest"] .cmp{background:#33354d; color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="side-quest"] .cmp th{color:var(--accent)}}
+:root[data-theme="dark"] [data-page="side-quest"] .cmp th{color:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="side-quest"] .tick.yes{color:#4ade80}}
+:root[data-theme="dark"] [data-page="side-quest"] .tick.yes{color:#4ade80}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="side-quest"] .tick.no{color:#f87171}}
+:root[data-theme="dark"] [data-page="side-quest"] .tick.no{color:#f87171}
 
 /* ---------- lightbox ---------- */
 .lightbox-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease;cursor:zoom-out}
