@@ -535,8 +535,14 @@ button.portrait img.on{opacity:1}
 .cap-state.s1{background:var(--chip); color:var(--muted); border-color:var(--chip-line)}
 .cap h3{font-size:1.1rem; font-weight:800; letter-spacing:-.01em; margin-top:3px}
 .cap p{color:var(--muted); font-size:.95rem}
-.cap-list{list-style:none; margin:6px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; width:100%}
-.cap-list li{position:relative; padding-left:17px; color:var(--muted); font-size:.95rem}
-.cap-list li::before{content:""; position:absolute; left:0; top:.6em; width:6px; height:6px; border-radius:50%; background:var(--accent)}
-.cap-list li b{color:var(--ink); font-weight:700}
+.cap-list{display:flex; flex-direction:column; width:100%; margin-top:6px; border-top:1px solid var(--line)}
+.cap-tog{border-bottom:1px solid var(--line)}
+.cap-tog summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:11px; padding:12px 2px; font-weight:700; font-size:.95rem; color:var(--ink)}
+.cap-tog summary::-webkit-details-marker{display:none}
+.cap-tog summary::before{content:""; flex:none; width:0; height:0; border-left:7px solid var(--accent); border-top:5px solid transparent; border-bottom:5px solid transparent; transform-origin:35% 50%; transition:transform .18s ease}
+.cap-tog[open] summary::before{transform:rotate(90deg)}
+.cap-tog summary:hover{color:var(--accent-ink)}
+.cap-tog summary:focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:4px}
+.cap-tog p{margin:0; padding:0 2px 14px 18px}
+@media (prefers-reduced-motion:reduce){.cap-tog summary::before{transition:none}}
 @media (max-width:860px){.cap-grid{grid-template-columns:1fr; gap:26px}}
