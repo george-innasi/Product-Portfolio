@@ -271,6 +271,28 @@ button{font-family:inherit}
 .strip h3{font-size:1.2rem; font-weight:800; margin-bottom:7px}
 .strip p{color:var(--muted); font-size:.95rem}
 
+/* ---------- next-project CTA ---------- */
+.next-proj-band{border-top:2px solid var(--accent)}
+.next-proj-label{font-size:.72rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:14px}
+.next-proj-card{display:flex; align-items:center; justify-content:space-between; gap:28px;
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+  padding:clamp(24px,4vw,38px) clamp(24px,4vw,36px); text-decoration:none; color:var(--ink);
+  transition:border-color .2s,transform .2s,box-shadow .2s}
+.next-proj-card:hover{border-color:var(--accent); transform:translateY(-3px);
+  box-shadow:0 16px 40px -16px color-mix(in srgb,var(--accent) 45%,transparent)}
+.next-proj-text{display:flex; flex-direction:column; gap:8px; max-width:52ch}
+.next-proj-text h3{font-family:var(--serif); font-weight:600; font-size:clamp(1.4rem,2.8vw,1.9rem); letter-spacing:-.01em}
+.next-proj-text p{color:var(--muted); font-size:.95rem; line-height:1.55}
+.next-proj-cta{display:inline-flex; align-items:center; gap:6px; margin-top:6px; font-weight:700; font-size:.9rem; color:var(--accent-ink)}
+.next-proj-visual{flex:none; width:72px; height:72px; border-radius:16px; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center}
+.next-proj-icon{font-size:2rem; line-height:1}
+@media (max-width:520px){
+  .next-proj-card{flex-direction:column; align-items:flex-start; gap:18px}
+  .next-proj-visual{width:56px; height:56px; border-radius:12px}
+  .next-proj-icon{font-size:1.6rem}
+}
+
 /* ---------- contact ---------- */
 .contact-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:40px 34px; text-align:center}
 .contact-card h2{font-family:var(--serif); font-style:italic; font-weight:500; font-size:1.9rem; letter-spacing:0; margin-bottom:10px}
