@@ -74,6 +74,41 @@
   });
 })();
 
+/* Lightbox: images with data-lightbox open in a full-screen overlay. */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img src="" alt="">';
+    document.body.appendChild(overlay);
+    var lbImg = overlay.querySelector('img');
+    var closeBtn = overlay.querySelector('.lightbox-close');
+
+    function open(src, alt) {
+      lbImg.src = src; lbImg.alt = alt || '';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-lightbox]').forEach(function (el) {
+      el.style.cursor = 'zoom-in';
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        var img = el.tagName === 'IMG' ? el : el.querySelector('img');
+        if (img) open(img.src, img.alt);
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  });
+})();
+
 /* Copy-to-clipboard buttons (e.g. the contact email). */
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
