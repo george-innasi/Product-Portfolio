@@ -174,27 +174,11 @@
           <p>You give Kural the gist in your own words. Before it writes a single line, it classifies the situation: how urgent it is, the power dynamic, and the emotional register. Then it drafts in your voice, shows you what it detected, and lets you adjust rather than regenerate from scratch.</p>
           <p>The draft on the right is one pass. No "I hope this email finds you well." No padding. A message the sender could send as is.</p>
         </div>
-        <div class="compose-demo">
-          <div class="compose-row">
-            <span class="compose-lbl">What you type</span>
-            <p class="compose-in">tell my manager the vendor API is down, we will miss the 5pm deadline, need her to approve a short extension</p>
-            <div class="compose-chips">
-              <span class="chip detected"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>Urgent</span>
-              <span class="chip detected"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 6-9 6-9-6 9-6zm0 9.5L4.5 8 12 5 19.5 8 12 12.5z"/></svg>Writing upward</span>
-              <span class="chip detected"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>Request</span>
-            </div>
+        <div class="compose-demo" style="flex:1 1 480px;min-width:0">
+          <div style="position:relative;width:100%;padding-top:75%;border-radius:12px;overflow:hidden;border:1px solid var(--border, rgba(0,0,0,.1));box-shadow:0 2px 12px rgba(0,0,0,.08)">
+            <iframe src="https://kural-iota.vercel.app/" title="Kural live prototype" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" loading="lazy" allow="clipboard-write"></iframe>
           </div>
-          <div class="compose-row out">
-            <span class="compose-lbl">What Kural drafts</span>
-            <p class="compose-out">Hi Sarah,
-
-The vendor API went down this afternoon, which pushes our release past the 5pm deadline. I have logged it with their team and put a fallback in motion.
-
-Could you approve a short extension to tomorrow morning? I will confirm the new timing the moment the vendor is back up.
-
-Thanks,
-George</p>
-          </div>
+          <p style="margin-top:10px;font-size:.85rem;color:var(--muted, #6b7280);text-align:center"><a href="https://kural-iota.vercel.app/" target="_blank" rel="noopener" style="color:var(--accent)">Open Kural in a new tab &rsaquo;</a></p>
         </div>
       </div>
     </div>
