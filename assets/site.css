@@ -183,13 +183,13 @@ button{font-family:inherit}
 .proj-head .one{color:var(--muted); font-size:1.1rem; max-width:60ch}
 .proj-head .note{margin-top:14px; font-family:var(--serif); font-style:italic; color:var(--muted); font-size:.95rem; max-width:64ch}
 .proj-meta{display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; justify-content:space-between; margin-top:22px}
-.actions{display:flex; gap:9px; flex-wrap:wrap}
-.action{display:inline-flex; align-items:center; gap:7px; border-radius:10px; padding:9px 15px; font-weight:700; font-size:.85rem; border:1px solid var(--line); background:var(--surface); color:var(--ink); text-decoration:none}
-.action:hover{border-color:var(--accent); color:var(--accent-ink)}
-.action.solid{background:var(--accent); color:var(--on-accent); border-color:transparent}
-.action.solid:hover{color:var(--on-accent); filter:brightness(1.07)}
+.actions{display:flex; gap:12px; flex-wrap:wrap}
+.action{display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:14px 28px; font-weight:600; font-size:.95rem; border:1.5px solid var(--ink); background:transparent; color:var(--ink); text-decoration:none; transition:background .2s,border-color .2s,color .2s,transform .15s}
+.action:hover{background:var(--ink); color:var(--surface); transform:translateY(-1px)}
+.action.solid{background:var(--surface); color:var(--ink); border-color:var(--ink)}
+.action.solid:hover{background:var(--ink); color:var(--surface)}
 .action[aria-disabled="true"]{opacity:.5; cursor:not-allowed; border-style:dashed}
-.action[aria-disabled="true"]:hover{border-color:var(--line); color:var(--ink)}
+.action[aria-disabled="true"]:hover{border-color:var(--line); color:var(--ink); background:transparent}
 
 /* ---------- banner ---------- */
 .banner{display:flex; align-items:center; gap:12px; background:var(--accent-soft); border:1px solid color-mix(in srgb,var(--accent) 34%,transparent); border-radius:12px; padding:14px 18px; margin-bottom:26px; font-size:.95rem; font-weight:600; color:var(--accent-ink); flex-wrap:wrap}
@@ -390,8 +390,8 @@ button.portrait img.on{opacity:1}
 .cs-hero .chips{justify-content:center; margin-top:18px}
 .cs-hero .chip-rows{margin-top:18px}
 .cs-hero .chip{font-size:.78rem; padding:5px 12px}
-.cs-hero .actions{justify-content:center; margin-top:16px}
-.cs-hero .action{padding:9px 16px; font-size:.85rem; border-radius:10px}
+.cs-hero .actions{justify-content:center; margin-top:24px}
+.cs-hero .action{padding:14px 28px; font-size:.95rem}
 
 .phase{display:flex; align-items:center; justify-content:center; gap:clamp(14px,3vw,24px); margin-bottom:40px}
 .phase::before,.phase::after{content:""; height:2px; width:clamp(26px,7vw,86px); background:var(--accent); flex:none}
