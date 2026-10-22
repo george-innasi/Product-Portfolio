@@ -271,6 +271,25 @@ button{font-family:inherit}
 .strip h3{font-size:1.2rem; font-weight:800; margin-bottom:7px}
 .strip p{color:var(--muted); font-size:.95rem}
 
+/* ---------- dark cards (problem / objectives) ---------- */
+.dark-cards{display:flex; flex-direction:column; gap:18px}
+.dark-card{background:var(--ink); color:var(--paper); border:1px solid color-mix(in srgb,var(--ink) 80%,var(--muted));
+  border-radius:var(--radius); padding:clamp(22px,4vw,32px) clamp(24px,4vw,34px)}
+.dark-card h3{font-family:var(--serif); font-weight:600; font-size:clamp(1.3rem,2.6vw,1.7rem); letter-spacing:-.01em; margin-top:6px; margin-bottom:10px}
+.dark-card p{color:color-mix(in srgb,var(--paper) 78%,transparent); line-height:1.6; font-size:.95rem}
+.dark-card-label{font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; margin-bottom:2px}
+.dark-card ul{padding-left:20px; color:color-mix(in srgb,var(--paper) 78%,transparent); display:flex; flex-direction:column; gap:10px; font-size:.95rem; line-height:1.55; margin-top:4px}
+.dark-card li::marker{color:var(--accent)}
+/* dark-mode inversion: swap ink and paper so cards stay contrasted */
+:root[data-theme="dark"] .dark-card,
+:root:not([data-theme="light"]) .dark-card{background:var(--surface); border-color:var(--line)}
+:root[data-theme="dark"] .dark-card h3,
+:root:not([data-theme="light"]) .dark-card h3{color:var(--ink)}
+:root[data-theme="dark"] .dark-card p,
+:root[data-theme="dark"] .dark-card ul,
+:root:not([data-theme="light"]) .dark-card p,
+:root:not([data-theme="light"]) .dark-card ul{color:var(--muted)}
+
 /* ---------- next-project CTA ---------- */
 .next-proj-band{border-top:2px solid var(--accent)}
 .next-proj-label{font-size:.72rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:14px}
