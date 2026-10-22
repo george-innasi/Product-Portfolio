@@ -656,6 +656,14 @@ button.portrait img.on{opacity:1}
 :root[data-theme="dark"] .step-card{background:var(--surface); color:var(--ink); border-left-color:var(--accent)}
 :root[data-theme="dark"] .step-num{color:var(--muted)}
 
+/* ---------- PIF priority badges & scores ---------- */
+.pri-badge{display:inline-flex; align-items:center; justify-content:center; min-width:34px; height:26px;
+  background:var(--ink); color:var(--paper); border-radius:6px; font-size:.7rem; font-weight:800;
+  margin-right:12px; letter-spacing:.04em; vertical-align:middle; flex:none}
+.pif-score{text-align:right; white-space:nowrap; width:72px; vertical-align:middle; padding-right:18px}
+.pif-score strong{font-size:1.4rem; font-weight:700; letter-spacing:-.02em}
+.pif-of{font-size:.82rem; color:var(--muted)}
+
 /* ---------- download resource cards ---------- */
 .dl-cards{display:flex; flex-direction:column; gap:10px; margin-top:20px}
 .dl-card{display:flex; align-items:center; gap:14px; padding:14px 18px;
