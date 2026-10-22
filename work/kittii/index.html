@@ -60,41 +60,7 @@
     </div>
   </header>
 
-  <section class="band">
-    <div class="wrap">
-      <div class="row">
-        <figure class="phone-shot"><img src="/assets/kittii/dashboard.webp" width="540" height="1205" alt="Kittii mobile dashboard listing a user's lost items with their status" loading="lazy"></figure>
-        <div class="row-text">
-          <h3>How it started</h3>
-          <p>Kittii began with friends from my post-graduate programme at Cape Breton University. The founder brought the idea to two of us, and it had already been put in front of Volta, the Atlantic Canada startup house, reaching the second round without getting through.</p>
-          <p>The feedback was that the idea was promising but the fundamentals were missing. That set the work for the next stage: do the discovery properly before building anything.</p>
-          <h3 style="margin-top:14px">Overview</h3>
-          <p><strong>Kittii</strong> is an AI-powered lost-and-found marketplace. Seekers report what they have lost, a community of finders called Sherlocks report what they have found, and multimodal AI matching pairs the two.</p>
-          <p>The business problem is that recovery today is informal and slow. It depends entirely on whoever happens to be holding the item, and the person who lost it has no way to reach them.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>A gist of the platform</h2></div>
-      <p class="lede" style="text-align:center; max-width:62ch; margin:0 auto">The build reached MVP and stopped there, so these are the screens as they stood: a consumer app for Seekers and Sherlocks, and an admin console where the team checked every claim before an item was returned.</p>
-      <p class="gist-lbl">In the app</p>
-      <div class="shot-gallery phones">
-        <figure><img src="/assets/kittii/report.webp" width="540" height="1205" alt="Report an item screen with value classification and category" loading="lazy"><figcaption>Report a lost or found item</figcaption></figure>
-        <figure><img src="/assets/kittii/item-ai.webp" width="540" height="1205" alt="Item detail with AI analysis tags and a claim button" loading="lazy"><figcaption>AI analysis on every item</figcaption></figure>
-        <figure><img src="/assets/kittii/claim-verify.webp" width="540" height="1205" alt="Claim screen asking an ownership verification question" loading="lazy"><figcaption>Claim with ownership proof</figcaption></figure>
-        <figure><img src="/assets/kittii/found-detail.webp" width="540" height="1205" alt="Found item detail awaiting a match" loading="lazy"><figcaption>A found item, awaiting its match</figcaption></figure>
-      </div>
-      <p class="gist-lbl">The admin console</p>
-      <div class="shot-gallery admin">
-        <figure><img src="/assets/kittii/admin-found.webp" width="936" height="1095" alt="Admin found-item detail with AI analysis and claim details" loading="lazy"><figcaption>A found item and its claim, with a match score</figcaption></figure>
-        <figure><img src="/assets/kittii/admin-queue.webp" width="1280" height="833" alt="Admin queue of lost items grouped by claim status" loading="lazy"><figcaption>The review queue, by claim status</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
+  <!-- META STRIP -->
   <section class="band">
     <div class="wrap row-wide">
       <div class="meta-strip">
@@ -115,29 +81,26 @@
     </div>
   </section>
 
+  <!-- ========== 1. PROBLEM STATEMENT ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Discovery</h2></div>
+      <div class="phase"><h2>Problem Statement</h2></div>
       <div class="row">
+        <figure class="phone-shot"><img src="/assets/kittii/dashboard.webp" width="540" height="1205" alt="Kittii mobile dashboard listing a user's lost items with their status" loading="lazy"></figure>
         <div class="row-text">
-          <h3>Why the incumbents left room</h3>
-          <p class="lede">We ran discovery before committing to a build, rather than treating the idea as validated because it sounded good.</p>
-          <p class="find">What did I find?</p>
-          <ul>
-            <li>Demand is real and constant. People lose things, and the recovery path is informal and slow.</li>
-            <li>Almost every established platform was American and sold to institutions: airports, transit authorities, venues.</li>
-            <li>They catalogue what an organisation has found. None started from the person who lost the item.</li>
-            <li>None built a community of finders on the other side, which is the gap Kittii was designed around.</li>
-          </ul>
+          <h3>How it started</h3>
+          <p>Kittii began with friends from my post-graduate programme at Cape Breton University. The founder brought the idea to two of us, and it had already been put in front of Volta, the Atlantic Canada startup house, reaching the second round without getting through.</p>
+          <p>The feedback was that the idea was promising but the fundamentals were missing. That set the work for the next stage: do the discovery properly before building anything.</p>
+          <h3 style="margin-top:14px">The problem</h3>
+          <p><strong>Kittii</strong> is an AI-powered lost-and-found marketplace. Seekers report what they have lost, a community of finders called Sherlocks report what they have found, and multimodal AI matching pairs the two.</p>
+          <p>The business problem is that recovery today is informal and slow. It depends entirely on whoever happens to be holding the item, and the person who lost it has no way to reach them.</p>
         </div>
-        <div class="shot">Competitor landscape</div>
       </div>
     </div>
   </section>
 
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>The Strategic Problem</h2></div>
       <div class="row">
         <div class="shot">Supply, not demand, is the constraint</div>
         <div class="row-text">
@@ -155,9 +118,49 @@
     </div>
   </section>
 
+  <!-- ========== 2. RESEARCH & INSIGHTS ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>The two-sided flow</h2></div>
+      <div class="phase"><h2>Research &amp; Insights</h2></div>
+      <div class="row">
+        <div class="row-text">
+          <h3>Why the incumbents left room</h3>
+          <p class="lede">We ran discovery before committing to a build, rather than treating the idea as validated because it sounded good.</p>
+          <p class="find">What did I find?</p>
+          <ul>
+            <li>Demand is real and constant. People lose things, and the recovery path is informal and slow.</li>
+            <li>Almost every established platform was American and sold to institutions: airports, transit authorities, venues.</li>
+            <li>They catalogue what an organisation has found. None started from the person who lost the item.</li>
+            <li>None built a community of finders on the other side, which is the gap Kittii was designed around.</li>
+          </ul>
+        </div>
+        <div class="shot">Competitor landscape</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. SOLUTION & PROCESS ========== -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Solution &amp; Process</h2></div>
+      <p class="lede" style="text-align:center; max-width:62ch; margin:0 auto">The build reached MVP and stopped there, so these are the screens as they stood: a consumer app for Seekers and Sherlocks, and an admin console where the team checked every claim before an item was returned.</p>
+      <p class="gist-lbl">In the app</p>
+      <div class="shot-gallery phones">
+        <figure><img src="/assets/kittii/report.webp" width="540" height="1205" alt="Report an item screen with value classification and category" loading="lazy"><figcaption>Report a lost or found item</figcaption></figure>
+        <figure><img src="/assets/kittii/item-ai.webp" width="540" height="1205" alt="Item detail with AI analysis tags and a claim button" loading="lazy"><figcaption>AI analysis on every item</figcaption></figure>
+        <figure><img src="/assets/kittii/claim-verify.webp" width="540" height="1205" alt="Claim screen asking an ownership verification question" loading="lazy"><figcaption>Claim with ownership proof</figcaption></figure>
+        <figure><img src="/assets/kittii/found-detail.webp" width="540" height="1205" alt="Found item detail awaiting a match" loading="lazy"><figcaption>A found item, awaiting its match</figcaption></figure>
+      </div>
+      <p class="gist-lbl">The admin console</p>
+      <div class="shot-gallery admin">
+        <figure><img src="/assets/kittii/admin-found.webp" width="936" height="1095" alt="Admin found-item detail with AI analysis and claim details" loading="lazy"><figcaption>A found item and its claim, with a match score</figcaption></figure>
+        <figure><img src="/assets/kittii/admin-queue.webp" width="1280" height="833" alt="Admin queue of lost items grouped by claim status" loading="lazy"><figcaption>The review queue, by claim status</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
       <p class="lede" style="text-align:center; max-width:64ch; margin:0 auto 6px">Two journeys meet in the middle. A Seeker reports what they lost, a Sherlock reports what they found, AI pairs them, and the team validates ownership before any return or payment.</p>
       <div class="flow-grid">
         <figure class="flow-fig">
@@ -172,9 +175,10 @@
     </div>
   </section>
 
+  <!-- ========== 4. IMPACT & METRICS ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Go to Market</h2></div>
+      <div class="phase"><h2>Impact &amp; Metrics</h2></div>
       <div class="row">
         <div class="row-text">
           <h3>#foundatkittii, a five-day treasure hunt</h3>
@@ -213,9 +217,10 @@
     </div>
   </section>
 
+  <!-- ========== 5. REFLECTION ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>What I would do differently</h2></div>
+      <div class="phase"><h2>Reflection</h2></div>
       <div class="row-text row-wide">
           <p class="lede">Two things I would change, both visible only in hindsight.</p>
           <ul>

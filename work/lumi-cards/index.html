@@ -59,21 +59,6 @@
   </header>
 
   <section class="band">
-    <div class="wrap">
-      <div class="row">
-        <div class="shot">The manual lookup, five steps while a client waits</div>
-        <div class="row-text">
-          <h3>How it started</h3>
-          <p>Five years behind a branch desk, the same thing happened every week. A client asks what a card actually covers, and answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
-          <h3 style="margin-top:14px">Overview</h3>
-          <p><strong>Lumi Cards</strong> is an AI assistant for personal bankers and tellers, built into the portal they already use. It answers credit card policy questions using only approved documents, and every figure it states carries a link to the source and the date it takes effect.</p>
-          <p>The business problem is cost and exposure at once. Each lookup takes 4 to 6 minutes of live appointment time, leaves no audit trail, and risks misstating a regulated disclosure.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
     <div class="wrap row-wide">
       <div class="meta-strip">
         <div><dt>Role</dt><dd>Sole author</dd></div>
@@ -92,9 +77,25 @@
     </div>
   </section>
 
+  <!-- ========== 1. PROBLEM STATEMENT ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>The Problem</h2></div>
+      <div class="phase"><h2>Problem Statement</h2></div>
+      <div class="row">
+        <div class="shot">The manual lookup, five steps while a client waits</div>
+        <div class="row-text">
+          <h3>How it started</h3>
+          <p>Five years behind a branch desk, the same thing happened every week. A client asks what a card actually covers, and answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
+          <h3 style="margin-top:14px">The product</h3>
+          <p><strong>Lumi Cards</strong> is an AI assistant for personal bankers and tellers, built into the portal they already use. It answers credit card policy questions using only approved documents, and every figure it states carries a link to the source and the date it takes effect.</p>
+          <p>The business problem is cost and exposure at once. Each lookup takes 4 to 6 minutes of live appointment time, leaves no audit trail, and risks misstating a regulated disclosure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
       <div class="row">
         <div class="row-text">
           <h3>Who asks, and what it costs</h3>
@@ -121,9 +122,10 @@
     </div>
   </section>
 
+  <!-- ========== 2. RESEARCH & INSIGHTS ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Why Retrieval</h2></div>
+      <div class="phase"><h2>Research &amp; Insights</h2></div>
       <div class="row">
         <div class="cmp-wrap">
           <table class="cmp">
@@ -136,6 +138,7 @@
           </table>
         </div>
         <div class="row-text">
+          <h3>Why retrieval was the only viable approach</h3>
           <p class="lede">Three other options were considered and rejected before this approach was chosen.</p>
           <p>The vocabulary gap is the concrete one. Staff say "foreign conversion fee" and the document says "FX transaction mark-up", so a keyword search returns nothing useful at the moment it is needed.</p>
           <p><strong>The decision.</strong> Retrieval is the only approach satisfying both binding constraints: the corpus changes continuously, and every answer must trace back to an approved source document.</p>
@@ -144,9 +147,10 @@
     </div>
   </section>
 
+  <!-- ========== 3. SOLUTION & PROCESS ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>The Design</h2></div>
+      <div class="phase"><h2>Solution &amp; Process</h2></div>
       <div class="row">
         <div class="row-text">
           <h3>The decision that does most of the work</h3>
@@ -175,12 +179,7 @@
         </div>
         <div class="shot">Refusal and escalation paths</div>
       </div>
-    </div>
-  </section>
 
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>Failure Modes and Cost</h2></div>
       <div class="row">
         <div class="shot">Six failure modes, detection and fix</div>
         <div class="row-text">
@@ -194,8 +193,14 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="row flip">
+  <!-- ========== 4. IMPACT & METRICS ========== -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Impact &amp; Metrics</h2></div>
+      <div class="row">
         <div class="row-text">
           <h3>What a query actually costs</h3>
           <p class="lede">About $0.0024 CAD per query. A 13-person branch team runs under $1.10 a month in tokens.</p>
@@ -204,13 +209,8 @@
         </div>
         <div class="shot">What it costs to run, and reusing past answers</div>
       </div>
-    </div>
-  </section>
 
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>The Prototype Run</h2></div>
-      <div class="row">
+      <div class="row flip">
         <div class="shot tall">Prototype: happy path, refusal, redirect</div>
         <div class="row-text">
           <h3>Running the spec</h3>
@@ -227,8 +227,14 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="row flip">
+  <!-- ========== 5. REFLECTION ========== -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Reflection</h2></div>
+      <div class="row">
         <div class="row-text">
           <h3>What the assessment flagged, and I agree with</h3>
           <p class="lede">The cost section is the one part of the document a reader cannot check.</p>
