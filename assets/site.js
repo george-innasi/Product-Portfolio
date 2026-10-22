@@ -129,6 +129,31 @@
   });
 })();
 
+/* Phase panel switching (HelloFresh 3-phase layout). */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var cards = document.querySelectorAll('.phase-card');
+    var panels = document.querySelectorAll('.phase-panel');
+    if (!cards.length) return;
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var phase = card.getAttribute('data-phase');
+        cards.forEach(function (c) {
+          c.classList.remove('active');
+          c.setAttribute('aria-selected', 'false');
+        });
+        card.classList.add('active');
+        card.setAttribute('aria-selected', 'true');
+        panels.forEach(function (p) {
+          p.hidden = p.getAttribute('data-panel') !== phase;
+        });
+        var panel = document.querySelector('[data-panel="' + phase + '"]');
+        if (panel) { panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  });
+})();
+
 /* "Leave me your thoughts" form.
    With a Web3Forms access key the note is emailed to George from the
    visitor's browser; without one it falls back to opening their mail app. */

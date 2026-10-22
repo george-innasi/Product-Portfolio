@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>HelloFresh retention study, George Innasi</title>
-<meta name="description" content="Finding the one HelloFresh retention problem worth solving, and designing the fix end to end. 128 survey respondents, four scored problems, four clickable prototypes.">
+<title>Building product sense at HelloPM — George Innasi</title>
+<meta name="description" content="Assignment 1: A three-phase product study of HelloFresh. Product teardown, user research with 128 survey respondents, and four clickable prototypes.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=42">
-<script src="/assets/site.js?v=7" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=43">
+<script src="/assets/site.js?v=8" defer></script>
 </head>
 <body data-accent="green">
 <a class="skip" href="#main">Skip to content</a>
@@ -34,11 +34,12 @@
     <a class="back" href="/work/" style="margin-top:26px">&larr; All work</a>
   </div>
 
+  <!-- HERO -->
   <header class="cs-hero">
     <div class="wrap">
-      <p class="kicker">HelloPM AI Product Management &middot; Cohort 51 &middot; Sole author</p>
+      <p class="kicker">Building product sense at HelloPM &middot; Assignment 1 &middot; Cohort 51 &middot; Sole author</p>
       <h1>HelloFresh</h1>
-      <p class="tagline">Finding the one retention problem worth solving</p>
+      <p class="tagline">A three-phase product study, from teardown to prototype</p>
       <div class="chip-rows">
         <span class="chip-row-lbl">Domain</span>
         <div class="chip-set">
@@ -52,17 +53,10 @@
           <span class="chip tool-ico"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#4285F4"/><stop offset=".5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path d="M12 2l2.4 7.2H22l-6 4.4 2.4 7.2L12 16.4l-6.4 4.4 2.4-7.2-6-4.4h7.6z" fill="url(#gm)"/></svg>Gemini</span>
         </div>
       </div>
-      <div class="actions">
-        <a class="action solid" href="https://george-innasi.github.io/hellofresh-project-assignment/" target="_blank" rel="noopener">&#9654; Live prototypes</a>
-        <a class="action solid" href="https://github.com/george-innasi/hellofresh-project-assignment" target="_blank" rel="noopener">Source on GitHub</a>
-        <a class="action solid" href="/assets/hellofresh-prd.pdf" target="_blank" rel="noopener">&#128196; PRD</a>
-        <a class="action solid" href="/assets/hellofresh-ux-survey.pdf" target="_blank" rel="noopener">UX survey results</a>
-        <a class="action solid" href="/assets/hellofresh-feedback-comparison.pdf" target="_blank" rel="noopener">Proposal vs. current</a>
-        <a class="action solid" href="https://www.reddit.com/r/hellofresh/s/T0OpkcO8mG" target="_blank" rel="noopener">Reddit feedback thread</a>
-      </div>
     </div>
   </header>
 
+  <!-- ORIGIN + OVERVIEW -->
   <section class="band">
     <div class="wrap">
       <div class="row-text" style="max-width:none; margin-bottom:32px">
@@ -78,32 +72,24 @@
     </div>
   </section>
 
+  <!-- ASSIGNMENT BRIEF -->
   <section class="band">
     <div class="wrap">
       <div class="dark-cards">
         <div class="dark-card">
-          <p class="dark-card-label" style="color:var(--gold)">&#127919; The Assignment</p>
-          <h3>Design &amp; Prototype an AI-Powered Feature</h3>
-          <p>Identify one meaningful opportunity to improve a real product using AI, then design and prototype how that improvement would actually work.</p>
+          <p class="dark-card-label" style="color:var(--gold)">&#128218; The Assignment</p>
+          <h3>Three-phase product study</h3>
+          <p>Pick a product you use. Study it for three weeks across three phases: understand the product and its category, learn from real users through primary research, then turn the sharpest problem into a working solution with a complete PRD.</p>
         </div>
         <div class="dark-card">
           <p class="dark-card-label" style="color:var(--gold)">&#9898; Problem</p>
           <p>HelloFresh subscribers who survive the risky early months and become profitable to retain are leaving without complaint. The loudest signal in every public forum is price, but price is almost never the root cause, making it a problem worth investigating properly.</p>
         </div>
-        <div class="dark-card">
-          <p class="dark-card-label" style="color:var(--accent)">Objectives</p>
-          <ul>
-            <li>Go beyond the surface complaint of price to identify the real root causes of subscriber churn</li>
-            <li>Validate findings through primary research: surveys, interviews, and public forum analysis</li>
-            <li>Score and prioritise confirmed problems using a structured framework</li>
-            <li>Design an AI-powered solution that addresses the highest-priority problem</li>
-            <li>Build clickable prototypes demonstrating the end-to-end solution</li>
-          </ul>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- META STRIP -->
   <section class="band">
     <div class="wrap row-wide">
       <div class="meta-strip">
@@ -111,118 +97,212 @@
         <div><dt>Goal</dt><dd>Retention, not acquisition</dd></div>
         <div><dt>Evidence</dt><dd>128 survey respondents, 6 user interviews</dd></div>
       </div>
-      <div class="row-text" style="max-width:none">
-        <p class="find">What I owned</p>
-        <ul>
-          <li><strong>Product teardown.</strong> The product itself, the competitor set and the category trends.</li>
-          <li><strong>Research.</strong> Survey design, interviews, a Reddit thread, then personas and a journey map.</li>
-          <li><strong>Prioritisation.</strong> Scoring four confirmed problems down to the single most important one, then scoring the possible solutions on reach, impact, confidence and effort.</li>
-          <li><strong>Solutions.</strong> Four clickable prototypes, the measures of success, the pitfalls to expect, and the product requirements document.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
-  <section class="band">
+  <!-- PHASE NAVIGATOR -->
+  <section class="band phase-nav-band" id="phases">
     <div class="wrap">
-      <div class="phase"><h2>Initial Research</h2></div>
-      <div class="row">
-        <div class="row-text">
-          <h3>What subscribers actually said</h3>
-          <p class="lede">128 survey respondents, plus interviews and a Reddit thread of cancellation posts.</p>
-          <p class="find">What did I find?</p>
-          <ul>
-            <li>53 per cent had been charged for at least one delivery they did not intend to receive.</li>
-            <li>48 per cent named a lower price as the single fix they wanted.</li>
-            <li>18 per cent actively compared the box against grocery costs.</li>
-            <li>15 per cent gamed the cancel and resubscribe cycle to get new-customer pricing.</li>
-          </ul>
-          <p>Price was the loudest complaint. It was not the root cause, and the rest of the study is about why.</p>
-        </div>
-        <div class="shot" data-lightbox><img src="/assets/hf-survey-findings.jpg" alt="Survey results: 48 per cent of 128 respondents named a lower price as the single fix, with stat cards showing 53 per cent accidental charges, 15 per cent cancel-resubscribe gaming, and 18 per cent grocery comparison" loading="lazy"></div>
+      <p class="phase-nav-label">The three phases</p>
+      <div class="phase-nav" role="tablist">
+        <button class="phase-card active" data-phase="1" type="button" role="tab" aria-selected="true" aria-controls="panel-1">
+          <span class="phase-num">Phase 1 &middot; 7 days</span>
+          <h3>Product Study</h3>
+          <p>Find the problem worth solving</p>
+        </button>
+        <button class="phase-card" data-phase="2" type="button" role="tab" aria-selected="false" aria-controls="panel-2">
+          <span class="phase-num">Phase 2 &middot; 7 days</span>
+          <h3>Research &amp; Learn</h3>
+          <p>Find out what is actually true</p>
+        </button>
+        <button class="phase-card" data-phase="3" type="button" role="tab" aria-selected="false" aria-controls="panel-3">
+          <span class="phase-num">Phase 3</span>
+          <h3>From Problem to Product</h3>
+          <p>Prototype, measure, ship</p>
+        </button>
       </div>
     </div>
   </section>
 
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>The Root Causes</h2></div>
-      <div class="row">
-        <div class="row-text">
-          <h3>Five causes under one complaint</h3>
-          <p class="lede">Subscribers struggle to keep feeling the per-serving price is worth paying, week after week. Five things drive that, and only one is addressable by a product change.</p>
-          <ul>
-            <li>Ingredient quality quietly declines and is <strong>unverifiable by the subscriber</strong>.</li>
-            <li>The price gap versus groceries widens with each increase.</li>
-            <li>Accumulated subscription value is invisible.</li>
-            <li>Long-tenured subscribers feel unrecognised next to discounted new customers.</li>
-            <li>The weekly skip decision repeats with no proactive intervention point.</li>
-          </ul>
-          <p>Only the first can be fixed by a feedback mechanism, which is why Food Quality Feedback became the primary build rather than a discount.</p>
-        </div>
-        <div class="shot" data-lightbox><img src="/assets/hf-root-causes.jpg" alt="PIF scoring: four confirmed problems ranked by population, intensity and frequency, P0 at 13 out of 15 down to P3 at 10 out of 15" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
+  <!-- ==================== PHASE 1 PANEL ==================== -->
+  <div class="phase-panel" id="panel-1" data-panel="1" role="tabpanel">
 
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>Prioritisation</h2></div>
-      <div class="row">
-        <div class="cmp-wrap">
-          <table class="cmp">
-            <thead><tr><th scope="col">Confirmed problem</th><th scope="col">Score</th></tr></thead>
-            <tbody>
-              <tr><td>Cannot justify the per-serving price as quality declines and the grocery gap widens</td><td class="tick">13</td></tr>
-              <tr><td>Charged for deliveries not intended, due to a narrow opt-out skip window</td><td class="tick">11</td></tr>
-              <tr><td>AI-generated recipe content eroding trust in what subscribers pay for</td><td class="tick">11</td></tr>
-              <tr><td>Weekly menu offering too few genuinely appealing recipes</td><td class="tick">10</td></tr>
-            </tbody>
-          </table>
+    <section class="band">
+      <div class="wrap">
+        <div class="phase-steps">
+          <div class="step-card" style="border-left-color:#8B5CF6"><span class="step-num">Step 1</span><span class="step-title">Observe the Product</span></div>
+          <div class="step-card" style="border-left-color:#10B981"><span class="step-num">Step 2</span><span class="step-title">Competitors &amp; Trends</span></div>
+          <div class="step-card" style="border-left-color:#EC4899"><span class="step-num">Step 3</span><span class="step-title">Map the Users</span></div>
+          <div class="step-card" style="border-left-color:#06B6D4"><span class="step-num">Step 4</span><span class="step-title">Problems &amp; Goal</span></div>
+          <div class="step-card" style="border-left-color:#F97316"><span class="step-num">Step 5</span><span class="step-title">Problems to Probe</span></div>
         </div>
-        <div class="row-text">
-          <p class="lede">Four confirmed problems, each scored out of 15 on population, intensity and frequency.</p>
-          <p>The two elevens were separated on evidence quality rather than the total. The accidental charge is sharp and trust-breaking but episodic. The AI content problem is high intensity in a vocal segment, and its population score was inference rather than measurement, which is stated rather than hidden.</p>
-          <p class="find">What I deliberately parked</p>
+        <p class="phase-brief">Seven days to understand HelloFresh deeply, see where it falls short, and walk away with a clear direction and a short list of problems to take into research.</p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="row-text" style="max-width:none">
+          <h3>The product and the category</h3>
+          <p>HelloFresh is a meal-kit subscription service. I chose to study existing subscribers, not prospects. The category is mature: the growth story is over, and the companies that remain are fighting to keep the subscribers they have. That made retention the right lens.</p>
+          <p class="find">What I owned in this phase</p>
           <ul>
-            <li><strong>Delivery failures.</strong> More than five cancellations named delivery, across three countries. Parked because the cause sits in courier partnerships, not the product.</li>
-            <li><strong>Loyalty pricing inequity.</strong> Parked because the fix sits in pricing strategy rather than the product.</li>
+            <li><strong>Product teardown.</strong> The product itself, the competitor set and the category trends.</li>
+            <li><strong>User mapping.</strong> Understanding who the subscriber base is, beyond prospects.</li>
+            <li><strong>Problem identification.</strong> Setting a goal around retention (not acquisition) and identifying the initial problems worth probing.</li>
           </ul>
+          <h3>The goal I set</h3>
+          <p>Understand why long-tenured subscribers, the ones past the risky early months who have only just become profitable, leave without complaint. Narrow that down to a short list of problems worth taking into primary research.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>The Solutions</h2></div>
-      <div class="row">
-        <div class="row-text">
-          <h3>Food Quality Feedback, and three supports</h3>
-          <p class="lede">The primary build converts an unstructured support ticket into data the business can act on.</p>
-          <ul>
-            <li><strong>Food Quality Feedback.</strong> Subscribers report a specific ingredient issue, wilted, bruised or spoiled, traced to the supplier batch.</li>
-            <li><strong>Accumulated value dashboard.</strong> Meals cooked, time saved, money saved, waste avoided, surfaced at the moment of the weekly skip decision.</li>
-            <li><strong>Basil, a proactive assistant.</strong> In-app check-ins with subscribers who are disengaging, rather than waiting for the cancellation flow.</li>
-            <li><strong>Milestone recognition</strong> at three, six, nine and twelve months, for the long-tenured subscribers sitting beside discounted new customers.</li>
-          </ul>
+  </div>
+
+  <!-- ==================== PHASE 2 PANEL ==================== -->
+  <div class="phase-panel" id="panel-2" data-panel="2" role="tabpanel" hidden>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="phase-steps">
+          <div class="step-card" style="border-left-color:#8B5CF6"><span class="step-num">Step 1</span><span class="step-title">User Research</span></div>
+          <div class="step-card" style="border-left-color:#10B981"><span class="step-num">Step 2</span><span class="step-title">Analyse the Insights</span></div>
+          <div class="step-card" style="border-left-color:#EC4899"><span class="step-num">Step 3</span><span class="step-title">Persona &amp; Journey</span></div>
+          <div class="step-card" style="border-left-color:#06B6D4"><span class="step-num">Step 4</span><span class="step-title">Prioritise to P0</span></div>
         </div>
-        <div class="shot-gallery phones">
-          <figure><img src="/assets/hf-food-quality-feedback.jpg" alt="Food Quality Feedback prototype: subscribers rate meals and report ingredient issues traced to supplier batches" loading="lazy" data-lightbox><figcaption>Food Quality Feedback</figcaption></figure>
-          <figure><img src="/assets/hf-value-dashboard.jpg" alt="Value Transparency Dashboard: monthly impact report showing meals cooked, money saved, and food waste avoided" loading="lazy" data-lightbox><figcaption>Value Dashboard</figcaption></figure>
-          <figure><img src="/assets/hf-basil-outreach.jpg" alt="Basil predictive retention outreach: proactive in-app check-in when a subscriber starts disengaging" loading="lazy" data-lightbox><figcaption>Basil Outreach</figcaption></figure>
-          <figure><img src="/assets/hf-milestone-rewards.jpg" alt="Tenure Milestone Rewards: 1-year member anniversary with Inner Circle unlock and reward" loading="lazy" data-lightbox><figcaption>Milestone Rewards</figcaption></figure>
+        <p class="phase-brief">Seven days to take the problems from Phase 1 into the real world, listen to how people actually behave, and come back with a single sharp problem worth solving.</p>
+        <div class="actions" style="margin-top:18px">
+          <a class="action solid" href="/assets/hellofresh-ux-survey.pdf" target="_blank" rel="noopener">UX survey results</a>
+          <a class="action solid" href="/assets/hellofresh-feedback-comparison.pdf" target="_blank" rel="noopener">Proposal vs. current</a>
+          <a class="action solid" href="https://www.reddit.com/r/hellofresh/s/T0OpkcO8mG" target="_blank" rel="noopener">Reddit feedback thread</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="band">
+      <div class="wrap">
+        <div class="row">
+          <div class="row-text">
+            <h3>What subscribers actually said</h3>
+            <p class="lede">128 survey respondents, plus interviews and a Reddit thread of cancellation posts.</p>
+            <p class="find">What did I find?</p>
+            <ul>
+              <li>53 per cent had been charged for at least one delivery they did not intend to receive.</li>
+              <li>48 per cent named a lower price as the single fix they wanted.</li>
+              <li>18 per cent actively compared the box against grocery costs.</li>
+              <li>15 per cent gamed the cancel and resubscribe cycle to get new-customer pricing.</li>
+            </ul>
+            <p>Price was the loudest complaint. It was not the root cause, and the rest of the study is about why.</p>
+          </div>
+          <div class="shot" data-lightbox><img src="/assets/hf-survey-findings.jpg" alt="Survey results: 48 per cent of 128 respondents named a lower price as the single fix, with stat cards showing 53 per cent accidental charges, 15 per cent cancel-resubscribe gaming, and 18 per cent grocery comparison" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="row">
+          <div class="row-text">
+            <h3>Five causes under one complaint</h3>
+            <p class="lede">Subscribers struggle to keep feeling the per-serving price is worth paying, week after week. Five things drive that, and only one is addressable by a product change.</p>
+            <ul>
+              <li>Ingredient quality quietly declines and is <strong>unverifiable by the subscriber</strong>.</li>
+              <li>The price gap versus groceries widens with each increase.</li>
+              <li>Accumulated subscription value is invisible.</li>
+              <li>Long-tenured subscribers feel unrecognised next to discounted new customers.</li>
+              <li>The weekly skip decision repeats with no proactive intervention point.</li>
+            </ul>
+            <p>Only the first can be fixed by a feedback mechanism, which is why Food Quality Feedback became the primary build rather than a discount.</p>
+          </div>
+          <div class="shot" data-lightbox><img src="/assets/hf-root-causes.jpg" alt="PIF scoring: four confirmed problems ranked by population, intensity and frequency, P0 at 13 out of 15 down to P3 at 10 out of 15" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="row">
+          <div class="cmp-wrap">
+            <table class="cmp">
+              <thead><tr><th scope="col">Confirmed problem</th><th scope="col">Score</th></tr></thead>
+              <tbody>
+                <tr><td>Cannot justify the per-serving price as quality declines and the grocery gap widens</td><td class="tick">13</td></tr>
+                <tr><td>Charged for deliveries not intended, due to a narrow opt-out skip window</td><td class="tick">11</td></tr>
+                <tr><td>AI-generated recipe content eroding trust in what subscribers pay for</td><td class="tick">11</td></tr>
+                <tr><td>Weekly menu offering too few genuinely appealing recipes</td><td class="tick">10</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row-text">
+            <p class="lede">Four confirmed problems, each scored out of 15 on population, intensity and frequency.</p>
+            <p>The two elevens were separated on evidence quality rather than the total. The accidental charge is sharp and trust-breaking but episodic. The AI content problem is high intensity in a vocal segment, and its population score was inference rather than measurement, which is stated rather than hidden.</p>
+            <p class="find">What I deliberately parked</p>
+            <ul>
+              <li><strong>Delivery failures.</strong> More than five cancellations named delivery, across three countries. Parked because the cause sits in courier partnerships, not the product.</li>
+              <li><strong>Loyalty pricing inequity.</strong> Parked because the fix sits in pricing strategy rather than the product.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==================== PHASE 3 PANEL ==================== -->
+  <div class="phase-panel" id="panel-3" data-panel="3" role="tabpanel" hidden>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="phase-steps">
+          <div class="step-card" style="border-left-color:#8B5CF6"><span class="step-num">Step 1</span><span class="step-title">Brainstorm</span></div>
+          <div class="step-card" style="border-left-color:#10B981"><span class="step-num">Step 2</span><span class="step-title">Prioritize</span></div>
+          <div class="step-card" style="border-left-color:#EC4899"><span class="step-num">Step 3</span><span class="step-title">Prototype</span></div>
+          <div class="step-card" style="border-left-color:#06B6D4"><span class="step-num">Step 4</span><span class="step-title">Metrics</span></div>
+          <div class="step-card" style="border-left-color:#F97316"><span class="step-num">Step 5</span><span class="step-title">Pitfalls</span></div>
+          <div class="step-card" style="border-left-color:#D97706"><span class="step-num">Step 6</span><span class="step-title">PRD</span></div>
+        </div>
+        <p class="phase-brief">Turn the validated P0 problem into solutions, working prototypes, success metrics, and a complete PRD.</p>
+        <div class="actions" style="margin-top:18px">
+          <a class="action solid" href="https://george-innasi.github.io/hellofresh-project-assignment/" target="_blank" rel="noopener">&#9654; Live prototypes</a>
+          <a class="action solid" href="https://github.com/george-innasi/hellofresh-project-assignment" target="_blank" rel="noopener">Source on GitHub</a>
+          <a class="action solid" href="/assets/hellofresh-prd.pdf" target="_blank" rel="noopener">&#128196; PRD</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="row">
+          <div class="row-text">
+            <h3>Food Quality Feedback, and three supports</h3>
+            <p class="lede">The primary build converts an unstructured support ticket into data the business can act on.</p>
+            <ul>
+              <li><strong>Food Quality Feedback.</strong> Subscribers report a specific ingredient issue, wilted, bruised or spoiled, traced to the supplier batch.</li>
+              <li><strong>Accumulated value dashboard.</strong> Meals cooked, time saved, money saved, waste avoided, surfaced at the moment of the weekly skip decision.</li>
+              <li><strong>Basil, a proactive assistant.</strong> In-app check-ins with subscribers who are disengaging, rather than waiting for the cancellation flow.</li>
+              <li><strong>Milestone recognition</strong> at three, six, nine and twelve months, for the long-tenured subscribers sitting beside discounted new customers.</li>
+            </ul>
+          </div>
+          <div class="shot-gallery phones">
+            <figure><img src="/assets/hf-food-quality-feedback.jpg" alt="Food Quality Feedback prototype: subscribers rate meals and report ingredient issues traced to supplier batches" loading="lazy" data-lightbox><figcaption>Food Quality Feedback</figcaption></figure>
+            <figure><img src="/assets/hf-value-dashboard.jpg" alt="Value Transparency Dashboard: monthly impact report showing meals cooked, money saved, and food waste avoided" loading="lazy" data-lightbox><figcaption>Value Dashboard</figcaption></figure>
+            <figure><img src="/assets/hf-basil-outreach.jpg" alt="Basil predictive retention outreach: proactive in-app check-in when a subscriber starts disengaging" loading="lazy" data-lightbox><figcaption>Basil Outreach</figcaption></figure>
+            <figure><img src="/assets/hf-milestone-rewards.jpg" alt="Tenure Milestone Rewards: 1-year member anniversary with Inner Circle unlock and reward" loading="lazy" data-lightbox><figcaption>Milestone Rewards</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- DISCLAIMER -->
   <section class="band">
     <div class="wrap row-wide">
       <p class="lede" style="text-align:center">An independent analysis using public information and self-fielded research. Not affiliated with HelloFresh.</p>
     </div>
   </section>
 
+  <!-- NEXT PROJECT -->
   <section class="band next-proj-band">
     <div class="wrap">
       <p class="next-proj-label">Next project</p>
