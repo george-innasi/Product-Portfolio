@@ -669,9 +669,9 @@ button.portrait img.on{opacity:1}
 .dl-card-icon.link{background:#dbeafe; color:#2563eb}
 .dl-card-icon.code{background:#f3e8ff; color:#7c3aed}
 .dl-card-icon.play{background:#d1fae5; color:#059669}
-.dl-card-body{flex:1; min-width:0}
+.dl-card-body{flex:1; min-width:0; display:flex; flex-direction:column; gap:2px}
 .dl-card-title{font-weight:700; font-size:.92rem; line-height:1.3}
-.dl-card-meta{font-size:.74rem; color:var(--muted); margin-top:2px}
+.dl-card-meta{font-size:.74rem; color:var(--muted)}
 .dl-card-arrow{flex:none; color:var(--muted); transition:color .2s,transform .2s}
 .dl-card:hover .dl-card-arrow{color:var(--accent-ink); transform:translateX(3px)}
 
