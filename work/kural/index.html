@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kural, George Innasi</title>
+<meta name="description" content="Assignment 2: an AI email assistant that drafts in your voice. From a 36-person survey to a shipped, live prototype, validated against published research.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=46">
+<script src="/assets/site.js?v=8" defer></script>
+</head>
+<body data-accent="violet">
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/">George Innasi <i>Portfolio</i></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/work/" aria-current="page">Projects</a>
+      <a href="/qualifications/">Qualifications</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <button class="theme-btn" type="button" aria-label="Switch theme"><svg class="ico-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ico-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.2v2M12 19.8v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2.2 12h2M19.8 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="wrap">
+    <a class="back" href="/work/" style="margin-top:26px">&larr; All work</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="cs-hero">
+    <div class="wrap">
+      <p class="kicker">Building product sense at HelloPM &middot; Assignment 2 &middot; Cohort 51 &middot; Sole author</p>
+      <h1>Kural</h1>
+      <p class="tagline">Draft emails in seconds that still sound like you</p>
+      <div class="chip-rows">
+        <span class="chip-row-lbl">Domain</span>
+        <div class="chip-set">
+          <span class="chip domain">Email &amp; productivity</span>
+        </div>
+        <span class="chip-row-lbl">Tools</span>
+        <div class="chip-set">
+          <span class="chip tool-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.57 6.02V19.5h-1.5V8.92L5.45 19.5H3.72L11.57 6.02zm.86 0L20.28 19.5h-1.73l-4.62-10.58V19.5h-1.5V6.02h1.5z"/></svg>Next.js</span>
+          <span class="chip tool-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5L1.5 22h21L12 1.5z"/></svg>Vercel</span>
+          <span class="chip tool-ico"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#4285F4"/><stop offset=".5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path d="M12 2l2.4 7.2H22l-6 4.4 2.4 7.2L12 16.4l-6.4 4.4 2.4-7.2-6-4.4h7.6z" fill="url(#gm)"/></svg>Gemini 2.5 Flash</span>
+          <span class="chip tool-ico"><svg viewBox="0 0 24 24"><path d="M4.436 16.21c1.192 1.87 3.285 3.274 5.564 3.46V17.4c-1.627-.212-3.005-1.087-3.87-2.345L4.436 16.21z" fill="#D97757"/><path d="M12 4c-2.69 0-5.034 1.326-6.407 3.37l1.694 1.155C8.28 7.02 9.984 6 12 6c3.308 0 6 2.692 6 6s-2.692 6-6 6c-.163 0-.323-.01-.483-.025v2.003c.16.008.321.022.483.022 4.418 0 8-3.582 8-8s-3.582-8-8-8z" fill="#D97757"/></svg>Claude</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="action solid" href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">&#9654; Live prototype</a>
+        <a class="action solid" href="#demo">See how it works</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ORIGIN + OVERVIEW -->
+  <section class="band">
+    <div class="wrap">
+      <div class="row-text" style="max-width:none">
+        <h3>How it started</h3>
+        <p>The brief was to stop deconstructing products and start building one. Pick a product I use often, find one real friction, and design an AI-powered improvement I could actually prototype and demonstrate.</p>
+        <p>I kept landing on the same moment in my own week: an AI assistant hands me a clean draft, and I rewrite it anyway. The sentences are correct, but they are not mine, and they read the same whether I am writing to a customer or to my manager. That gap, between a polished draft and a sendable one, became the project.</p>
+        <h3 style="margin-top:14px">Overview</h3>
+        <p><strong>Kural</strong> is an AI email assistant that drafts in your voice and reads the situation before it writes. It is not another model that polishes sentences; it classifies who you are writing to and why, holds a persistent model of how you sound, and produces a draft you can send without a rewrite. Built, shipped, and live at <a href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">kural-iota.vercel.app</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSIGNMENT BRIEF + PROBLEM -->
+  <section class="band">
+    <div class="wrap">
+      <div class="dark-cards">
+        <div class="dark-card">
+          <p class="dark-card-label" style="color:var(--gold)">&#128221; The Assignment</p>
+          <h3>Design &amp; prototype an AI-powered feature</h3>
+          <p>You are the PM at a company whose product you use often. Identify one meaningful opportunity to improve it with AI, then design and prototype how that improvement would actually work. Focus on a single P0 problem, build a demonstrable prototype, and validate the thinking with PMs from that industry rather than inside the assignment.</p>
+        </div>
+        <div class="dark-card">
+          <p class="dark-card-label" style="color:var(--gold)">&#9898; The P0 problem</p>
+          <p>Even professionals who already use AI email tools rewrite the drafts they are given, because the tools polish sentences but do not read people: one voice, one register, every reader. <strong>71% of AI users surveyed say they cannot send AI drafts as they are, and 22% have quietly abandoned the tools.</strong> The root cause is that generic assistants hold no persistent model of your voice and no structured read of the situation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- META STRIP -->
+  <section class="band">
+    <div class="wrap row-wide">
+      <div class="meta-strip">
+        <div><dt>Role</dt><dd>Sole author, built end to end</dd></div>
+        <div><dt>Stage</dt><dd>Live prototype, v1.2</dd></div>
+        <div><dt>Evidence</dt><dd>36-person survey, 4 interviews</dd></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SURVEY -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>What the research said</h2></div>
+      <div class="row-text" style="max-width:none; margin-bottom:22px">
+        <p class="lede">A 36-person survey run through friends, WhatsApp and Reddit, plus four interviews. The question was simple: when you write an important email, where does the time and the friction actually go?</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-fig">71%</div>
+          <p class="stat-cap">of AI tool users cannot copy-paste the draft: it sounds like a robot and lacks their voice.</p>
+        </div>
+        <div class="stat">
+          <div class="stat-fig">42%</div>
+          <p class="stat-cap">say getting the tone right is the single hardest part of writing an important email.</p>
+        </div>
+        <div class="stat">
+          <div class="stat-fig">75%</div>
+          <p class="stat-cap">spend five minutes or more on a single important email, and many far longer.</p>
+        </div>
+      </div>
+      <div class="row-text" style="max-width:none; margin-top:18px">
+        <p class="find">What the numbers pointed to</p>
+        <ul>
+          <li><strong>Voice is the blocker, not grammar.</strong> The complaint was never that drafts were wrong. It was that they did not sound like the person sending them.</li>
+          <li><strong>Tone is situational.</strong> The same person writes differently to a customer, a manager and a professor. Generic tools flatten all three into one register.</li>
+          <li><strong>The work hides in wording, not typing.</strong> A third of respondents said their time goes into wording and tone, and a quarter into second-guessing what they already wrote.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-CHECK -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>Cross-checked against published research</h2></div>
+      <div class="row">
+        <div class="row-text">
+          <p>A 36-person survey finds a signal; it does not prove one. So I held each finding against larger, published studies before writing it into the problem statement. The survey and the literature agreed.</p>
+          <p class="find">Where they lined up</p>
+          <ul>
+            <li>McKinsey puts the professional workweek spent on email at around 28%. The time cost is real and large.</li>
+            <li>Bynder found 62% of readers distrust copy that reads as bot-written, and 82% accept it once it feels human. The voice problem is a trust problem.</li>
+            <li>My own survey: 42% named tone as the hardest part and 75% spend five minutes or more per important email. The friction is specific and measurable.</li>
+          </ul>
+        </div>
+        <div class="cmp-wrap"><table class="cmp">
+          <thead>
+            <tr><th scope="col">Finding</th><th scope="col">My survey</th><th scope="col">Published</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Email is a heavy time cost</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>Bot-sounding copy is rejected</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>Tone is the hardest part</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>Human-sounding copy is trusted</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET KURAL / DEMO -->
+  <section class="band" id="demo">
+    <div class="wrap">
+      <div class="phase"><h2>Meet Kural</h2></div>
+      <div class="row">
+        <div class="row-text">
+          <h3>A composer, not an autopilot</h3>
+          <p>You give Kural the gist in your own words. Before it writes a single line, it classifies the situation: how urgent it is, the power dynamic, and the emotional register. Then it drafts in your voice, shows you what it detected, and lets you adjust rather than regenerate from scratch.</p>
+          <p>The draft on the right is one pass. No "I hope this email finds you well." No padding. A message the sender could send as is.</p>
+        </div>
+        <div class="compose-demo">
+          <div class="compose-row">
+            <span class="compose-lbl">What you type</span>
+            <p class="compose-in">tell my manager the vendor API is down, we will miss the 5pm deadline, need her to approve a short extension</p>
+            <div class="compose-chips">
+              <span class="chip detected"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>Urgent</span>
+              <span class="chip detected"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 6-9 6-9-6 9-6zm0 9.5L4.5 8 12 5 19.5 8 12 12.5z"/></svg>Writing upward</span>
+              <span class="chip detected"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>Request</span>
+            </div>
+          </div>
+          <div class="compose-row out">
+            <span class="compose-lbl">What Kural drafts</span>
+            <p class="compose-out">Hi Sarah,
+
+The vendor API went down this afternoon, which pushes our release past the 5pm deadline. I have logged it with their team and put a fallback in motion.
+
+Could you approve a short extension to tomorrow morning? I will confirm the new timing the moment the vendor is back up.
+
+Thanks,
+George</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>How it works</h2></div>
+      <div class="phase-steps">
+        <div class="step-card"><span class="step-num">Step 1</span><span class="step-title">Classify first</span></div>
+        <div class="step-card"><span class="step-num">Step 2</span><span class="step-title">Adapt to the reader</span></div>
+        <div class="step-card"><span class="step-num">Step 3</span><span class="step-title">Draft in your voice</span></div>
+        <div class="step-card"><span class="step-num">Step 4</span><span class="step-title">Learn from your edits</span></div>
+      </div>
+      <p class="phase-brief">The engine classifies before it composes: a situation object, carrying urgency, power dynamic and emotional category, is forced in the schema before any draft is generated. Situational rules with a defined precedence then shape the register, an anti-cliche guard strips the stock AI openers at both the prompt and the server, and the style memory learns how you sound from the edits you make. The result is a draft that reads the room and reads like you.</p>
+    </div>
+  </section>
+
+  <!-- UNDER THE HOOD -->
+  <section class="band">
+    <div class="wrap">
+      <div class="dark-cards">
+        <div class="dark-card">
+          <p class="dark-card-label" style="color:var(--gold)">&#9881; Under the hood</p>
+          <h3>Deliberately simple, structured underneath</h3>
+          <ul>
+            <li><strong>Classifies before it writes.</strong> A situation object is required in the schema before a draft exists, so tone is a decision, not an afterthought.</li>
+            <li><strong>Adapts to who is reading.</strong> Writing upward, to a customer, or to a peer each pull a different register through rules with set precedence.</li>
+            <li><strong>Learns your voice.</strong> Style memory updates from your edits, so the drafts drift toward how you actually write.</li>
+            <li><strong>Never opens with a cliche.</strong> A prompt-plus-server guard removes "Hope you are doing well" and its relatives. Ever.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITORS -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>What is already out there</h2></div>
+      <div class="row">
+        <div class="row-text">
+          <p class="lede">Capable tools exist. Each solves a nearby problem, and each leaves the voice-and-situation gap open.</p>
+          <p class="find">The gap Kural takes</p>
+          <ul>
+            <li><strong>Superhuman</strong> is fast, but it asks you to replace your whole inbox to get there.</li>
+            <li><strong>Ellie</strong> can train on your voice, but the voice-trained tier is the expensive one.</li>
+            <li><strong>Gemini in Gmail</strong> is cheap and close at hand, but it stays generic unless you prompt it hard every time.</li>
+          </ul>
+        </div>
+        <div class="cmp-wrap"><table class="cmp">
+          <thead>
+            <tr><th scope="col">&nbsp;</th><th scope="col">Superhuman</th><th scope="col">Ellie</th><th scope="col">Gemini</th><th scope="col">Kural</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Voice-first by default</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>Reads the situation</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>No inbox switch needed</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+            <tr><td>Voice without a premium tier</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOALS -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase"><h2>How success is measured</h2></div>
+      <div class="row-text" style="max-width:none; margin-bottom:18px">
+        <p>One number matters: the send-as-is rate. A draft counts as a win only when the sender ships it with barely a touch.</p>
+      </div>
+      <div class="meta-strip">
+        <div><dt>North star</dt><dd>60% of drafts sent as is, edit distance under 10%</dd></div>
+        <div><dt>Guardrails</dt><dd>Two regenerations or fewer, ask-gate under 25%</dd></div>
+        <div><dt>Speed</dt><dd>P95 draft latency at or under 8 seconds</dd></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>Explore the build</h2>
+        <p>The live prototype is open to try. The PRD and survey write-up are available on request.</p>
+      </div>
+      <div class="dl-cards">
+        <a class="dl-card" href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">
+          <span class="dl-card-icon play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+          <span class="dl-card-body"><span class="dl-card-title">Live prototype</span><span class="dl-card-meta">Interactive &middot; Compose and reply, in your voice</span></span>
+          <svg class="dl-card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT PROJECT -->
+  <section class="band">
+    <div class="wrap">
+      <div class="strip">
+        <div class="t">
+          <h3>Next project</h3>
+          <p>Kittii: product management at an AI lost-and-found startup, from discovery through the MVP to a go-to-market plan, with a team of eight.</p>
+        </div>
+        <a class="btn btn-primary" href="/work/kittii/">Read the Kittii project</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <span>&copy; 2026 George Innasi</span>
+    <span class="foot-links">
+      <a href="mailto:georgeinnasi@gmail.com">georgeinnasi@gmail.com</a>
+      <a href="https://www.linkedin.com/in/georgeinnasi" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/work/">All work</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -289,6 +289,10 @@ button{font-family:inherit}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dark-card h3{color:var(--ink)}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dark-card p,
 :root:not([data-theme="light"]) .dark-card ul{color:var(--muted)}}
+/* bold lead-ins inside dark cards stay readable in both themes */
+.dark-card strong{color:var(--paper)}
+:root[data-theme="dark"] .dark-card strong{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dark-card strong{color:var(--ink)}}
 
 /* ---------- next-project CTA ---------- */
 .next-proj-band{border-top:2px solid var(--accent)}
@@ -693,6 +697,27 @@ button.portrait img.on{opacity:1}
 :root[data-theme="dark"] .dl-card-icon.code{background:#3b0764; color:#d8b4fe}
 :root[data-theme="dark"] .dl-card-icon.play{background:#052e16; color:#6ee7b7}
 
+/* ---------- survey stat tiles (Kural) ---------- */
+.stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:6px 0 10px}
+.stat{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(20px,3vw,28px) clamp(18px,2.5vw,24px)}
+.stat-fig{font-family:var(--serif); font-weight:600; font-size:clamp(2.2rem,5vw,3rem); letter-spacing:-.02em; color:var(--accent-ink); line-height:1}
+.stat-cap{margin-top:10px; color:var(--muted); font-size:.92rem; line-height:1.45}
+
+/* ---------- compose demo mock (Kural) ---------- */
+.compose-demo{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden}
+.compose-row{padding:clamp(16px,2.4vw,22px) clamp(18px,2.6vw,24px)}
+.compose-row + .compose-row{border-top:1px solid var(--line)}
+.compose-row.out{background:var(--surface-2)}
+.compose-lbl{font-size:.66rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:9px; display:block}
+.compose-in{font-size:.95rem; color:var(--ink); line-height:1.5}
+.compose-out{font-size:.95rem; color:var(--ink); line-height:1.62; white-space:pre-line}
+.compose-chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:13px}
+.chip.detected{background:var(--accent-soft); border-color:transparent; color:var(--accent-ink); font-weight:700; display:inline-flex; align-items:center; gap:5px}
+.chip.detected svg{width:13px; height:13px; flex:none}
+
+@media (max-width:720px){
+  .stat-row{grid-template-columns:1fr}
+}
 @media (max-width:620px){
   .phase-nav{grid-template-columns:1fr}
 }
