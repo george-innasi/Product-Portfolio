@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=47">
-<script src="/assets/site.js?v=8" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=48">
+<script src="/assets/site.js?v=9" defer></script>
 </head>
 <body data-accent="blue">
 <a class="skip" href="#main">Skip to content</a>
@@ -34,34 +34,40 @@
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">Contact</p>
-      <h1><span class="serif">Every product created</span><br><span class="bold">was once imagined</span></h1>
-      <p class="sub">Let's discuss further on how I can help bring yours to life.</p>
+      <h1><span class="serif">Every product created</span><br><span class="bold">was once an imagination.</span></h1>
+      <p class="sub">Let's discuss how we can bring yours to life.</p>
     </div>
   </section>
+
+  <!-- relocation badge -->
+  <div class="wrap">
+    <div class="ct-reloc">
+      <span class="ct-reloc-pin">📍</span>
+      Relocating from Canada to India in January 2027 &bull; Open to AI PM roles &amp; startup collaborations
+    </div>
+  </div>
 
   <section class="band">
     <div class="wrap">
       <div class="contact-split">
 
-        <!-- left column: info -->
+        <!-- left column: direct connect -->
         <div class="ct-info">
           <div class="ct-avail">
             <span class="ct-dot"></span>
-            Open to AI PM roles &amp; incubator projects
+            Available for opportunities
           </div>
 
-          <p class="ct-bio">I'm an AI Product Manager with 5+ years in retail banking, now building at the intersection of AI, fintech and customer experience. Currently Ops Lead at Kittii, an AI-powered lost-and-found platform.</p>
-
-          <div class="ct-detail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Toronto, Canada &middot; EST (UTC-5)</span>
-          </div>
+          <a class="ct-book" href="https://calendly.com/georgeinnasi" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book a 15-min intro chat
+          </a>
 
           <div class="ct-links">
-            <a class="ct-link" href="mailto:georgeinnasi@gmail.com" data-gmail="georgeinnasi@gmail.com">
+            <button class="ct-link ct-copy-email" type="button" data-email="georgeinnasi@gmail.com" aria-label="Copy email address">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
-              georgeinnasi@gmail.com
-            </a>
+              <span class="ct-copy-label">Copy Email</span>
+            </button>
             <a class="ct-link" href="https://www.linkedin.com/in/georgeinnasi" target="_blank" rel="noopener">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
               LinkedIn
@@ -79,7 +85,7 @@
           </a>
         </div>
 
-        <!-- right column: message interface -->
+        <!-- right column: message form -->
         <div class="ct-form-wrap">
           <div class="ct-form-header">
             <h2>Send a message</h2>
@@ -91,16 +97,16 @@
             <fieldset class="ct-intents" id="ct-intents">
               <legend class="sr-only">What brings you here?</legend>
               <button type="button" class="ct-intent" data-intent="role" aria-pressed="false">
-                <span class="ct-intent-ico">💼</span> Full-Time AI/PM Role
+                <span class="ct-intent-ico">💼</span> AI/PM Role
               </button>
               <button type="button" class="ct-intent" data-intent="startup" aria-pressed="false">
                 <span class="ct-intent-ico">🚀</span> Startup Collaboration / Kittii
               </button>
               <button type="button" class="ct-intent" data-intent="advisory" aria-pressed="false">
-                <span class="ct-intent-ico">💡</span> Advisory / Consulting
+                <span class="ct-intent-ico">💡</span> Advisory
               </button>
               <button type="button" class="ct-intent" data-intent="network" aria-pressed="false">
-                <span class="ct-intent-ico">☕</span> Just Networking
+                <span class="ct-intent-ico">☕</span> Networking
               </button>
             </fieldset>
 

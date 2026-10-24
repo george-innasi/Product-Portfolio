@@ -129,6 +129,41 @@
   });
 })();
 
+/* Copy-email button on the contact page. */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.querySelector('.ct-copy-email');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var email = btn.getAttribute('data-email');
+      var label = btn.querySelector('.ct-copy-label');
+      if (!email) return;
+      var done = function () {
+        btn.classList.add('copied');
+        if (label) label.textContent = 'Copied!';
+        setTimeout(function () {
+          btn.classList.remove('copied');
+          if (label) label.textContent = 'Copy Email';
+        }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done).catch(function () {
+          /* fallback: select from a temporary input */
+          var inp = document.createElement('input');
+          inp.value = email; document.body.appendChild(inp);
+          inp.select(); document.execCommand('copy'); document.body.removeChild(inp);
+          done();
+        });
+      } else {
+        var inp = document.createElement('input');
+        inp.value = email; document.body.appendChild(inp);
+        inp.select(); document.execCommand('copy'); document.body.removeChild(inp);
+        done();
+      }
+    });
+  });
+})();
+
 /* Phase panel switching (HelloFresh 3-phase layout). */
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
@@ -169,10 +204,10 @@
   };
 
   var INTENT_LABELS = {
-    role: 'Full-Time AI/PM Role',
+    role: 'AI/PM Role',
     startup: 'Startup Collaboration / Kittii',
-    advisory: 'Advisory / Consulting',
-    network: 'Just Networking'
+    advisory: 'Advisory',
+    network: 'Networking'
   };
 
   document.addEventListener('DOMContentLoaded', function () {

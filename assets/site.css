@@ -517,14 +517,30 @@ button.portrait img.on{opacity:1}
 .ct-dot{width:9px; height:9px; border-radius:50%; background:var(--accent); flex:none;
   box-shadow:0 0 0 3px var(--accent-soft); animation:ct-pulse 2.4s ease-in-out infinite}
 @keyframes ct-pulse{0%,100%{opacity:1}50%{opacity:.45}}
-.ct-bio{color:var(--muted); font-size:1.01rem; line-height:1.62; max-width:52ch}
-.ct-detail{display:flex; align-items:center; gap:8px; color:var(--muted); font-size:.92rem}
-.ct-detail svg{color:var(--accent-ink); flex:none}
+/* relocation badge */
+.ct-reloc{display:flex; align-items:center; gap:10px; padding:14px 22px; margin-bottom:8px;
+  background:var(--accent-soft); border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);
+  border-radius:14px; color:var(--ink); font-size:.93rem; font-weight:600; line-height:1.5}
+.ct-reloc-pin{font-size:1.15rem; flex:none; line-height:1}
+
+/* book a chat CTA */
+.ct-book{display:inline-flex; align-items:center; gap:10px; padding:14px 24px;
+  background:var(--accent); color:var(--on-accent,#fff); border-radius:12px;
+  font-weight:700; font-size:.95rem; text-decoration:none;
+  transition:filter .2s,transform .15s,box-shadow .2s; width:max-content}
+.ct-book svg{flex:none}
+.ct-book:hover{color:var(--on-accent,#fff); filter:brightness(1.08); transform:translateY(-1px);
+  box-shadow:0 8px 22px -10px color-mix(in srgb,var(--accent) 50%,transparent)}
+
 .ct-links{display:flex; flex-direction:column; gap:6px}
 .ct-link{display:inline-flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem;
   padding:8px 0; transition:color .18s}
 .ct-link svg{color:var(--accent-ink); flex:none}
 .ct-link:hover{color:var(--accent-ink)}
+/* copy email button styled as a link row */
+.ct-copy-email{cursor:pointer; background:none; border:0; font:inherit}
+.ct-copy-email.copied .ct-copy-label{color:var(--accent-ink)}
+.ct-copy-email.copied .ct-copy-label::after{content:" ✓"; font-weight:800}
 .ct-resume{display:inline-flex; align-items:center; gap:10px; padding:12px 20px;
   background:var(--surface); border:1.5px solid var(--line); border-radius:12px;
   color:var(--ink); font-weight:700; font-size:.92rem; text-decoration:none;
