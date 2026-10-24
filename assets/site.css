@@ -141,7 +141,7 @@ button{font-family:inherit}
 .band:first-of-type{border-top:0}
 .sec-head{margin-bottom:24px}
 .sec-head h2{font-size:1.7rem; font-weight:800}
-.sec-head p{color:var(--muted); max-width:58ch; margin-top:7px}
+.sec-head p{color:var(--muted); margin-top:7px}
 
 /* ---------- work cards ---------- */
 .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px}
