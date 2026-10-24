@@ -154,12 +154,27 @@
   });
 })();
 
-/* "Leave me your thoughts" form.
-   With a Web3Forms access key the note is emailed to George from the
-   visitor's browser; without one it falls back to opening their mail app. */
+/* "Send a message" form with intent tags.
+   Web3Forms sends the note to George. Without a key it falls back to mailto. */
 (function () {
-  var WEB3FORMS_KEY = '10794bf7-de2e-4d1d-a3d2-cf8e8f299af9'; // Web3Forms public access key (georgeinnasi@gmail.com)
+  var WEB3FORMS_KEY = '10794bf7-de2e-4d1d-a3d2-cf8e8f299af9';
   var INBOX = 'georgeinnasi@gmail.com';
+
+  var PLACEHOLDERS = {
+    '': 'Let\'s connect. Tell me about the role or idea, and how you see me fitting in.',
+    role: 'Tell me about the team, product stage, or role scope...',
+    startup: 'What\'s the idea? Where are you in the journey? How can I help?',
+    advisory: 'What challenge are you facing? What kind of input would be most useful?',
+    network: 'No agenda needed. Tell me a bit about yourself or what you\'re working on.'
+  };
+
+  var INTENT_LABELS = {
+    role: 'Full-Time AI/PM Role',
+    startup: 'Startup Collaboration / Kittii',
+    advisory: 'Advisory / Consulting',
+    network: 'Just Networking'
+  };
+
   document.addEventListener('DOMContentLoaded', function () {
     var f = document.getElementById('tform');
     if (!f) return;
@@ -168,18 +183,50 @@
     var status = document.getElementById('tstatus');
     var count = document.getElementById('tcount');
     var btn = f.querySelector('button[type="submit"]');
+    var intentInput = document.getElementById('ct-intent-val');
+    var intents = f.querySelectorAll('.ct-intent');
+    var toast = document.getElementById('ct-toast');
 
+    /* character counter */
     if (ta && count) {
       var sync = function () { count.textContent = ta.value.length; };
       ta.addEventListener('input', sync); sync();
     }
+
+    /* intent tag selection */
+    intents.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.getAttribute('data-intent');
+        var wasActive = btn.getAttribute('aria-pressed') === 'true';
+        intents.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        if (!wasActive) {
+          btn.setAttribute('aria-pressed', 'true');
+          if (intentInput) intentInput.value = key;
+          if (ta) ta.setAttribute('placeholder', PLACEHOLDERS[key] || PLACEHOLDERS['']);
+        } else {
+          if (intentInput) intentInput.value = '';
+          if (ta) ta.setAttribute('placeholder', PLACEHOLDERS['']);
+        }
+      });
+    });
+
     function set(msg, kind) { if (status) { status.textContent = msg; status.className = 'tform-status' + (kind ? ' ' + kind : ''); } }
+
+    function showToast() {
+      if (!toast) return;
+      toast.classList.add('show');
+      setTimeout(function () { toast.classList.remove('show'); }, 5000);
+    }
 
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var msg = (ta ? ta.value : '').trim();
       var email = emailEl ? emailEl.value.trim() : '';
+      var intent = intentInput ? intentInput.value : '';
       if (!msg) { set('Please add a short note first.', 'err'); if (ta) ta.focus(); return; }
+
+      var intentLabel = intent ? INTENT_LABELS[intent] || intent : 'Not specified';
+      var subject = intent ? 'Portfolio: ' + intentLabel : 'New message from your portfolio';
 
       if (WEB3FORMS_KEY) {
         set('Sending...', ''); if (btn) btn.disabled = true;
@@ -188,21 +235,28 @@
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({
             access_key: WEB3FORMS_KEY,
-            subject: 'New message from your portfolio',
+            subject: subject,
             from_name: 'Portfolio contact',
             botcheck: '',
+            intent: intentLabel,
             message: msg,
             reply_email: email || 'not provided'
           })
         }).then(function (r) { return r.json(); }).then(function (d) {
-          if (d && d.success) { f.reset(); if (count) count.textContent = '0'; set('Thanks, your note is on its way.', 'ok'); }
-          else { set('Something went wrong. You can email me directly instead.', 'err'); }
+          if (d && d.success) {
+            f.reset(); if (count) count.textContent = '0';
+            intents.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+            if (intentInput) intentInput.value = '';
+            if (ta) ta.setAttribute('placeholder', PLACEHOLDERS['']);
+            set('', '');
+            showToast();
+          } else { set('Something went wrong. You can email me directly instead.', 'err'); }
         }).catch(function () {
           set('Something went wrong. You can email me directly instead.', 'err');
         }).then(function () { if (btn) btn.disabled = false; });
       } else {
-        var body = msg + (email ? '\n\nReply to: ' + email : '');
-        window.location.href = 'mailto:' + INBOX + '?subject=' + encodeURIComponent('Message from your portfolio') + '&body=' + encodeURIComponent(body);
+        var body = (intent ? 'Intent: ' + intentLabel + '\n\n' : '') + msg + (email ? '\n\nReply to: ' + email : '');
+        window.location.href = 'mailto:' + INBOX + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         set('Opening your email app to send the note...', 'ok');
       }
     });
