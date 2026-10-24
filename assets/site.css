@@ -164,7 +164,8 @@ button{font-family:inherit}
 
 /* ---------- chips ---------- */
 .chips{display:flex; flex-wrap:wrap; gap:7px}
-.chip{font-size:.74rem; font-weight:600; padding:4px 11px; border-radius:999px; border:1px solid var(--chip-line); background:var(--chip); color:var(--muted); white-space:nowrap}
+.chip{font-size:.74rem; font-weight:600; padding:4px 11px; border-radius:999px; border:1px solid var(--chip-line); background:var(--chip); color:var(--muted); white-space:nowrap; display:inline-flex; align-items:center; gap:5px}
+.chip svg{width:14px; height:14px; flex:none}
 .chip.domain, .card .chip{background:var(--gold-soft); border-color:transparent; color:var(--gold-ink); font-weight:700}
 .chip.tool{background:var(--accent-soft); border-color:transparent; color:var(--accent-ink); font-weight:700}
 /* icon-style tool chips: dark card with logo + name */
