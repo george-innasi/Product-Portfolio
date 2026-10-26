@@ -883,9 +883,9 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
    Text is held to a 48rem measure. Two modules sit side by side over a
    principles row; key figures are pulled into a strip under the hero. */
 .ab-hero{padding-block:58px 34px}
-.ab-hero h1{font-size:clamp(2rem,4.6vw,3.3rem); line-height:1.08; max-width:22ch}
+.ab-hero h1{font-size:clamp(2.3rem,5.6vw,4.2rem); line-height:1.07; max-width:26ch}
 .ab-hero h1 .serif{display:block}
-.ab-lead{margin-top:22px; max-width:48rem; font-size:1.12rem; line-height:1.7; color:var(--muted)}
+.ab-lead{margin-top:24px; max-width:52rem; font-size:1.18rem; line-height:1.7; color:var(--muted)}
 .ab-lead strong{color:var(--ink); font-weight:700}
 
 .ab-proof-band{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--surface)}
