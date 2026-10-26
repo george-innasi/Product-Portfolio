@@ -906,7 +906,7 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .ab-tags .chip{background:var(--gold-soft); border-color:transparent; color:var(--gold-ink); font-weight:700}
 
 /* 01 and 02: deep green panels, matching the contact page feature card */
-.ab-mod{position:relative; overflow:hidden; background:#064e3b; color:#ecfdf5; border-color:#065f46; border-top-color:#34d399}
+.ab-mod{position:relative; overflow:hidden; background:#064e3b; color:#ecfdf5; border-color:#facc15}
 .ab-mod::after{content:""; position:absolute; right:-90px; bottom:-110px; width:320px; height:320px; border-radius:50%;
   background:radial-gradient(circle,rgba(52,211,153,.24),transparent 68%); pointer-events:none}
 .ab-mod > *{position:relative; z-index:1}
@@ -917,8 +917,8 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .ab-mod .ab-list strong{color:#fff}
 .ab-mod .ab-k{color:#6ee7b7}
 .ab-mod .ab-tags .chip{background:rgba(250,204,21,.16); border-color:transparent; color:#facc15}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ab-mod{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent); border-top-color:#34d399}}
-:root[data-theme="dark"] .ab-mod{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent); border-top-color:#34d399}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ab-mod{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:#facc15}}
+:root[data-theme="dark"] .ab-mod{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:#facc15}
 
 .ab-principles-wrap{margin-top:56px}
 .ab-principles-head{display:flex; align-items:baseline; gap:14px; margin-bottom:22px}
