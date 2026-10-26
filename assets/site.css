@@ -754,7 +754,7 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .sec-head .eyebrow{color:var(--gold-ink); margin-top:0; margin-bottom:2px}
 .cap-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:26px}
 .cap{display:flex; flex-direction:column; align-items:flex-start; gap:8px}
-.cap-lbl{font-size:.68rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--ink)}
+.cap-lbl{font-size:.84rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--ink)}
 .cap-state{font-size:.72rem; font-weight:700; padding:3px 11px; border-radius:999px; border:1px solid transparent; white-space:nowrap}
 .cap-state.s3{background:var(--accent-soft); color:var(--accent-ink)}
 .cap-state.s2{background:var(--gold-soft); color:var(--gold-ink)}
