@@ -207,6 +207,7 @@ button{font-family:inherit}
 .proj-head .note{margin-top:14px; font-family:var(--serif); font-style:italic; color:var(--muted); font-size:.95rem; max-width:64ch}
 .proj-meta{display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; justify-content:space-between; margin-top:22px}
 .actions{display:flex; gap:12px; flex-wrap:wrap}
+[id]{scroll-margin-top:84px}
 .action{display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:14px 28px; font-weight:600; font-size:.95rem; border:1.5px solid var(--ink); background:transparent; color:var(--ink); text-decoration:none; transition:background .2s,border-color .2s,color .2s,transform .15s}
 .action:hover{background:var(--ink); color:var(--surface); transform:translateY(-1px)}
 .action.solid{background:var(--surface); color:var(--ink); border-color:var(--ink)}
