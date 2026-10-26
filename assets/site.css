@@ -141,10 +141,10 @@ button{font-family:inherit}
 
 /* ---------- buttons ---------- */
 .btn{display:inline-flex; align-items:center; gap:8px; transition:filter .2s,transform .2s,background .2s,color .2s,border-color .2s; border-radius:999px; padding:11px 20px; font-weight:700; font-size:.9rem; text-decoration:none; border:1px solid transparent; cursor:pointer}
-.btn-primary{background:var(--accent); color:var(--on-accent)}
-.btn-primary:hover{color:var(--on-accent); filter:brightness(1.07)}
+.btn-primary{background:var(--cta-bg); color:var(--cta-ink)}
+.btn-primary:hover{color:var(--cta-ink); filter:brightness(1.12)}
 .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
-.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--accent); color:var(--on-accent); border-color:var(--accent)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--cta-bg); color:var(--cta-ink); border-color:var(--cta-bg)}
 .btn[aria-disabled="true"]{opacity:.45; cursor:not-allowed}
 
 /* ---------- bands and section heads ---------- */
@@ -365,8 +365,8 @@ footer{border-top:1px solid var(--line); margin-top:10px; padding-block:28px}
 .headline .b{font-family:var(--sans); font-weight:800; letter-spacing:-.04em; color:var(--bold-green)}
 .hero-actions{display:flex; align-items:center; justify-content:space-between; gap:22px; flex-wrap:wrap; margin-top:40px}
 .icon-row{display:flex; gap:10px}
-.icon-btn{width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:var(--accent); color:var(--on-accent); text-decoration:none; flex:none}
-.icon-btn:hover{color:var(--on-accent); filter:brightness(1.08)}
+.icon-btn{width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:var(--cta-bg); color:var(--cta-ink); text-decoration:none; flex:none}
+.icon-btn:hover{color:var(--cta-ink); filter:brightness(1.12)}
 .icon-btn svg{width:17px; height:17px; display:block}
 
 /* ---------- intro, text beside portrait ---------- */
