@@ -17,6 +17,9 @@
   --h-green:var(--emerald);  --h-green-ink:var(--emerald-ink);  --h-green-soft:var(--emerald-soft);  --h-green-tint:var(--emerald-tint);
   --h-wine:var(--emerald);   --h-wine-ink:var(--emerald-ink);   --h-wine-soft:var(--emerald-soft);   --h-wine-tint:var(--emerald-tint);
 
+  /* bold headline words: deep green (light), mint (dark) */
+  --bold-green:#064e3b;
+
   /* gold, light */
   --gold:#d97706; --gold-ink:#b45309; --gold-soft:#fef3c7;
 
@@ -35,6 +38,7 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#16303f;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
+  --bold-green:#6ee7b7;
 
   --paper:#101f33; --surface:#1a2d43;
   --ink:#f4f7fa; --muted:#a8bace; --line:#2a4058;
@@ -46,6 +50,7 @@
 :root[data-theme="dark"]{
   --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#16303f;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
+  --bold-green:#6ee7b7;
 
   --paper:#101f33; --surface:#1a2d43;
   --ink:#f4f7fa; --muted:#a8bace; --line:#2a4058;
@@ -124,7 +129,7 @@ button{font-family:inherit}
 /* ---------- hero ---------- */
 .hero{padding-block:58px 40px; background-image:radial-gradient(var(--dot) 1.3px,transparent 1.3px); background-size:22px 22px; background-position:-8px -8px}
 .hero h1{font-weight:400; font-size:clamp(2.3rem,6.2vw,4rem); line-height:1.03}
-.hero h1 .bold{font-family:var(--sans); font-weight:800; letter-spacing:-.03em}
+.hero h1 .bold{font-family:var(--sans); font-weight:800; letter-spacing:-.03em; color:var(--bold-green)}
 .hero .sub{margin-top:20px; color:var(--muted); font-size:1.08rem; max-width:52ch}
 .cta-row{display:flex; gap:10px; margin-top:26px; flex-wrap:wrap; align-items:center}
 
@@ -351,7 +356,7 @@ footer{border-top:1px solid var(--line); margin-top:10px; padding-block:28px}
 .hl{display:inline-block; background:var(--gold-soft); color:var(--ink); font-weight:700; font-size:.92rem; letter-spacing:-.01em; padding:3px 8px; border-radius:3px; margin-bottom:28px}
 .headline{font-size:clamp(2.15rem,5.8vw,4.4rem); line-height:1.05; letter-spacing:-.03em; font-weight:400; max-width:22ch}
 .headline .i{font-family:var(--serif); font-style:italic; font-weight:400}
-.headline .b{font-family:var(--sans); font-weight:800; letter-spacing:-.04em}
+.headline .b{font-family:var(--sans); font-weight:800; letter-spacing:-.04em; color:var(--bold-green)}
 .hero-actions{display:flex; align-items:center; justify-content:space-between; gap:22px; flex-wrap:wrap; margin-top:40px}
 .icon-row{display:flex; gap:10px}
 .icon-btn{width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:var(--accent); color:var(--on-accent); text-decoration:none; flex:none}
