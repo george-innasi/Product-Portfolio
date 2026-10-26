@@ -19,6 +19,7 @@
 
   /* bold headline words: deep green (light), mint (dark) */
   --bold-green:#064e3b;
+  --cta-bg:#064e3b; --cta-ink:#ecfdf5;
 
   /* gold, light */
   --gold:#d97706; --gold-ink:#b45309; --gold-soft:#fef3c7;
@@ -39,6 +40,7 @@
   --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#16303f;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
   --bold-green:#6ee7b7;
+  --cta-bg:#6ee7b7; --cta-ink:#06281c;
 
   --paper:#101f33; --surface:#1a2d43;
   --ink:#f4f7fa; --muted:#a8bace; --line:#2a4058;
@@ -51,6 +53,7 @@
   --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#16303f;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
   --bold-green:#6ee7b7;
+  --cta-bg:#6ee7b7; --cta-ink:#06281c;
 
   --paper:#101f33; --surface:#1a2d43;
   --ink:#f4f7fa; --muted:#a8bace; --line:#2a4058;
@@ -134,7 +137,7 @@ button{font-family:inherit}
 .cta-row{display:flex; gap:10px; margin-top:26px; flex-wrap:wrap; align-items:center}
 
 /* ---------- buttons ---------- */
-.btn{display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:11px 20px; font-weight:700; font-size:.9rem; text-decoration:none; border:1px solid transparent; cursor:pointer}
+.btn{display:inline-flex; align-items:center; gap:8px; transition:filter .2s,transform .2s; border-radius:999px; padding:11px 20px; font-weight:700; font-size:.9rem; text-decoration:none; border:1px solid transparent; cursor:pointer}
 .btn-primary{background:var(--accent); color:var(--on-accent)}
 .btn-primary:hover{color:var(--on-accent); filter:brightness(1.07)}
 .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
@@ -933,8 +936,17 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .ab-pr h3{font-size:1.06rem; font-weight:800; letter-spacing:-.01em}
 .ab-pr p{color:var(--ink); font-size:.98rem; line-height:1.7}
 
-.ab-close{margin-top:28px; max-width:48rem; color:var(--muted); line-height:1.7}
-.ab-close a{font-weight:700}
+/* closing bridge: sends the reader on to the project work */
+.ab-bridge{padding-block:66px 78px; border-top:1px solid var(--line); text-align:center}
+.ab-bridge-title{font-size:clamp(1.9rem,4.2vw,2.9rem); line-height:1.1; letter-spacing:-.025em; font-weight:400}
+.ab-bridge-title .serif{font-family:var(--serif); font-style:italic; font-weight:400}
+.ab-bridge-title .bold{font-family:var(--sans); font-weight:800; letter-spacing:-.03em; color:var(--bold-green)}
+.ab-bridge-sub{margin:16px auto 0; max-width:46rem; color:var(--muted); font-size:1.06rem; line-height:1.7}
+.btn-cta{margin-top:30px; background:var(--cta-bg); color:var(--cta-ink); padding:14px 26px; font-size:.96rem}
+.btn-cta:hover{color:var(--cta-ink); filter:brightness(1.12); transform:translateY(-1px)}
+.btn-cta svg{transition:transform .2s}
+.btn-cta:hover svg{transform:translateX(4px)}
+@media (prefers-reduced-motion:reduce){.btn-cta,.btn-cta svg{transition:none}}
 
 /* dark: the principle icon swaps to the accent so it does not invert to white */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ab-pr-ico{background:var(--accent-soft); color:var(--accent-ink)}}
@@ -950,6 +962,7 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
   .ab-proof > div:nth-child(odd){border-left:0; padding-left:0}
   .ab-proof > div:nth-child(n+3){border-top:1px solid var(--line)}
   .ab-band{padding-block:44px}
+  .ab-bridge{padding-block:48px 56px}
 }
 @media (max-width:520px){
   .ab-list li{grid-template-columns:minmax(0,1fr); gap:4px}
