@@ -897,14 +897,14 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .ab-proof dd{margin:8px 0 0; font-size:.86rem; line-height:1.45; color:var(--muted)}
 
 .ab-band{padding-block:64px; border-top:0}
-.ab-modules{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; align-items:stretch}
+.ab-modules{display:grid; grid-template-columns:minmax(0,1fr); gap:22px}
 .ab-mod{display:flex; flex-direction:column; gap:14px; background:var(--surface); border:1px solid var(--line);
   border-top:3px solid var(--accent); border-radius:var(--radius); padding:clamp(24px,3.2vw,34px)}
 .ab-num{font-size:.72rem; font-weight:800; letter-spacing:.16em; color:var(--gold-ink); font-variant-numeric:tabular-nums}
 .ab-mod h2,.ab-principles-head h2{font-size:clamp(1.3rem,2.2vw,1.55rem); font-weight:800; letter-spacing:-.02em; line-height:1.2}
 .ab-sum{color:var(--muted); line-height:1.7; max-width:48rem}
 .ab-list{list-style:none; padding:0; margin:4px 0 0; display:flex; flex-direction:column}
-.ab-list li{display:grid; grid-template-columns:132px minmax(0,1fr); gap:16px; padding-block:14px; border-top:1px solid var(--line); line-height:1.65; font-size:.95rem; color:var(--muted)}
+.ab-list li{display:grid; grid-template-columns:160px minmax(0,46rem); gap:16px 28px; padding-block:14px; border-top:1px solid var(--line); line-height:1.65; font-size:.95rem; color:var(--muted)}
 .ab-list strong{color:var(--ink); font-weight:700}
 .ab-k{font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); line-height:1.5; padding-top:3px}
 .ab-tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:6px}
