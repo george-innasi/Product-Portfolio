@@ -889,7 +889,7 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .ab-lead strong{color:var(--ink); font-weight:700}
 
 .ab-proof-band{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--surface)}
-.ab-proof{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0}
+.ab-proof{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); margin:0}
 .ab-proof > div{padding:24px 22px; border-left:1px solid var(--line)}
 .ab-proof > div:first-child{border-left:0; padding-left:0}
 .ab-proof dt{font-family:var(--serif); font-weight:600; font-size:clamp(1.7rem,3.2vw,2.3rem); line-height:1; letter-spacing:-.02em; color:var(--accent-ink); font-variant-numeric:tabular-nums}
@@ -924,6 +924,11 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ab-pr-ico{background:var(--accent-soft); color:var(--accent-ink)}}
 :root[data-theme="dark"] .ab-pr-ico{background:var(--accent-soft); color:var(--accent-ink)}
 
+@media (max-width:1000px) and (min-width:761px){
+  .ab-proof{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ab-proof > div:nth-child(4){border-left:0; padding-left:0}
+  .ab-proof > div:nth-child(n+4){border-top:1px solid var(--line)}
+}
 @media (max-width:900px){
   .ab-modules{grid-template-columns:minmax(0,1fr)}
   .ab-principles{grid-template-columns:minmax(0,1fr)}
@@ -933,6 +938,7 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
   .ab-proof > div{padding:20px 16px}
   .ab-proof > div:nth-child(odd){border-left:0; padding-left:0}
   .ab-proof > div:nth-child(n+3){border-top:1px solid var(--line)}
+  .ab-proof > div:nth-child(5){grid-column:1 / -1; border-left:0; padding-left:0}
   .ab-band{padding-block:44px}
 }
 @media (max-width:520px){
