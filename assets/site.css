@@ -883,8 +883,8 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 /* Qualifications jump nav */
 .qual-jump{padding:28px 0 0;text-align:center}
 .qual-jump .wrap{display:flex;align-items:stretch;justify-content:center;gap:16px;flex-wrap:wrap}
-.qual-jump-link{flex:1;max-width:220px;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:1.35rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.01em;padding:18px 24px;border:2px solid var(--accent);border-radius:10px;transition:background .2s,color .2s,box-shadow .2s}
-.qual-jump-link:hover{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.10)}
+.qual-jump-link{flex:1;max-width:220px;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:1.35rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.01em;padding:18px 24px;border:2px solid var(--accent);border-radius:10px;transition:background .2s,color .2s,border-color .2s,box-shadow .2s}
+.qual-jump-link:hover,.qual-jump-link:focus-visible{background:var(--panel-green);border-color:var(--panel-green-line);color:#ecfdf5;box-shadow:0 2px 8px rgba(0,0,0,.10)}
 @media(max-width:480px){.qual-jump .wrap{gap:10px}.qual-jump-link{font-size:1.1rem;padding:14px 16px;max-width:none}}
 
 /* ---------- about page ----------
