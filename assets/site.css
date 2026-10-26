@@ -20,6 +20,10 @@
   /* bold headline words: deep green (light), mint (dark) */
   --bold-green:var(--accent);
   --cta-bg:#064e3b; --cta-ink:#ecfdf5;
+  /* deep green for icons, labels and rules on plain backgrounds */
+  --deep:#064e3b;
+  --deep-soft:color-mix(in srgb,var(--deep) 14%,transparent);
+  --deep-line:color-mix(in srgb,var(--deep) 30%,transparent);
   --panel-green:#064e3b; --panel-green-line:#065f46;
 
   /* gold, light */
@@ -42,6 +46,7 @@
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
   --bold-green:var(--accent);
   --cta-bg:#6ee7b7; --cta-ink:#06281c;
+  --deep:#6ee7b7;
   --panel-green:color-mix(in srgb,var(--accent) 16%,var(--surface)); --panel-green-line:color-mix(in srgb,var(--accent) 45%,transparent);
 
   --paper:#101f33; --surface:#1a2d43;
@@ -56,6 +61,7 @@
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
   --bold-green:var(--accent);
   --cta-bg:#6ee7b7; --cta-ink:#06281c;
+  --deep:#6ee7b7;
   --panel-green:color-mix(in srgb,var(--accent) 16%,var(--surface)); --panel-green-line:color-mix(in srgb,var(--accent) 45%,transparent);
 
   --paper:#101f33; --surface:#1a2d43;
@@ -219,12 +225,12 @@ button{font-family:inherit}
 .g p{font-size:.97rem}
 
 /* ---------- accordion ---------- */
-.detail-list{border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:30px}
-.acc{border-bottom:1px solid var(--line); background:var(--surface)}
+.detail-list{border:1px solid var(--deep-line); border-radius:12px; overflow:hidden; margin-bottom:30px}
+.acc{border-bottom:1px solid var(--deep-line); background:var(--surface)}
 .acc:last-child{border-bottom:0}
-.acc summary{cursor:pointer; padding:15px 18px; font-weight:700; font-size:.96rem; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px}
+.acc summary{cursor:pointer; padding:15px 18px; font-weight:700; font-size:.96rem; color:var(--deep); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px}
 .acc summary::-webkit-details-marker{display:none}
-.acc summary::after{content:"+"; color:var(--muted); font-weight:700; flex:none}
+.acc summary::after{content:"+"; color:var(--deep); font-weight:700; flex:none}
 .acc[open] summary::after{content:"\2013"}
 .acc .body{padding:0 18px 18px; color:var(--muted); font-size:.94rem; display:flex; flex-direction:column; gap:12px}
 .acc .body ul,.acc .body ol{padding-left:20px; display:flex; flex-direction:column; gap:7px}
@@ -523,11 +529,11 @@ button.portrait img.on{opacity:1}
   -webkit-mask-image:linear-gradient(180deg,#000 55%,transparent); mask-image:linear-gradient(180deg,#000 55%,transparent)}
 .ct-status{list-style:none; padding:0; margin:26px 0 0; display:flex; flex-wrap:wrap; gap:8px}
 .ct-status li{display:inline-flex; align-items:center; gap:8px; padding:7px 14px; border-radius:999px;
-  background:var(--surface); border:1px solid var(--line); color:var(--muted); font-size:.85rem; font-weight:600; font-variant-numeric:tabular-nums}
-.ct-status li svg{color:var(--gold-ink); flex:none}
-.ct-status li.ct-status-live{background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,transparent); color:var(--accent-ink); font-weight:700}
-.ct-dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; position:relative}
-.ct-dot::after{content:""; position:absolute; inset:-4px; border-radius:50%; border:2px solid var(--accent); opacity:0; animation:ct-ping 2.4s ease-out infinite}
+  background:var(--surface); border:1px solid var(--deep-line); color:var(--deep); font-size:.85rem; font-weight:600; font-variant-numeric:tabular-nums}
+.ct-status li svg{color:var(--deep); flex:none}
+.ct-status li.ct-status-live{background:var(--deep-soft); border-color:var(--deep-line); color:var(--deep); font-weight:700}
+.ct-dot{width:8px; height:8px; border-radius:50%; background:var(--deep); flex:none; position:relative}
+.ct-dot::after{content:""; position:absolute; inset:-4px; border-radius:50%; border:2px solid var(--deep); opacity:0; animation:ct-ping 2.4s ease-out infinite}
 @keyframes ct-ping{0%{transform:scale(.5); opacity:.7}80%,100%{transform:scale(1.4); opacity:0}}
 @media (prefers-reduced-motion:reduce){.ct-dot::after{animation:none}}
 
@@ -556,8 +562,8 @@ button.portrait img.on{opacity:1}
   color:var(--ink); text-decoration:none; transition:border-color .2s,transform .2s,box-shadow .2s}
 a.ct-tile:hover,.ct-tile:has(a:hover){color:var(--ink); border-color:var(--accent); transform:translateY(-2px);
   box-shadow:0 12px 28px -18px color-mix(in srgb,var(--accent) 60%,transparent)}
-.ct-ico{flex:none; width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent-ink)}
-.ct-ico-gold{background:var(--gold-soft); color:var(--gold-ink)}
+.ct-ico{flex:none; width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:var(--deep-soft); color:var(--deep)}
+.ct-ico-gold{background:var(--deep-soft); color:var(--deep)}
 .ct-tile-body{flex:1; min-width:0; display:flex; flex-direction:column; gap:1px}
 .ct-tile-lbl{font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
 .ct-tile-val{font-weight:700; font-size:.95rem; color:var(--ink); text-decoration:none; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
