@@ -878,3 +878,63 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .qual-jump-link{flex:1;max-width:220px;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:1.35rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.01em;padding:18px 24px;border:2px solid var(--accent);border-radius:10px;transition:background .2s,color .2s,box-shadow .2s}
 .qual-jump-link:hover{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.10)}
 @media(max-width:480px){.qual-jump .wrap{gap:10px}.qual-jump-link{font-size:1.1rem;padding:14px 16px;max-width:none}}
+
+/* ---------- about page ----------
+   Text is held to a 48rem measure. Two modules sit side by side over a
+   principles row; key figures are pulled into a strip under the hero. */
+.ab-hero{padding-block:58px 34px}
+.ab-hero h1{font-size:clamp(2rem,4.6vw,3.3rem); line-height:1.08; max-width:22ch}
+.ab-hero h1 .serif{display:block}
+.ab-lead{margin-top:22px; max-width:48rem; font-size:1.12rem; line-height:1.7; color:var(--muted)}
+.ab-lead strong{color:var(--ink); font-weight:700}
+
+.ab-proof-band{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--surface)}
+.ab-proof{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0}
+.ab-proof > div{padding:24px 22px; border-left:1px solid var(--line)}
+.ab-proof > div:first-child{border-left:0; padding-left:0}
+.ab-proof dt{font-family:var(--serif); font-weight:600; font-size:clamp(1.7rem,3.2vw,2.3rem); line-height:1; letter-spacing:-.02em; color:var(--accent-ink); font-variant-numeric:tabular-nums}
+.ab-proof dt span{font-family:var(--sans); font-size:.9rem; font-weight:700; color:var(--muted); letter-spacing:0}
+.ab-proof dd{margin:8px 0 0; font-size:.86rem; line-height:1.45; color:var(--muted)}
+
+.ab-band{padding-block:64px; border-top:0}
+.ab-modules{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; align-items:stretch}
+.ab-mod{display:flex; flex-direction:column; gap:14px; background:var(--surface); border:1px solid var(--line);
+  border-top:3px solid var(--accent); border-radius:var(--radius); padding:clamp(24px,3.2vw,34px)}
+.ab-num{font-size:.72rem; font-weight:800; letter-spacing:.16em; color:var(--gold-ink); font-variant-numeric:tabular-nums}
+.ab-mod h2,.ab-principles-head h2{font-size:clamp(1.3rem,2.2vw,1.55rem); font-weight:800; letter-spacing:-.02em; line-height:1.2}
+.ab-sum{color:var(--muted); line-height:1.7; max-width:48rem}
+.ab-list{list-style:none; padding:0; margin:4px 0 0; display:flex; flex-direction:column}
+.ab-list li{display:grid; grid-template-columns:132px minmax(0,1fr); gap:16px; padding-block:14px; border-top:1px solid var(--line); line-height:1.65; font-size:.95rem; color:var(--muted)}
+.ab-list strong{color:var(--ink); font-weight:700}
+.ab-k{font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); line-height:1.5; padding-top:3px}
+.ab-tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:6px}
+
+.ab-principles-wrap{margin-top:56px}
+.ab-principles-head{display:flex; align-items:baseline; gap:14px; margin-bottom:22px}
+.ab-principles{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px}
+.ab-pr{display:flex; flex-direction:column; gap:10px; padding:24px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2)}
+.ab-pr-ico{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--ink); color:var(--paper); margin-bottom:4px}
+.ab-pr h3{font-size:1.06rem; font-weight:800; letter-spacing:-.01em}
+.ab-pr p{color:var(--muted); font-size:.95rem; line-height:1.7}
+
+.ab-close{margin-top:28px; max-width:48rem; color:var(--muted); line-height:1.7}
+.ab-close a{font-weight:700}
+
+/* dark: the principle icon swaps to the accent so it does not invert to white */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ab-pr-ico{background:var(--accent-soft); color:var(--accent-ink)}}
+:root[data-theme="dark"] .ab-pr-ico{background:var(--accent-soft); color:var(--accent-ink)}
+
+@media (max-width:900px){
+  .ab-modules{grid-template-columns:minmax(0,1fr)}
+  .ab-principles{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .ab-proof{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ab-proof > div{padding:20px 16px}
+  .ab-proof > div:nth-child(odd){border-left:0; padding-left:0}
+  .ab-proof > div:nth-child(n+3){border-top:1px solid var(--line)}
+  .ab-band{padding-block:44px}
+}
+@media (max-width:520px){
+  .ab-list li{grid-template-columns:minmax(0,1fr); gap:4px}
+}
