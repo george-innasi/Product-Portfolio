@@ -137,13 +137,14 @@
     btn.addEventListener('click', function () {
       var email = btn.getAttribute('data-email');
       var label = btn.querySelector('.ct-copy-label');
+      var original = label ? label.textContent : '';
       if (!email) return;
       var done = function () {
         btn.classList.add('copied');
-        if (label) label.textContent = 'Copied!';
+        if (label) label.textContent = 'Copied';
         setTimeout(function () {
           btn.classList.remove('copied');
-          if (label) label.textContent = 'Copy Email';
+          if (label) label.textContent = original;
         }, 1800);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -295,5 +296,19 @@
         set('Opening your email app to send the note...', 'ok');
       }
     });
+  });
+})();
+
+/* Live local time chip on the contact page. */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.querySelector('[data-localtime]');
+    if (!el || !window.Intl) return;
+    var tz = el.getAttribute('data-tz'), city = el.getAttribute('data-city') || '';
+    var fmt;
+    try { fmt = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit' }); }
+    catch (e) { return; }
+    var tick = function () { el.textContent = city + ', ' + fmt.format(new Date()) + ' local time'; };
+    tick(); setInterval(tick, 30000);
   });
 })();

@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=48">
-<script src="/assets/site.js?v=9" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=49">
+<script src="/assets/site.js?v=10" defer></script>
 </head>
 <body data-accent="blue">
 <a class="skip" href="#main">Skip to content</a>
@@ -31,91 +31,109 @@
 
 <main id="main">
 
-  <section class="hero">
+  <section class="hero ct-hero">
     <div class="wrap">
       <p class="eyebrow">Contact</p>
-      <h1><span class="serif">Every product created</span><br><span class="bold">was once an imagination.</span></h1>
+      <h1><span class="serif">Every product created</span><br><span class="bold">was once imagined.</span></h1>
       <p class="sub">Let's discuss how we can bring yours to life.</p>
+      <ul class="ct-status">
+        <li class="ct-status-live"><span class="ct-dot" aria-hidden="true"></span>Open to AI PM roles and startup collaborations</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Relocating to India, January 2027</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-localtime data-tz="America/Edmonton" data-city="Calgary">Calgary, Mountain Time</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- relocation badge -->
-  <div class="wrap">
-    <div class="ct-reloc">
-      <span class="ct-reloc-pin">📍</span>
-      Relocating from Canada to India in January 2027 &bull; Open to AI PM roles &amp; startup collaborations
-    </div>
-  </div>
-
-  <section class="band">
+  <section class="ct-band">
     <div class="wrap">
-      <div class="contact-split">
+      <div class="ct-grid">
 
-        <!-- left column: direct connect -->
-        <div class="ct-info">
-          <div class="ct-avail">
-            <span class="ct-dot"></span>
-            Available for opportunities
-          </div>
-
-          <a class="ct-book" href="https://calendly.com/georgeinnasi" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Book a 15-min intro chat
+        <!-- left: direct lines -->
+        <div class="ct-panel">
+          <a class="ct-feature" href="https://calendly.com/georgeinnasi" target="_blank" rel="noopener">
+            <span class="ct-feature-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/><path d="m9 15.5 2 2 4-4"/></svg></span>
+            <span class="ct-feature-kicker">Fastest way to reach me</span>
+            <span class="ct-feature-title">Book a 15-minute intro call</span>
+            <span class="ct-feature-txt">Pick a slot that suits you. Bring a role, an idea or a problem worth solving.</span>
+            <span class="ct-feature-cta">Open calendar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
 
-          <div class="ct-links">
-            <button class="ct-link ct-copy-email" type="button" data-email="georgeinnasi@gmail.com" aria-label="Copy email address">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
-              <span class="ct-copy-label">Copy Email</span>
+          <div class="ct-tile ct-email">
+            <span class="ct-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span class="ct-tile-body">
+              <span class="ct-tile-lbl">Email</span>
+              <a class="ct-tile-val" href="mailto:georgeinnasi@gmail.com">georgeinnasi@gmail.com</a>
+            </span>
+            <button class="ct-copy-email" type="button" data-email="georgeinnasi@gmail.com" aria-label="Copy email address">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              <span class="ct-copy-label">Copy</span>
             </button>
-            <a class="ct-link" href="https://www.linkedin.com/in/georgeinnasi" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
-              LinkedIn
+          </div>
+
+          <div class="ct-pair">
+            <a class="ct-tile" href="https://www.linkedin.com/in/georgeinnasi" target="_blank" rel="noopener">
+              <span class="ct-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
+              <span class="ct-tile-body">
+                <span class="ct-tile-lbl">LinkedIn</span>
+                <span class="ct-tile-val">/in/georgeinnasi</span>
+              </span>
+              <svg class="ct-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-            <a class="ct-link" href="https://github.com/george-innasi" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.82-.26.82-.58l-.01-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.41-1.31.75-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.36.81 1.1.81 2.22l-.01 3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .3Z"/></svg>
-              GitHub
+            <a class="ct-tile" href="https://github.com/george-innasi" target="_blank" rel="noopener">
+              <span class="ct-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.82-.26.82-.58l-.01-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.41-1.31.75-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.36.81 1.1.81 2.22l-.01 3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .3Z"/></svg></span>
+              <span class="ct-tile-body">
+                <span class="ct-tile-lbl">GitHub</span>
+                <span class="ct-tile-val">@george-innasi</span>
+              </span>
+              <svg class="ct-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
           </div>
 
-          <a class="ct-resume" href="/assets/george-innasi-resume.pdf" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            Download Resume / CV
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ct-resume-arrow"><path d="M7 10l5 5 5-5"/></svg>
+          <a class="ct-tile" href="/assets/george-innasi-resume.pdf" target="_blank" rel="noopener">
+            <span class="ct-ico ct-ico-gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+            <span class="ct-tile-body">
+              <span class="ct-tile-lbl">Resume / CV</span>
+              <span class="ct-tile-val">PDF download</span>
+            </span>
+            <svg class="ct-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>
           </a>
         </div>
 
-        <!-- right column: message form -->
+        <!-- right: message form -->
         <div class="ct-form-wrap">
           <div class="ct-form-header">
             <h2>Send a message</h2>
             <p>Select what best describes your intent, and leave a note.</p>
           </div>
 
-          <form class="ct-form" id="tform" novalidate>
-            <!-- intent tags -->
+          <form class="ct-form tform" id="tform" novalidate>
             <fieldset class="ct-intents" id="ct-intents">
-              <legend class="sr-only">What brings you here?</legend>
+              <legend class="tform-lbl">What brings you here?</legend>
+              <div class="ct-intent-grid">
               <button type="button" class="ct-intent" data-intent="role" aria-pressed="false">
-                <span class="ct-intent-ico">💼</span> AI/PM Role
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+                AI / PM role
               </button>
               <button type="button" class="ct-intent" data-intent="startup" aria-pressed="false">
-                <span class="ct-intent-ico">🚀</span> Startup Collaboration / Kittii
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2"/><path d="M9 15l-3-3a14 14 0 0 1 12-9 14 14 0 0 1-9 12z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg>
+                Startup / Kittii
               </button>
               <button type="button" class="ct-intent" data-intent="advisory" aria-pressed="false">
-                <span class="ct-intent-ico">💡</span> Advisory
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>
+                Advisory
               </button>
               <button type="button" class="ct-intent" data-intent="network" aria-pressed="false">
-                <span class="ct-intent-ico">☕</span> Networking
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a3 3 0 0 1 0 6h-1"/><path d="M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M7 2.5v2M11 2.5v2"/></svg>
+                Networking
               </button>
+              </div>
             </fieldset>
 
             <input type="hidden" name="intent" id="ct-intent-val" value="">
 
             <label class="tform-field">
-              <span class="tform-lbl">Your message</span>
+              <span class="tform-head"><span class="tform-lbl">Your message</span><span class="tform-count"><span id="tcount">0</span> / 500</span></span>
               <textarea name="message" id="ct-msg" maxlength="500" required rows="5" placeholder="Let's connect. Tell me about the role or idea, and how you see me fitting in."></textarea>
-              <span class="tform-count"><span id="tcount">0</span> / 500</span>
             </label>
 
             <label class="tform-field">
@@ -123,28 +141,28 @@
               <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
             </label>
 
-            <div class="tform-row">
-              <button class="btn btn-primary" type="submit">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <div class="ct-submit-row">
+              <button class="btn btn-primary ct-submit" type="submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
                 Send message
               </button>
-              <p class="tform-status" id="tstatus" role="status" aria-live="polite"></p>
+              <span class="ct-reply-note">Replies within 24 hours</span>
             </div>
+            <p class="tform-status" id="tstatus" role="status" aria-live="polite"></p>
           </form>
         </div>
 
-      </div><!-- /contact-split -->
+      </div>
     </div>
   </section>
 
 </main>
 
-<!-- success toast (hidden by default) -->
 <div class="ct-toast" id="ct-toast" role="alert" aria-live="assertive">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
   <div class="ct-toast-txt">
-    <strong>Payload sent successfully!</strong>
-    <span>I'll review your prompt within 24 hours.</span>
+    <strong>Message sent</strong>
+    <span>Thank you. I will reply within 24 hours.</span>
   </div>
 </div>
 

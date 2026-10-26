@@ -508,68 +508,108 @@ button.portrait img.on{opacity:1}
 .cc-copy.copied{color:var(--accent-ink); border-color:var(--accent)}
 @media (max-width:420px){.cc-actions{grid-template-columns:repeat(2,1fr)}}
 
-/* ---------- contact split (two-column redesign) ---------- */
-.contact-split{display:grid; grid-template-columns:1fr 1.15fr; gap:clamp(36px,5vw,72px); align-items:start}
-.ct-info{display:flex; flex-direction:column; gap:22px}
-.ct-avail{display:inline-flex; align-items:center; gap:9px; font-weight:700; font-size:.92rem; color:var(--accent-ink);
-  background:var(--accent-soft); border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);
-  border-radius:999px; padding:8px 18px; width:max-content}
-.ct-dot{width:9px; height:9px; border-radius:50%; background:var(--accent); flex:none;
-  box-shadow:0 0 0 3px var(--accent-soft); animation:ct-pulse 2.4s ease-in-out infinite}
-@keyframes ct-pulse{0%,100%{opacity:1}50%{opacity:.45}}
-/* relocation badge */
-.ct-reloc{display:flex; align-items:center; gap:10px; padding:14px 22px; margin-bottom:8px;
-  background:var(--accent-soft); border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);
-  border-radius:14px; color:var(--ink); font-size:.93rem; font-weight:600; line-height:1.5}
-.ct-reloc-pin{font-size:1.15rem; flex:none; line-height:1}
+/* ---------- contact page ----------
+   Hero with a fading dot grid and a status row; a two-column grid below where
+   the direct-line tiles stretch to the height of the message card. */
+.ct-hero{position:relative; isolation:isolate; background-image:none; padding-block:58px 30px}
+.ct-hero::before{content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background-image:radial-gradient(var(--dot) 1.3px,transparent 1.3px); background-size:22px 22px; background-position:-8px -8px;
+  -webkit-mask-image:linear-gradient(180deg,#000 55%,transparent); mask-image:linear-gradient(180deg,#000 55%,transparent)}
+.ct-status{list-style:none; padding:0; margin:26px 0 0; display:flex; flex-wrap:wrap; gap:8px}
+.ct-status li{display:inline-flex; align-items:center; gap:8px; padding:7px 14px; border-radius:999px;
+  background:var(--surface); border:1px solid var(--line); color:var(--muted); font-size:.85rem; font-weight:600; font-variant-numeric:tabular-nums}
+.ct-status li svg{color:var(--gold-ink); flex:none}
+.ct-status li.ct-status-live{background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,transparent); color:var(--accent-ink); font-weight:700}
+.ct-dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; position:relative}
+.ct-dot::after{content:""; position:absolute; inset:-4px; border-radius:50%; border:2px solid var(--accent); opacity:0; animation:ct-ping 2.4s ease-out infinite}
+@keyframes ct-ping{0%{transform:scale(.5); opacity:.7}80%,100%{transform:scale(1.4); opacity:0}}
+@media (prefers-reduced-motion:reduce){.ct-dot::after{animation:none}}
 
-/* book a chat CTA */
-.ct-book{display:inline-flex; align-items:center; gap:10px; padding:14px 24px;
-  background:var(--accent); color:var(--on-accent,#fff); border-radius:12px;
-  font-weight:700; font-size:.95rem; text-decoration:none;
-  transition:filter .2s,transform .15s,box-shadow .2s; width:max-content}
-.ct-book svg{flex:none}
-.ct-book:hover{color:var(--on-accent,#fff); filter:brightness(1.08); transform:translateY(-1px);
-  box-shadow:0 8px 22px -10px color-mix(in srgb,var(--accent) 50%,transparent)}
+.ct-band{padding-block:10px 64px}
+.ct-grid{display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:22px; align-items:stretch}
 
-.ct-links{display:flex; flex-direction:column; gap:6px}
-.ct-link{display:inline-flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem;
-  padding:8px 0; transition:color .18s}
-.ct-link svg{color:var(--accent-ink); flex:none}
-.ct-link:hover{color:var(--accent-ink)}
-/* copy email button styled as a link row */
-.ct-copy-email{cursor:pointer; background:none; border:0; font:inherit}
-.ct-copy-email.copied .ct-copy-label{color:var(--accent-ink)}
-.ct-copy-email.copied .ct-copy-label::after{content:" ✓"; font-weight:800}
-.ct-resume{display:inline-flex; align-items:center; gap:10px; padding:12px 20px;
-  background:var(--surface); border:1.5px solid var(--line); border-radius:12px;
-  color:var(--ink); font-weight:700; font-size:.92rem; text-decoration:none;
-  transition:border-color .2s,transform .15s,box-shadow .2s; width:max-content}
-.ct-resume svg{flex:none}
-.ct-resume:hover{color:var(--ink); border-color:var(--accent); transform:translateY(-1px);
-  box-shadow:0 8px 22px -10px color-mix(in srgb,var(--accent) 30%,transparent)}
-.ct-resume-arrow{color:var(--muted); margin-left:auto; transform:rotate(-90deg)}
-.ct-resume:hover .ct-resume-arrow{color:var(--accent-ink)}
+/* left column */
+.ct-panel{display:flex; flex-direction:column; gap:12px}
+.ct-feature{flex:1; display:flex; flex-direction:column; align-items:flex-start; gap:8px; position:relative; overflow:hidden;
+  background:#064e3b; color:#ecfdf5; border:1px solid #065f46; border-radius:var(--radius);
+  padding:clamp(22px,3vw,30px); text-decoration:none; min-height:220px;
+  transition:transform .2s,box-shadow .2s}
+.ct-feature::after{content:""; position:absolute; right:-70px; bottom:-90px; width:240px; height:240px; border-radius:50%;
+  background:radial-gradient(circle,rgba(52,211,153,.28),transparent 68%); pointer-events:none}
+.ct-feature:hover{color:#ecfdf5; transform:translateY(-2px); box-shadow:0 18px 40px -16px rgba(5,150,105,.45)}
+.ct-feature-ico{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:rgba(255,255,255,.1); color:#6ee7b7; margin-bottom:6px}
+.ct-feature-kicker{font-size:.7rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#facc15}
+.ct-feature-title{font-family:var(--serif); font-weight:600; font-size:clamp(1.45rem,2.6vw,1.8rem); line-height:1.15; letter-spacing:-.01em; color:#fff}
+.ct-feature-txt{font-size:.94rem; line-height:1.55; color:rgba(236,253,245,.78); max-width:36ch}
+.ct-feature-cta{margin-top:auto; padding-top:12px; display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:.92rem; color:#6ee7b7}
+.ct-feature-cta svg{transition:transform .2s}
+.ct-feature:hover .ct-feature-cta svg{transform:translateX(4px)}
+
+.ct-tile{display:flex; align-items:center; gap:14px; padding:14px 16px; min-width:0;
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+  color:var(--ink); text-decoration:none; transition:border-color .2s,transform .2s,box-shadow .2s}
+a.ct-tile:hover,.ct-tile:has(a:hover){color:var(--ink); border-color:var(--accent); transform:translateY(-2px);
+  box-shadow:0 12px 28px -18px color-mix(in srgb,var(--accent) 60%,transparent)}
+.ct-ico{flex:none; width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent-ink)}
+.ct-ico-gold{background:var(--gold-soft); color:var(--gold-ink)}
+.ct-tile-body{flex:1; min-width:0; display:flex; flex-direction:column; gap:1px}
+.ct-tile-lbl{font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+.ct-tile-val{font-weight:700; font-size:.95rem; color:var(--ink); text-decoration:none; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+a.ct-tile-val:hover{color:var(--accent-ink)}
+.ct-arrow{flex:none; color:var(--muted); transition:color .2s,transform .2s}
+.ct-tile:hover .ct-arrow{color:var(--accent-ink); transform:translate(2px,-2px)}
+.ct-pair{display:flex; flex-direction:column; gap:12px}
+
+.ct-copy-email{flex:none; display:inline-flex; align-items:center; gap:6px; padding:8px 12px; border-radius:999px;
+  border:1px solid var(--line); background:var(--paper); color:var(--muted); font:inherit; font-size:.8rem; font-weight:700; cursor:pointer;
+  transition:color .2s,border-color .2s,background .2s}
+.ct-copy-email:hover{color:var(--accent-ink); border-color:var(--accent)}
+.ct-copy-email.copied{color:var(--accent-ink); border-color:var(--accent); background:var(--accent-soft)}
 
 /* right column form */
-.ct-form-wrap{background:var(--surface); border:1px solid var(--line); border-radius:20px;
-  padding:clamp(24px,3.6vw,38px); box-shadow:0 18px 44px -28px rgba(0,0,0,.18)}
-.ct-form-header{margin-bottom:22px}
-.ct-form-header h2{font-size:1.5rem; font-weight:800; margin-bottom:6px}
+.ct-form-wrap{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+  padding:clamp(22px,3.2vw,34px); box-shadow:0 24px 50px -34px rgba(0,0,0,.28)}
+.ct-form-header{margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid var(--line)}
+.ct-form-header h2{font-size:1.45rem; font-weight:800; margin-bottom:5px}
 .ct-form-header p{color:var(--muted); font-size:.95rem}
-.ct-form{display:flex; flex-direction:column; gap:18px}
+.ct-form.tform{max-width:none; gap:20px}
+.ct-form.tform textarea,.ct-form.tform input{background:var(--paper); font-size:.95rem}
+.ct-form.tform textarea{min-height:132px}
+.tform-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
+.tform-head .tform-count{align-self:auto}
 
-/* intent tags */
-.ct-intents{border:0; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:9px}
-.ct-intent{display:inline-flex; align-items:center; gap:7px; padding:9px 16px; border-radius:999px;
-  border:1.5px solid var(--line); background:var(--surface); color:var(--muted);
-  font:inherit; font-size:.86rem; font-weight:600; cursor:pointer;
-  transition:background .2s,border-color .2s,color .2s,transform .15s,box-shadow .15s}
-.ct-intent:hover{border-color:var(--accent); color:var(--ink); transform:translateY(-1px)}
-.ct-intent[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent);
-  color:var(--accent-ink); font-weight:700; box-shadow:0 4px 14px -6px color-mix(in srgb,var(--accent) 40%,transparent)}
-.ct-intent-ico{font-size:1rem; line-height:1; flex:none}
+.ct-intents{border:0; margin:0; padding:0; min-width:0}
+.ct-intents legend{padding:0; margin-bottom:9px}
+.ct-intent-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.ct-intent{display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:12px; text-align:left;
+  border:1.5px solid var(--line); background:var(--surface); color:var(--ink);
+  font:inherit; font-size:.9rem; font-weight:600; cursor:pointer;
+  transition:background .2s,border-color .2s,color .2s,box-shadow .2s}
+.ct-intent svg{flex:none; color:var(--muted); transition:color .2s}
+.ct-intent:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+.ct-intent:hover svg{color:var(--accent-ink)}
+.ct-intent[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent-ink); font-weight:700}
+.ct-intent[aria-pressed="true"] svg{color:var(--accent-ink)}
 .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+
+.ct-submit-row{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; padding-top:4px}
+.ct-submit{padding:13px 26px; font-size:.95rem}
+.ct-submit:disabled{opacity:.6; cursor:progress}
+.ct-reply-note{font-size:.84rem; color:var(--muted); font-family:var(--serif); font-style:italic}
+.ct-form .tform-status:empty{display:none}
+
+/* dark theme: the feature tile drops to the surface with an emerald edge */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ct-feature{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}}
+:root[data-theme="dark"] .ct-feature{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+
+@media (max-width:820px){
+  .ct-grid{grid-template-columns:minmax(0,1fr)}
+  .ct-feature{min-height:0}
+}
+@media (max-width:460px){
+  .ct-intent-grid{grid-template-columns:1fr}
+  .ct-submit{width:100%; justify-content:center}
+}
 
 /* toast */
 .ct-toast{position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(120px); z-index:9000;
@@ -588,10 +628,6 @@ button.portrait img.on{opacity:1}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ct-toast-txt span{color:#a8bace}}
 :root[data-theme="dark"] .ct-toast-txt span{color:#a8bace}
 
-@media (max-width:760px){
-  .contact-split{grid-template-columns:1fr; gap:32px}
-  .ct-avail{font-size:.84rem; padding:7px 14px}
-}
 
 /* ---------- thoughts form ---------- */
 .tform{display:flex; flex-direction:column; gap:18px; max-width:560px}
