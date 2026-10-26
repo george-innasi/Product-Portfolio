@@ -206,7 +206,7 @@
 
   var INTENT_LABELS = {
     role: 'AI/PM Role',
-    startup: 'Startup Collaboration / Kittii',
+    startup: 'Startup Collaboration',
     advisory: 'Advisory',
     network: 'Networking'
   };
