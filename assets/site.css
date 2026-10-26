@@ -20,6 +20,7 @@
   /* bold headline words: deep green (light), mint (dark) */
   --bold-green:#064e3b;
   --cta-bg:#064e3b; --cta-ink:#ecfdf5;
+  --panel-green:#064e3b; --panel-green-line:#065f46;
 
   /* gold, light */
   --gold:#d97706; --gold-ink:#b45309; --gold-soft:#fef3c7;
@@ -41,6 +42,7 @@
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
   --bold-green:#6ee7b7;
   --cta-bg:#6ee7b7; --cta-ink:#06281c;
+  --panel-green:color-mix(in srgb,var(--accent) 16%,var(--surface)); --panel-green-line:color-mix(in srgb,var(--accent) 45%,transparent);
 
   --paper:#101f33; --surface:#1a2d43;
   --ink:#f4f7fa; --muted:#a8bace; --line:#2a4058;
@@ -54,6 +56,7 @@
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
   --bold-green:#6ee7b7;
   --cta-bg:#6ee7b7; --cta-ink:#06281c;
+  --panel-green:color-mix(in srgb,var(--accent) 16%,var(--surface)); --panel-green-line:color-mix(in srgb,var(--accent) 45%,transparent);
 
   --paper:#101f33; --surface:#1a2d43;
   --ink:#f4f7fa; --muted:#a8bace; --line:#2a4058;
@@ -589,10 +592,12 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
   font:inherit; font-size:.9rem; font-weight:600; cursor:pointer;
   transition:background .2s,border-color .2s,color .2s,box-shadow .2s}
 .ct-intent svg{flex:none; color:var(--muted); transition:color .2s}
-.ct-intent:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
-.ct-intent:hover svg{color:var(--accent-ink)}
-.ct-intent[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent-ink); font-weight:700}
-.ct-intent[aria-pressed="true"] svg{color:var(--accent-ink)}
+.ct-intent{transition:background .18s,border-color .18s,color .18s}
+.ct-intent:hover{background:var(--panel-green); border-color:var(--panel-green-line); color:#ecfdf5}
+.ct-intent:hover svg{color:#6ee7b7}
+.ct-intent[aria-pressed="true"]{background:var(--panel-green); border-color:#6ee7b7; color:#ecfdf5; font-weight:700}
+.ct-intent[aria-pressed="true"] svg{color:#6ee7b7}
+@media (prefers-reduced-motion:reduce){.ct-intent{transition:none}}
 .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
 
 .ct-submit-row{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; padding-top:4px}

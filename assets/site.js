@@ -306,7 +306,7 @@
     if (!el || !window.Intl) return;
     var tz = el.getAttribute('data-tz'), city = el.getAttribute('data-city') || '';
     var fmt;
-    try { fmt = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit' }); }
+    try { fmt = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }); }
     catch (e) { return; }
     var tick = function () { el.textContent = city + ', ' + fmt.format(new Date()) + ' local time'; };
     tick(); setInterval(tick, 30000);
