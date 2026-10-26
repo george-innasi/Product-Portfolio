@@ -942,7 +942,11 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .ab-bridge-title .serif{font-family:var(--serif); font-style:italic; font-weight:400}
 .ab-bridge-title .bold{font-family:var(--sans); font-weight:800; letter-spacing:-.03em; color:var(--bold-green)}
 .ab-bridge-sub{margin:16px auto 0; max-width:46rem; color:var(--muted); font-size:1.06rem; line-height:1.7}
-.btn-cta{margin-top:30px; background:var(--cta-bg); color:var(--cta-ink); padding:14px 26px; font-size:.96rem}
+.ab-bridge-actions{margin-top:30px; display:flex; justify-content:center; align-items:stretch; flex-wrap:wrap; gap:12px}
+.ab-bridge-actions .btn{padding:14px 26px; font-size:.96rem; justify-content:center}
+.btn-cta{background:var(--cta-bg); color:var(--cta-ink)}
+.btn-cta-ghost{background:transparent; color:var(--cta-bg); border-color:var(--cta-bg)}
+.btn-cta-ghost:hover{color:var(--cta-ink); background:var(--cta-bg)}
 .btn-cta:hover{color:var(--cta-ink); filter:brightness(1.12); transform:translateY(-1px)}
 .btn-cta svg{transition:transform .2s}
 .btn-cta:hover svg{transform:translateX(4px)}
@@ -963,6 +967,7 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
   .ab-proof > div:nth-child(n+3){border-top:1px solid var(--line)}
   .ab-band{padding-block:44px}
   .ab-bridge{padding-block:48px 56px}
+  .ab-bridge-actions{flex-direction:column; align-items:stretch; max-width:320px; margin-inline:auto}
 }
 @media (max-width:520px){
   .ab-list li{grid-template-columns:minmax(0,1fr); gap:4px}
