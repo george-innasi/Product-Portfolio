@@ -18,7 +18,7 @@
   --h-wine:var(--emerald);   --h-wine-ink:var(--emerald-ink);   --h-wine-soft:var(--emerald-soft);   --h-wine-tint:var(--emerald-tint);
 
   /* bold headline words: deep green (light), mint (dark) */
-  --bold-green:#064e3b;
+  --bold-green:var(--accent);
   --cta-bg:#064e3b; --cta-ink:#ecfdf5;
   --panel-green:#064e3b; --panel-green-line:#065f46;
 
@@ -40,7 +40,7 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#16303f;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
-  --bold-green:#6ee7b7;
+  --bold-green:var(--accent);
   --cta-bg:#6ee7b7; --cta-ink:#06281c;
   --panel-green:color-mix(in srgb,var(--accent) 16%,var(--surface)); --panel-green-line:color-mix(in srgb,var(--accent) 45%,transparent);
 
@@ -54,7 +54,7 @@
 :root[data-theme="dark"]{
   --emerald:#10b981; --emerald-ink:#34d399; --emerald-soft:rgba(16,185,129,.16); --emerald-tint:#16303f;
   --gold:#facc15; --gold-ink:#facc15; --gold-soft:rgba(250,204,21,.16);
-  --bold-green:#6ee7b7;
+  --bold-green:var(--accent);
   --cta-bg:#6ee7b7; --cta-ink:#06281c;
   --panel-green:color-mix(in srgb,var(--accent) 16%,var(--surface)); --panel-green-line:color-mix(in srgb,var(--accent) 45%,transparent);
 
