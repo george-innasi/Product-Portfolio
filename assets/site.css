@@ -1216,3 +1216,12 @@ body{overflow-x:clip}
 .logos .logo-item .co-logo{filter:grayscale(1) contrast(1.15) brightness(.8); opacity:.62; background:none; border-radius:0; padding:0; box-sizing:content-box}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logos .logo-item .co-logo{filter:grayscale(1) invert(1) brightness(1.8); opacity:.68; background:none; border-radius:0; padding:0}}
 :root[data-theme="dark"] .logos .logo-item .co-logo{filter:grayscale(1) invert(1) brightness(1.8); opacity:.68; background:none; border-radius:0; padding:0}
+
+/* ---------- qualifications logos: equal visual area, not equal box ---------- */
+/* Each mark carries --lw/--lh (its optical size) and is centred in the 140x56 column box. */
+.cv-item.has-logo .co-logo{width:140px; height:56px; box-sizing:border-box; object-fit:contain; object-position:center;
+  padding:calc((56px - var(--lh,40px)) / 2) calc((140px - var(--lw,100px)) / 2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cv-item.has-logo .co-logo{width:140px; height:56px; box-sizing:border-box;
+  padding:calc((56px - var(--lh,40px)) / 2) calc((140px - var(--lw,100px)) / 2)}}
+:root[data-theme="dark"] .cv-item.has-logo .co-logo{width:140px; height:56px; box-sizing:border-box;
+  padding:calc((56px - var(--lh,40px)) / 2) calc((140px - var(--lw,100px)) / 2)}
