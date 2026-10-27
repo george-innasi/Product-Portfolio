@@ -1288,3 +1288,6 @@ body{overflow-x:clip}
 .proto-fig{margin:32px auto 0; max-width:902px; display:flex; flex-direction:column; gap:10px}
 .proto-fig img{width:100%; height:auto; border:1px solid var(--line); border-radius:14px; box-shadow:0 14px 30px -20px rgba(0,0,0,.4); cursor:zoom-in}
 .proto-fig figcaption{text-align:center; font-size:.84rem; color:var(--muted)}
+
+.meta-note{margin:14px auto 0; max-width:var(--narrow); font-size:.92rem; line-height:1.6; color:var(--muted); text-align:center}
+.meta-note strong{color:var(--ink)}
