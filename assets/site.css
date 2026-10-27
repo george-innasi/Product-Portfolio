@@ -1222,3 +1222,13 @@ body{overflow-x:clip}
 /* project cards: chips and CTA share one baseline at the bottom of every card in a row */
 .card .chips{margin-top:auto}
 .card .chips + .card-open{margin-top:0}
+
+/* Kittii: business model panel */
+.biz-model{max-width:var(--narrow); margin:40px auto 0; background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius); padding:clamp(22px,3vw,30px)}
+
+/* admin screenshots: framed and clearly separated when stacked */
+.shot-gallery.admin{gap:48px; max-width:820px}
+.shot-gallery.admin figure{background:var(--surface-2); border:1px solid var(--line); border-radius:18px; padding:clamp(14px,2.4vw,22px); gap:12px}
+.shot-gallery.admin figure:first-child img{max-width:600px; margin-inline:auto}
+.shot-gallery.admin figcaption{font-weight:600; color:var(--ink)}
