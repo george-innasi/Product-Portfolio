@@ -960,7 +960,7 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .ab-principles-wrap{margin-top:56px}
 .ab-principles-head{display:flex; align-items:baseline; gap:14px; margin-bottom:22px}
 .ab-principles{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px}
-.ab-pr{display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; padding:24px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2)}
+.ab-pr{display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; padding:24px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:0 1px 2px rgba(17,24,39,.04)}
 .ab-pr-ico{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--ink); color:var(--paper); margin-bottom:4px}
 .ab-pr h3{font-size:1.06rem; font-weight:800; letter-spacing:-.01em}
 .ab-pr p{color:var(--ink); font-size:.98rem; line-height:1.7}
