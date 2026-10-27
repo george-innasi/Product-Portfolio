@@ -817,19 +817,41 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .phase-panel[hidden]{display:none}
 
 /* ---------- step indicators ---------- */
-.phase-steps{display:flex; gap:10px; overflow-x:auto; padding-bottom:8px; margin-bottom:22px; scrollbar-width:thin}
-.step-card{flex:none; background:var(--ink); color:var(--paper); border-radius:10px; padding:14px 18px;
-  display:flex; flex-direction:column; gap:4px; min-width:140px; border-left:3px solid var(--accent)}
+/* A four-up grid rather than a scrolling flex row: the cards carried only
+   a label each, so they packed into the left corner and left the band
+   half empty. Equal columns fill the width and give each step room for a
+   line of explanation. */
+.phase-steps{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:26px}
+.step-card{min-width:0; background:var(--ink); color:var(--paper); border-radius:10px;
+  padding:16px 18px 18px; display:flex; flex-direction:column; gap:5px;
+  border-left:3px solid var(--accent)}
 .step-num{font-size:.66rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
   color:color-mix(in srgb,var(--paper) 65%,transparent)}
-.step-title{font-weight:700; font-size:.88rem}
-.phase-brief{color:var(--muted); font-size:.95rem; line-height:1.6; max-width:66ch}
+.step-title{font-weight:700; font-size:.95rem; line-height:1.3}
+.step-card p{font-size:.8rem; line-height:1.55; margin-top:3px;
+  color:color-mix(in srgb,var(--paper) 72%,transparent)}
+/* intro and close bracket the steps, centred under the centred heading */
+.phase-brief{color:var(--muted); font-size:1rem; line-height:1.65; max-width:68ch;
+  margin:0 auto 28px; text-align:center}
+.phase-close{color:var(--ink); font-family:var(--serif); font-style:italic;
+  font-size:1.05rem; line-height:1.6; max-width:60ch; margin:0 auto; text-align:center}
+@media (max-width:860px){
+  .phase-steps{grid-template-columns:repeat(2,1fr); gap:12px}
+  /* full width and flush left, so both align with the cards */
+  .phase-brief,.phase-close{text-align:left; max-width:none; margin-inline:0}
+  .phase-brief{font-size:.95rem}
+}
+@media (max-width:520px){
+  .phase-steps{grid-template-columns:1fr}
+}
 
 /* dark mode step cards */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step-card{background:var(--surface); color:var(--ink); border-left-color:var(--accent)}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step-num{color:var(--muted)}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step-card p{color:var(--muted)}}
 :root[data-theme="dark"] .step-card{background:var(--surface); color:var(--ink); border-left-color:var(--accent)}
 :root[data-theme="dark"] .step-num{color:var(--muted)}
+:root[data-theme="dark"] .step-card p{color:var(--muted)}
 
 /* ---------- PIF priority badges & scores ---------- */
 .pri-badge{display:inline-flex; align-items:center; justify-content:center; min-width:34px; height:26px;
