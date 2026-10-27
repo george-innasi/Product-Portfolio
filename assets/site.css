@@ -1270,3 +1270,21 @@ body{overflow-x:clip}
 .edge-note .edge-list li{flex:none}
 .edge-note .edge-kicker{color:var(--gold-ink)}
 .edge-note .edge-lead{color:var(--ink)}
+
+/* HelloFresh: silent churn panel */
+.churn{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:clamp(20px,3vw,28px); display:flex; flex-direction:column; gap:16px; box-shadow:0 1px 2px rgba(17,24,39,.04)}
+.churn-kicker{margin:0; font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-ink)}
+.churn-track{display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; font-size:.74rem; font-weight:700; text-align:center}
+.churn-track .seg{padding:10px 6px; line-height:1.25}
+.churn-track .early{background:var(--chip); color:var(--muted); border-radius:10px 0 0 10px}
+.churn-track .prof{background:var(--accent-soft); color:var(--accent-ink)}
+.churn-track .gone{background:var(--gold-soft); color:var(--gold-ink); border-radius:0 10px 10px 0; position:relative}
+.churn-facts{margin:0; display:flex; flex-direction:column}
+.churn-facts > div{display:grid; grid-template-columns:96px 1fr; gap:12px; padding:10px 0; border-top:1px solid var(--line)}
+.churn-facts dt{font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); padding-top:3px}
+.churn-facts dd{margin:0; font-size:.92rem; color:var(--muted); line-height:1.5}
+.churn-q{margin:0; font-family:var(--serif); font-style:italic; font-size:1.05rem; color:var(--ink); text-align:center; padding-top:4px; border-top:1px solid var(--line); padding-top:14px}
+/* HelloFresh: prototypes figure in Solution */
+.proto-fig{margin:32px auto 0; max-width:902px; display:flex; flex-direction:column; gap:10px}
+.proto-fig img{width:100%; height:auto; border:1px solid var(--line); border-radius:14px; box-shadow:0 14px 30px -20px rgba(0,0,0,.4); cursor:zoom-in}
+.proto-fig figcaption{text-align:center; font-size:.84rem; color:var(--muted)}
