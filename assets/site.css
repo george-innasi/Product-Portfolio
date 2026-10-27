@@ -1163,3 +1163,5 @@ body{overflow-x:clip}
 .band .contact-card .btn-ghost:hover,.band .contact-card .btn-ghost:focus-visible{background:rgba(236,253,245,.12); color:#fff; border-color:#ecfdf5}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .band .contact-card{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}}
 :root[data-theme="dark"] .band .contact-card{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+
+.qual-jump-link[aria-current="true"]{background:var(--panel-green);border-color:var(--panel-green-line);color:#ecfdf5;box-shadow:0 2px 8px rgba(0,0,0,.10)}
