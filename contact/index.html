@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=75">
-<script src="/assets/site.js?v=11" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=76">
+<script src="/assets/site.js?v=12" defer></script>
 </head>
 <body data-accent="blue">
 <a class="skip" href="#main">Skip to content</a>
@@ -131,14 +131,20 @@
 
             <input type="hidden" name="intent" id="ct-intent-val" value="">
 
+            <div class="tform-row">
+              <label class="tform-field">
+                <span class="tform-lbl">Name</span>
+                <input type="text" name="name" id="ct-name" autocomplete="name" maxlength="80" required placeholder="Your full name">
+              </label>
+              <label class="tform-field">
+                <span class="tform-lbl">Email</span>
+                <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
+              </label>
+            </div>
+
             <label class="tform-field">
               <span class="tform-head"><span class="tform-lbl">Your message</span><span class="tform-count"><span id="tcount">0</span> / 500</span></span>
               <textarea name="message" id="ct-msg" maxlength="500" required rows="5" placeholder="Let's connect. Tell me about the role or idea, and how you see me fitting in."></textarea>
-            </label>
-
-            <label class="tform-field">
-              <span class="tform-lbl">Email</span>
-              <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
             </label>
 
             <div class="ct-submit-row">

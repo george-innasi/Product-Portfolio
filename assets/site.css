@@ -1214,3 +1214,7 @@ body{overflow-x:clip}
   padding:calc((56px - var(--lh,40px)) / 2) calc((140px - var(--lw,100px)) / 2)}}
 :root[data-theme="dark"] .cv-item.has-logo .co-logo{width:140px; height:56px; box-sizing:border-box;
   padding:calc((56px - var(--lh,40px)) / 2) calc((140px - var(--lw,100px)) / 2)}
+
+/* contact form: name and email side by side above the message */
+.tform-row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media(max-width:560px){.tform-row{grid-template-columns:1fr}}

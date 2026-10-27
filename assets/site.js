@@ -216,6 +216,7 @@
     if (!f) return;
     var ta = f.querySelector('textarea[name="message"]');
     var emailEl = f.querySelector('input[name="email"]');
+    var nameEl = f.querySelector('input[name="name"]');
     var status = document.getElementById('tstatus');
     var count = document.getElementById('tcount');
     var btn = f.querySelector('button[type="submit"]');
@@ -258,11 +259,13 @@
       e.preventDefault();
       var msg = (ta ? ta.value : '').trim();
       var email = emailEl ? emailEl.value.trim() : '';
+      var name = nameEl ? nameEl.value.trim() : '';
       var intent = intentInput ? intentInput.value : '';
+      if (nameEl && !name) { set('Please add your name.', 'err'); nameEl.focus(); return; }
       if (!msg) { set('Please add a short note first.', 'err'); if (ta) ta.focus(); return; }
 
       var intentLabel = intent ? INTENT_LABELS[intent] || intent : 'Not specified';
-      var subject = intent ? 'Portfolio: ' + intentLabel : 'New message from your portfolio';
+      var subject = (intent ? 'Portfolio: ' + intentLabel : 'New message from your portfolio') + (name ? ' from ' + name : '');
 
       if (WEB3FORMS_KEY) {
         set('Sending...', ''); if (btn) btn.disabled = true;
@@ -272,7 +275,8 @@
           body: JSON.stringify({
             access_key: WEB3FORMS_KEY,
             subject: subject,
-            from_name: 'Portfolio contact',
+            from_name: name ? name + ' (portfolio)' : 'Portfolio contact',
+            name: name || 'not provided',
             botcheck: '',
             intent: intentLabel,
             message: msg,
@@ -291,7 +295,7 @@
           set('Something went wrong. You can email me directly instead.', 'err');
         }).then(function () { if (btn) btn.disabled = false; });
       } else {
-        var body = (intent ? 'Intent: ' + intentLabel + '\n\n' : '') + msg + (email ? '\n\nReply to: ' + email : '');
+        var body = (name ? 'From: ' + name + '\n' : '') + (intent ? 'Intent: ' + intentLabel + '\n' : '') + ((name || intent) ? '\n' : '') + msg + (email ? '\n\nReply to: ' + email : '');
         window.location.href = 'mailto:' + INBOX + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         set('Opening your email app to send the note...', 'ok');
       }
