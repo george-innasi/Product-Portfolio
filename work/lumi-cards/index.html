@@ -83,7 +83,7 @@
     <div class="wrap">
       <div class="phase"><h2>Problem Statement</h2></div>
       <div class="row">
-        <div class="shot">The manual lookup, five steps while a client waits</div>
+        <div class="shot" data-lightbox><img src="/assets/lumi/manual-lookup.jpg" alt="Five-step manual lookup process: client asks question, leave conversation, search PDF, interpret clause, relay from memory — 4 to 6 minutes per lookup with no audit trail" width="1200" height="675" loading="lazy"></div>
         <div class="row-text">
           <h3>How it started</h3>
           <p>Five years behind a branch desk, the same thing happened every week. A client asks what a card actually covers, and answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
@@ -164,7 +164,7 @@
             <li><strong>After the answer is written.</strong> Every source the answer cites is checked against the documents actually supplied. If it cites something that was never there, the answer is blocked instead of shown.</li>
           </ul>
         </div>
-        <div class="shot tall">How it works: loading the documents, and answering a question</div>
+        <div class="shot tall" data-lightbox><img src="/assets/lumi/architecture.jpg" alt="RAG pipeline architecture: document ingestion with tagging, pre-search privacy and scope guards, dual-search retrieval with tag filtering, answer generation with confidence scoring, and post-generation citation and figure verification" width="1200" height="900" loading="lazy"></div>
       </div>
 
       <div class="row flip">
@@ -178,11 +178,11 @@
           </ul>
           <p>Escalation rate is monitored but deliberately not minimised. Reducing refusals means lowering the confidence threshold, which is the exact failure the controls exist to prevent.</p>
         </div>
-        <div class="shot">Refusal and escalation paths</div>
+        <div class="shot" data-lightbox><img src="/assets/lumi/refusal-qualify.jpg" alt="Lumi for Cards prototype showing a refusal response: when asked if a client qualifies for rental coverage, Lumi lists the policy requirements but states the final decision rests with Claims Administrator or Underwriting" width="1280" height="585" loading="lazy"></div>
       </div>
 
       <div class="row">
-        <div class="shot">Six failure modes, detection and fix</div>
+        <div class="shot" data-lightbox><img src="/assets/lumi/failure-modes.jpg" alt="Table of six failure modes with severity, detection method and fix: correct citation with wrong number, split clause misleading, phantom citation, expired document, over-trust, and low-confidence answer" width="1200" height="675" loading="lazy"></div>
         <div class="row-text">
           <h3>Six ways it breaks</h3>
           <p class="lede">Each failure mode is paired with how it is detected and what fixes it, because an undetectable failure is not a managed one.</p>
@@ -215,11 +215,11 @@
           <p><strong>The cost is not in running the model.</strong> The search index sits on servers that stay switched on around the clock, costing roughly a hundred times more than all the model usage put together. The real lever is how that index is set up, not which model is picked, which is why the design keeps it to one region and as few servers as possible.</p>
           <p>Reusing past answers is where the saving comes from. Staff ask nearly the same questions every day, so a close enough match returns the stored answer and cuts the wait from about 1.5 seconds to about 200 milliseconds.</p>
         </div>
-        <div class="shot">What it costs to run, and reusing past answers</div>
+        <div class="shot" data-lightbox><img src="/assets/lumi/cost-analysis.jpg" alt="Cost analysis: $0.0024 CAD per query, $1.10 per branch team per month, manual lookup costs $1,059/month versus $53 with Lumi, and cached answers respond in 200ms versus 1.5 seconds" width="1200" height="675" loading="lazy"></div>
       </div>
 
       <div class="row flip">
-        <div class="shot tall">Prototype: happy path, refusal, redirect</div>
+        <div class="shot tall" data-lightbox><img src="/assets/lumi/prototype-composite.jpg" alt="Lumi for Cards prototype showing three response types in one session: a refusal listing policy requirements for rental coverage, and an out-of-scope redirect for a mortgage question" width="1280" height="585" loading="lazy"></div>
         <div class="row-text">
           <h3>Running the spec</h3>
           <p class="lede">Built in Google AI Studio on Gemini 2.5 Flash at temperature 0.0, against a nine-document knowledge base.</p>
@@ -261,7 +261,7 @@
           </ul>
           <p><strong>Scope and disclaimer.</strong> A large Canadian bank is used as a worked example. Every source is publicly available credit card documentation. This is an independent study, not a project of any bank, and is not affiliated with or endorsed by one.</p>
         </div>
-        <div class="shot">Assessment feedback</div>
+        <div class="shot" data-lightbox><img src="/assets/lumi/assessment-feedback.jpg" alt="Assessment feedback from HelloPM Cohort 51: scored 87 out of 100, ranked 4th of 77, with strengths in cost analysis and prototype fidelity, and gaps in cost sourcing and unspecified confidence threshold" width="1200" height="675" loading="lazy"></div>
       </div>
     </div>
   </section>
