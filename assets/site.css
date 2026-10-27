@@ -1218,3 +1218,7 @@ body{overflow-x:clip}
 /* contact form: name and email side by side above the message */
 .tform-row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
 @media(max-width:560px){.tform-row{grid-template-columns:1fr}}
+
+/* project cards: chips and CTA share one baseline at the bottom of every card in a row */
+.card .chips{margin-top:auto}
+.card .chips + .card-open{margin-top:0}
