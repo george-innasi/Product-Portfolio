@@ -990,3 +990,111 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 @media (max-width:520px){
   .ab-list li{grid-template-columns:minmax(0,1fr); gap:4px}
 }
+
+/* ---------- architecture diagram (inline, no image) ----------
+   Two-lane flow: an ingestion lane and a query lane, plus an
+   observability footer. Serpentine on desktop, stacked on mobile. */
+.arch{
+  --arch-a:#1e3a5f; --arch-a-ink:#fff; --arch-a-bg:#f4f7fb; --arch-a-line:#c7d6e8;
+  --arch-b:#15603f; --arch-b-ink:#fff; --arch-b-bg:#f2faf6; --arch-b-line:#bde0cd;
+  --arch-warn:#b45309; --arch-warn-bg:#fffbeb; --arch-warn-line:#f0c478;
+  --arch-stop:#b91c1c; --arch-stop-bg:#fef5f5; --arch-stop-line:#f0b4b4;
+  --arch-obs:#5b4bb8; --arch-obs-bg:#f7f6fd; --arch-obs-line:#d6d1f2;
+  --arch-node:#fff; --arch-rule:#e2e8f0;
+  margin-top:34px; display:flex; flex-direction:column; gap:18px;
+  container-type:inline-size;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .arch{
+  --arch-a:#7dabe0; --arch-a-ink:#08182b; --arch-a-bg:rgba(125,171,224,.08); --arch-a-line:rgba(125,171,224,.32);
+  --arch-b:#5cc795; --arch-b-ink:#06281c; --arch-b-bg:rgba(92,199,149,.08); --arch-b-line:rgba(92,199,149,.32);
+  --arch-warn:#eab308; --arch-warn-bg:rgba(234,179,8,.09); --arch-warn-line:rgba(234,179,8,.38);
+  --arch-stop:#f08a8a; --arch-stop-bg:rgba(240,138,138,.09); --arch-stop-line:rgba(240,138,138,.34);
+  --arch-obs:#a99cf0; --arch-obs-bg:rgba(169,156,240,.08); --arch-obs-line:rgba(169,156,240,.3);
+  --arch-node:var(--surface); --arch-rule:var(--line);
+}}
+:root[data-theme="dark"] .arch{
+  --arch-a:#7dabe0; --arch-a-ink:#08182b; --arch-a-bg:rgba(125,171,224,.08); --arch-a-line:rgba(125,171,224,.32);
+  --arch-b:#5cc795; --arch-b-ink:#06281c; --arch-b-bg:rgba(92,199,149,.08); --arch-b-line:rgba(92,199,149,.32);
+  --arch-warn:#eab308; --arch-warn-bg:rgba(234,179,8,.09); --arch-warn-line:rgba(234,179,8,.38);
+  --arch-stop:#f08a8a; --arch-stop-bg:rgba(240,138,138,.09); --arch-stop-line:rgba(240,138,138,.34);
+  --arch-obs:#a99cf0; --arch-obs-bg:rgba(169,156,240,.08); --arch-obs-line:rgba(169,156,240,.3);
+  --arch-node:var(--surface); --arch-rule:var(--line);
+}
+
+.arch-head{text-align:center; display:flex; flex-direction:column; gap:4px; margin-bottom:2px}
+.arch-head h4{font-family:var(--serif); font-weight:600; font-size:1.3rem; letter-spacing:-.01em; color:var(--ink)}
+.arch-head p{color:var(--muted); font-size:.92rem}
+
+.arch-lane{border:1px solid var(--arch-line); border-radius:16px; background:var(--arch-bg); overflow:hidden}
+.arch-lane.a{--arch-c:var(--arch-a); --arch-c-ink:var(--arch-a-ink); --arch-bg:var(--arch-a-bg); --arch-line:var(--arch-a-line)}
+.arch-lane.b{--arch-c:var(--arch-b); --arch-c-ink:var(--arch-b-ink); --arch-bg:var(--arch-b-bg); --arch-line:var(--arch-b-line)}
+.arch-lane > h5{background:var(--arch-c); color:var(--arch-c-ink); font-size:.76rem; font-weight:800;
+  letter-spacing:.09em; text-transform:uppercase; padding:9px 18px}
+.arch-body{padding:20px 18px 18px}
+
+.arch-flow{display:grid; gap:30px 26px; list-style:none; padding:0; margin:0}
+.arch-lane.a .arch-flow{grid-template-columns:repeat(5,1fr)}
+.arch-lane.b .arch-flow{grid-template-columns:repeat(4,1fr)}
+
+.arch-flow li{position:relative; background:var(--arch-node); border:1px solid var(--arch-line);
+  border-radius:11px; padding:13px 13px 14px; display:flex; flex-direction:column; gap:5px}
+.arch-flow li b{font-size:.84rem; font-weight:800; color:var(--ink); line-height:1.3; display:block}
+.arch-flow li b span{color:var(--arch-c); margin-right:4px}
+.arch-flow li p{font-size:.745rem; line-height:1.5; color:var(--muted); margin:0}
+.arch-flow li em{font-style:normal; font-weight:700; color:var(--ink)}
+.arch-flow li.is-guard{border-color:var(--arch-warn-line); background:var(--arch-warn-bg)}
+.arch-flow li.is-guard b span{color:var(--arch-warn)}
+.arch-flow li.is-stop{border-color:var(--arch-stop-line); background:var(--arch-stop-bg)}
+.arch-flow li.is-stop b span{color:var(--arch-stop)}
+.arch-flow li .flag{font-size:.72rem; font-weight:700; color:var(--arch-stop)}
+
+/* chevrons sit in the gap; direction set per lane and row */
+.arch-flow li::after{content:""; position:absolute; width:11px; height:11px; border-right:2.5px solid var(--arch-c);
+  border-bottom:2.5px solid var(--arch-c); opacity:.75}
+.arch-flow li:last-child::after{content:none}
+.arch-flow li::after{top:50%; right:-19px; transform:translateY(-50%) rotate(-45deg)}
+/* lane A: five across, all point right */
+/* lane B: serpentine, row 2 reversed */
+.arch-lane.b .arch-flow li:nth-child(5){grid-column:4; grid-row:2}
+.arch-lane.b .arch-flow li:nth-child(6){grid-column:3; grid-row:2}
+.arch-lane.b .arch-flow li:nth-child(7){grid-column:2; grid-row:2}
+.arch-lane.b .arch-flow li:nth-child(8){grid-column:1; grid-row:2}
+.arch-lane.b .arch-flow li:nth-child(4)::after{top:auto; bottom:-22px; right:50%;
+  transform:translateX(50%) rotate(45deg)}
+.arch-lane.b .arch-flow li:nth-child(n+5)::after{right:auto; left:-19px;
+  transform:translateY(-50%) rotate(135deg)}
+
+.arch-note{margin-top:16px; padding-top:14px; border-top:1px dashed var(--arch-line);
+  font-size:.76rem; line-height:1.6; color:var(--muted)}
+.arch-note + .arch-note{margin-top:7px; padding-top:0; border-top:0}
+.arch-note b{color:var(--ink); font-weight:700}
+.arch-note.loop b{color:var(--arch-stop)}
+
+.arch-obs{border:1px solid var(--arch-obs-line); border-radius:16px; background:var(--arch-obs-bg); padding:17px 20px}
+.arch-obs h5{font-size:.76rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--arch-obs); margin-bottom:9px}
+.arch-obs p{font-size:.78rem; line-height:1.6; color:var(--muted); margin:0}
+.arch-obs p + p{margin-top:6px}
+.arch-obs b{color:var(--ink); font-weight:700}
+
+/* Two across: serpentine is dropped, so rows read left to right and the
+   second node of each row hands down to the next. nth-child(n) keeps the
+   specificity level with the desktop rules above, so source order decides. */
+@container (max-width:860px){
+  .arch-lane.a .arch-flow,.arch-lane.b .arch-flow{grid-template-columns:repeat(2,1fr); gap:28px 22px}
+  .arch-lane.b .arch-flow li:nth-child(n){grid-column:auto; grid-row:auto}
+  .arch-lane.a .arch-flow li:nth-child(n)::after,
+  .arch-lane.b .arch-flow li:nth-child(n)::after{top:50%; bottom:auto; right:-16px; left:auto;
+    transform:translateY(-50%) rotate(-45deg)}
+  .arch-lane.a .arch-flow li:nth-child(even)::after,
+  .arch-lane.b .arch-flow li:nth-child(even)::after{top:auto; bottom:-20px; right:50%; left:auto;
+    transform:translateX(50%) rotate(45deg)}
+}
+@container (max-width:520px){
+  .arch-lane.a .arch-flow,.arch-lane.b .arch-flow{grid-template-columns:1fr; gap:26px}
+  .arch-lane.a .arch-flow li:nth-child(n)::after,
+  .arch-lane.b .arch-flow li:nth-child(n)::after,
+  .arch-lane.a .arch-flow li:nth-child(even)::after,
+  .arch-lane.b .arch-flow li:nth-child(even)::after{top:auto; bottom:-19px; right:50%; left:auto;
+    transform:translateX(50%) rotate(45deg)}
+}

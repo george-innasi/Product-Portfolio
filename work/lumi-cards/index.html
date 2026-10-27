@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=70">
+<link rel="stylesheet" href="/assets/site.css?v=71">
 <script src="/assets/site.js?v=11" defer></script>
 </head>
 <body data-accent="blue">
@@ -152,7 +152,7 @@
   <section class="band">
     <div class="wrap">
       <div class="phase"><h2>Solution &amp; Process</h2></div>
-      <div class="row">
+      <div class="row-wide">
         <div class="row-text">
           <h3>The decision that does most of the work</h3>
           <p class="lede">Every piece of a document is tagged with the card name, document type, province, effective date, expiry date and source link. The system filters on those tags when a question is asked, rather than relying on instructions to the model.</p>
@@ -164,8 +164,54 @@
             <li><strong>After the answer is written.</strong> Every source the answer cites is checked against the documents actually supplied. If it cites something that was never there, the answer is blocked instead of shown.</li>
           </ul>
         </div>
-        <div class="shot tall" data-lightbox><img src="/assets/lumi/rag-architecture.png" alt="Lumi RAG Architecture: two-lane diagram showing Admin Ingestion Pipeline (SharePoint sources through tagging, chunking, embedding to Vertex AI Vector Search) and Branch Staff Query Path (chat widget through input guardrail, semantic cache, hybrid retrieval, ranking, LLM generation, citation validation to grounded response UI), with Google Cloud observability logging" width="1200" height="900" loading="lazy"></div>
       </div>
+
+      <figure class="arch">
+        <figcaption class="arch-head">
+          <h4>How it works</h4>
+          <p>Loading the documents, and answering a question</p>
+        </figcaption>
+
+        <div class="arch-lane a">
+          <h5>Lane A &middot; Admin ingestion pipeline</h5>
+          <div class="arch-body">
+            <ol class="arch-flow">
+              <li><b><span>1</span>SharePoint sources</b><p>Cardholder agreements, insurance certificates, fee schedules, promo terms, Quebec variants.</p></li>
+              <li><b><span>2</span>Ingest and tag</b><p>Graph API connector. Auto-tags card, document type, province, effective and expiry date, active flag, source URL.</p></li>
+              <li><b><span>3</span>Chunk</b><p>Header-aware recursive splitting. <em>512 to 768 tokens, 100 overlap.</em></p></li>
+              <li><b><span>4</span>Embed</b><p>Gemini embedding model on Vertex AI. Vectors written back with their metadata.</p></li>
+              <li><b><span>5</span>Vector search</b><p>Dense and sparse vectors, metadata restricts, deep-link anchors, group access control.</p></li>
+            </ol>
+            <p class="arch-note loop"><b>Freshness webhook.</b> When a SharePoint file changes, that document's vectors are purged, then re-chunked, re-embedded and the cache is flushed.</p>
+            <p class="arch-note"><b>Ownership.</b> The Policy and Procedure Admin approves a document into the index. Documents outside their active date range are blocked at step 2 and never reach it. Source documents stay in SharePoint; chunks, vectors, index and logs sit in the bank's cloud project on a pinned regional endpoint.</p>
+          </div>
+        </div>
+
+        <div class="arch-lane b">
+          <h5>Lane B &middot; Branch staff query path</h5>
+          <div class="arch-body">
+            <ol class="arch-flow">
+              <li><b><span>6</span>Chat widget</b><p>Embedded in the internal policy portal. Single sign-on with the corporate ID.</p></li>
+              <li class="is-guard"><b><span>7</span>Input guardrail</b><p>Customer-data scan and scope classifier. Blocks before any search runs.</p></li>
+              <li><b><span>8</span>Semantic cache</b><p>Returns a stored answer on a close-enough match, in under 50ms. Flushed on re-ingest.</p></li>
+              <li><b><span>9</span>Hybrid retrieval</b><p>Card, province and active filters applied first, then dense and sparse search run together.</p></li>
+              <li><b><span>10</span>Ranking</b><p>Rescores candidates against the question and passes on the best five. <span class="flag">Below threshold, escalate.</span></p></li>
+              <li><b><span>11</span>Generation</b><p>Gemini 2.5 Flash on a pinned regional endpoint. Temperature 0.0, prompt plus the top five chunks.</p></li>
+              <li class="is-stop"><b><span>12</span>Citation validator</b><p>Every source cited must exist in the chunks supplied, or the answer is blocked and escalated.</p></li>
+              <li><b><span>13</span>Grounded response</b><p>Inline citations, effective-date footnote, sources panel, deep link to the SharePoint page.</p></li>
+            </ol>
+            <p class="arch-note loop"><b>Blocked answers loop back.</b> A failed citation check returns to generation rather than reaching the person who asked.</p>
+            <p class="arch-note"><b>One platform.</b> Retrieval, ranking and generation all run on Vertex AI in a single pinned region. SharePoint remains the system of record; the assistant never writes back to it.</p>
+          </div>
+        </div>
+
+        <div class="arch-obs">
+          <h5>Observability &middot; every stage logs to one conversation ID</h5>
+          <p>Logged per query: the raw question, the metadata filters applied, the retrieved chunk IDs with text and reranker scores, the exact system prompt sent, the raw model output, the thumbs up or down with its reason, and the latency of each stage.</p>
+          <p><b>Debug path.</b> A reported bad answer resolves to a chunking failure, a retrieval failure or a generation failure, each inspected from the log above.</p>
+          <p><b>Retention.</b> Staff-identifying fields are purged at 30 days. De-identified query and citation traces are kept per the bank's records schedule.</p>
+        </div>
+      </figure>
 
       <div class="row flip">
         <div class="row-text">
