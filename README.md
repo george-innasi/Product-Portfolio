@@ -37,14 +37,11 @@ In the Vercel project, open **Settings, Domains**, add the domain and follow the
 Vercel shows. Then replace `REPLACE-WITH-YOUR-DOMAIN` in `robots.txt` and `sitemap.xml` with
 the live domain.
 
-## Three things still to add
+## Things still to add
 
-1. **Resume PDF.** Save it as `resume.pdf` in the root of this folder, then in
-   `contact/index.html` change `data-href="/resume.pdf" aria-disabled="true"` to
-   `href="/resume.pdf"`. The button is already in place and styled, just inactive.
-2. **Lumi PRD.** Save it as `assets/lumi-cards-prd.pdf`, then make the same swap on the two
+1. **Lumi PRD.** Save it as `assets/lumi-cards-prd.pdf`, then make the same swap on the two
    buttons in `work/lumi-cards/index.html`.
-3. **Case study images.** Every case study has labelled placeholder panels marked `.shot`,
+2. **Case study images.** Every case study has labelled placeholder panels marked `.shot`,
    each captioned with what belongs there. Replace one with
    `<div class="shot"><img src="/assets/your-image.png" alt="..."></div>`.
 
