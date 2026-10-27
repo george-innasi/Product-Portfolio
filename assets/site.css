@@ -1165,3 +1165,14 @@ body{overflow-x:clip}
 :root[data-theme="dark"] .band .contact-card{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
 
 .qual-jump-link[aria-current="true"]{background:var(--panel-green);border-color:var(--panel-green-line);color:#ecfdf5;box-shadow:0 2px 8px rgba(0,0,0,.10)}
+
+/* ---------- planning notes: larger, reads as an openable panel ---------- */
+.board-note{padding:0; margin-top:44px; border-radius:18px; border-left-width:6px; transition:box-shadow .2s,border-color .2s}
+.board-note:hover{border-color:var(--accent); box-shadow:0 14px 34px -20px rgba(5,150,105,.45)}
+.board-note summary{font-size:clamp(1.1rem,2vw,1.35rem); gap:16px; padding:30px 28px 30px 26px; line-height:1.3}
+.board-note summary::before{font-size:1.7em; line-height:1}
+.board-note summary::after{content:'\25B8'; flex:none; width:44px; height:44px; display:grid; place-items:center; border-radius:50%;
+  background:var(--surface); border:1px solid color-mix(in srgb,var(--accent) 40%,transparent); font-size:1.1rem; opacity:1}
+.board-note[open] summary::after{transform:rotate(90deg); background:var(--accent); color:#fff; border-color:var(--accent)}
+.board-note .board-body{margin-top:0; padding:4px 28px 30px 26px}
+@media(max-width:560px){.board-note summary{padding:22px 18px 22px 16px; gap:12px}.board-note .board-body{padding:2px 18px 22px 16px}.board-note summary::after{width:38px; height:38px}}
