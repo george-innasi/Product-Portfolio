@@ -953,20 +953,9 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
 .ab-tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:6px}
 .ab-tags .chip{background:var(--gold-soft); border-color:transparent; color:var(--gold-ink); font-weight:700}
 
-/* 01 and 02: deep green panels, matching the contact page feature card */
-.ab-mod{position:relative; overflow:hidden; background:#064e3b; color:#ecfdf5; border-color:#facc15}
-.ab-mod::after{content:""; position:absolute; right:-90px; bottom:-110px; width:320px; height:320px; border-radius:50%;
-  background:radial-gradient(circle,rgba(52,211,153,.24),transparent 68%); pointer-events:none}
-.ab-mod > *{position:relative; z-index:1}
-.ab-mod .ab-num{color:#facc15}
-.ab-mod h2{color:#fff}
-.ab-mod .ab-sum{color:rgba(236,253,245,.82)}
-.ab-mod .ab-list li{border-top-color:rgba(236,253,245,.16); color:rgba(236,253,245,.8)}
-.ab-mod .ab-list strong{color:#fff}
-.ab-mod .ab-k{color:#6ee7b7}
-.ab-mod .ab-tags .chip{background:rgba(250,204,21,.16); border-color:transparent; color:#facc15}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ab-mod{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:#facc15}}
-:root[data-theme="dark"] .ab-mod{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:#facc15}
+/* 01 and 02: soft mint highlight, matching the Power BI strip on Qualifications */
+.ab-mod{background:var(--surface-2); border:1px solid var(--line)}
+.ab-mod .ab-list li{border-top-color:color-mix(in srgb,var(--accent) 18%,var(--line))}
 
 .ab-principles-wrap{margin-top:56px}
 .ab-principles-head{display:flex; align-items:baseline; gap:14px; margin-bottom:22px}
