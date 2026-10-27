@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=78">
+<link rel="stylesheet" href="/assets/site.css?v=79">
 <script src="/assets/site.js?v=12" defer></script>
 </head>
 <body data-accent="wine">
@@ -176,16 +176,40 @@
           <img src="/assets/flows/sherlock-flow.svg" alt="Sherlock flow: item found, submit found report, AI scans for matching seeker reports, submit claim, admin receives and validates, claim approved, return coordinated, item returned, feedback form.">
         </figure>
       </div>
-      <div class="row-text biz-model">
-        <p class="find">How Kittii was meant to make money</p>
-        <p>A hybrid B2B2C model: transactions up front, with SaaS underneath. None of it was tested with paying users.</p>
-        <ul>
-          <li><strong>Seeker fees.</strong> $6.99, $12.99, $21.99 or $29.99, tiered by item value and charged only once a claim is approved.</li>
-          <li><strong>Paid add-ons.</strong> Priority at $9.99, Concierge delivery at $24.99, and Enhanced Protection.</li>
-          <li><strong>Venue SaaS.</strong> Monthly plans at $99, $199 or $580 for partner venues.</li>
-          <li><strong>Year 1 target.</strong> $30,000 to $55,000 in revenue, reaching $3,000 to $5,000 MRR by month 12.</li>
-        </ul>
-      </div>
+      <section class="biz" aria-labelledby="biz-title">
+        <div class="biz-head">
+          <p class="biz-kicker">Business model <span class="biz-flag">Untested</span></p>
+          <h3 id="biz-title">How Kittii was meant to make money</h3>
+          <p class="biz-sub">A hybrid B2B2C model: transactions up front, with SaaS underneath. None of it was tested with paying users.</p>
+        </div>
+        <div class="biz-grid">
+          <article class="biz-card">
+            <p class="biz-who">Seekers</p>
+            <h4>Recovery fee</h4>
+            <p class="biz-price"><span>$6.99</span><small>to $29.99</small></p>
+            <p class="biz-note">Four tiers by item value: $6.99, $12.99, $21.99 and $29.99. Charged only once a claim is approved.</p>
+          </article>
+          <article class="biz-card">
+            <p class="biz-who">Seekers</p>
+            <h4>Paid add-ons</h4>
+            <ul class="biz-lines">
+              <li><span>Priority</span><b>$9.99</b></li>
+              <li><span>Concierge delivery</span><b>$24.99</b></li>
+              <li><span>Enhanced Protection</span><b>Price not set</b></li>
+            </ul>
+          </article>
+          <article class="biz-card">
+            <p class="biz-who">Partner venues</p>
+            <h4>Venue SaaS</h4>
+            <p class="biz-price"><span>$99</span><small>to $580 / month</small></p>
+            <p class="biz-note">Three monthly plans at $99, $199 and $580, the recurring layer under the transactions.</p>
+          </article>
+        </div>
+        <dl class="biz-target">
+          <div><dt>$30K to $55K</dt><dd>Year 1 revenue target</dd></div>
+          <div><dt>$3K to $5K</dt><dd>MRR by month 12</dd></div>
+        </dl>
+      </section>
       <details class="board-note">
         <summary>Planning &amp; discovery: GTM and contest design</summary>
         <div class="board-body">
