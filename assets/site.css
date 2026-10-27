@@ -1147,3 +1147,19 @@ body{overflow-x:clip}
   .row.figrow.flip .shot{order:0}
   .row.figrow .shot.cap{max-width:none}
 }
+
+
+/* ---------- home contact card: same green as the contact page feature box ---------- */
+.band .contact-card{position:relative; overflow:hidden; background:#064e3b; color:#ecfdf5; border:1px solid #065f46; box-shadow:none}
+.band .contact-card::after{content:""; position:absolute; right:-70px; bottom:-90px; width:240px; height:240px; border-radius:50%;
+  background:radial-gradient(circle,rgba(52,211,153,.28),transparent 68%); pointer-events:none}
+.band .contact-card > *{position:relative; z-index:1}
+.band .contact-card h2{color:#fff}
+.band .contact-card p{color:rgba(236,253,245,.78)}
+.band .contact-card .addr a{color:#6ee7b7}
+.band .contact-card .btn-primary{background:#ecfdf5; color:#064e3b}
+.band .contact-card .btn-primary:hover{background:#fff; color:#064e3b; filter:none}
+.band .contact-card .btn-ghost{background:transparent; color:#ecfdf5; border-color:rgba(236,253,245,.45)}
+.band .contact-card .btn-ghost:hover,.band .contact-card .btn-ghost:focus-visible{background:rgba(236,253,245,.12); color:#fff; border-color:#ecfdf5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .band .contact-card{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}}
+:root[data-theme="dark"] .band .contact-card{background:color-mix(in srgb,var(--accent) 16%,var(--surface)); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
