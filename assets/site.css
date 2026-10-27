@@ -1001,7 +1001,10 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
   --arch-stop:#b91c1c; --arch-stop-bg:#fef5f5; --arch-stop-line:#f0b4b4;
   --arch-obs:#5b4bb8; --arch-obs-bg:#f7f6fd; --arch-obs-line:#d6d1f2;
   --arch-node:#fff; --arch-rule:#e2e8f0;
-  margin-top:34px; display:flex; flex-direction:column; gap:18px;
+  /* asymmetric on purpose: the diagram belongs to the text above it, so the
+     gap below has to be the larger one to close the topic. The .row + .row
+     rule cannot do this, since the next row's previous sibling is a figure. */
+  margin:34px 0 60px; display:flex; flex-direction:column; gap:18px;
   container-type:inline-size;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .arch{
