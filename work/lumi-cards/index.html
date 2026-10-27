@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=71">
+<link rel="stylesheet" href="/assets/site.css?v=72">
 <script src="/assets/site.js?v=11" defer></script>
 </head>
 <body data-accent="blue">
@@ -82,8 +82,7 @@
   <section class="band">
     <div class="wrap">
       <div class="phase"><h2>Problem Statement</h2></div>
-      <div class="row">
-        <div class="shot" data-lightbox><img src="/assets/lumi/manual-lookup.jpg" alt="Five-step manual lookup process: client asks question, leave conversation, search PDF, interpret clause, relay from memory — 4 to 6 minutes per lookup with no audit trail" width="1200" height="675" loading="lazy"></div>
+      <div class="row stack">
         <div class="row-text">
           <h3>How it started</h3>
           <p>Five years behind a branch desk, the same thing happened every week. A client asks what a card actually covers, and answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
@@ -91,6 +90,7 @@
           <p><strong>Lumi Cards</strong> is an AI assistant for personal bankers and tellers, built into the portal they already use. It answers credit card policy questions using only approved documents, and every figure it states carries a link to the source and the date it takes effect.</p>
           <p>The business problem is cost and exposure at once. Each lookup takes 4 to 6 minutes of live appointment time, leaves no audit trail, and risks misstating a regulated disclosure.</p>
         </div>
+        <div class="shot" data-lightbox><img src="/assets/lumi/manual-lookup.jpg" alt="Five-step manual lookup process: client asks question, leave conversation, search PDF, interpret clause, relay from memory — 4 to 6 minutes per lookup with no audit trail" width="1200" height="675" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -213,7 +213,7 @@
         </div>
       </figure>
 
-      <div class="row flip">
+      <div class="row stack">
         <div class="row-text">
           <h3>What it refuses</h3>
           <p class="lede">Three kinds of question the assistant refuses, each stopped before the search runs rather than declined afterwards.</p>
@@ -227,8 +227,7 @@
         <div class="shot" data-lightbox><img src="/assets/lumi/refusal-qualify.jpg" alt="Lumi for Cards prototype showing a refusal response: when asked if a client qualifies for rental coverage, Lumi lists the policy requirements but states the final decision rests with Claims Administrator or Underwriting" width="1280" height="585" loading="lazy"></div>
       </div>
 
-      <div class="row">
-        <div class="shot" data-lightbox><img src="/assets/lumi/failure-modes.jpg" alt="Table of six failure modes with severity, detection method and fix: correct citation with wrong number, split clause misleading, phantom citation, expired document, over-trust, and low-confidence answer" width="1200" height="675" loading="lazy"></div>
+      <div class="row stack">
         <div class="row-text">
           <h3>Six ways it breaks</h3>
           <p class="lede">Each failure mode is paired with how it is detected and what fixes it, because an undetectable failure is not a managed one.</p>
@@ -239,6 +238,7 @@
             <li><strong>Over-trust is tracked.</strong> Low citation click-through at high usage is the more dangerous reading, not the reassuring one.</li>
           </ul>
         </div>
+        <div class="shot" data-lightbox><img src="/assets/lumi/failure-modes.jpg" alt="Table of six failure modes with severity, detection method and fix: correct citation with wrong number, split clause misleading, phantom citation, expired document, over-trust, and low-confidence answer" width="1200" height="675" loading="lazy"></div>
       </div>
       <details class="board-note">
         <summary>Planning &amp; discovery: RAG architecture whiteboard</summary>
@@ -254,7 +254,7 @@
   <section class="band">
     <div class="wrap">
       <div class="phase"><h2>Impact &amp; Metrics</h2></div>
-      <div class="row">
+      <div class="row stack">
         <div class="row-text">
           <h3>What a query actually costs</h3>
           <p class="lede">About $0.0024 CAD per query. A 13-person branch team runs under $1.10 a month in tokens.</p>
@@ -264,8 +264,7 @@
         <div class="shot" data-lightbox><img src="/assets/lumi/cost-analysis.jpg" alt="Cost analysis: $0.0024 CAD per query, $1.10 per branch team per month, manual lookup costs $1,059/month versus $53 with Lumi, and cached answers respond in 200ms versus 1.5 seconds" width="1200" height="675" loading="lazy"></div>
       </div>
 
-      <div class="row flip">
-        <div class="shot tall" data-lightbox><img src="/assets/lumi/prototype-composite.jpg" alt="Lumi for Cards prototype showing three response types in one session: a refusal listing policy requirements for rental coverage, and an out-of-scope redirect for a mortgage question" width="1280" height="585" loading="lazy"></div>
+      <div class="row stack">
         <div class="row-text">
           <h3>Running the spec</h3>
           <p class="lede">Built in Google AI Studio on Gemini 2.5 Flash at temperature 0.0, against a nine-document knowledge base.</p>
@@ -280,14 +279,15 @@
             <li>The model added a document version to the citation format. That is better than what I specified, so the spec was updated to require it rather than leaving it to the model's discretion.</li>
           </ul>
         </div>
+        <div class="shot" data-lightbox><img src="/assets/lumi/prototype-composite.jpg" alt="Lumi for Cards prototype showing three response types in one session: a refusal listing policy requirements for rental coverage, and an out-of-scope redirect for a mortgage question" width="1280" height="585" loading="lazy"></div>
       </div>
-      <div class="row" id="recognition">
+      <div class="row stack" id="recognition">
         <div class="row-text">
           <h3>Recognition</h3>
           <p class="lede">Ranked 4th out of 77 PRDs in HelloPM Cohort 51, Assignment 3.</p>
           <p>Scored 87/100 on a single rubric with no curve. The assessment credited the cost analysis approach and the prototype's faithful execution of the spec, while flagging gaps in cost sourcing and an unspecified confidence threshold.</p>
         </div>
-        <div class="shot" data-lightbox><img src="/assets/lumi/leaderboard.png" alt="HelloPM Cohort 51 Assignment 3 leaderboard: George Innasi ranked 4th of 77 with a score of 87." width="1080" height="1080" loading="lazy"></div>
+        <div class="shot cap" data-lightbox><img src="/assets/lumi/leaderboard.png" alt="HelloPM Cohort 51 Assignment 3 leaderboard: George Innasi ranked 4th of 77 with a score of 87." width="1080" height="1080" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -296,7 +296,7 @@
   <section class="band">
     <div class="wrap">
       <div class="phase"><h2>Reflection</h2></div>
-      <div class="row">
+      <div class="row stack">
         <div class="row-text">
           <h3>What the assessment flagged, and I agree with</h3>
           <p class="lede">The cost section is the one part of the document a reader cannot check.</p>

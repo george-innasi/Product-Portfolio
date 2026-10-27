@@ -1098,3 +1098,26 @@ a.ct-tile-val:hover{color:var(--accent-ink)}
   .arch-lane.b .arch-flow li:nth-child(even)::after{top:auto; bottom:-19px; right:50%; left:auto;
     transform:translateX(50%) rotate(45deg)}
 }
+
+/* ---------- stacked figure rows ----------
+   A wide screenshot squeezed into half of a 1080px row renders near 40%
+   and its text stops being legible. Stacking keeps the prose at a
+   readable measure and lets the image break out past the wrap, so a
+   1280px capture lands close to native size. */
+/* align-items must be reset: .row sets center, which would re-centre the
+   oversized figure and cancel the symmetric negative margins below. */
+.row.stack{display:flex; flex-direction:column; align-items:stretch; gap:26px}
+.row.stack .row-text{width:100%; max-width:var(--narrow); margin-inline:auto}
+/* Negative margins widen the figure past the wrap without a transform, so
+   the element keeps a normal box for the lightbox and for screenshots. */
+.row.stack .shot{max-width:none;
+  margin-inline:calc((100% - min(1240px,100vw - 40px)) / 2)}
+.row.stack .shot.cap{margin-inline:calc((100% - min(720px,100vw - 40px)) / 2)}
+/* neutralise the phone-frame variant when a figure is stacked */
+.row.stack .shot.tall{min-height:0; max-width:none; border-radius:18px}
+body{overflow-x:clip}
+@media (max-width:860px){
+  .row.stack{gap:20px}
+  .row.stack .shot,.row.stack .shot.cap{
+    margin-inline:calc((100% - (100vw - 32px)) / 2)}
+}
