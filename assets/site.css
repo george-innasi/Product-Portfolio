@@ -1651,3 +1651,16 @@ html{scroll-padding-top:64px}
 .cap-card[open] .cap-meter{display:none}
 @media (max-width:860px){.cap-card summary{min-height:0}}
 .cap-card[open] summary{min-height:0; justify-content:flex-start; gap:16px; padding-bottom:4px}
+
+/* ---------- About: heading beside a full-height How I work ---------- */
+.ab2{align-items:stretch}
+.ab2-left{display:flex; flex-direction:column; gap:26px; min-width:0}
+#about .sp-head{margin-bottom:0}
+.ab2-how{display:flex; flex-direction:column}
+.ab2-how .ab2-list{flex:1; justify-content:space-between}
+.ab2-how .ab2-list li{padding-block:18px}
+@media (max-width:900px){
+  .ab2-left{gap:20px}
+  .ab2-how .ab2-list{display:flex; justify-content:flex-start}
+  .ab2-how .ab2-list li{padding-block:15px}
+}
