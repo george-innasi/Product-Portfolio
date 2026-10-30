@@ -1680,3 +1680,4 @@ html{scroll-padding-top:64px}
 :root[data-theme="dark"] .ph-callout{background:color-mix(in srgb,var(--pc) 16%,var(--surface)); border-color:color-mix(in srgb,var(--pc) 40%,transparent)}
 :root[data-theme="dark"] .ph-callout .ph-lbl{color:color-mix(in srgb,var(--pc) 45%,#fff)}
 :root[data-theme="dark"] .ph-callout .ph-problem{color:var(--ink)}
+.tr-src a{color:#6ee7b7; font-weight:700; font-style:normal; text-decoration:none}
