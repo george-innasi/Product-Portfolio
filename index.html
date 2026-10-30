@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=93">
-<script src="/assets/site.js?v=14" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=94">
+<script src="/assets/site.js?v=15" defer></script>
 </head>
 <body data-accent="blue" class="sp">
 <a class="skip" href="#main">Skip to content</a>
@@ -35,6 +35,7 @@
   <!-- HOME: quick intro -->
   <section class="sp-intro" id="home">
     <div class="wrap sp-intro-grid">
+      <p class="sp-clock" data-localtime data-tz="America/Edmonton" data-city="Calgary">Calgary</p>
       <button class="portrait sp-portrait" type="button" data-cycle aria-label="Show the next photo of George">
         <img class="on" src="/assets/photos/george-mug.jpg" width="900" height="1125" alt="George holding an enamel mug printed with his name in a gift shop" fetchpriority="high">
         <img src="/assets/photos/td-desk.jpg" width="900" height="1125" alt="George seated at a desk in a TD branch office with a Calgary skyline mural behind him" loading="lazy">
@@ -150,40 +151,52 @@
       </div>
       <div class="cap-grid">
 
-        <div class="cap">
-          <p class="cap-lbl">Product discovery</p>
-          <span class="cap-state s3">Strongest Today</span>
-          <h3>Finding the Problem Worth Solving</h3>
-          <p>Through intensive discovery work for Kittii and HelloPM, I combine qualitative and quantitative research to identify the real problem before writing specs.</p>
-          <div class="cap-list">
-            <details class="cap-tog"><summary>Direct User Research</summary><p>Conducting real user interviews, gathering core survey responses, and engaging targeted communities across Reddit and Facebook.</p></details>
-            <details class="cap-tog"><summary>Expert &amp; Market Validation</summary><p>Consulting subject matter experts and leveraging premium data sources like Bloomberg, established media, and SEO-driven platforms to back every decision.</p></details>
+        <details class="cap-card">
+          <summary>
+            <span class="cap-head"><span class="cap-lbl">Product discovery</span><span class="cap-state s3">Strongest Today</span></span>
+            <span class="cap-h3">Finding the Problem Worth Solving</span>
+            <span class="cap-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="cap-body">
+            <p>Through intensive discovery work for Kittii and HelloPM, I combine qualitative and quantitative research to identify the real problem before writing specs.</p>
+            <ul class="cap-points">
+              <li><strong>Direct user research.</strong> Real user interviews, core survey responses, and targeted communities across Reddit and Facebook.</li>
+              <li><strong>Expert &amp; market validation.</strong> Subject-matter experts and premium data sources like Bloomberg, established media and SEO platforms behind every decision.</li>
+            </ul>
           </div>
-        </div>
+        </details>
 
-        <div class="cap">
-          <p class="cap-lbl">Product delivery</p>
-          <span class="cap-state s2">Active Execution</span>
-          <h3>From Concept to Shipped Software</h3>
-          <p>I bridge product strategy with engineering execution to ship clean, impactful solutions.</p>
-          <div class="cap-list">
-            <details class="cap-tog"><summary>Strategy &amp; Prioritization</summary><p>Condensing findings into clear User Personas and Journey Maps, prioritizing features using Impact vs. Effort frameworks to maximize business value.</p></details>
-            <details class="cap-tog"><summary>Clear Specifications</summary><p>Writing concise PRDs that translate technical requirements, cost estimates, and timelines so development teams build efficiently.</p></details>
-            <details class="cap-tog"><summary>Rapid Prototyping</summary><p>Hands-on experience building functional, live prototypes (leveraging AI-assisted / "vibe-coding" workflows) for rapid testing and stakeholder alignment.</p></details>
+        <details class="cap-card">
+          <summary>
+            <span class="cap-head"><span class="cap-lbl">Product delivery</span><span class="cap-state s2">Active Execution</span></span>
+            <span class="cap-h3">From Concept to Shipped Software</span>
+            <span class="cap-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="cap-body">
+            <p>I bridge product strategy with engineering execution to ship clean, impactful solutions.</p>
+            <ul class="cap-points">
+              <li><strong>Strategy &amp; prioritisation.</strong> Clear user personas and journey maps, with features ranked by Impact vs. Effort to maximise business value.</li>
+              <li><strong>Clear specifications.</strong> Concise PRDs that translate requirements, cost estimates and timelines so development teams build efficiently.</li>
+              <li><strong>Rapid prototyping.</strong> Functional, live prototypes built with AI-assisted workflows for fast testing and stakeholder alignment.</li>
+            </ul>
           </div>
-        </div>
+        </details>
 
-        <div class="cap">
-          <p class="cap-lbl">Product distribution</p>
-          <span class="cap-state s1">Expanding Focus</span>
-          <h3>Go-To-Market &amp; Growth</h3>
-          <p>I combine digital marketing foundations with product analytics to drive user activation, engagement, and sustainable post-launch growth.</p>
-          <div class="cap-list">
-            <details class="cap-tog"><summary>GTM &amp; Launch Strategy</summary><p>Designed go-to-market plans at Kittii, structured user onboarding workflows, and led growth marketing initiatives at Enactus CBU.</p></details>
-            <details class="cap-tog"><summary>Analytics &amp; Feedback Loops</summary><p>Set up product analytics and feedback loops to monitor user behavior, optimize conversion, and iterate post-launch.</p></details>
-            <details class="cap-tog"><summary>Digital Marketing Foundation</summary><p>Hands-on agency experience from E21 Designs in digital marketing, paid channels, and organic reach strategies.</p></details>
+        <details class="cap-card">
+          <summary>
+            <span class="cap-head"><span class="cap-lbl">Product distribution</span><span class="cap-state s1">Expanding Focus</span></span>
+            <span class="cap-h3">Go-To-Market &amp; Growth</span>
+            <span class="cap-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="cap-body">
+            <p>I combine digital marketing foundations with product analytics to drive user activation, engagement and sustainable post-launch growth.</p>
+            <ul class="cap-points">
+              <li><strong>GTM &amp; launch strategy.</strong> Go-to-market plans at Kittii, structured onboarding workflows, and growth marketing at Enactus CBU.</li>
+              <li><strong>Analytics &amp; feedback loops.</strong> Product analytics and feedback loops to monitor behaviour, optimise conversion and iterate post-launch.</li>
+              <li><strong>Digital marketing foundation.</strong> Hands-on agency experience from E21 Designs in digital marketing, paid channels and organic reach.</li>
+            </ul>
           </div>
-        </div>
+        </details>
 
       </div>
     </div>
@@ -194,75 +207,84 @@
     <div class="wrap">
       <div class="sp-head">
         <p class="eyebrow">Qualifications</p>
-        <h2><span class="serif">The record</span> <span class="b">behind the work</span></h2>
       </div>
-
-      <div class="q-block">
-        <h3 class="q-title">Work experience</h3>
-        <div class="cv-list">
-          <div class="cv-item has-logo">
-          <img class="co-logo" src="/assets/logos/kittii.webp" alt="Kittii" width="266" height="84" style="--lw:89px;--lh:28px" loading="lazy">
-          <div class="l">
+      <div class="q-grid">
+        <details class="q-card">
+          <summary>
+            <span class="q-card-head"><span class="q-card-t">Work experience</span><span class="q-card-sub">4 roles &middot; 2020 to 2026</span></span>
+            <span class="cap-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="q-card-body">
+            <div class="cv-list">
+            <div class="cv-item has-logo">
+            <img class="co-logo" src="/assets/logos/kittii.webp" alt="Kittii" width="266" height="84" style="--lw:89px;--lh:28px" loading="lazy">
+            <div class="l">
             <strong>Product Manager, Kittii - AI-Powered Lost and Found</strong>
             <span>Part time, Alberta, Canada</span>
-          </div>
-          <span class="when">Sep 2025 to Apr 2026</span>
-        </div>
-          <div class="cv-item has-logo">
-          <img class="co-logo" src="/assets/logos/bmo.webp" alt="Bank of Montreal" width="576" height="200" style="--lw:85px;--lh:29px" loading="lazy">
-          <div class="l">
+            </div>
+            <span class="when">Sep 2025 to Apr 2026</span>
+            </div>
+            <div class="cv-item has-logo">
+            <img class="co-logo" src="/assets/logos/bmo.webp" alt="Bank of Montreal" width="576" height="200" style="--lw:85px;--lh:29px" loading="lazy">
+            <div class="l">
             <strong>Personal Banker, Bank of Montreal</strong>
             <span>Full time, Calgary, Alberta, Canada</span>
-          </div>
-          <span class="when">Oct 2025 to Oct 2026</span>
-        </div>
-          <div class="cv-item has-logo">
-          <img class="co-logo" src="/assets/logos/td.svg?v=2" alt="TD Canada Trust" width="39" height="35" style="--lw:47px;--lh:42px" loading="lazy">
-          <div class="l">
+            </div>
+            <span class="when">Oct 2025 to Oct 2026</span>
+            </div>
+            <div class="cv-item has-logo">
+            <img class="co-logo" src="/assets/logos/td.svg?v=2" alt="TD Canada Trust" width="39" height="35" style="--lw:47px;--lh:42px" loading="lazy">
+            <div class="l">
             <strong>Financial Advisor, TD Canada Trust</strong>
             <span>Full time, Georgetown, Ontario, Canada</span>
-          </div>
-          <span class="when">Mar 2022 to Jun 2024</span>
-        </div>
-        </div>
-        <div class="cv-list q-more-list" id="work-more" hidden>
-          <div class="cv-item has-logo">
-          <img class="co-logo" src="/assets/logos/rbc.webp?v=2" alt="RBC" width="152" height="200" style="--lw:40px;--lh:52px" loading="lazy">
-          <div class="l">
+            </div>
+            <span class="when">Mar 2022 to Jun 2024</span>
+            </div>
+            <div class="cv-item has-logo">
+            <img class="co-logo" src="/assets/logos/rbc.webp?v=2" alt="RBC" width="152" height="200" style="--lw:40px;--lh:52px" loading="lazy">
+            <div class="l">
             <strong>Banking and Credit Advisor, RBC</strong>
             <span>Full time, Moncton, New Brunswick, Canada</span>
+            </div>
+            <span class="when">Oct 2020 to Mar 2022</span>
+            </div>
+            </div>
           </div>
-          <span class="when">Oct 2020 to Mar 2022</span>
-        </div>
-        </div>
-        <button class="q-more" type="button" aria-expanded="false" aria-controls="work-more" data-more-label="See more experience" data-less-label="Show less">See more experience <span aria-hidden="true">&darr;</span></button>
-      </div>
-
-      <div class="q-block">
-        <h3 class="q-title">Education</h3>
-        <div class="cv-list">
-          <div class="cv-item has-logo">
+        </details>
+        <details class="q-card">
+          <summary>
+            <span class="q-card-head"><span class="q-card-t">Education</span><span class="q-card-sub">2 degrees</span></span>
+            <span class="cap-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="q-card-body">
+            <div class="cv-list">
+            <div class="cv-item has-logo">
             <img class="co-logo" src="/assets/logos/cbu.png?v=3" alt="Cape Breton University" width="1299" height="510" style="--lw:91px;--lh:36px" loading="lazy">
             <div class="l">
-              <strong>Post-Baccalaureate Diploma, Business Administration and Management</strong>
-              <span>Major in Finance and Marketing &middot; Cape Breton University, Nova Scotia</span>
+            <strong>Post-Baccalaureate Diploma, Business Administration and Management</strong>
+            <span>Major in Finance and Marketing &middot; Cape Breton University, Nova Scotia</span>
             </div>
             <span class="when">Sep 2018 to May 2020</span>
-          </div>
-          <div class="cv-item has-logo">
+            </div>
+            <div class="cv-item has-logo">
             <img class="co-logo" src="/assets/logos/loyola.png?v=4" alt="Loyola College" width="585" height="581" style="--lw:52px;--lh:52px" loading="lazy">
             <div class="l">
-              <strong>Bachelor of Science, Mathematics</strong>
-              <span>Minor in Statistics &middot; Loyola College, University of Madras, Chennai</span>
+            <strong>Bachelor of Science, Mathematics</strong>
+            <span>Minor in Statistics &middot; Loyola College, University of Madras, Chennai</span>
             </div>
             <span class="when">Jul 2014 to Nov 2017</span>
+            </div>
+            </div>
           </div>
-        </div>
+        </details>
       </div>
-
-      <div class="q-block">
-        <h3 class="q-title">Certifications</h3>
-        <div class="q-certs">
+      <details class="q-card q-card-wide">
+        <summary>
+          <span class="q-card-head"><span class="q-card-t">Certifications</span><span class="q-card-sub">Product &middot; Finance &middot; Data &middot; Marketing</span></span>
+          <span class="cap-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="q-card-body">
+          <div class="q-certs">
           <div class="q-cert">
             <p class="q-cert-k">Product</p>
             <ul>
@@ -294,7 +316,8 @@
             </ul>
           </div>
         </div>
-      </div>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -303,11 +326,11 @@
     <div class="wrap">
       <div class="sp-head">
         <p class="eyebrow">About</p>
-        <h2><span class="serif">From the banking counter</span> <span class="b">to product</span></h2>
+        <h2><span class="serif">From advising clients</span> <span class="b">to building products</span></h2>
       </div>
       <div class="ab2">
         <div class="ab2-story">
-          <p>For five years I sat across from customers at RBC, TD and BMO, helping them decide on mortgages, loans and investments. What I enjoyed most was finding the need behind the request. As a banker I could help one person at a time; product lets me help thousands.</p>
+          <p>For five years I sat across from customers at RBC, TD and BMO, helping them decide on mortgages, loans and investments. What I enjoyed most was finding the need behind the request. As an advisor I could help one person at a time; product lets me help thousands.</p>
           <p>Building Kittii showed me how much I enjoy the full product process, from the first interview to a working build. I now combine that banking depth with AI to build products people genuinely need.</p>
           <dl class="ab2-proof">
             <div><dt>94%+</dt><dd>Client NPS</dd></div>
@@ -335,11 +358,6 @@
         <p class="eyebrow">Contact</p>
         <h2><span class="serif">Every product created</span> <span class="b">was once imagined.</span></h2>
         <p>Let's briefly discuss how I can bring yours to life.</p>
-        <ul class="ct-status">
-          <li class="ct-status-live"><span class="ct-dot" aria-hidden="true"></span>Open to full-time AI PM roles</li>
-          <li>Relocating to India, January 2027</li>
-          <li><span data-localtime data-tz="America/Edmonton" data-city="Calgary">Calgary, Mountain Time</span></li>
-        </ul>
       </div>
       <div class="ct-grid">
 

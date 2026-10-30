@@ -312,7 +312,7 @@
     var fmt;
     try { fmt = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }); }
     catch (e) { return; }
-    var tick = function () { el.textContent = city + ', ' + fmt.format(new Date()) + ' local time'; };
+    var tick = function () { el.textContent = city + ' \u00b7 ' + fmt.format(new Date()); };
     tick(); setInterval(tick, 30000);
   });
 })();
