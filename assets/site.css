@@ -1632,3 +1632,22 @@ html{scroll-padding-top:64px}
 .ab2-txt{display:flex; flex-direction:column; gap:3px}
 .ab2-t{font-weight:800; font-size:1rem; color:var(--ink); letter-spacing:-.005em}
 .ab2-d{color:var(--muted); font-size:.95rem; line-height:1.55}
+
+/* ---------- capabilities: roomier cards with icon + strength meter ---------- */
+.cap-grid{gap:20px; margin-top:28px; align-items:start}
+.cap-card summary{padding:24px; gap:22px; min-height:236px; justify-content:space-between}
+.cap-top{display:flex; align-items:center; justify-content:space-between}
+.cap-ico{width:44px; height:44px; border-radius:13px; background:var(--surface-2); color:var(--deep); display:grid; place-items:center; flex:none}
+.cap-ico svg{width:23px; height:23px}
+.cap-top .cap-toggle{position:relative; top:auto; right:auto}
+.cap-mid{display:flex; flex-direction:column; gap:8px}
+.cap-card .cap-lbl{font-size:.72rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; color:var(--muted)}
+.cap-h3{font-size:1.16rem; line-height:1.25; padding-right:0}
+.cap-meter{display:flex; align-items:center; gap:11px}
+.cap-dots{display:inline-flex; gap:5px; flex:none}
+.cap-dots i{width:8px; height:8px; border-radius:50%; background:var(--line)}
+.cap-dots.lvl3 i:nth-child(-n+3),.cap-dots.lvl2 i:nth-child(-n+2),.cap-dots.lvl1 i:nth-child(-n+1){background:var(--accent)}
+.cap-state-txt{font-size:.78rem; font-weight:700; color:var(--muted); letter-spacing:.01em}
+.cap-card[open] .cap-meter{display:none}
+@media (max-width:860px){.cap-card summary{min-height:0}}
+.cap-card[open] summary{min-height:0; justify-content:flex-start; gap:16px; padding-bottom:4px}
