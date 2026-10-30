@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=90">
+<link rel="stylesheet" href="/assets/site.css?v=93">
 <script src="/assets/site.js?v=14" defer></script>
 </head>
 <body data-accent="violet">
@@ -31,37 +31,55 @@
 </nav>
 
 <main id="main">
-  <div class="wrap">
-    <a class="back" href="/#projects" style="margin-top:26px">&larr; All projects</a>
-  </div>
-
-  <!-- HERO -->
-  <header class="cs-hero">
+  <!-- ========== PROJECT HERO: live prototype + problem ========== -->
+  <section class="ph-hero">
     <div class="wrap">
-      <p class="kicker">Building product sense at HelloPM &middot; Assignment 2 &middot; Cohort 51 &middot; Solo PM and builder</p>
-      <h1>Kural</h1>
-      <p class="tagline">Draft emails in seconds that still sound like you</p>
-      <div class="chip-rows">
-        <span class="chip-row-lbl">Domain</span>
-        <div class="chip-set">
-          <span class="chip domain">Email &amp; productivity</span>
+      <a class="back" href="/#projects">&larr; All projects</a>
+      <div class="ph-head">
+        <p class="kicker">Building product sense at HelloPM &middot; Assignment 2 &middot; Cohort 51 &middot; Solo PM and builder</p>
+        <h1>Kural</h1>
+        <p class="tagline">Draft emails in seconds that still sound like you</p>
+      </div>
+
+      <div class="ph-grid ph-wide">
+        <div class="ph-demo">
+          <div class="ph-device">
+            <div class="ph-bar"><span></span><span></span><span></span><em>kural-iota.vercel.app</em></div>
+            <iframe src="https://kural-iota.vercel.app/" title="Kural live prototype" loading="eager" allow="clipboard-write"></iframe>
+          </div>
+          <p class="ph-cap">The live prototype: type a rough note and let Kural draft it. <a href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">Open in a new tab &nearr;</a></p>
         </div>
-        <span class="chip-row-lbl">Tools used</span>
-        <div class="chip-set">
+
+        <div class="ph-info">
+          <p class="ph-lbl">Problem statement</p>
+          <p class="ph-problem">AI email tools polish sentences but do not read people: one voice, one register, every reader. Professionals still rewrite the drafts, and 71% of AI users surveyed cannot send an AI draft as it is.</p>
+          <p class="ph-solution"><strong>Kural</strong> reads the situation first, urgency, power dynamic and emotional register, then drafts in your own voice.</p>
+
+          <p class="ph-lbl">Highlights</p>
+          <dl class="ph-hl">
+            <div><dt>71%</dt><dd>Cannot send AI drafts as is</dd></div>
+            <div><dt>42%</dt><dd>Say tone is the hardest part</dd></div>
+            <div><dt>36 + 4</dt><dd>Survey responses and interviews</dd></div>
+            <div><dt>v1.2</dt><dd>Live prototype</dd></div>
+          </dl>
+
+          <div class="ph-tools"><span class="chip-row-lbl">Built with</span><div class="chip-set">
           <span class="chip tool-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.57 6.02V19.5h-1.5V8.92L5.45 19.5H3.72L11.57 6.02zm.86 0L20.28 19.5h-1.73l-4.62-10.58V19.5h-1.5V6.02h1.5z"/></svg>Next.js</span>
           <span class="chip tool-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5L1.5 22h21L12 1.5z"/></svg>Vercel</span>
           <span class="chip tool-ico"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#4285F4"/><stop offset=".5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path d="M12 2l2.4 7.2H22l-6 4.4 2.4 7.2L12 16.4l-6.4 4.4 2.4-7.2-6-4.4h7.6z" fill="url(#gm)"/></svg>Gemini 2.5 Flash</span>
           <span class="chip tool-ico"><svg viewBox="0 0 24 24"><path d="M4.436 16.21c1.192 1.87 3.285 3.274 5.564 3.46V17.4c-1.627-.212-3.005-1.087-3.87-2.345L4.436 16.21z" fill="#D97757"/><path d="M12 4c-2.69 0-5.034 1.326-6.407 3.37l1.694 1.155C8.28 7.02 9.984 6 12 6c3.308 0 6 2.692 6 6s-2.692 6-6 6c-.163 0-.323-.01-.483-.025v2.003c.16.008.321.022.483.022 4.418 0 8-3.582 8-8s-3.582-8-8-8z" fill="#D97757"/></svg>Claude Code</span>
+        </div></div>
+
+          <div class="ph-links">
+            <a class="ph-link" href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">Live prototype <span aria-hidden="true">&nearr;</span></a>
+            <a class="ph-link" href="/assets/kural/kural-prd.pdf" target="_blank" rel="noopener">PRD <span aria-hidden="true">&nearr;</span></a>
+            <a class="ph-link" href="/assets/kural/kural-deck.pdf" target="_blank" rel="noopener">Pitch deck <span aria-hidden="true">&nearr;</span></a>
+            <a class="ph-link" href="/assets/kural/kural-survey.pdf" target="_blank" rel="noopener">Survey results <span aria-hidden="true">&nearr;</span></a>
+          </div>
         </div>
       </div>
-      <div class="actions">
-        <a class="action solid" href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">Live prototype &nearr;</a>
-        <a class="action" href="/assets/kural/kural-prd.pdf" target="_blank" rel="noopener">PRD &nearr;</a>
-        <a class="action" href="/assets/kural/kural-deck.pdf" target="_blank" rel="noopener">Pitch deck &nearr;</a>
-        <a class="action" href="/assets/kural/kural-survey.pdf" target="_blank" rel="noopener">Survey results &nearr;</a>
-      </div>
     </div>
-  </header>
+  </section>
 
   <!-- ORIGIN + OVERVIEW -->
   <section class="band">
@@ -176,12 +194,7 @@
           <p>You give Kural the gist in your own words. Before it writes a single line, it classifies the situation: how urgent it is, the power dynamic, and the emotional register. Then it drafts in your voice, shows you what it detected, and lets you adjust rather than regenerate from scratch.</p>
           <p>The draft on the right is one pass. No "I hope this email finds you well." No padding. A message the sender could send as is.</p>
         </div>
-        <div class="compose-demo" style="flex:1 1 480px;min-width:0">
-          <div style="position:relative;width:100%;padding-top:75%;border-radius:12px;overflow:hidden;border:1px solid var(--border, rgba(0,0,0,.1));box-shadow:0 2px 12px rgba(0,0,0,.08)">
-            <iframe src="https://kural-iota.vercel.app/" title="Kural live prototype" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" loading="lazy" allow="clipboard-write"></iframe>
-          </div>
-          <p style="margin-top:10px;font-size:.85rem;color:var(--muted, #6b7280);text-align:center"><a href="https://kural-iota.vercel.app/" target="_blank" rel="noopener" style="color:var(--accent)">Open Kural in a new tab &rsaquo;</a></p>
-        </div>
+        <div class="shot" data-lightbox><img src="/assets/covers/kural.jpg?v=4" alt="Kural landing page: rough thoughts turned into a polished, tone-matched email" width="1200" height="675" loading="lazy"></div>
       </div>
     </div>
   </section>

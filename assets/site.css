@@ -1542,3 +1542,14 @@ html{scroll-padding-top:64px}
   .ph-hl{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ph-info{order:-1}
 }
+
+/* project hero, desktop web apps: a wider browser frame */
+.ph-grid.ph-wide{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:44px}
+.ph-wide .ph-problem{font-size:clamp(1.1rem,1.55vw,1.24rem)}
+.ph-wide .ph-solution{font-size:.97rem}
+.ph-wide .ph-hl dt{font-size:1.25rem}
+.ph-wide .ph-hl div{padding:10px 12px}
+.ph-wide .ph-device{max-width:none; border-radius:18px; padding:8px}
+.ph-wide .ph-device iframe{border-radius:10px; background:#fff}
+.ph-wide .ph-hl{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){ .ph-grid.ph-wide{grid-template-columns:minmax(0,1fr)} }

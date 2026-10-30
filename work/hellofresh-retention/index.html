@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=90">
+<link rel="stylesheet" href="/assets/site.css?v=93">
 <script src="/assets/site.js?v=14" defer></script>
 </head>
 <body data-accent="green">
@@ -31,31 +31,54 @@
 </nav>
 
 <main id="main">
-  <div class="wrap">
-    <a class="back" href="/#projects" style="margin-top:26px">&larr; All projects</a>
-  </div>
-
-  <!-- HERO -->
-  <header class="cs-hero">
+  <!-- ========== PROJECT HERO: live prototype + problem ========== -->
+  <section class="ph-hero">
     <div class="wrap">
-      <p class="kicker">Building product sense at HelloPM &middot; Assignment 1 &middot; Cohort 51 &middot; Solo PM and builder</p>
-      <h1>HelloFresh</h1>
-      <p class="tagline">A three-phase product study, from teardown to prototype</p>
-      <div class="chip-rows">
-        <span class="chip-row-lbl">Domain</span>
-        <div class="chip-set">
-          <span class="chip domain">Meal-kit delivery &amp; subscription</span>
+      <a class="back" href="/#projects">&larr; All projects</a>
+      <div class="ph-head">
+        <p class="kicker">Building product sense at HelloPM &middot; Assignment 1 &middot; Cohort 51 &middot; Solo PM and builder</p>
+        <h1>HelloFresh</h1>
+        <p class="tagline">A three-phase product study, from teardown to prototype</p>
+      </div>
+
+      <div class="ph-grid ph-wide">
+        <div class="ph-demo">
+          <div class="ph-device">
+            <div class="ph-bar"><span></span><span></span><span></span><em>george-innasi.github.io</em></div>
+            <iframe src="https://george-innasi.github.io/hellofresh-project-assignment/" title="HelloFresh retention prototypes" loading="eager" allow="clipboard-write"></iframe>
+          </div>
+          <p class="ph-cap">The clickable prototypes: explore inside. <a href="https://george-innasi.github.io/hellofresh-project-assignment/" target="_blank" rel="noopener">Open in a new tab &nearr;</a></p>
         </div>
-        <span class="chip-row-lbl">Tools used</span>
-        <div class="chip-set">
+
+        <div class="ph-info">
+          <p class="ph-lbl">Problem statement</p>
+          <p class="ph-problem">Long-tenured HelloFresh subscribers, the ones who have only just become profitable to keep, leave quietly: skipping, then cancelling, without a complaint. Price is the loudest signal, but it is rarely the root cause.</p>
+          <p class="ph-solution">Research through to a full <strong>PRD and four clickable prototypes</strong>. The primary build turns an unstructured support ticket into data the business can act on.</p>
+
+          <p class="ph-lbl">Highlights</p>
+          <dl class="ph-hl">
+            <div><dt>128</dt><dd>Survey respondents</dd></div>
+            <div><dt>6</dt><dd>User interviews</dd></div>
+            <div><dt>4</dt><dd>Problems scored</dd></div>
+            <div><dt>4</dt><dd>Clickable prototypes</dd></div>
+          </dl>
+
+          <div class="ph-tools"><span class="chip-row-lbl">Built with</span><div class="chip-set">
           <span class="chip tool-ico"><svg viewBox="0 0 24 24"><path fill="#E44D26" d="M4.14 3l1.59 17.82L12 22l6.27-1.18L19.86 3H4.14z"/><path fill="#F16529" d="M12 4.58v15.84l5.07-.96 1.36-15.25H12z"/><path fill="#EBEBEB" d="M12 10.28H8.72l-.24-2.7H12V4.88H5.88l.06.7.66 7.4H12v-2.7zm0 5.82l-.02.01-2.76-.75-.18-1.96H6.32l.34 3.86 5.32 1.48.02-.01v-2.63z"/><path fill="#fff" d="M11.98 10.28v2.7h3.04l-.29 3.17-2.75.75v2.63l5.33-1.48.04-.43.61-6.84.06-.7h-.7l-5.34-.01zm0-5.4v2.7h5.9l.05-.55.11-1.28.07-.87h-6.13z"/></svg>HTML / CSS</span>
           <span class="chip tool-ico"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/></svg>GitHub Pages</span>
           <span class="chip tool-ico"><svg viewBox="0 0 24 24"><path d="M4.436 16.21c1.192 1.87 3.285 3.274 5.564 3.46V17.4c-1.627-.212-3.005-1.087-3.87-2.345L4.436 16.21z" fill="#D97757"/><path d="M12 4c-2.69 0-5.034 1.326-6.407 3.37l1.694 1.155C8.28 7.02 9.984 6 12 6c3.308 0 6 2.692 6 6s-2.692 6-6 6c-.163 0-.323-.01-.483-.025v2.003c.16.008.321.022.483.022 4.418 0 8-3.582 8-8s-3.582-8-8-8z" fill="#D97757"/></svg>Claude Code</span>
           <span class="chip tool-ico"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#4285F4"/><stop offset=".5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path d="M12 2l2.4 7.2H22l-6 4.4 2.4 7.2L12 16.4l-6.4 4.4 2.4-7.2-6-4.4h7.6z" fill="url(#gm)"/></svg>Gemini</span>
+        </div></div>
+
+          <div class="ph-links">
+            <a class="ph-link" href="https://george-innasi.github.io/hellofresh-project-assignment/" target="_blank" rel="noopener">Live prototypes <span aria-hidden="true">&nearr;</span></a>
+            <a class="ph-link" href="https://github.com/george-innasi/hellofresh-project-assignment" target="_blank" rel="noopener">Source on GitHub <span aria-hidden="true">&nearr;</span></a>
+            <a class="ph-link" href="/assets/hellofresh-prd.pdf" target="_blank" rel="noopener">PRD <span aria-hidden="true">&nearr;</span></a>
+          </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- META STRIP -->
   <section class="band">

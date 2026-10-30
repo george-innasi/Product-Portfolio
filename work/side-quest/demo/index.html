@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Side Quest, interactive demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#14123a;--card:#26233f;--card2:#2c2850;--line:rgba(255,255,255,.09);--ink:#f4f1ff;--mut:#a9a5d1;--chip:#262a5c;--chipink:#d4d1ff;
+  --gold1:#ffe6a3;--gold2:#ffc547;--orange:#f3a33d;--tag:#4a3a3c;--tagink:#ffe2b0;--green:#4ade80}
+html,body{height:100%}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);font-size:15px;line-height:1.45;
+  background:radial-gradient(520px 420px at 0% 0%,#3b2a40 0%,transparent 70%),radial-gradient(560px 520px at 100% 100%,#2c2985 0%,transparent 65%),var(--bg);
+  background-attachment:fixed;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+input,select{font:inherit;color:var(--ink)}
+.app{max-width:440px;min-height:100%;margin:0 auto;display:flex;flex-direction:column}
+.demo-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 14px;font-size:11.5px;color:var(--mut);background:rgba(0,0,0,.22);border-bottom:1px solid var(--line)}
+.demo-bar b{color:var(--gold2);font-weight:700}
+.demo-bar a{color:var(--gold1);font-weight:700;text-decoration:none;white-space:nowrap}
+.top{display:flex;align-items:center;justify-content:center;position:relative;padding:14px 16px;border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:7px;font-weight:800;font-size:17px;color:var(--orange);letter-spacing:-.01em}
+.logo svg{width:22px;height:22px}
+.back{position:absolute;left:12px;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:var(--mut)}
+.back:hover{background:rgba(255,255,255,.06);color:var(--ink)}
+.screen{flex:1;padding:18px 16px 22px;display:flex;flex-direction:column}
+.hidden{display:none!important}
+
+/* welcome */
+.hero{flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:14px;padding:10px 6px}
+.hero h1{font-size:30px;line-height:1.08;font-weight:800;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold1),#f59e0b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);font-size:15px}
+.hero .pts{display:flex;flex-direction:column;gap:8px;margin:8px auto 4px;text-align:left}
+.hero .pts span{display:flex;gap:9px;align-items:center;font-size:13.5px;color:#d9d5ff}
+.hero .pts i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--chip);font-size:13px}
+.note{font-size:11.5px;color:var(--mut);text-align:center}
+
+/* buttons */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 16px;border-radius:14px;font-weight:800;font-size:15px;
+  background:linear-gradient(90deg,var(--gold1),var(--gold2));color:#1e1b4b;box-shadow:0 12px 26px -12px rgba(255,197,71,.6);transition:filter .2s,opacity .2s}
+.btn:hover{filter:brightness(1.05)}
+.btn:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.18);box-shadow:none}
+.foot{margin-top:auto;padding-top:16px;display:flex;flex-direction:column;gap:9px}
+
+/* onboarding */
+.prog{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--mut);font-weight:600}
+.bar{flex:1;height:6px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--gold1),var(--gold2));transition:width .35s}
+.q{margin-top:18px;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.qs{margin-top:6px;color:var(--mut);font-size:13.5px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border-radius:999px;background:var(--chip);color:var(--chipink);font-size:13.5px;font-weight:600;border:1.5px solid transparent;transition:background .15s,border-color .15s}
+.chip:hover{border-color:rgba(255,255,255,.18)}
+.chip[aria-pressed="true"]{background:rgba(255,197,71,.16);border-color:var(--gold2);color:var(--gold1)}
+.chip[disabled]{opacity:.4;cursor:not-allowed}
+.cap{margin-top:12px;font-size:12px;color:var(--mut)}
+.cap b{color:var(--gold1)}
+.field{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+.field label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.inp{width:100%;padding:13px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line);outline:none}
+.inp:focus{border-color:var(--gold2)}
+select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--mut) 50%),linear-gradient(135deg,var(--mut) 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 13px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+select.inp option{background:#1d1a44}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg .chip{justify-content:center}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:8px}
+.days .chip{padding:10px 0;justify-content:center;font-size:12.5px}
+.range{display:flex;align-items:center;gap:12px;margin-top:4px}
+.range input{flex:1;accent-color:var(--gold2)}
+.range b{min-width:52px;text-align:right;color:var(--gold1)}
+
+/* loader */
+.load{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center}
+.spin{width:54px;height:54px;border-radius:50%;border:5px solid rgba(255,255,255,.1);border-top-color:var(--gold2);animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.load ol{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--mut);text-align:left}
+.load li.done{color:var(--ink)}
+.load li.done::before{content:"✓ ";color:var(--green);font-weight:800}
+.load li:not(.done)::before{content:"• ";color:var(--mut)}
+
+/* quest log */
+.share{padding:10px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:12.5px;text-align:center;color:#e9e6ff}
+.pcard{margin-top:12px;padding:18px 16px;border-radius:16px;background:linear-gradient(180deg,#2d2945,#28243f);border:1px solid var(--line)}
+.av{width:70px;height:70px;border-radius:50%;margin:0 auto;display:grid;place-items:center;font-weight:800;font-size:24px;color:#1e1b4b;background:linear-gradient(135deg,var(--gold1),#f59e0b);box-shadow:0 0 0 3px rgba(255,255,255,.08)}
+.pn{text-align:center;font-size:22px;font-weight:800;margin-top:10px;letter-spacing:-.01em}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{padding:4px 10px;border-radius:999px;background:var(--tag);color:var(--tagink);font-size:11.5px;font-weight:700}
+.loc{text-align:center;font-size:12.5px;color:var(--mut);margin-top:6px}
+.lbl{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:#8f8bc0;margin-top:14px;text-transform:uppercase}
+.mini{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.mini span{padding:5px 10px;border-radius:999px;background:var(--chip);color:var(--chipink);font-size:11.5px;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.stat{padding:12px 6px;text-align:center;border-radius:14px;background:var(--card2);border:1px solid var(--line)}
+.stat b{display:block;font-size:20px;font-weight:800}
+.stat span{font-size:10.5px;color:var(--mut)}
+.badge{margin-top:12px;display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700}
+.badge i{font-style:normal;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:2px solid #fff;font-size:13px}
+
+/* board */
+.bhead{display:flex;flex-direction:column;gap:4px}
+.bhead h2{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.bhead p{font-size:13px;color:var(--mut)}
+.ai{margin-top:10px;display:flex;gap:8px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);font-size:12px;color:#c9f7da}
+.list{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.quest{width:100%;text-align:left;padding:13px;border-radius:16px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:9px;transition:border-color .15s,transform .15s}
+.quest:hover{border-color:rgba(255,197,71,.5);transform:translateY(-1px)}
+.qt{display:flex;gap:11px;align-items:center}
+.ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:20px;flex:none}
+.qn{font-size:15px;font-weight:700;line-height:1.2}
+.qo{font-size:11.5px;color:var(--mut);margin-top:2px}
+.score{margin-left:auto;flex:none;text-align:center;line-height:1}
+.score b{display:block;font-size:17px;font-weight:800;color:var(--gold1)}
+.score small{font-size:9.5px;color:var(--mut);font-weight:700;letter-spacing:.05em}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.m{padding:4px 8px;border-radius:8px;background:#312f66;font-size:11px;font-weight:600;color:var(--chipink)}
+.why{font-size:12px;color:#d9d5ff;line-height:1.45}
+.why b{color:var(--gold1)}
+.empty{padding:16px;border-radius:14px;background:var(--card);border:1px dashed rgba(255,255,255,.18);font-size:13px;color:var(--mut);text-align:center}
+
+/* detail */
+.dhero{display:flex;gap:12px;align-items:center}
+.dhero .ic{width:56px;height:56px;font-size:26px;border-radius:16px}
+.dhero h2{font-size:21px;font-weight:800;line-height:1.15}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.fact{padding:11px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.fact span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8f8bc0}
+.fact b{font-size:13.5px}
+.box{margin-top:12px;padding:13px;border-radius:14px;background:var(--card);border:1px solid var(--line);font-size:13.5px;color:#e4e1ff}
+.box h3{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px}
+.box ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.box li::before{content:"✓ ";color:var(--green);font-weight:800}
+.done{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px}
+.done .big{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;font-size:32px;background:rgba(74,222,128,.15);border:2px solid rgba(74,222,128,.5)}
+.done h2{font-size:22px;font-weight:800}
+.done p{color:var(--mut);font-size:14px;max-width:320px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="demo-bar"><span><b>Demo</b> with sample quests, no sign-in</span><a href="https://v0-side--quest.vercel.app/welcome" target="_blank" rel="noopener">Try the live app &nearr;</a></div>
+  <div class="top">
+    <button class="back hidden" id="back" type="button" aria-label="Back">&larr;</button>
+    <div class="logo"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 34 L14 10 L22 28 L30 6" stroke="#f3a33d" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 6 l7 3 -7 4" fill="#f3a33d"/></svg>Side Quest</div>
+  </div>
+
+  <!-- welcome -->
+  <section class="screen" data-s="welcome">
+    <div class="hero">
+      <h1>Volunteering that fits <em>around your classes.</em></h1>
+      <p>Short, nearby quests matched to what you care about and the free time you actually have.</p>
+      <div class="pts">
+        <span><i>🎯</i>Pick the causes you care about</span>
+        <span><i>🕓</i>Tell us when you're free</span>
+        <span><i>📍</i>Get quests close to home or campus</span>
+      </div>
+    </div>
+    <div class="foot">
+      <button class="btn" data-go="1" type="button">Start my profile &rarr;</button>
+      <p class="note">The live app signs you in with Google. This demo skips that step.</p>
+    </div>
+  </section>
+
+  <!-- onboarding -->
+  <section class="screen hidden" data-s="onboard">
+    <div class="prog"><span id="stepLbl">Step 1 of 7</span><div class="bar"><i id="barFill"></i></div></div>
+
+    <div data-step="1">
+      <h2 class="q">First, who's questing?</h2>
+      <p class="qs">This goes on your Quest log.</p>
+      <div class="field"><label for="fName">Your name</label><input class="inp" id="fName" autocomplete="off" value="Aarav S" maxlength="28"></div>
+      <div class="field"><label for="fCollege">College</label>
+        <select class="inp" id="fCollege"><option>Madras Christian College</option><option>Loyola College</option><option>Stella Maris College</option><option>Women's Christian College</option><option>Anna University</option><option>SRM Institute</option></select></div>
+      <div class="field"><label>Year</label><div class="seg" data-single="year"><button class="chip" type="button" aria-pressed="true">1st</button><button class="chip" type="button" aria-pressed="false">2nd</button><button class="chip" type="button" aria-pressed="false">3rd</button></div></div>
+    </div>
+
+    <div data-step="2" class="hidden">
+      <h2 class="q">What are you questing for?</h2>
+      <p class="qs">Pick up to five causes.</p>
+      <div class="chips" data-multi="causes" data-max="5"></div>
+      <p class="cap" id="capNote"><b id="capN">0</b> of 5 picked. Five keeps your board focused on what you care about most.</p>
+    </div>
+
+    <div data-step="3" class="hidden">
+      <h2 class="q">What are you looking to get out of it?</h2>
+      <p class="qs">Pick any that fit.</p>
+      <div class="chips" data-multi="goals"></div>
+    </div>
+
+    <div data-step="4" class="hidden">
+      <h2 class="q">What can you bring?</h2>
+      <p class="qs">Skills help us find quests where you'll be useful from day one.</p>
+      <div class="chips" data-multi="skills"></div>
+    </div>
+
+    <div data-step="5" class="hidden">
+      <h2 class="q">When are you usually free?</h2>
+      <p class="qs">Pick the days and times outside your classes.</p>
+      <div class="field"><label>Days</label><div class="days" data-multi="days"></div></div>
+      <div class="field"><label>Time of day</label><div class="seg" data-multi="slots"></div></div>
+    </div>
+
+    <div data-step="6" class="hidden">
+      <h2 class="q">Where are you based?</h2>
+      <p class="qs">We rank quests by how far you'd travel.</p>
+      <div class="field"><label for="fArea">Home or campus area, Chennai</label><select class="inp" id="fArea"></select></div>
+      <div class="field"><label for="fKm">How far will you travel?</label><div class="range"><input type="range" id="fKm" min="2" max="20" step="1" value="8"><b id="kmOut">8 km</b></div></div>
+    </div>
+
+    <div data-step="7" class="hidden">
+      <h2 class="q">A little about you</h2>
+      <p class="qs">Optional. It helps NGOs say hello.</p>
+      <div class="chips" data-multi="about"></div>
+    </div>
+
+    <div class="foot">
+      <button class="btn" id="next" type="button">Continue</button>
+    </div>
+  </section>
+
+  <!-- building board -->
+  <section class="screen hidden" data-s="loading">
+    <div class="load">
+      <div class="spin" aria-hidden="true"></div>
+      <h2 style="font-size:19px;font-weight:800">Building your quest board</h2>
+      <ol>
+        <li id="l1">Saving your profile</li>
+        <li id="l2">Scoring 12 sample quests on causes, skills, time and distance</li>
+        <li id="l3">Adding a reason for each match</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- quest log -->
+  <section class="screen hidden" data-s="log">
+    <p class="share" id="shareLine">Your quest profile is ready</p>
+    <div class="pcard">
+      <div class="av" id="pAv">AS</div>
+      <div class="pn" id="pName">Aarav S</div>
+      <div class="tags"><span class="tag">Student</span><span class="tag" id="pCollege">Madras Christian College</span></div>
+      <div class="loc" id="pLoc">Kodungaiyur, Chennai</div>
+      <div class="lbl">Questing for</div><div class="mini" id="pCauses"></div>
+      <div class="lbl">Looking to</div><div class="mini" id="pGoals"></div>
+      <div class="lbl" id="pAboutL">About me</div><div class="mini" id="pAbout"></div>
+    </div>
+    <div class="stats"><div class="stat"><b>0</b><span>Impact hours</span></div><div class="stat"><b>0</b><span>Quests completed</span></div><div class="stat"><b id="pLines">0 of 6</b><span>Quest lines</span></div></div>
+    <div class="badge"><i>✓</i>Quest ready</div>
+    <div class="foot">
+      <button class="btn" data-go="board" type="button">See my matches &rarr;</button>
+    </div>
+  </section>
+
+  <!-- board -->
+  <section class="screen hidden" data-s="board">
+    <div class="bhead"><h2 id="bTitle">Quests for you</h2><p id="bSub">Ranked by your causes, skills, free time and distance.</p></div>
+    <div class="ai"><span>✦</span><span>Matches are scored by rules first, so the board appears instantly. In the live app, AI then reorders them and writes the reason for each one.</span></div>
+    <div class="list" id="list"></div>
+    <div class="foot"><button class="btn ghost" data-go="log" type="button">View my Quest log</button></div>
+  </section>
+
+  <!-- quest detail -->
+  <section class="screen hidden" data-s="detail">
+    <div class="dhero"><div class="ic" id="dIc"></div><div><h2 id="dName"></h2><p class="qo" id="dOrg"></p></div></div>
+    <div class="facts">
+      <div class="fact"><span>When</span><b id="dWhen"></b></div>
+      <div class="fact"><span>Time needed</span><b id="dDur"></b></div>
+      <div class="fact"><span>Where</span><b id="dWhere"></b></div>
+      <div class="fact"><span>Distance</span><b id="dDist"></b></div>
+    </div>
+    <div class="box"><h3>Why it fits you</h3><ul id="dWhy"></ul></div>
+    <div class="box"><h3>What you'll do</h3><p id="dDo"></p></div>
+    <div class="foot">
+      <button class="btn" data-go="joined" type="button">Join quest</button>
+      <button class="btn ghost" data-go="board" type="button">Back to matches</button>
+    </div>
+  </section>
+
+  <!-- joined -->
+  <section class="screen hidden" data-s="joined">
+    <div class="done">
+      <div class="big">✓</div>
+      <h2>That's the demo</h2>
+      <p>In the live app, joining logs the quest to your profile and your impact hours start counting once you check in.</p>
+      <p>Want to try it with your own profile?</p>
+    </div>
+    <div class="foot">
+      <a class="btn" href="https://v0-side--quest.vercel.app/welcome" target="_blank" rel="noopener" style="text-decoration:none">Try the live Side Quest app &nearr;</a>
+      <button class="btn ghost" data-go="restart" type="button">Restart the demo</button>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var CAUSES = [['🩸','Blood donation drives'],['🌊','Beach & lake cleanups'],['📚','Teaching & tutoring'],['🐾','Animal welfare'],['🌳','Tree planting'],['🍲','Food drives'],['🧓','Elder care'],['♿','Disability inclusion'],['🧠','Mental health awareness']];
+  var GOALS = [['❤️','Give back to my community'],['💪','Build confidence'],['🤝','Meet new people'],['🛠️','Learn new skills'],['📄','Something for my CV']];
+  var SKILLS = [['🧑‍🏫','Teaching'],['🗣️','Tamil and English'],['🎨','Design'],['📱','Social media'],['📷','Photography'],['🎪','Event help'],['🩹','First aid'],['🎵','Music']];
+  var DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  var SLOTS = ['Morning','Afternoon','Evening'];
+  var ABOUT = [['🏙️','New to this city'],['🎵','Music or art lover'],['⚽','Into sports'],['📖','Bookworm'],['🍛','Foodie'],['🤫','Prefer small groups']];
+  var AREAS = {'Kodungaiyur':[13.137,80.247],'Perambur':[13.112,80.233],'Anna Nagar':[13.085,80.210],'Egmore':[13.073,80.261],'T. Nagar':[13.041,80.234],'Mylapore':[13.033,80.268],'Adyar':[13.006,80.257],'Besant Nagar':[13.000,80.267],'Velachery':[12.975,80.221],'Tambaram':[12.925,80.118]};
+
+  /* Sample quests for the demo. Organisation names are descriptive placeholders. */
+  var QUESTS = [
+    {n:'Beach cleanup',o:'Coastal care volunteers',ic:'🌊',bg:'#164e63',c:'Beach & lake cleanups',s:['Event help','Photography'],d:['Sat'],t:'Morning',a:'Besant Nagar',h:2,w:'Sat, 6:30 to 8:30 am',x:'Sort and log waste along Elliot\'s Beach with a crew of 20. Gloves and bags provided.'},
+    {n:'Lake restoration walk',o:'Wetland watch collective',ic:'🪷',bg:'#155e75',c:'Beach & lake cleanups',s:['Photography','Social media'],d:['Sun'],t:'Morning',a:'Velachery',h:2.5,w:'Sun, 7 to 9:30 am',x:'Clear plastic from the lake edge and photograph before and after for the monthly report.'},
+    {n:'Blood donation camp support',o:'Community health camp',ic:'🩸',bg:'#7f1d1d',c:'Blood donation drives',s:['First aid','Event help'],d:['Sat'],t:'Afternoon',a:'Perambur',h:3,w:'Sat, 2 to 5 pm',x:'Register donors, hand out refreshments and help the medical team keep the queue moving.'},
+    {n:'Campus blood drive outreach',o:'Student donor network',ic:'📣',bg:'#9f1239',c:'Blood donation drives',s:['Social media','Design'],d:['Wed'],t:'Evening',a:'Egmore',h:1.5,w:'Wed, 5 to 6:30 pm',x:'Make posts and sign-up sheets for next month\'s camp and talk to first-time donors.'},
+    {n:'Evening tutoring, Class 8',o:'Neighbourhood learning centre',ic:'📚',bg:'#1e3a8a',c:'Teaching & tutoring',s:['Teaching','Tamil and English'],d:['Tue','Thu'],t:'Evening',a:'Kodungaiyur',h:1.5,w:'Tue and Thu, 6 to 7:30 pm',x:'Help a small group with maths and English homework. Lesson plans are shared in advance.'},
+    {n:'Spoken English club',o:'Youth skills trust',ic:'🗣️',bg:'#3730a3',c:'Teaching & tutoring',s:['Tamil and English','Teaching'],d:['Sat'],t:'Afternoon',a:'Mylapore',h:2,w:'Sat, 3 to 5 pm',x:'Run conversation games with first-generation college students preparing for interviews.'},
+    {n:'Animal shelter weekend help',o:'City animal rescue',ic:'🐾',bg:'#78350f',c:'Animal welfare',s:['Photography','Event help'],d:['Sun'],t:'Afternoon',a:'Anna Nagar',h:3,w:'Sun, 1 to 4 pm',x:'Walk and feed rescued dogs, and take adoption photos for the shelter\'s page.'},
+    {n:'Music hour at an elder home',o:'Senior care home',ic:'🎵',bg:'#5b21b6',c:'Elder care',s:['Music','Tamil and English'],d:['Fri'],t:'Evening',a:'Adyar',h:1.5,w:'Fri, 5:30 to 7 pm',x:'Sing, play or simply chat with residents during their weekly music evening.'},
+    {n:'Tree planting drive',o:'Green belt volunteers',ic:'🌳',bg:'#14532d',c:'Tree planting',s:['Event help'],d:['Sun'],t:'Morning',a:'Tambaram',h:3,w:'Sun, 7 to 10 am',x:'Plant and water native saplings along the reserve edge. Transport from the station.'},
+    {n:'Food bank sorting',o:'Neighbourhood food bank',ic:'🍲',bg:'#9a3412',c:'Food drives',s:['Event help'],d:['Wed','Sat'],t:'Afternoon',a:'T. Nagar',h:2,w:'Wed or Sat, 2 to 4 pm',x:'Sort donated groceries into family packs for the weekly distribution.'},
+    {n:'Awareness poster sprint',o:'Youth mental health forum',ic:'🧠',bg:'#0f766e',c:'Mental health awareness',s:['Design','Social media'],d:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],t:'Any',a:'Remote',h:2,w:'Any time this week',x:'Design two posters for campus notice boards from a brief and approved messages.'},
+    {n:'Accessible campus audit',o:'Inclusion action group',ic:'♿',bg:'#1d4ed8',c:'Disability inclusion',s:['Photography','Design'],d:['Sat'],t:'Morning',a:'Egmore',h:2,w:'Sat, 9 to 11 am',x:'Walk a campus with a checklist and photograph ramps, signage and entrances.'}
+  ];
+
+  var state = {step:1, single:{year:'1st'}, multi:{causes:['Beach & lake cleanups','Blood donation drives'], goals:['Give back to my community','Build confidence'], skills:['Event help','Tamil and English'], days:['Sat','Sun'], slots:['Morning'], about:['New to this city']}};
+  var history = [];
+
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function show(name, push) {
+    var cur = $('.screen:not(.hidden)');
+    if (push !== false && cur) history.push(cur.getAttribute('data-s'));
+    $$('.screen').forEach(function (s) { s.classList.toggle('hidden', s.getAttribute('data-s') !== name); });
+    $('#back').classList.toggle('hidden', name === 'welcome' || name === 'loading' || name === 'joined');
+    window.scrollTo(0, 0);
+  }
+
+  function chip(label, icon, pressed) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    b.dataset.v = label;
+    b.innerHTML = (icon ? '<span aria-hidden="true">' + icon + '</span>' : '') + esc(label);
+    return b;
+  }
+
+  function fill(key, items) {
+    var box = $('[data-multi="' + key + '"]');
+    items.forEach(function (it) {
+      var label = Array.isArray(it) ? it[1] : it, icon = Array.isArray(it) ? it[0] : '';
+      box.appendChild(chip(label, icon, state.multi[key].indexOf(label) > -1));
+    });
+  }
+  fill('causes', CAUSES); fill('goals', GOALS); fill('skills', SKILLS); fill('days', DAYS); fill('slots', SLOTS); fill('about', ABOUT);
+
+  var areaSel = $('#fArea');
+  Object.keys(AREAS).forEach(function (a) { var o = document.createElement('option'); o.textContent = a; areaSel.appendChild(o); });
+
+  function syncCap() {
+    var box = $('[data-multi="causes"]'), n = state.multi.causes.length;
+    $('#capN').textContent = n;
+    $$('.chip', box).forEach(function (c) { c.disabled = n >= 5 && c.getAttribute('aria-pressed') !== 'true'; });
+  }
+  syncCap();
+
+  document.addEventListener('click', function (e) {
+    var c = e.target.closest('.chip');
+    if (c && c.closest('[data-multi]')) {
+      var grp = c.closest('[data-multi]'), key = grp.dataset.multi, max = +grp.dataset.max || 99, v = c.dataset.v, arr = state.multi[key];
+      var on = c.getAttribute('aria-pressed') === 'true';
+      if (on) arr.splice(arr.indexOf(v), 1); else if (arr.length < max) arr.push(v); else return;
+      c.setAttribute('aria-pressed', on ? 'false' : 'true');
+      if (key === 'causes') syncCap();
+      validate(); return;
+    }
+    if (c && c.closest('[data-single]')) {
+      var g = c.closest('[data-single]');
+      $$('.chip', g).forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      state.single[g.dataset.single] = c.textContent.trim(); return;
+    }
+    var go = e.target.closest('[data-go]');
+    if (go) {
+      var t = go.dataset.go;
+      if (t === '1') { state.step = 1; renderStep(); show('onboard'); }
+      else if (t === 'board') { renderBoard(); show('board'); }
+      else if (t === 'log') { show('log'); }
+      else if (t === 'joined') { show('joined'); }
+      else if (t === 'restart') { history = []; show('welcome', false); }
+    }
+  });
+
+  $('#fKm').addEventListener('input', function () { $('#kmOut').textContent = this.value + ' km'; });
+  $('#fName').addEventListener('input', validate);
+
+  function validate() {
+    var s = state.step, ok = true;
+    if (s === 1) ok = $('#fName').value.trim().length > 1;
+    if (s === 2) ok = state.multi.causes.length > 0;
+    if (s === 3) ok = state.multi.goals.length > 0;
+    if (s === 5) ok = state.multi.days.length > 0 && state.multi.slots.length > 0;
+    $('#next').disabled = !ok;
+  }
+
+  function renderStep() {
+    $$('[data-step]').forEach(function (d) { d.classList.toggle('hidden', +d.dataset.step !== state.step); });
+    $('#stepLbl').textContent = 'Step ' + state.step + ' of 7';
+    $('#barFill').style.width = (state.step / 7 * 100) + '%';
+    $('#next').textContent = state.step === 7 ? 'Finish my profile' : 'Continue';
+    validate();
+  }
+
+  $('#next').addEventListener('click', function () {
+    if (state.step < 7) { state.step++; renderStep(); window.scrollTo(0, 0); return; }
+    buildProfile(); runLoader();
+  });
+
+  $('#back').addEventListener('click', function () {
+    var cur = $('.screen:not(.hidden)').getAttribute('data-s');
+    if (cur === 'onboard' && state.step > 1) { state.step--; renderStep(); return; }
+    var prev = history.pop();
+    while (prev === 'loading') prev = history.pop();
+    show(prev || 'welcome', false);
+  });
+
+  function initials(n) { return n.trim().split(/\s+/).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase(); }
+  function minis(id, arr, src) {
+    var map = {}; src.forEach(function (it) { map[it[1]] = it[0]; });
+    $(id).innerHTML = arr.map(function (v) { return '<span>' + (map[v] ? map[v] + ' ' : '') + esc(v) + '</span>'; }).join('');
+  }
+
+  function buildProfile() {
+    var name = $('#fName').value.trim() || 'Student';
+    state.name = name; state.college = $('#fCollege').value; state.area = areaSel.value; state.km = +$('#fKm').value;
+    $('#pAv').textContent = initials(name);
+    $('#pName').textContent = name;
+    $('#pCollege').textContent = state.college;
+    $('#pLoc').textContent = state.area + ', Chennai';
+    $('#shareLine').textContent = name.split(' ')[0] + "'s quest profile, ready to share";
+    minis('#pCauses', state.multi.causes, CAUSES);
+    minis('#pGoals', state.multi.goals, GOALS);
+    minis('#pAbout', state.multi.about, ABOUT);
+    $('#pAboutL').classList.toggle('hidden', !state.multi.about.length);
+    $('#pLines').textContent = '0 of ' + state.multi.causes.length;
+  }
+
+  function runLoader() {
+    show('loading');
+    ['#l1','#l2','#l3'].forEach(function (id) { $(id).classList.remove('done'); });
+    setTimeout(function () { $('#l1').classList.add('done'); }, 350);
+    setTimeout(function () { $('#l2').classList.add('done'); }, 900);
+    setTimeout(function () { $('#l3').classList.add('done'); }, 1400);
+    setTimeout(function () { show('log'); }, 1800);
+  }
+
+  function km(a, b) {
+    if (a === 'Remote' || b === 'Remote') return 0;
+    var p = AREAS[a], q = AREAS[b], R = 6371, r = Math.PI / 180;
+    var dLat = (q[0] - p[0]) * r, dLon = (q[1] - p[1]) * r;
+    var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(p[0] * r) * Math.cos(q[0] * r) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return Math.round(2 * R * Math.asin(Math.sqrt(h)) * 1.25 * 10) / 10; /* road factor */
+  }
+
+  function scoreQuest(q) {
+    var m = state.multi, why = [], s = 0;
+    var causeHit = m.causes.indexOf(q.c) > -1;
+    if (causeHit) { s += 40; why.push('You\'re questing for <b>' + esc(q.c.toLowerCase()) + '</b>'); }
+    var skillHits = q.s.filter(function (k) { return m.skills.indexOf(k) > -1; });
+    if (skillHits.length) { s += 20; why.push('Uses your <b>' + esc(skillHits.join(', ')) + '</b> skills'); }
+    var dayHit = q.d.filter(function (d) { return m.days.indexOf(d) > -1; });
+    var slotHit = q.t === 'Any' || m.slots.indexOf(q.t) > -1;
+    if (dayHit.length && slotHit) { s += 25; why.push('Fits your free time: <b>' + (q.t === 'Any' ? 'flexible' : dayHit[0] + ' ' + q.t.toLowerCase()) + '</b>'); }
+    else if (dayHit.length || slotHit) { s += 10; }
+    var dist = km(state.area, q.a);
+    q.dist = dist;
+    if (q.a === 'Remote') { s += 15; why.push('<b>Remote</b>, no travel'); }
+    else if (dist <= state.km) { s += Math.round(15 * (1 - dist / (state.km + 1))) + 4; why.push(dist < 1 ? '<b>Right in ' + esc(state.area) + '</b>' : '<b>' + dist + ' km</b> from ' + esc(state.area)); }
+    else { s -= 10; }
+    q.score = Math.max(0, Math.min(99, s)); q.why = why; q.cause = causeHit;
+    return q;
+  }
+
+  function renderBoard() {
+    var ranked = QUESTS.map(function (q) { return scoreQuest(Object.assign({}, q)); })
+      .filter(function (q) { return (q.cause || q.score >= 45) && (q.a === 'Remote' || q.dist <= state.km * 2); })
+      .sort(function (a, b) { return b.score - a.score; }).slice(0, 6);
+    state.ranked = ranked;
+    $('#bTitle').textContent = 'Quests for you, ' + state.name.split(' ')[0];
+    $('#bSub').textContent = ranked.length + ' matches near ' + state.area + ', ranked by causes, skills, free time and distance.';
+    if (!ranked.length) { $('#list').innerHTML = '<div class="empty">No close matches yet. Go back and add a cause, a free day or a wider travel distance.</div>'; return; }
+    $('#list').innerHTML = ranked.map(function (q, i) {
+      return '<button class="quest" type="button" data-i="' + i + '">' +
+        '<div class="qt"><div class="ic" style="background:' + q.bg + '">' + q.ic + '</div><div><div class="qn">' + esc(q.n) + '</div><div class="qo">' + esc(q.o) + ' &middot; ' + esc(q.a) + '</div></div>' +
+        '<div class="score"><b>' + q.score + '%</b><small>MATCH</small></div></div>' +
+        '<div class="meta"><span class="m">' + esc(q.w) + '</span><span class="m">' + q.h + ' hrs</span><span class="m">' + (q.a === 'Remote' ? 'Remote' : q.dist < 1 ? 'Nearby' : q.dist + ' km') + '</span></div>' +
+        (q.why.length ? '<p class="why">' + q.why[0] + (q.why[1] ? '; ' + q.why[1].charAt(0).toLowerCase() + q.why[1].slice(1) : '') + '.</p>' : '') +
+        '</button>';
+    }).join('');
+  }
+
+  $('#list').addEventListener('click', function (e) {
+    var b = e.target.closest('.quest'); if (!b) return;
+    var q = state.ranked[+b.dataset.i];
+    $('#dIc').textContent = q.ic; $('#dIc').style.background = q.bg;
+    $('#dName').textContent = q.n; $('#dOrg').textContent = q.o + ' · ' + q.c;
+    $('#dWhen').textContent = q.w; $('#dDur').textContent = q.h + ' hours';
+    $('#dWhere').textContent = q.a === 'Remote' ? 'Remote' : q.a + ', Chennai';
+    $('#dDist').textContent = q.a === 'Remote' ? 'No travel' : q.dist < 1 ? 'Under 1 km' : q.dist + ' km away';
+    $('#dWhy').innerHTML = (q.why.length ? q.why : ['A good stretch outside your usual picks']).map(function (w) { return '<li>' + w + '</li>'; }).join('');
+    $('#dDo').textContent = q.x;
+    show('detail');
+  });
+
+  renderStep();
+})();
+</script>
+</body>
+</html>
