@@ -1393,16 +1393,15 @@ html{scroll-padding-top:64px}
 .pj-open span{display:inline-block; transition:transform .2s}
 .pj:hover .pj-open span{transform:translateX(4px)}
 
-.pj-cta{margin-top:36px; border-top:1px solid var(--line)}
-.pj-cta-row{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:20px; padding:26px 6px; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); transition:padding .25s,background .25s}
-.pj-cta-row:hover{background:linear-gradient(90deg,var(--emerald-tint),transparent 70%); padding-left:18px}
-.pj-cta-n{font-family:var(--serif); font-style:italic; font-size:1.05rem; color:var(--emerald); min-width:28px}
-.pj-cta-txt{display:flex; flex-direction:column; gap:3px; min-width:0}
-.pj-cta-txt strong{font-family:var(--serif); font-size:1.5rem; font-weight:600; line-height:1.2}
-.pj-cta-txt span{font-size:.9rem; color:var(--muted)}
-.pj-cta-go{width:38px; height:38px; border-radius:50%; border:1px solid var(--deep-line); display:grid; place-items:center; color:var(--deep); flex:none; transition:background .25s,color .25s,transform .25s}
+.pj-cta{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:36px}
+.pj-cta-card{position:relative; border:1px solid var(--line); background:var(--surface); border-radius:18px; padding:26px 26px 24px; text-decoration:none; color:var(--ink); display:block; transition:border-color .25s,box-shadow .25s,transform .25s}
+.pj-cta-card:hover{border-color:var(--emerald); box-shadow:0 12px 30px rgba(5,150,105,.12); transform:translateY(-3px)}
+.pj-cta-tag{font-family:var(--sans); font-size:.7rem; letter-spacing:.13em; text-transform:uppercase; font-weight:800; color:var(--emerald-ink); background:var(--emerald-tint); padding:5px 10px; border-radius:999px; display:inline-block; margin-bottom:14px}
+.pj-cta-card strong{display:block; font-family:var(--serif); font-size:1.42rem; font-weight:600; line-height:1.2; margin-bottom:6px}
+.pj-cta-card p{margin:0; font-size:.9rem; color:var(--muted); max-width:34ch}
+.pj-cta-go{position:absolute; right:22px; bottom:22px; width:36px; height:36px; border-radius:50%; background:var(--emerald-tint); color:var(--emerald-ink); display:grid; place-items:center; transition:background .25s,color .25s,transform .25s}
 .pj-cta-go svg{width:16px; height:16px}
-.pj-cta-row:hover .pj-cta-go{background:var(--deep); color:#fff; transform:translateX(5px)}
+.pj-cta-card:hover .pj-cta-go{background:var(--emerald); color:#fff; transform:translate(3px,-3px)}
 
 /* qualifications, compact */
 .q-block + .q-block{margin-top:40px}
@@ -1458,9 +1457,7 @@ html{scroll-padding-top:64px}
   .sp-intro-grid{grid-template-columns:minmax(0,1fr); gap:26px}
   button.sp-portrait{width:112px; justify-self:start; border-radius:14px}
   button.sp-portrait .portrait-count{display:none}
-  .pj-grid{grid-template-columns:minmax(0,1fr)}
-  .pj-cta-row{gap:14px; padding:22px 4px}
-  .pj-cta-txt strong{font-size:1.28rem}
+  .pj-grid,.pj-cta{grid-template-columns:minmax(0,1fr)}
   .ab2-proof{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:480px){
