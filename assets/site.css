@@ -1484,3 +1484,12 @@ html{scroll-padding-top:64px}
 .q-more:hover{background:var(--cta-bg); color:var(--cta-ink); border-color:var(--cta-bg)}
 .q-more[aria-expanded="true"] span{display:inline-block; transform:rotate(180deg)}
 .q-more-list[hidden]{display:none}
+
+/* cleaner single page: no rules between sections or rows, plain status line */
+.sp .sp-sec{border-top:0}
+.sp .sp-overview{border-top:0; padding-top:4px}
+.sp .cv-item,.sp .q-more-list{border-top:0}
+.sp .cv-item{padding-block:12px}
+.sp .sp-status{background:none; border:0; padding:0}
+.sp footer{border-top:0}
+.pj-badge{left:auto; right:14px}
