@@ -316,3 +316,53 @@
     tick(); setInterval(tick, 30000);
   });
 })();
+
+/* Single-page scroll spy: mark the nav link for the section in view.
+   The active section is the last one whose top has passed the reading line. */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var nav = document.querySelector('[data-spy]');
+    if (!nav) return;
+    var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    var last = null, ticking = false;
+    function mark(i) {
+      if (i === last) return;
+      last = i;
+      links.forEach(function (a, j) {
+        if (j === i) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+      if (nav.scrollWidth > nav.clientWidth) {
+        nav.scrollTo({ left: links[i].offsetLeft - 16, behavior: 'smooth' });
+      }
+    }
+    function update() {
+      ticking = false;
+      var line = 120, i = 0;
+      secs.forEach(function (s, j) { if (s && s.getBoundingClientRect().top <= line) i = j; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) i = secs.length - 1;
+      mark(i);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+})();
+
+/* "See more" toggles: reveal the hidden rows a button controls. */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.q-more[aria-controls]').forEach(function (btn) {
+      var box = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!box) return;
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        box.hidden = open;
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        btn.firstChild.nodeValue = (open ? btn.getAttribute('data-more-label') : btn.getAttribute('data-less-label')) + ' ';
+      });
+    });
+  });
+})();

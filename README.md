@@ -6,20 +6,19 @@ HTML sharing one stylesheet and one small script.
 ## Pages
 
 ```
-/                          Home
-/work/                     Case study index
-/work/lumi-cards/          Lumi Cards
-/work/side-quest/          Side Quest
+/                           Single scrolling page: intro, projects, capabilities,
+                            qualifications, about, contact (anchors #projects etc.)
+/work/                      Every project, plus the calculators at /work/#tools
+/work/kittii/               Kittii
+/work/side-quest/           Side Quest
+/work/kural/                Kural
+/work/lumi-cards/           Lumi Cards
 /work/hellofresh-retention/ HelloFresh retention study
-/work/kittii/              Kittii
-/projects/                 Side projects, the finance calculators
-/about/                    About
-/about/experience/         Experience
-/about/education/          Education
-/about/certifications/     Certifications
-/contact/                  Contact
-404.html                   Not found
+404.html                    Not found
 ```
+
+The old /about/, /qualifications/ and /contact/ pages redirect to their sections on
+the home page (see `vercel.json`).
 
 ## Deploying to Vercel
 
@@ -48,7 +47,8 @@ the live domain.
 ## Editing
 
 Pages are independent files. The navigation is inline in each page, so adding a nav item means
-editing each file's `.nav-links` block. The current page is marked with `aria-current="page"`.
+editing each file's `.nav-links` block. On the home page the links are in-page anchors and a
+scroll spy marks the section in view; on the other pages they point to `/#section`.
 
 All colour, type and spacing is defined as custom properties at the top of `assets/site.css`.
 Change a value there and it applies everywhere, in both light and dark themes.

@@ -9,18 +9,63 @@
       "permanent": true
     },
     {
+      "source": "/about",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/qualifications",
+      "destination": "/#qualifications",
+      "permanent": true
+    },
+    {
+      "source": "/qualifications/",
+      "destination": "/#qualifications",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
       "source": "/about/experience",
-      "destination": "/qualifications/",
+      "destination": "/#qualifications",
+      "permanent": true
+    },
+    {
+      "source": "/about/experience/",
+      "destination": "/#qualifications",
       "permanent": true
     },
     {
       "source": "/about/education",
-      "destination": "/qualifications/",
+      "destination": "/#qualifications",
+      "permanent": true
+    },
+    {
+      "source": "/about/education/",
+      "destination": "/#qualifications",
       "permanent": true
     },
     {
       "source": "/about/certifications",
-      "destination": "/qualifications/",
+      "destination": "/#qualifications",
+      "permanent": true
+    },
+    {
+      "source": "/about/certifications/",
+      "destination": "/#qualifications",
       "permanent": true
     }
   ],
