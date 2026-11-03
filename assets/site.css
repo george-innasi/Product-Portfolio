@@ -2114,3 +2114,15 @@ html.cs-collapsed #audit,html.cs-collapsed #architecture,html.cs-collapsed #pilo
 #architecture .evidence{gap:clamp(32px,5vw,64px); align-items:center}
 #architecture .evidence + .evidence{margin-top:clamp(48px,7vw,80px)}
 #architecture .ev-card .ev-key{background:rgba(5,150,105,.08); border-left:4px solid #059669; border-radius:0 12px 12px 0; padding:14px 18px; margin:4px 0 0}
+
+/* side quest research: single narrative column, read top to bottom */
+.ev-grid{grid-template-columns:minmax(0,1fr); max-width:760px; margin-inline:auto; gap:clamp(56px,8vw,88px)}
+.ev-grid .ev-card{gap:18px; padding-top:28px}
+.ev-grid .ev-card h3{font-size:clamp(1.3rem,2.6vw,1.65rem)}
+.ev-grid .ev-card > p{font-size:1.04rem; line-height:1.75}
+.ev-grid .pl-stat{padding:18px 20px}
+.ev-grid .pl-stat b{font-size:2.3rem}
+.ev-grid .ev-key{font-size:1.04rem}
+.ev-grid .ev-quote{font-size:clamp(1.2rem,2.2vw,1.45rem); padding-block:4px}
+.ev-grid .ev-stat b{font-size:3rem}
+.ev-grid .ev-stat-low b{font-size:2.4rem}
