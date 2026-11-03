@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=187">
-<script src="/assets/site.js?v=14" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=189">
+<script src="/assets/site.js?v=19" defer></script>
 </head>
-<body data-accent="violet">
+<body data-accent="violet" data-page="kural">
 <a class="skip" href="#main">Skip to content</a>
 
 <nav class="nav">
@@ -38,7 +38,7 @@
       <div class="ph-grid ph-wide ph-split">
         <div class="ph-demo">
           <div class="ph-head">
-          <p class="kicker">Building product sense at HelloPM &middot; Assignment 2 &middot; Cohort 51 &middot; Solo PM and builder</p>
+          <p class="kicker">Building product sense at HelloPM &middot; Assignment 2 &middot; Cohort 51 &middot; Solo PM and builder, 0 to 1</p>
           <h1>Kural</h1>
           <p class="tagline">Draft emails in seconds that still sound like you</p>
           </div>
@@ -64,7 +64,7 @@
             <div><dt>v1.2</dt><dd>Live prototype</dd></div>
           </dl>
 
-          <div class="ph-tools"><span class="chip-row-lbl">Tools used</span><div class="chip-set">
+          <div class="ph-tools"><span class="chip-row-lbl">Tech stack &amp; infrastructure</span><div class="chip-set">
           <span class="chip tool-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.57 6.02V19.5h-1.5V8.92L5.45 19.5H3.72L11.57 6.02zm.86 0L20.28 19.5h-1.73l-4.62-10.58V19.5h-1.5V6.02h1.5z"/></svg>Next.js</span>
           <span class="chip tool-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5L1.5 22h21L12 1.5z"/></svg>Vercel</span>
           <span class="chip tool-ico"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#4285F4"/><stop offset=".5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path d="M12 2l2.4 7.2H22l-6 4.4 2.4 7.2L12 16.4l-6.4 4.4 2.4-7.2-6-4.4h7.6z" fill="url(#gm)"/></svg>Gemini 2.5 Flash</span>
@@ -84,105 +84,102 @@
     </div>
   </section>
 
-  <!-- ORIGIN + OVERVIEW -->
-  <section class="band">
+  <!-- STICKY CASE STUDY INDEX -->
+  <div class="cs-index" id="cs-index">
+    <div class="cs-index-in">
+      <a class="cs-back" href="/#projects"><span aria-hidden="true">&larr;</span><span class="cs-back-t"> All projects</span></a>
+      <nav class="cs-pills" aria-label="Case study sections">
+        <a href="#problem">Problem</a>
+        <a href="#research">Research</a>
+        <a href="#demo">Meet Kural</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#competitors">Competitors</a>
+        <a href="#success">Success metrics</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section class="band" id="problem">
     <div class="wrap">
-      <div class="row-text" style="max-width:none">
-        <h3>How it started</h3>
-        <p>The brief was to stop deconstructing products and start building one. Pick a product I use often, find one real friction, and design an AI-powered improvement I could actually prototype and demonstrate.</p>
-        <p>I kept landing on the same moment in my own week: an AI assistant hands me a clean draft, and I rewrite it anyway. The sentences are correct, but they are not mine, and they read the same whether I am writing to a customer or to my manager. That gap, between a polished draft and a sendable one, became the project.</p>
-        <h3 style="margin-top:14px">Overview</h3>
-        <p><strong>Kural</strong> is an AI email assistant that drafts in your voice and reads the situation before it writes. It is not another model that polishes sentences; it classifies who you are writing to and why, holds a persistent model of how you sound, and produces a draft you can send without a rewrite. Built, shipped, and live at <a href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">kural-iota.vercel.app</a>.</p>
+      <div class="phase"><h2>Why Polished Drafts Still Get Rewritten</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">Origin</p>
+          <h3>How it started</h3>
+          <p>The brief was to stop deconstructing products and start building one. Pick a product I use often, find one real friction, and design an AI-powered improvement I could actually prototype and demonstrate.</p>
+          <p>I kept landing on the same moment in my own week: an AI assistant hands me a clean draft, and I rewrite it anyway. The sentences are correct, but they are not mine, and they read the same whether I am writing to a customer or to my manager. That gap, between a polished draft and a sendable one, became the project.</p>
+          <p class="ev-key"><strong>What I built.</strong> Kural is an AI email assistant that drafts in your voice and reads the situation before it writes. It classifies who you are writing to and why, holds a persistent model of how you sound, and produces a draft you can send without a rewrite. I built it solo, shipped it, and it is live at <a href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">kural-iota.vercel.app</a>.</p>
+        </div>
+
+        <div class="ev-card">
+          <p class="ev-eyebrow">The assignment</p>
+          <h3>Design and prototype an AI-powered feature</h3>
+          <p>The assignment asked me to act as the PM at a company whose product I use often, identify one meaningful opportunity to improve it with AI, and design and prototype how that improvement would actually work. I focused on a single P0 problem and built a demonstrable prototype. The brief also required me to validate the thinking with PMs from that industry rather than inside the assignment.</p>
+        </div>
+
+        <div class="ev-card">
+          <p class="ev-eyebrow">The P0 problem</p>
+          <h3>Professionals rewrite the drafts they are given</h3>
+          <p>Even people who already use AI email tools rewrite what they get, because the tools polish sentences but do not read people: one voice, one register, every reader.</p>
+          <div class="pl-stats pl-stats-rows">
+            <div class="pl-stat"><b>71%</b><span>of AI users surveyed cannot send AI drafts as they are</span></div>
+            <div class="pl-stat"><b>22%</b><span>have quietly abandoned the tools</span></div>
+          </div>
+          <p class="ev-key"><strong>The root cause.</strong> Generic assistants hold no persistent model of your voice and no structured read of the situation.</p>
+        </div>
+
+        <div class="ev-card">
+          <p class="ev-eyebrow">Role and build</p>
+          <h3>Solo, from spec to shipped</h3>
+          <p class="ev-key"><strong>Role.</strong> Solo product manager and builder, end to end.</p>
+          <p class="ev-key"><strong>Stage.</strong> Live prototype, v1.2.</p>
+          <p class="ev-key"><strong>Evidence.</strong> A 36-person survey and four interviews.</p>
+          <p class="ev-key"><strong>How it was built.</strong> I wrote the spec and directed Claude Code to generate the Next.js app end to end, then tested it myself before shipping it on Vercel.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ASSIGNMENT BRIEF + PROBLEM -->
-  <section class="band">
+  <!-- RESEARCH -->
+  <section class="band" id="research">
     <div class="wrap">
-      <div class="dark-cards">
-        <div class="dark-card">
-          <p class="dark-card-label" style="color:var(--gold)">&#128221; The Assignment</p>
-          <h3>Design &amp; prototype an AI-powered feature</h3>
-          <p>You are the PM at a company whose product you use often. Identify one meaningful opportunity to improve it with AI, then design and prototype how that improvement would actually work. Focus on a single P0 problem, build a demonstrable prototype, and validate the thinking with PMs from that industry rather than inside the assignment.</p>
+      <div class="phase"><h2>Proving Voice Is the Blocker, Not Grammar</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">Survey and interviews</p>
+          <h3>Where the time and friction actually go</h3>
+          <p>I ran a 36-person survey through friends, WhatsApp and Reddit, plus four interviews. The question was simple: when you write an important email, where does the time and the friction actually go?</p>
+          <div class="pl-stats pl-stats-rows">
+            <div class="pl-stat"><b>71%</b><span>of AI tool users cannot copy-paste the draft: it sounds like a robot and lacks their voice</span></div>
+            <div class="pl-stat"><b>42%</b><span>say getting the tone right is the single hardest part of writing an important email</span></div>
+            <div class="pl-stat"><b>75%</b><span>spend five minutes or more on a single important email, and many far longer</span></div>
+          </div>
+          <h4 class="pq-head">What the numbers pointed to</h4>
+          <p class="ev-key"><strong>Voice is the blocker, not grammar.</strong> The complaint was never that drafts were wrong. It was that they did not sound like the person sending them.</p>
+          <p class="ev-key"><strong>Tone is situational.</strong> The same person writes differently to a customer, a manager and a professor. Generic tools flatten all three into one register.</p>
+          <p class="ev-key"><strong>The work hides in wording, not typing.</strong> A third of respondents said their time goes into wording and tone, and a quarter into second-guessing what they already wrote.</p>
         </div>
-        <div class="dark-card">
-          <p class="dark-card-label" style="color:var(--gold)">&#9898; The P0 problem</p>
-          <p>Even professionals who already use AI email tools rewrite the drafts they are given, because the tools polish sentences but do not read people: one voice, one register, every reader. <strong>71% of AI users surveyed say they cannot send AI drafts as they are, and 22% have quietly abandoned the tools.</strong> The root cause is that generic assistants hold no persistent model of your voice and no structured read of the situation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- META STRIP -->
-  <section class="band">
-    <div class="wrap row-wide">
-      <div class="meta-strip">
-        <div><dt>Role</dt><dd>Solo product manager and builder, end to end</dd></div>
-        <div><dt>Stage</dt><dd>Live prototype, v1.2</dd></div>
-        <div><dt>Evidence</dt><dd>36-person survey, 4 interviews</dd></div>
-      </div>
-      <p class="meta-note"><strong>How it was built.</strong> I wrote the spec and directed Claude Code to generate the Next.js app end to end, then tested it myself before shipping it on Vercel.</p>
-    </div>
-  </section>
-
-  <!-- SURVEY -->
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>What the research said</h2></div>
-      <div class="row-text" style="max-width:none; margin-bottom:22px">
-        <p class="lede">A 36-person survey run through friends, WhatsApp and Reddit, plus four interviews. The question was simple: when you write an important email, where does the time and the friction actually go?</p>
-      </div>
-      <div class="stat-row">
-        <div class="stat">
-          <div class="stat-fig">71%</div>
-          <p class="stat-cap">of AI tool users cannot copy-paste the draft: it sounds like a robot and lacks their voice.</p>
-        </div>
-        <div class="stat">
-          <div class="stat-fig">42%</div>
-          <p class="stat-cap">say getting the tone right is the single hardest part of writing an important email.</p>
-        </div>
-        <div class="stat">
-          <div class="stat-fig">75%</div>
-          <p class="stat-cap">spend five minutes or more on a single important email, and many far longer.</p>
-        </div>
-      </div>
-      <div class="row-text" style="max-width:none; margin-top:18px">
-        <p class="find">What the numbers pointed to</p>
-        <ul>
-          <li><strong>Voice is the blocker, not grammar.</strong> The complaint was never that drafts were wrong. It was that they did not sound like the person sending them.</li>
-          <li><strong>Tone is situational.</strong> The same person writes differently to a customer, a manager and a professor. Generic tools flatten all three into one register.</li>
-          <li><strong>The work hides in wording, not typing.</strong> A third of respondents said their time goes into wording and tone, and a quarter into second-guessing what they already wrote.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CROSS-CHECK -->
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>Cross-checked against published research</h2></div>
-      <div class="row">
-        <div class="row-text">
+        <div class="ev-card">
+          <p class="ev-eyebrow">Validation</p>
+          <h3>Cross-checked against published research</h3>
           <p>A 36-person survey finds a signal; it does not prove one. So I held each finding against larger, published studies before writing it into the problem statement. The survey and the literature agreed.</p>
-          <p class="find">Where they lined up</p>
-          <ul>
-            <li>McKinsey puts the professional workweek spent on email at around 28%. The time cost is real and large.</li>
-            <li>Bynder found 62% of readers distrust copy that reads as bot-written, and 82% accept it once it feels human. The voice problem is a trust problem.</li>
-            <li>My own survey: 42% named tone as the hardest part and 75% spend five minutes or more per important email. The friction is specific and measurable.</li>
-          </ul>
+          <p class="ev-key"><strong>McKinsey.</strong> Puts the professional workweek spent on email at around 28%. The time cost is real and large.</p>
+          <p class="ev-key"><strong>Bynder.</strong> Found 62% of readers distrust copy that reads as bot-written, and 82% accept it once it feels human. The voice problem is a trust problem.</p>
+          <p class="ev-key"><strong>My own survey.</strong> 42% named tone as the hardest part and 75% spend five minutes or more per important email. The friction is specific and measurable.</p>
+          <div class="cmp-wrap"><table class="cmp">
+            <thead>
+              <tr><th scope="col">Finding</th><th scope="col">My survey</th><th scope="col">Published</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Email is a heavy time cost</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+              <tr><td>Bot-sounding copy is rejected</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+              <tr><td>Tone is the hardest part</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+              <tr><td>Human-sounding copy is trusted</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+            </tbody>
+          </table></div>
         </div>
-        <div class="cmp-wrap"><table class="cmp">
-          <thead>
-            <tr><th scope="col">Finding</th><th scope="col">My survey</th><th scope="col">Published</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Email is a heavy time cost</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
-            <tr><td>Bot-sounding copy is rejected</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
-            <tr><td>Tone is the hardest part</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
-            <tr><td>Human-sounding copy is trusted</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
-          </tbody>
-        </table></div>
       </div>
     </div>
   </section>
@@ -191,106 +188,89 @@
   <section class="band" id="demo">
     <div class="wrap">
       <div class="phase"><h2>Meet Kural</h2></div>
-      <div class="row">
-        <div class="row-text">
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">The product</p>
           <h3>A composer, not an autopilot</h3>
           <p>You give Kural the gist in your own words. Before it writes a single line, it classifies the situation: how urgent it is, the power dynamic, and the emotional register. Then it drafts in your voice, shows you what it detected, and lets you adjust rather than regenerate from scratch.</p>
-          <p>The draft on the right is one pass. No "I hope this email finds you well." No padding. A message the sender could send as is.</p>
+          <p>The draft below is one pass. No "I hope this email finds you well." No padding. A message the sender could send as is.</p>
+          <div class="shot" data-lightbox><img src="/assets/covers/kural.jpg?v=4" alt="Kural landing page: rough thoughts turned into a polished, tone-matched email" width="1200" height="675" loading="lazy"></div>
         </div>
-        <div class="shot" data-lightbox><img src="/assets/covers/kural.jpg?v=4" alt="Kural landing page: rough thoughts turned into a polished, tone-matched email" width="1200" height="675" loading="lazy"></div>
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="band">
+  <section class="band" id="how-it-works">
     <div class="wrap">
-      <div class="phase"><h2>How it works</h2></div>
-      <p class="phase-brief">The engine classifies before it composes. Urgency, power dynamic and emotional category are settled in the schema before a single line is drafted, so tone is a decision the system makes on purpose rather than something the model improvises.</p>
-      <div class="phase-steps">
-        <div class="step-card">
-          <span class="step-num">Step 1</span>
-          <span class="step-title">Classify first</span>
-          <p>A situation object carrying urgency, power dynamic and emotional category is required by the schema before a draft can exist at all.</p>
+      <div class="phase"><h2>How Kural Reads the Situation Before It Writes</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">The engine</p>
+          <h3>Classify first, compose second</h3>
+          <p>I designed the engine to classify before it composes. Urgency, power dynamic and emotional category are settled in the schema before a single line is drafted, so tone is a decision the system makes on purpose rather than something the model improvises.</p>
+          <ol class="prio-list">
+            <li><span class="prio-n">1</span><div><strong>Classify first.</strong> A situation object carrying urgency, power dynamic and emotional category is required by the schema before a draft can exist at all.</div></li>
+            <li><span class="prio-n">2</span><div><strong>Adapt to the reader.</strong> Writing upward, to a customer, or to a peer each pull a different register, chosen by situational rules with a defined precedence.</div></li>
+            <li><span class="prio-n">3</span><div><strong>Draft in your voice.</strong> The draft is composed in that register, with an anti-cliche guard stripping stock AI openers at both the prompt and the server.</div></li>
+            <li><span class="prio-n">4</span><div><strong>Learn from your edits.</strong> Style memory updates from the changes you make, so later drafts drift towards how you actually write.</div></li>
+          </ol>
+          <p class="ev-key"><strong>The result.</strong> A draft that reads the room, and reads like you.</p>
         </div>
-        <div class="step-card">
-          <span class="step-num">Step 2</span>
-          <span class="step-title">Adapt to the reader</span>
-          <p>Writing upward, to a customer, or to a peer each pull a different register, chosen by situational rules with a defined precedence.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">Step 3</span>
-          <span class="step-title">Draft in your voice</span>
-          <p>The draft is composed in that register, with an anti-cliche guard stripping stock AI openers at both the prompt and the server.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">Step 4</span>
-          <span class="step-title">Learn from your edits</span>
-          <p>Style memory updates from the changes you make, so later drafts drift towards how you actually write.</p>
-        </div>
-      </div>
-      <p class="phase-close">The result is a draft that reads the room, and reads like you.</p>
-    </div>
-  </section>
 
-  <!-- UNDER THE HOOD -->
-  <section class="band">
-    <div class="wrap">
-      <div class="dark-cards">
-        <div class="dark-card">
-          <p class="dark-card-label" style="color:var(--gold)">&#9881; Under the hood</p>
+        <div class="ev-card">
+          <p class="ev-eyebrow">Under the hood</p>
           <h3>Deliberately simple, structured underneath</h3>
-          <ul>
-            <li><strong>Classifies before it writes.</strong> A situation object is required in the schema before a draft exists, so tone is a decision, not an afterthought.</li>
-            <li><strong>Adapts to who is reading.</strong> Writing upward, to a customer, or to a peer each pull a different register through rules with set precedence.</li>
-            <li><strong>Learns your voice.</strong> Style memory updates from your edits, so the drafts drift toward how you actually write.</li>
-            <li><strong>Never opens with a cliche.</strong> A prompt-plus-server guard removes "Hope you are doing well" and its relatives. Ever.</li>
-          </ul>
+          <p class="ev-key"><strong>Classifies before it writes.</strong> A situation object is required in the schema before a draft exists, so tone is a decision, not an afterthought.</p>
+          <p class="ev-key"><strong>Adapts to who is reading.</strong> Writing upward, to a customer, or to a peer each pull a different register through rules with set precedence.</p>
+          <p class="ev-key"><strong>Learns your voice.</strong> Style memory updates from your edits, so the drafts drift toward how you actually write.</p>
+          <p class="ev-key"><strong>Never opens with a cliche.</strong> A prompt-plus-server guard removes "Hope you are doing well" and its relatives. Ever.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- COMPETITORS -->
-  <section class="band">
+  <section class="band" id="competitors">
     <div class="wrap">
-      <div class="phase"><h2>What is already out there</h2></div>
-      <div class="row">
-        <div class="row-text">
-          <p class="lede">Capable tools exist. Each solves a nearby problem, and each leaves the voice-and-situation gap open.</p>
-          <p class="find">The gap Kural takes</p>
-          <ul>
-            <li><strong>Superhuman</strong> is fast, but it asks you to replace your whole inbox to get there.</li>
-            <li><strong>Ellie</strong> can train on your voice, but the voice-trained tier is the expensive one.</li>
-            <li><strong>Gemini in Gmail</strong> is cheap and close at hand, but it stays generic unless you prompt it hard every time.</li>
-          </ul>
+      <div class="phase"><h2>What Existing Tools Leave Open</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">Competitors</p>
+          <h3>The gap Kural takes</h3>
+          <p>Capable tools exist. Each solves a nearby problem, and each leaves the voice-and-situation gap open.</p>
+          <p class="ev-key"><strong>Superhuman.</strong> Fast, but it asks you to replace your whole inbox to get there.</p>
+          <p class="ev-key"><strong>Ellie.</strong> Can train on your voice, but the voice-trained tier is the expensive one.</p>
+          <p class="ev-key"><strong>Gemini in Gmail.</strong> Cheap and close at hand, but it stays generic unless you prompt it hard every time.</p>
+          <div class="cmp-wrap"><table class="cmp">
+            <thead>
+              <tr><th scope="col">&nbsp;</th><th scope="col">Superhuman</th><th scope="col">Ellie</th><th scope="col">Gemini</th><th scope="col">Kural</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Voice-first by default</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+              <tr><td>Reads the situation</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+              <tr><td>No inbox switch needed</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
+              <tr><td>Voice without a premium tier</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
+            </tbody>
+          </table></div>
         </div>
-        <div class="cmp-wrap"><table class="cmp">
-          <thead>
-            <tr><th scope="col">&nbsp;</th><th scope="col">Superhuman</th><th scope="col">Ellie</th><th scope="col">Gemini</th><th scope="col">Kural</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Voice-first by default</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
-            <tr><td>Reads the situation</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
-            <tr><td>No inbox switch needed</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td><td class="tick yes">&#10003;</td></tr>
-            <tr><td>Voice without a premium tier</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick no">&#10007;</td><td class="tick yes">&#10003;</td></tr>
-          </tbody>
-        </table></div>
       </div>
     </div>
   </section>
 
-  <!-- GOALS -->
-  <section class="band">
+  <!-- SUCCESS METRICS -->
+  <section class="band" id="success">
     <div class="wrap">
-      <div class="phase"><h2>How success is measured</h2></div>
-      <div class="row-text" style="max-width:none; margin-bottom:18px">
-        <p>One number matters: the send-as-is rate. A draft counts as a win only when the sender ships it with barely a touch.</p>
-      </div>
-      <div class="meta-strip">
-        <div><dt>North star</dt><dd>60% of drafts sent as is, edit distance under 10%</dd></div>
-        <div><dt>Guardrails</dt><dd>Two regenerations or fewer, ask-gate under 25%</dd></div>
-        <div><dt>Speed</dt><dd>P95 draft latency at or under 8 seconds</dd></div>
+      <div class="phase"><h2>How I Measure Success</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">Metrics</p>
+          <h3>One number matters: the send-as-is rate</h3>
+          <p>A draft counts as a win only when the sender ships it with barely a touch.</p>
+          <p class="ev-key"><strong>North star.</strong> 60% of drafts sent as is, edit distance under 10%.</p>
+          <p class="ev-key"><strong>Guardrails.</strong> Two regenerations or fewer, ask-gate under 25%.</p>
+          <p class="ev-key"><strong>Speed.</strong> P95 draft latency at or under 8 seconds.</p>
+        </div>
       </div>
     </div>
   </section>
