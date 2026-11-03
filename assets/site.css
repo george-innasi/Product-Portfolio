@@ -1992,3 +1992,16 @@ html{scroll-padding-top:64px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ev-key strong,:root:not([data-theme="light"]) .ev-quote{color:var(--ink)} :root:not([data-theme="light"]) .ev-eyebrow{color:#6ee7b7} :root:not([data-theme="light"]) .ev-stat b{color:#34d399}}
 @media (max-width:620px){.ev-stats{flex-direction:column} .ev-vs{align-self:flex-start}}
 @media (max-width:700px){.evidence .shot{flex:none; width:100%}}
+
+/* side quest audit: scannable findings and a framed comparison card */
+.row-text ul.audit-list{gap:16px}
+.row-text ul.audit-list li > strong:first-child{color:#0F172A}
+.cmp-card{background:var(--surface); border:1px solid var(--line); border-top:4px solid #059669; border-radius:16px; padding:22px 22px 14px; box-shadow:0 14px 34px -26px rgba(6,78,59,.45); align-self:center}
+.cmp-card .cmp-eyebrow{margin:0 0 6px; font-size:.7rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#047857}
+.cmp-card .cmp{min-width:0}
+.cmp-card .cmp thead th{font-size:.86rem; vertical-align:bottom}
+.cmp-card .cmp th:last-child,.cmp-card .cmp td:last-child{background:rgba(5,150,105,.08)}
+.cmp-card .cmp tbody tr:last-child td{border-bottom:0}
+:root[data-theme="dark"] .row-text ul.audit-list li > strong:first-child{color:var(--ink)}
+:root[data-theme="dark"] .cmp-card .cmp-eyebrow{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .row-text ul.audit-list li > strong:first-child{color:var(--ink)} :root:not([data-theme="light"]) .cmp-card .cmp-eyebrow{color:#6ee7b7}}
