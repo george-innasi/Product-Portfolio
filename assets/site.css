@@ -2154,3 +2154,10 @@ html.cs-collapsed #audit,html.cs-collapsed #architecture,html.cs-collapsed #pilo
 .ph-link.ph-link-award:hover{background:#FACC15; border-color:#FACC15; color:#3d2e00}
 #recognition{scroll-margin-top:calc(var(--nav-h) + var(--bar-h) + 12px)}
 html.cs-collapsed #recognition{scroll-margin-top:calc(var(--bar-h) + 12px)}
+
+/* side quest reflection: roadmap reads as one column, graphic summarises before the detail */
+.pilot-stack .prio-list{gap:18px}
+.pilot-stack .prio-list li{font-size:1.04rem; line-height:1.7; gap:14px}
+.pilot-stack .prio-list li > div{min-width:0}
+.pilot-stack .shot + .prio-list{margin-top:12px}
+.pilot-stack .prio-list + .ev-key{margin-top:8px}
