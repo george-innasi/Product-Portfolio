@@ -2133,3 +2133,14 @@ html.cs-collapsed #audit,html.cs-collapsed #architecture,html.cs-collapsed #pilo
 .phone-frame{background:#0b0c22; padding:10px; border-radius:46px; box-shadow:0 30px 60px -28px rgba(15,23,42,.6), 0 0 0 1.5px #2b2d52 inset}
 .phone-frame img{display:block; width:100%; height:auto; aspect-ratio:780/1688; object-fit:contain; border-radius:36px}
 @media (max-width:700px){.evidence .shot.shot-phone{flex:none; width:100%; max-width:300px}}
+
+/* side quest pilot: single narrative column, flat blocks, image closes each block */
+.pilot-stack .ev-card .shot{margin-top:10px; border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 8px 30px -14px rgba(0,0,0,.25)}
+.pilot-stack .ev-card .shot img{display:block; width:100%; height:auto}
+.pilot-stack .ev-card > p:not(.ev-eyebrow){margin:0}
+.pilot-stack .ev-recognition{border-top-color:#e0b100}
+.pilot-stack .rec-head{display:flex; align-items:center; gap:12px}
+.pilot-stack .rec-head .aw-ico{width:40px; height:40px; border-radius:12px; box-shadow:none}
+.pilot-stack .rec-head .aw-ico svg{width:22px; height:22px}
+.pilot-stack .ev-recognition .shot{max-width:420px}
+@media (max-width:700px){.pilot-stack .ev-recognition .shot{max-width:100%}}
