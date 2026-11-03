@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=167">
-<script src="/assets/site.js?v=14" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=168">
+<script src="/assets/site.js?v=17" defer></script>
 </head>
 <body data-accent="violet" data-page="side-quest">
 <a class="skip" href="#main">Skip to content</a>
@@ -85,6 +85,20 @@
     </div>
   </section>
 
+  <!-- STICKY CASE STUDY INDEX -->
+  <div class="cs-index" id="cs-index">
+    <div class="cs-index-in">
+      <a class="cs-back" href="/#projects"><span aria-hidden="true">&larr;</span><span class="cs-back-t"> All projects</span></a>
+      <nav class="cs-pills" aria-label="Case study sections">
+        <a href="#discovery">Discovery &amp; Research</a>
+        <a href="#audit">Competitor Audit</a>
+        <a href="#architecture">AI Architecture</a>
+        <a href="#pilot">Pilot Learnings</a>
+        <a href="#reflection">Reflection</a>
+      </nav>
+    </div>
+  </div>
+
   <section class="band">
     <div class="wrap row-wide">
       <div class="row-text" style="max-width:none">
@@ -101,7 +115,7 @@
   </section>
 
   <!-- ========== 1. ORIGIN ========== -->
-  <section class="band">
+  <section class="band" id="discovery">
     <div class="wrap">
       <div class="row" style="align-items:start">
         <div class="row-text">
@@ -148,7 +162,7 @@
     </div>
   </section>
 
-  <section class="band">
+  <section class="band" id="audit">
     <div class="wrap">
       <div class="row">
         <div class="row-text">
@@ -178,7 +192,7 @@
   </section>
 
   <!-- ========== 3. SOLUTION & PROCESS ========== -->
-  <section class="band">
+  <section class="band" id="architecture">
     <div class="wrap">
       <div class="phase"><h2>Hybrid AI Matching: Rules-Based Speed with Gemini Reordering</h2></div>
       <div class="evidence">
@@ -209,7 +223,7 @@
   </section>
 
   <!-- ========== 4. IMPACT & METRICS ========== -->
-  <section class="band">
+  <section class="band" id="pilot">
     <div class="wrap">
       <div class="phase"><h2>Pilot Learnings: What 6 Students Taught Us &amp; HelloPM Recognition</h2></div>
       <div class="evidence">
@@ -249,7 +263,7 @@
   </section>
 
   <!-- ========== 5. REFLECTION ========== -->
-  <section class="band">
+  <section class="band" id="reflection">
     <div class="wrap">
       <div class="phase"><h2>PM Reflection: What Six Users Taught Us About Real Product-Market Fit</h2></div>
       <div class="evidence">

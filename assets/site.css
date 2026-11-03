@@ -2050,3 +2050,5 @@ html{scroll-padding-top:64px}
 :root[data-theme="dark"] .nx-kicker{color:#6ee7b7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .prio-list li strong,:root:not([data-theme="light"]) .nx-text h3{color:var(--ink)} :root:not([data-theme="light"]) .nx-kicker{color:#6ee7b7}}
 @media (max-width:760px){.next-card{flex-direction:column; align-items:flex-start; padding:24px 22px} .nx-btn{width:100%; justify-content:center}}
+
+#audit,#architecture,#pilot,#reflection{scroll-margin-top:calc(var(--nav-h) + var(--bar-h) + 12px)}
