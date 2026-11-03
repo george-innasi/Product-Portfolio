@@ -2108,3 +2108,9 @@ html.cs-collapsed #audit,html.cs-collapsed #architecture,html.cs-collapsed #pilo
 .ev-grid .ev-quote{background:none; border-left:3px solid #059669; border-radius:0; padding:2px 0 2px 18px}
 :root[data-theme="dark"] .ev-grid .ev-key strong{color:var(--ink)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ev-grid .ev-key strong{color:var(--ink)}}
+
+/* side quest architecture and Quest Log: no outer cards, text sits beside its mockup; callouts stay single-layer */
+#architecture .ev-card{background:none; border:0; border-radius:0; box-shadow:none; padding:0; gap:14px}
+#architecture .evidence{gap:clamp(32px,5vw,64px); align-items:center}
+#architecture .evidence + .evidence{margin-top:clamp(48px,7vw,80px)}
+#architecture .ev-card .ev-key{background:rgba(5,150,105,.08); border-left:4px solid #059669; border-radius:0 12px 12px 0; padding:14px 18px; margin:4px 0 0}
