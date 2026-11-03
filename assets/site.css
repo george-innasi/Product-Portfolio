@@ -1492,7 +1492,8 @@ html{scroll-padding-top:64px}
 .sp footer{border-top:0}
 /* badge position: placed in each cover's empty space (--bx/--by set per card in index.html) */
 .pj-cover{container-type:inline-size}
-.pj-cover .pj-badge{left:var(--bx,auto); top:var(--by,14px); right:auto; transform:translate(-50%,-50%); white-space:nowrap; font-size:clamp(.56rem,2.2cqi,.74rem); padding:.45em 1em}
+.pj-cover .pj-badge{left:var(--bx,auto); top:var(--by,14px); right:auto; transform:translate(var(--tx,-50%),-50%); white-space:nowrap; font-size:clamp(.56rem,2.2cqi,.74rem); padding:.45em 1em}
+.pj-cover .pj-badge--sm{font-size:clamp(.4rem,1.7cqi,.64rem); padding:.4em .85em}
 
 /* ---------- project hero: title, live prototype left, problem right ----------
    Fills the first screen, so the problem and the prototype are seen together. */
