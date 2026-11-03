@@ -2126,3 +2126,10 @@ html.cs-collapsed #audit,html.cs-collapsed #architecture,html.cs-collapsed #pilo
 .ev-grid .ev-quote{font-size:clamp(1.2rem,2.2vw,1.45rem); padding-block:4px}
 .ev-grid .ev-stat b{font-size:3rem}
 .ev-grid .ev-stat-low b{font-size:2.4rem}
+
+/* portrait phone frame for vertical mobile screenshots */
+.evidence .shot.shot-phone{flex:0 1 320px; border:0; box-shadow:none; background:none; border-radius:0; overflow:visible; margin-inline:auto}
+.evidence .shot.shot-phone:has(img){border:0; box-shadow:none}
+.phone-frame{background:#0b0c22; padding:10px; border-radius:46px; box-shadow:0 30px 60px -28px rgba(15,23,42,.6), 0 0 0 1.5px #2b2d52 inset}
+.phone-frame img{display:block; width:100%; height:auto; aspect-ratio:780/1688; object-fit:contain; border-radius:36px}
+@media (max-width:700px){.evidence .shot.shot-phone{flex:none; width:100%; max-width:300px}}
