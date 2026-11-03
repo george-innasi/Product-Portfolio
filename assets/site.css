@@ -2265,3 +2265,10 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 .k-brief-in .ev-card{margin:0}
 @media (max-width:560px){.k-brief summary{padding:16px 16px}.k-brief-in{padding:24px 16px 24px}}
 @media (prefers-reduced-motion:reduce){.k-brief-ico,.k-brief-ico::before,.k-brief-ico::after{transition:none}}
+
+/* kural: compact feature grid */
+.k-feat{gap:12px}
+.k-feat .k-card{padding:18px 18px 18px; gap:6px}
+.k-feat .k-card h4{font-size:1.04rem}
+.k-feat .k-card p{font-size:.92rem}
+@media (max-width:420px){.k-feat{grid-template-columns:minmax(0,1fr)}}
