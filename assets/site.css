@@ -1948,3 +1948,8 @@ html{scroll-padding-top:64px}
 :root[data-theme="dark"] .peek-eyebrow{color:#6ee7b7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .row-text ul.how-list li > strong:first-child{color:var(--ink)} :root:not([data-theme="light"]) .peek-eyebrow{color:#6ee7b7}}
 @media (max-width:760px){.peek-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* gtm card inside the narrower role section: button drops under the copy */
+.row-wide .gtm-card{margin-top:34px}
+.row-wide .gtm-card summary{grid-template-columns:auto minmax(0,1fr); padding:24px 26px; gap:18px 20px}
+.row-wide .gtm-card .gtm-btn{grid-column:1 / -1; justify-self:start}
