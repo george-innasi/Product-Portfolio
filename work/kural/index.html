@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=206">
+<link rel="stylesheet" href="/assets/site.css?v=207">
 <script src="/assets/site.js?v=20" defer></script>
 </head>
 <body data-accent="violet" data-page="kural">
@@ -211,12 +211,12 @@
         <div class="ev-card">
           <p class="ev-eyebrow">The product</p>
           <h3>Product architecture</h3>
-          <div class="k-cards k-cards-2 k-feat">
-            <div class="k-card"><span class="k-src">Input</span><h4>You give the gist.</h4><p>Rough thoughts, in your own words.</p></div>
-            <div class="k-card"><span class="k-src">Read</span><h4>It reads the situation.</h4><p>Urgency, power dynamic and emotional register are classified before a single line is written.</p></div>
-            <div class="k-card"><span class="k-src">Draft</span><h4>It drafts in your voice.</h4><p>One pass, no "I hope this email finds you well", no padding.</p></div>
-            <div class="k-card"><span class="k-src">Review</span><h4>You stay in control.</h4><p>Kural shows what it detected, and you adjust rather than regenerate.</p></div>
-          </div>
+          <ol class="io-flow" aria-label="Kural's data flow from input to user control">
+            <li class="io-step"><code class="io-tag">01_INPUT</code><h4>You give the gist.</h4><p>Rough thoughts, in your own words.</p></li>
+            <li class="io-step"><code class="io-tag">02_CLASSIFY</code><h4>It reads the situation.</h4><p>Urgency, power dynamic and emotional register are classified before a single line is written.</p></li>
+            <li class="io-step"><code class="io-tag">03_GENERATE</code><h4>It drafts in your voice.</h4><p>One pass, no "I hope this email finds you well", no padding.</p></li>
+            <li class="io-step"><code class="io-tag">04_USER_CONTROL</code><h4>You stay in control.</h4><p>Kural shows what it detected, and you adjust rather than regenerate.</p></li>
+          </ol>
 
           <figure class="k-figure">
             <div class="k-demo">
