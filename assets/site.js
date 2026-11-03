@@ -447,6 +447,18 @@
         if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
       });
     });
+    /* hero buttons that jump to a section (e.g. the recognition banner) use the same offset-aware scroll */
+    [].slice.call(document.querySelectorAll('.ph-links a[href^="#"]')).forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var el = document.getElementById(a.getAttribute('href').slice(1));
+        if (!el) return;
+        e.preventDefault();
+        goTo(el, true);
+        setTimeout(function () { goTo(el, true); }, 900);
+        setTimeout(function () { goTo(el, false); }, 1700);
+        if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
+      });
+    });
     window.addEventListener('scroll', function () {
       if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
     }, { passive: true });
