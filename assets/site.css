@@ -2170,3 +2170,7 @@ html.cs-collapsed #recognition{scroll-margin-top:calc(var(--bar-h) + 12px)}
 .pilot-stack .pilot-quote .pq-note strong{color:#047857; font-weight:800}
 :root[data-theme="dark"] .pilot-stack .pilot-quote .pq-note strong{color:#6ee7b7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pilot-stack .pilot-quote .pq-note strong{color:#6ee7b7}}
+
+/* pilot feedback: quote card is the evidence, headed by a short finding title */
+.pilot-stack .pq-head{margin:0; font-family:var(--sans); font-size:1.08rem; font-weight:700; line-height:1.3; color:var(--ink)}
+.pilot-stack .pq-head + .pilot-quote{margin-top:-6px}
