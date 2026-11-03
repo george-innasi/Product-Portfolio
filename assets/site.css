@@ -2161,3 +2161,12 @@ html.cs-collapsed #recognition{scroll-margin-top:calc(var(--bar-h) + 12px)}
 .pilot-stack .prio-list li > div{min-width:0}
 .pilot-stack .shot + .prio-list{margin-top:12px}
 .pilot-stack .prio-list + .ev-key{margin-top:8px}
+
+/* side quest pilot: direct user quotes as native callout cards */
+.pilot-stack .pilot-quote{margin:-4px 0 4px; padding:20px 24px; background:var(--surface); border:1px solid var(--line); border-left:4px solid #059669; border-radius:4px 16px 16px 4px; box-shadow:0 14px 30px -24px rgba(15,23,42,.45)}
+.pilot-stack .pilot-quote blockquote{margin:0; font-family:var(--serif); font-size:clamp(1.12rem,2vw,1.28rem); font-weight:500; line-height:1.55; letter-spacing:-.005em; color:var(--ink)}
+.pilot-stack .pilot-quote figcaption{margin-top:12px; font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+.pilot-stack .pilot-quote .pq-note{margin:14px 0 0; padding-top:12px; border-top:1px dashed var(--line); font-size:.92rem; line-height:1.6; color:var(--muted)}
+.pilot-stack .pilot-quote .pq-note strong{color:#047857; font-weight:800}
+:root[data-theme="dark"] .pilot-stack .pilot-quote .pq-note strong{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pilot-stack .pilot-quote .pq-note strong{color:#6ee7b7}}
