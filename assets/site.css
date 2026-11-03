@@ -1739,3 +1739,9 @@ html{scroll-padding-top:64px}
 /* about story: explicit leading and paragraph spacing */
 .ab2-story > p{line-height:1.7}
 .ab2-story > p:first-child, .ab2-story > p:nth-child(2){color:var(--ink)}
+
+/* case study hero: wider container and more space between the two columns */
+.ph-hero > .wrap{max-width:1200px}
+.ph-grid{gap:88px}
+.ph-grid.ph-wide{gap:72px}
+@media (max-width:900px){ .ph-grid, .ph-grid.ph-wide{gap:30px} }
