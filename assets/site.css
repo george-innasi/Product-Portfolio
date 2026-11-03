@@ -1378,7 +1378,7 @@ html{scroll-padding-top:64px}
 .pj-cover{position:relative; aspect-ratio:16/9; overflow:hidden; border-bottom:1px solid var(--line); background:var(--surface-2)}
 .pj-cover img{width:100%; height:100%; object-fit:cover; transition:transform .5s}
 .pj:hover .pj-cover img{transform:scale(1.03)}
-.pj-badge{display:inline-block; align-self:flex-start; padding:5px 11px; border-radius:999px; background:#064e3b; color:#facc15; font-size:.74rem; font-weight:800; letter-spacing:.02em; box-shadow:0 4px 12px -4px rgba(0,0,0,.3)}
+.pj-badge{position:absolute; z-index:1; top:14px; left:14px; padding:5px 11px; border-radius:999px; background:#064e3b; color:#facc15; font-size:.74rem; font-weight:800; letter-spacing:.02em; box-shadow:0 6px 16px -6px rgba(0,0,0,.4)}
 .pj-body{display:flex; flex-direction:column; gap:12px; padding:20px 22px 22px; flex:1}
 .pj-title{font-size:1.28rem; font-weight:800; letter-spacing:-.015em; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px}
 .pj-title span{font-family:var(--serif); font-style:italic; font-weight:400; font-size:1rem; color:var(--muted); letter-spacing:0}
@@ -1490,7 +1490,7 @@ html{scroll-padding-top:64px}
 .sp .cv-item{padding-block:12px}
 .sp .sp-status{background:none; border:0; padding:0}
 .sp footer{border-top:0}
-/* badge is now inline in .pj-body, no position override needed */
+/* badge position: top-left on cover (set in base .pj-badge) */
 
 /* ---------- project hero: title, live prototype left, problem right ----------
    Fills the first screen, so the problem and the prototype are seen together. */
@@ -1608,8 +1608,8 @@ html{scroll-padding-top:64px}
 .q-card-body .cv-item.has-logo .l{grid-column:2; align-self:center}
 .q-card-body .cv-item.has-logo .when{grid-column:2; grid-row:2; text-align:left; margin-top:1px; font-size:.82rem}
 
-/* ---------- project card badges: gold, centred ---------- */
-.pj-badge{background:linear-gradient(90deg,#ffd27a,#f4b000); color:#3d2a00; border:1px solid rgba(255,255,255,.4); box-shadow:0 4px 12px -6px rgba(160,110,0,.55)}
+/* ---------- project card badges: gold, top-left ---------- */
+.pj-badge{background:linear-gradient(90deg,#ffd27a,#f4b000); color:#3d2a00; border:1px solid rgba(255,255,255,.4); box-shadow:0 6px 16px -8px rgba(160,110,0,.55)}
 
 /* ---------- qualifications: icon + logo-preview summaries ---------- */
 .q-card summary{flex-direction:column; align-items:stretch; gap:12px; padding:16px 20px}
