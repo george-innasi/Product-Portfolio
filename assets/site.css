@@ -1762,3 +1762,6 @@ html{scroll-padding-top:64px}
 
 /* problem statement: regular weight and open leading */
 .ph-callout .ph-problem{font-weight:400; line-height:1.65}
+.ph-split .ph-demo{align-items:flex-start}
+.ph-split .ph-demo .ph-cap{width:100%; max-width:410px; text-align:center}
+@media (max-width:900px){ .ph-split .ph-demo{align-items:stretch} }
