@@ -1726,3 +1726,12 @@ html{scroll-padding-top:64px}
 :root[data-theme="dark"] .pj-cta-card:hover .pj-cta-art{color:rgba(52,211,153,.11)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pj-cta-art{color:rgba(52,211,153,.07)}}
 @media (max-width:560px){ .pj-cta-art{width:140px; height:140px; right:-14px; bottom:-18px} }
+
+/* qualifications: toggle shows a minus when the accordion is open */
+.q-card[open] .cap-toggle::after{transform:scaleY(0)}
+
+/* qualifications: company and school logos sized for their 64px column
+   (the 140px-column padding was leaving only a few pixels of image) */
+:root .q-card-body .cv-item.has-logo{grid-template-columns:64px 1fr}
+:root .q-card-body .cv-item.has-logo .co-logo{width:64px; height:48px; padding:6px 8px; box-sizing:border-box; object-fit:contain; object-position:center;
+  background:#fff; border:1px solid var(--line); border-radius:10px}
