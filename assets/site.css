@@ -1750,13 +1750,12 @@ html{scroll-padding-top:64px}
    both columns start at the same top edge */
 .ph-split{column-gap:88px; align-items:start; margin-top:28px}
 .ph-split .ph-demo .ph-head{text-align:left; width:100%; max-width:410px; margin-bottom:20px}
-.ph-split .ph-head .kicker{font-size:.66rem; letter-spacing:.06em; white-space:nowrap}
+.ph-split .ph-head .kicker{font-size:.66rem; letter-spacing:.06em}
 .ph-split .ph-device{height:clamp(440px,calc(100svh - 400px),700px)}
 @media (max-width:900px){
   .ph-split{row-gap:24px}
   .ph-split .ph-demo{display:contents}
   .ph-split .ph-demo .ph-head{order:-2; max-width:none; margin-bottom:0}
-  .ph-split .ph-head .kicker{white-space:normal}
   .ph-split .ph-device{height:620px}
 }
 
@@ -1765,3 +1764,8 @@ html{scroll-padding-top:64px}
 .ph-split .ph-demo{align-items:flex-start}
 .ph-split .ph-demo .ph-cap{width:100%; max-width:410px; text-align:center}
 @media (max-width:900px){ .ph-split .ph-demo{align-items:stretch} }
+
+/* wide (desktop web app) case studies: title spans the whole frame */
+.ph-split.ph-wide .ph-demo .ph-head, .ph-split.ph-wide .ph-demo .ph-cap{max-width:none}
+.ph-split.ph-wide .ph-demo .ph-cap{text-align:left}
+.ph-tools .chip-row-lbl{flex:0 0 100%}
