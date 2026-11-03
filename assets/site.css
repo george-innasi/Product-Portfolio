@@ -2096,3 +2096,15 @@ html.cs-collapsed #audit,html.cs-collapsed #architecture,html.cs-collapsed #pilo
 
 /* side quest hero subtitle: reads as the product definition under the problem card */
 .ph-solution.ph-subtitle{font-size:1.1rem; font-weight:500; line-height:1.65; color:var(--ink); max-width:58ch}
+
+/* side quest research: flat layout, one card layer (the stat tiles), plain text blocks */
+.ev-grid{gap:clamp(32px,5vw,64px)}
+.ev-grid .ev-card{background:none; border:0; border-top:3px solid #059669; border-radius:0; box-shadow:none; padding:20px 0 0; height:auto}
+.ev-grid .pl-stats{gap:12px}
+.ev-grid .pl-stat{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px}
+.ev-grid .pl-stat b{color:#059669}
+.ev-grid .ev-key{background:none; border:0; border-radius:0; padding:0; color:var(--muted); line-height:1.7}
+.ev-grid .ev-key strong{display:block; margin-bottom:2px; font-size:1.02rem; color:#0F172A}
+.ev-grid .ev-quote{background:none; border-left:3px solid #059669; border-radius:0; padding:2px 0 2px 18px}
+:root[data-theme="dark"] .ev-grid .ev-key strong{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ev-grid .ev-key strong{color:var(--ink)}}
