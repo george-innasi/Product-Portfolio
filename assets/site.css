@@ -1384,7 +1384,7 @@ html{scroll-padding-top:64px}
 .pj-title span{font-family:var(--serif); font-style:italic; font-weight:400; font-size:1rem; color:var(--muted); letter-spacing:0}
 .pj-tags{display:flex; flex-wrap:wrap; gap:6px}
 .tag{font-size:.74rem; font-weight:600; padding:3px 10px; border-radius:6px; white-space:nowrap}
-.t-green,.t-gold,.t-blue,.t-rose{background-color:#0F172A; color:#FACC15}
+.t-green,.t-gold,.t-blue,.t-rose{background-color:rgba(250,204,21,.2); color:#0F172A}
 .pj-desc{color:var(--muted); font-size:.98rem; line-height:1.55}
 .pj-open{margin-top:auto; padding-top:4px; font-weight:700; font-size:.88rem; color:var(--accent-ink)}
 .pj-open span{display:inline-block; transition:transform .2s}
@@ -1434,9 +1434,9 @@ html{scroll-padding-top:64px}
 #contact .ct-grid{margin-top:8px}
 
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) :is(.t-green,.t-gold,.t-blue,.t-rose){background-color:#0F172A; color:#FACC15}
+  :root:not([data-theme="light"]) :is(.t-green,.t-gold,.t-blue,.t-rose){background-color:rgba(250,204,21,.2); color:#FACC15}
 }
-:root[data-theme="dark"] :is(.t-green,.t-gold,.t-blue,.t-rose){background-color:#0F172A; color:#FACC15}
+:root[data-theme="dark"] :is(.t-green,.t-gold,.t-blue,.t-rose){background-color:rgba(250,204,21,.2); color:#FACC15}
 
 @media (max-width:900px){
   .q-certs{grid-template-columns:repeat(2,minmax(0,1fr))}
