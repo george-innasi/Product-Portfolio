@@ -2161,3 +2161,8 @@ html.cs-collapsed #recognition{scroll-margin-top:calc(var(--bar-h) + 12px)}
 .pilot-stack .prio-list li > div{min-width:0}
 .pilot-stack .shot + .prio-list{margin-top:12px}
 .pilot-stack .prio-list + .ev-key{margin-top:8px}
+
+/* side quest hero: tech stack grouped by layer */
+.ph-tools .tool-groups{display:flex; flex-wrap:wrap; gap:12px 26px; flex:0 0 100%}
+.ph-tools .tool-group{display:flex; flex-direction:column; gap:6px; min-width:0}
+.ph-tools .tool-group-lbl{font-size:.72rem; font-weight:600; color:var(--muted); line-height:1.2}
