@@ -2313,17 +2313,14 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 .cx col.c0,.cx thead th:first-child,.cx tbody th{width:19%}
 .cx thead th{font-family:var(--serif); font-size:1.08rem; font-weight:700; padding-block:18px; border-bottom:1px solid var(--line)}
 .cx tbody th{font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
-.cx tbody tr:nth-child(n+3) th{font-size:.88rem; letter-spacing:0; text-transform:none; font-weight:600; color:var(--ink)}
+.cx tbody tr:nth-child(n+2) th{font-size:.88rem; letter-spacing:0; text-transform:none; font-weight:600; color:var(--ink)}
 .cx tr.cx-good td{font-weight:600}
-.cx tr.cx-gap td{color:#b91c1c; background:color-mix(in srgb,#dc2626 5%,var(--surface))}
-.cx tr.cx-gap th{color:#b91c1c; background:color-mix(in srgb,#dc2626 5%,var(--surface))}
 .cx td:not(.cx-k) .cc-t{display:inline-grid}
-.cx tbody tr:nth-child(n+3) td{text-align:center}
+.cx tbody tr:nth-child(n+2) td{text-align:center}
 .cx thead th:last-child,.cx td.cx-k{text-align:center}
-.cx tbody tr:nth-child(-n+2) td.cx-k{text-align:left}
+.cx tbody tr:nth-child(1) td.cx-k{text-align:left}
 /* emerald winning column */
 .cx td.cx-k,.cx th.cx-k{background:color-mix(in srgb,#059669 12%,var(--surface)); border-inline:2px solid #059669}
-.cx tr.cx-gap td.cx-k{color:var(--ink); font-weight:600}
 .cx thead th.cx-k{background:#059669; color:#fff; border-top:0; border-bottom-color:#059669; font-size:1.2rem}
 .cx tbody tr:last-child td.cx-k{border-bottom:2px solid #059669}
 .cx tr.cx-good td.cx-k{color:var(--ink); font-weight:700}
@@ -2331,10 +2328,7 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 .cc-t.n{display:inline-grid; color:var(--muted); background:color-mix(in srgb,var(--muted) 14%,transparent)}
 .cc-t.y{display:inline-grid; color:#fff; background:#059669}
 @media (max-width:1000px){.cx-wrap{width:min(760px,100%); left:auto; transform:none}}
-@media (max-width:560px){.cx th,.cx td{padding:12px 10px; font-size:.84rem}.cx tbody th{position:sticky; left:0; z-index:1; background:var(--surface)}.cx tr.cx-gap th{background:color-mix(in srgb,#dc2626 5%,var(--surface))}}
-:root[data-theme="dark"] .cx tr.cx-gap td,:root[data-theme="dark"] .cx tr.cx-gap th{color:#fca5a5}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cx tr.cx-gap td,:root:not([data-theme="light"]) .cx tr.cx-gap th{color:#fca5a5}}
-:root .cx tr.cx-gap td.cx-k{color:var(--ink); background:color-mix(in srgb,#059669 12%,var(--surface))}
+@media (max-width:560px){.cx th,.cx td{padding:12px 10px; font-size:.84rem}.cx tbody th{position:sticky; left:0; z-index:1; background:var(--surface)}}
 @media (max-width:560px){
   .cx{min-width:600px}
   .cx thead th:first-child,.cx tbody th{width:96px}
@@ -2371,7 +2365,7 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 [data-page="kural"] .k-step:not(:last-child)::before{top:31px; right:-27px}
 [data-page="kural"] .cx th,[data-page="kural"] .cx td{padding:10px 12px}
 [data-page="kural"] .cx thead th{padding-block:13px}
-[data-page="kural"] .cx tbody tr:nth-child(n+3) th,[data-page="kural"] .cx tbody tr:nth-child(n+3) td{padding-block:8px}
+[data-page="kural"] .cx tbody tr:nth-child(n+2) th,[data-page="kural"] .cx tbody tr:nth-child(n+2) td{padding-block:8px}
 [data-page="kural"] .pilot-stack .prio-list{gap:12px}
 @media (max-width:1000px){[data-page="kural"] .k-flow{gap:22px 26px}}
 [data-page="kural"] .cmp th,[data-page="kural"] .cmp td{padding-block:9px}
@@ -2391,3 +2385,12 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 [data-page="kural"] .xb-hero{padding:22px 24px; gap:8px; min-height:0}
 [data-page="kural"] .xb-docs{gap:8px}
 [data-page="kural"] .xb-doc{padding:11px 14px}
+
+/* kural competitors: limitation sits under each tool name; tighter intro spacing */
+.cx thead th{vertical-align:top}
+.cx thead th small{display:block; margin-top:5px; font-family:var(--sans); font-size:.78rem; font-weight:600; line-height:1.35; color:#b91c1c}
+.cx thead th.cx-k small{color:rgba(255,255,255,.92)}
+:root[data-theme="dark"] .cx thead th:not(.cx-k) small{color:#fca5a5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cx thead th:not(.cx-k) small{color:#fca5a5}}
+[data-page="kural"] #competitors .ev-grid{gap:12px}
+[data-page="kural"] #competitors .ev-card{padding-bottom:0}
