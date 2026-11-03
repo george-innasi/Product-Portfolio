@@ -1769,3 +1769,11 @@ html{scroll-padding-top:64px}
 .ph-split.ph-wide .ph-demo .ph-head, .ph-split.ph-wide .ph-demo .ph-cap{max-width:none}
 .ph-split.ph-wide .ph-demo .ph-cap{text-align:left}
 .ph-tools .chip-row-lbl{flex:0 0 100%}
+
+/* kittii research: breathing room in the insight list and metric callouts */
+.row-text ul.insight-list{gap:16px}
+.row-text li.metric-li{list-style:none; margin-left:-20px; padding:2px 0}
+.stat-row{display:flex; align-items:center; gap:16px; margin-top:6px}
+.stat-num{flex:none; min-width:84px; font-family:var(--serif); font-weight:700; font-size:2.4rem; line-height:1; letter-spacing:-.01em; color:#059669}
+.stat-cap{color:var(--muted)}
+@media (max-width:520px){ .stat-num{min-width:72px; font-size:2rem} }
