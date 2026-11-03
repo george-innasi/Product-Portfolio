@@ -366,3 +366,69 @@
     });
   });
 })();
+
+
+/* Case study index: sticky offsets, active section highlight. */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var bar = document.getElementById('cs-index');
+    if (!bar) return;
+    var nav = document.querySelector('.nav');
+    var pills = bar.querySelector('.cs-pills');
+    var links = [].slice.call(pills.querySelectorAll('a[href^="#"]'));
+    var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    var root = document.documentElement, ticking = false, current = -1;
+
+    function offsets() {
+      var n = nav ? nav.offsetHeight : 61;
+      root.style.setProperty('--nav-h', n + 'px');
+      root.style.setProperty('--bar-h', bar.offsetHeight + 'px');
+      return n + bar.offsetHeight;
+    }
+    function mark(i) {
+      if (i === current) return;
+      current = i;
+      links.forEach(function (a, j) {
+        a.classList.toggle('is-active', j === i);
+        if (j === i) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+      if (i >= 0) {
+        var a = links[i];
+        pills.scrollTo({ left: a.offsetLeft - (pills.clientWidth - a.offsetWidth) / 2, behavior: 'smooth' });
+      }
+    }
+    function update() {
+      ticking = false;
+      var line = offsets() + 24, idx = -1, best = -Infinity;
+      targets.forEach(function (t, j) {
+        if (!t) return;
+        var top = t.getBoundingClientRect().top;
+        if (top <= line && top > best) { best = top; idx = j; }
+      });
+      mark(idx);
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function goTo(t, smooth) {
+      var y = window.pageYOffset + t.getBoundingClientRect().top - offsets() - 12;
+      window.scrollTo({ top: Math.max(0, y), behavior: (smooth && !reduce) ? 'smooth' : 'auto' });
+    }
+    links.forEach(function (a, j) {
+      a.addEventListener('click', function (e) {
+        var t = targets[j];
+        if (!t) return;
+        e.preventDefault();
+        goTo(t, true);
+        /* lazy images above the target shift the page while it scrolls, so re-aim twice */
+        setTimeout(function () { goTo(t, true); }, 900);
+        setTimeout(function () { goTo(t, false); }, 1700);
+        if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
+      });
+    });
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  });
+})();

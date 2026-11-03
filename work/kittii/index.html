@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=157">
-<script src="/assets/site.js?v=14" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=158">
+<script src="/assets/site.js?v=17" defer></script>
 </head>
 <body data-accent="wine">
 <a class="skip" href="#main">Skip to content</a>
@@ -87,6 +87,21 @@
     </div>
   </section>
 
+  <!-- STICKY CASE STUDY INDEX -->
+  <div class="cs-index" id="cs-index">
+    <div class="cs-index-in">
+      <a class="cs-back" href="/#projects"><span aria-hidden="true">&larr;</span><span class="cs-back-t"> All projects</span></a>
+      <nav class="cs-pills" aria-label="Case study sections">
+        <a href="#gtm">GTM Strategy</a>
+        <a href="#discovery">Discovery</a>
+        <a href="#insights">Market Insights</a>
+        <a href="#business-model">Business Model</a>
+        <a href="#solution">Solution</a>
+        <a href="#mvp">MVP Build</a>
+      </nav>
+    </div>
+  </div>
+
   <!-- META STRIP -->
   <section class="band">
     <div class="wrap row-wide">
@@ -105,7 +120,7 @@
         </ul>
         <p>As a co-founder, I translated our core vision into a rigorous product roadmap, leading an 8-person cross-functional team spanning engineering, UI/UX design, and marketing to bring Kittii from concept to high-fidelity MVP.</p>
       </div>
-      <details class="board-note gtm-card">
+      <details class="board-note gtm-card" id="gtm">
         <summary>
           <span class="gtm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
           <span class="gtm-copy">
@@ -137,7 +152,7 @@
   </section>
 
   <!-- ========== 1. DISCOVERY & VALIDATION ========== -->
-  <section class="band">
+  <section class="band" id="discovery">
     <div class="wrap">
       <div class="row" style="align-items:start">
         <div class="row-text">
@@ -151,7 +166,7 @@
     </div>
   </section>
 
-  <section class="band">
+  <section class="band" id="insights">
     <div class="wrap">
       <div class="trap-head">
         <h3>Every competitor ran short of finders</h3>
@@ -208,7 +223,7 @@
 
   <section class="band">
     <div class="wrap">
-      <section class="biz" aria-labelledby="biz-title">
+      <section class="biz" id="business-model" aria-labelledby="biz-title">
         <div class="biz-head">
           <p class="biz-kicker">Business model <span class="biz-flag">Untested</span></p>
           <h3 id="biz-title">Kittii intended revenue model</h3>
@@ -292,7 +307,7 @@
   </section>
 
   <!-- ========== 3. SOLUTION & PROCESS ========== -->
-  <section class="band">
+  <section class="band" id="solution">
     <div class="wrap">
       <div class="phase"><h2>Flipping the Model: Leading with Sherlocks</h2></div>
       <p class="mvp-intro">The MVP successfully reached high-fidelity build completion, delivering a dual-sided consumer app for Seekers and Sherlocks, backed by a secure human-in-the-loop admin console to manually verify ownership claims before any item handover.</p>
@@ -328,7 +343,7 @@
   </section>
 
   <!-- ========== 4. IMPACT & METRICS ========== -->
-  <section class="band">
+  <section class="band" id="mvp">
     <div class="wrap">
       <div class="phase"><h2>Building for the 0-to-1 MVP</h2></div>
       <div class="row">

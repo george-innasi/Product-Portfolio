@@ -1953,3 +1953,19 @@ html{scroll-padding-top:64px}
 .row-wide .gtm-card{margin-top:34px}
 .row-wide .gtm-card summary{grid-template-columns:auto minmax(0,1fr); padding:24px 26px; gap:18px 20px}
 .row-wide .gtm-card .gtm-btn{grid-column:1 / -1; justify-self:start}
+
+/* kittii: sticky case study index with persistent back control */
+:root{--nav-h:61px; --bar-h:54px}
+.cs-index{position:sticky; top:var(--nav-h); z-index:30; background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.cs-index-in{max-width:1200px; margin:0 auto; padding:9px max(20px,env(safe-area-inset-left,0px)); display:flex; align-items:center; gap:14px}
+.cs-back{flex:none; display:inline-flex; align-items:center; gap:4px; padding:8px 14px 8px 12px; border-radius:999px; font-weight:700; font-size:.86rem; color:var(--ink); text-decoration:none; border:1px solid var(--line); background:var(--surface); transition:background .2s,color .2s,border-color .2s}
+.cs-back:hover{background:#059669; color:#fff; border-color:#059669}
+.cs-pills{display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; flex:1; min-width:0; padding:2px 0}
+.cs-pills::-webkit-scrollbar{display:none}
+.cs-pills a{flex:none; padding:7px 14px; border-radius:999px; font-weight:600; font-size:.86rem; color:var(--muted); text-decoration:none; border:1px solid transparent; transition:background .2s,color .2s,border-color .2s; white-space:nowrap}
+.cs-pills a:hover{color:var(--ink); background:rgba(5,150,105,.08)}
+.cs-pills a.is-active{background:#059669; color:#fff; border-color:#059669}
+#gtm,#discovery,#insights,#business-model,#solution,#mvp{scroll-margin-top:calc(var(--nav-h) + var(--bar-h) + 12px)}
+:root[data-theme="dark"] .cs-pills a.is-active{background:#059669; color:#fff}
+@media (max-width:560px){.cs-back-t{display:none} .cs-back{padding:8px 12px} .cs-index-in{gap:10px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
