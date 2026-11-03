@@ -1405,9 +1405,9 @@ html{scroll-padding-top:64px}
 .pj-cta-tag{font-family:var(--sans); font-size:.7rem; letter-spacing:.13em; text-transform:uppercase; font-weight:800; color:var(--emerald-ink); background:var(--emerald-tint); padding:5px 10px; border-radius:999px; display:inline-block; margin-bottom:14px}
 .pj-cta-card strong{display:block; font-family:var(--serif); font-size:1.42rem; font-weight:600; line-height:1.2; margin-bottom:6px}
 .pj-cta-card p{margin:0; font-size:.9rem; color:var(--muted); max-width:34ch}
-.pj-cta-go{position:absolute; right:22px; bottom:22px; width:36px; height:36px; border-radius:50%; background:var(--emerald-tint); color:var(--emerald-ink); display:grid; place-items:center; transition:background .25s,color .25s,transform .25s}
+.pj-cta-go{position:absolute; right:22px; bottom:22px; width:36px; height:36px; border-radius:50%; background-color:#059669; color:#FFFFFF; box-shadow:0 4px 6px -1px rgba(0,0,0,.1); display:grid; place-items:center; transition:transform .25s, box-shadow .25s}
 .pj-cta-go svg{width:16px; height:16px}
-.pj-cta-card:hover .pj-cta-go{background:var(--emerald); color:#fff; transform:translate(3px,-3px)}
+.pj-cta-card:hover .pj-cta-go, .pj-cta-go:hover{transform:scale(1.05); box-shadow:0 6px 10px -2px rgba(0,0,0,.18)}
 
 /* qualifications, compact */
 .q-block + .q-block{margin-top:40px}
