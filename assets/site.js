@@ -368,22 +368,39 @@
 })();
 
 
-/* Case study index: sticky offsets, active section highlight. */
+/* Case study index: sticky offsets, active section highlight, and header handover.
+   Past the hero the site header slides away and the index bar takes over the top edge;
+   back above that point the header returns and the bar goes back inline. */
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     var bar = document.getElementById('cs-index');
     if (!bar) return;
     var nav = document.querySelector('.nav');
+    var hero = document.querySelector('.ph-hero');
     var pills = bar.querySelector('.cs-pills');
     var links = [].slice.call(pills.querySelectorAll('a[href^="#"]'));
     var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
-    var root = document.documentElement, ticking = false, current = -1;
+    var root = document.documentElement, ticking = false, current = -1, collapsed = false;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    function navH() { return nav ? nav.offsetHeight : 61; }
+    function barH() { return bar.offsetHeight; }
     function offsets() {
-      var n = nav ? nav.offsetHeight : 61;
-      root.style.setProperty('--nav-h', n + 'px');
-      root.style.setProperty('--bar-h', bar.offsetHeight + 'px');
-      return n + bar.offsetHeight;
+      root.style.setProperty('--nav-h', navH() + 'px');
+      root.style.setProperty('--bar-h', barH() + 'px');
+      return (collapsed ? 0 : navH()) + barH();
+    }
+    /* scroll position at which the index bar reaches the bottom of the site header */
+    function threshold() {
+      var bottom = hero ? hero.getBoundingClientRect().bottom + window.pageYOffset : 400;
+      return Math.max(0, bottom - navH());
+    }
+    function setCollapsed(on) {
+      if (on === collapsed) return;
+      collapsed = on;
+      root.classList.toggle('cs-collapsed', on);
+      if (nav) nav.setAttribute('aria-hidden', on ? 'true' : 'false');
+      if (nav) { if (on) nav.setAttribute('inert', ''); else nav.removeAttribute('inert'); }
     }
     function mark(i) {
       if (i === current) return;
@@ -399,28 +416,34 @@
     }
     function update() {
       ticking = false;
+      var y = window.pageYOffset, t = threshold();
+      if (!collapsed && y > t + 8) setCollapsed(true);
+      else if (collapsed && (y < t - 8 || y <= 2)) setCollapsed(false);
       var line = offsets() + 24, idx = -1, best = -Infinity;
-      targets.forEach(function (t, j) {
-        if (!t) return;
-        var top = t.getBoundingClientRect().top;
+      targets.forEach(function (el, j) {
+        if (!el) return;
+        var top = el.getBoundingClientRect().top;
         if (top <= line && top > best) { best = top; idx = j; }
       });
       mark(idx);
     }
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function goTo(t, smooth) {
-      var y = window.pageYOffset + t.getBoundingClientRect().top - offsets() - 12;
+    function goTo(el, smooth) {
+      var abs = window.pageYOffset + el.getBoundingClientRect().top;
+      /* aim for where the bars will be once the jump lands, not where they are now */
+      var landed = abs > threshold() + 8;
+      offsets();
+      var y = abs - (landed ? 0 : navH()) - barH() - 12;
       window.scrollTo({ top: Math.max(0, y), behavior: (smooth && !reduce) ? 'smooth' : 'auto' });
     }
     links.forEach(function (a, j) {
       a.addEventListener('click', function (e) {
-        var t = targets[j];
-        if (!t) return;
+        var el = targets[j];
+        if (!el) return;
         e.preventDefault();
-        goTo(t, true);
+        goTo(el, true);
         /* lazy images above the target shift the page while it scrolls, so re-aim twice */
-        setTimeout(function () { goTo(t, true); }, 900);
-        setTimeout(function () { goTo(t, false); }, 1700);
+        setTimeout(function () { goTo(el, true); }, 900);
+        setTimeout(function () { goTo(el, false); }, 1700);
         if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
       });
     });
