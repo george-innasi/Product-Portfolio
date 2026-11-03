@@ -2011,3 +2011,42 @@ html{scroll-padding-top:64px}
 .ev-card > p > strong:first-child{color:#0F172A}
 :root[data-theme="dark"] .ev-card ul.arch-list li > strong,:root[data-theme="dark"] .ev-card > p > strong:first-child{color:var(--ink)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ev-card ul.arch-list li > strong,:root:not([data-theme="light"]) .ev-card > p > strong:first-child{color:var(--ink)}}
+
+/* side quest pilot: stat tiles, defect callouts, award card */
+.pl-stats{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px}
+.pl-stat{background:rgba(5,150,105,.1); border:1px solid color-mix(in srgb,#059669 30%,var(--line)); border-radius:12px; padding:12px 14px; display:flex; flex-direction:column; gap:4px}
+.pl-stat b{font-family:var(--serif); font-weight:700; font-size:2rem; line-height:1; letter-spacing:-.01em; color:#059669}
+.pl-stat span{font-size:.84rem; font-weight:600; line-height:1.35; color:var(--muted)}
+.pl-stat-low{background:var(--surface-2,#f3f4f6); border-color:var(--line)}
+.pl-stat-low b{color:var(--muted)}
+.ev-card > p.ev-key + p.ev-key{margin-top:0}
+.evidence.ev-award{background:linear-gradient(135deg,rgba(250,204,21,.18),rgba(250,204,21,.05) 60%,var(--surface)); border:1.5px solid #e0b100; border-radius:22px; padding:28px; box-shadow:0 22px 46px -30px rgba(161,120,0,.6); margin-top:clamp(32px,5vw,56px); gap:30px}
+.ev-award .shot{flex:0 1 300px}
+.ev-award .ev-text{max-width:none; display:flex; flex-direction:column; gap:10px; color:var(--ink)}
+.aw-ico{width:56px; height:56px; border-radius:16px; background:#FACC15; color:#3d2e00; display:grid; place-items:center; box-shadow:0 10px 20px -10px rgba(161,120,0,.8)}
+.aw-ico svg{width:30px; height:30px}
+.aw-kicker{margin:0 !important; font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#8a6500}
+.ev-award .ev-text h3{font-size:clamp(1.3rem,2.6vw,1.75rem); line-height:1.2; margin:0}
+.ev-award .ev-text p{font-size:1.02rem; line-height:1.65; color:var(--muted); margin:0}
+:root[data-theme="dark"] .pl-stat b{color:#34d399}
+:root[data-theme="dark"] .aw-kicker{color:#fde68a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pl-stat b{color:#34d399} :root:not([data-theme="light"]) .aw-kicker{color:#fde68a}}
+@media (max-width:700px){.evidence.ev-award{padding:20px} .ev-award .shot{flex:none; width:100%; max-width:320px; margin:0 auto}}
+
+/* side quest reflection: priorities and next project card */
+.prio-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px}
+.prio-list li{display:flex; align-items:flex-start; gap:12px; line-height:1.6; color:var(--muted)}
+.prio-list li strong{color:#0F172A}
+.prio-n{flex:none; width:28px; height:28px; border-radius:50%; background:#059669; color:#fff; font-weight:800; font-size:.85rem; display:grid; place-items:center; margin-top:1px}
+.next-card{display:flex; align-items:center; justify-content:space-between; gap:28px; background:linear-gradient(135deg,rgba(5,150,105,.14),rgba(5,150,105,.04) 70%,var(--surface)); border:1.5px solid #059669; border-radius:20px; padding:30px 32px; box-shadow:0 18px 40px -28px rgba(6,78,59,.55)}
+.nx-kicker{margin:0 0 6px; font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#047857}
+.nx-text h3{margin:0 0 8px; font-family:var(--serif); font-weight:700; font-size:clamp(1.4rem,2.8vw,1.9rem); line-height:1.15; color:#0F172A}
+.nx-text p:last-child{margin:0; max-width:56ch; color:var(--muted); line-height:1.6}
+.nx-btn{flex:none; display:inline-flex; align-items:center; gap:10px; padding:15px 24px; border-radius:999px; background:#059669; color:#fff; font-weight:700; font-size:1rem; text-decoration:none; box-shadow:0 12px 24px -12px rgba(5,150,105,.9); transition:background .2s, transform .2s, box-shadow .2s}
+.nx-btn span{transition:transform .2s}
+.nx-btn:hover{background:#047857; transform:translateY(-2px); box-shadow:0 16px 28px -12px rgba(5,150,105,.95); color:#fff}
+.nx-btn:hover span{transform:translateX(4px)}
+:root[data-theme="dark"] .prio-list li strong,:root[data-theme="dark"] .nx-text h3{color:var(--ink)}
+:root[data-theme="dark"] .nx-kicker{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .prio-list li strong,:root:not([data-theme="light"]) .nx-text h3{color:var(--ink)} :root:not([data-theme="light"]) .nx-kicker{color:#6ee7b7}}
+@media (max-width:760px){.next-card{flex-direction:column; align-items:flex-start; padding:24px 22px} .nx-btn{width:100%; justify-content:center}}
