@@ -1690,3 +1690,11 @@ html{scroll-padding-top:64px}
 .src-note a{color:#1f8a7a; font-weight:700; font-style:normal; text-decoration:none}
 .ph-disclaimer{margin:16px 0 0; font-size:.8rem; line-height:1.5; color:var(--muted); opacity:.85; max-width:52ch}
 .cards.one{grid-template-columns:minmax(0,1fr); max-width:720px}
+
+/* about: How I work sits at its natural height; proof tiles lead with the number */
+.ab2{align-items:start}
+.ab2-how .ab2-list{flex:none; justify-content:flex-start}
+.ab2-how .ab2-list li{padding-block:16px}
+.ab2-proof div{padding:16px 16px 14px; display:flex; flex-direction:column; gap:6px}
+.ab2-proof dt{font-size:2.05rem; line-height:1; letter-spacing:-.01em}
+.ab2-proof dd{margin:0; font-size:.74rem; line-height:1.35}
