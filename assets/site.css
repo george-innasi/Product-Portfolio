@@ -2005,3 +2005,9 @@ html{scroll-padding-top:64px}
 :root[data-theme="dark"] .row-text ul.audit-list li > strong:first-child{color:var(--ink)}
 :root[data-theme="dark"] .cmp-card .cmp-eyebrow{color:#6ee7b7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .row-text ul.audit-list li > strong:first-child{color:var(--ink)} :root:not([data-theme="light"]) .cmp-card .cmp-eyebrow{color:#6ee7b7}}
+
+.ev-card ul.arch-list{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:12px; color:var(--muted); line-height:1.65}
+.ev-card ul.arch-list li > strong{color:#0F172A}
+.ev-card > p > strong:first-child{color:#0F172A}
+:root[data-theme="dark"] .ev-card ul.arch-list li > strong,:root[data-theme="dark"] .ev-card > p > strong:first-child{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ev-card ul.arch-list li > strong,:root:not([data-theme="light"]) .ev-card > p > strong:first-child{color:var(--ink)}}

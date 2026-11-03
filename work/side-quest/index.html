@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=163">
+<link rel="stylesheet" href="/assets/site.css?v=164">
 <script src="/assets/site.js?v=14" defer></script>
 </head>
 <body data-accent="violet" data-page="side-quest">
@@ -180,24 +180,29 @@
   <!-- ========== 3. SOLUTION & PROCESS ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Rules First, AI on Top: A Quest Board That Never Waits on the Model</h2></div>
+      <div class="phase"><h2>Hybrid AI Matching: Rules-Based Speed with Gemini Reordering</h2></div>
       <div class="evidence">
         <div class="shot" data-lightbox><img src="/assets/side-quest/architecture-slide.png" alt="How Side Quest was built: rules-based matching first, AI reordering on top. Five stages from sign-in through baseline ranking to model re-rank, with a tools breakdown by stage." width="1200" height="675" loading="lazy"></div>
-        <div class="ev-text">
+        <div class="ev-text ev-card">
+          <p class="ev-eyebrow">Architecture</p>
           <h3>How Side Quest was built</h3>
-          <p>Rules-based matching first; AI reordering on top. A baseline score across interests, skills, availability and distance renders the quest board immediately. Gemini 2.5 Flash then reorders it and supplies a reason per quest.</p>
-          <p>The ordering matters: the board is useful even when the model is slow or unavailable. A fallback takes over whenever model latency exceeds 1.5 seconds.</p>
-          <p><strong>North star: confirmed quest starts.</strong> A student matched, attended, and logged their first civic hour. It sits past sign-up on purpose, because the usual failure is students who register and never turn up.</p>
+          <ul class="arch-list">
+            <li><strong>Rules-based baseline.</strong> A score across interests, skills, availability and distance renders the quest board immediately.</li>
+            <li><strong>Gemini 2.5 Flash reordering.</strong> The model then reorders the board and supplies a reason for each quest.</li>
+            <li><strong>1.5 second latency fallback.</strong> If the model is slow or unavailable, the baseline board stays useful and the fallback takes over once latency passes 1.5 seconds.</li>
+          </ul>
+          <p class="ev-key"><strong>North star: confirmed quest starts.</strong> A student matched, attended, and logged their first civic hour. It sits past sign-up on purpose, because the usual failure is students who register and never turn up.</p>
         </div>
       </div>
 
       <div class="evidence">
         <div class="shot" data-lightbox><img src="/assets/side-quest/quest-log.jpg" alt="Quest Log: a shareable student profile card showing interests, impact hours, quests completed, quest lines, earned badges, and organisations worked with." width="1539" height="784" loading="lazy"></div>
-        <div class="ev-text">
+        <div class="ev-text ev-card">
+          <p class="ev-eyebrow">Feature</p>
           <h3>Quest Log</h3>
-          <p>A shareable profile card that students can send to friends, family or prospective employers. It consolidates everything that matters into one portable record.</p>
-          <p><strong>What it shows:</strong> causes the student is questing for, personal motivations, impact hours logged, quests completed, quest lines across organisations, and earned badges.</p>
-          <p>The insight behind it: hours, milestones and verified badges should aggregate into one cross-organisational log rather than sitting as PDF certificates inside one NGO. A student who volunteers across three organisations should not need three separate proofs.</p>
+          <p><strong>What it is.</strong> A shareable profile card that students can send to friends, family or prospective employers, consolidating everything that matters into one portable record.</p>
+          <p><strong>What it shows.</strong> Causes the student is questing for, personal motivations, impact hours logged, quests completed, quest lines across organisations, and earned badges.</p>
+          <p class="ev-key"><strong>The insight behind it.</strong> Hours, milestones and verified badges should aggregate into one cross-organisational log rather than sitting as PDF certificates inside one NGO. A student who volunteers across three organisations should not need three separate proofs.</p>
         </div>
       </div>
     </div>
