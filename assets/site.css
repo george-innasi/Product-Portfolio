@@ -1386,9 +1386,18 @@ html{scroll-padding-top:64px}
 .tag{font-size:.74rem; font-weight:600; padding:3px 10px; border-radius:6px; white-space:nowrap}
 .t-green,.t-gold,.t-blue,.t-rose{background-color:rgba(250,204,21,.2); color:#0F172A}
 .pj-desc{color:var(--muted); font-size:.98rem; line-height:1.55}
-.pj-open{margin-top:auto; padding-top:4px; font-weight:700; font-size:.88rem; color:var(--accent-ink)}
+.pj-open{margin-top:auto; font-size:.88rem}
 .pj-open span{display:inline-block; transition:transform .2s}
 .pj:hover .pj-open span{transform:translateX(4px)}
+/* "Read case study": a clear action with a larger click target */
+.pj-open{display:inline-block; align-self:flex-start; padding:8px 0; margin-bottom:-6px; font-weight:600; color:#059669; text-decoration:none; transition:color .2s}
+.pj:hover .pj-open, .pj:focus-visible .pj-open{color:#047857; text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:4px}
+:root[data-theme="dark"] .pj-open{color:#34d399}
+:root[data-theme="dark"] .pj:hover .pj-open, :root[data-theme="dark"] .pj:focus-visible .pj-open{color:#6ee7b7}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .pj-open{color:#34d399}
+  :root:not([data-theme="light"]) .pj:hover .pj-open, :root:not([data-theme="light"]) .pj:focus-visible .pj-open{color:#6ee7b7}
+}
 
 .pj-cta{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:36px}
 .pj-cta-card{position:relative; border:1px solid var(--line); background:var(--surface); border-radius:18px; padding:26px 26px 24px; text-decoration:none; color:var(--ink); display:block; transition:border-color .25s,box-shadow .25s,transform .25s}
