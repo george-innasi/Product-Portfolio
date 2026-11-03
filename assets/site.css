@@ -2420,3 +2420,20 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 [data-page="kural"] #how-it-works .k-step:nth-child(4):hover{border-color:#6ee7b7}
 @media (min-width:1001px){[data-page="kural"] #how-it-works .k-flow{grid-template-columns:.92fr 1fr 1.08fr 1.2fr}}
 [data-page="kural"] #how-it-works .k-step-n{display:flex; align-items:flex-end; min-height:clamp(2.6rem,4.8vw,3.2rem)}
+
+/* case studies: use wide desktops, keep reading columns narrow */
+body:has(.ph-hero){--maxw:1380px}
+@media (min-width:1700px){body:has(.ph-hero){--maxw:1440px}}
+body:has(.ph-hero) .wrap,body:has(.ph-hero) .nav-in,body:has(.ph-hero) .foot-in,body:has(.ph-hero) .cs-index-in{padding-inline:max(clamp(20px,3.4vw,64px),env(safe-area-inset-left,0px))}
+.ph-hero > .wrap{max-width:var(--maxw)}
+.cs-index-in{max-width:var(--maxw)}
+@media (min-width:1500px){
+  body:has(.ph-hero) .ph-grid{gap:clamp(88px,6vw,120px)}
+  [data-page="kural"] .k-flow{width:min(1180px,calc(100vw - 96px))}
+  [data-page="kural"] .cx-wrap{width:min(1120px,calc(100vw - 96px))}
+}
+
+/* case studies: readable line length inside the wider container */
+body:has(.ph-hero) .trap-head .lede,body:has(.ph-hero) .trap-head .intro-callout,body:has(.ph-hero) .ph-head .kicker,body:has(.ph-hero) .ins-block .src-note{max-width:min(78ch,100%); margin-inline:auto}
+body:has(.ph-hero) .trap-head .intro-callout{text-align:left}
+body:has(.ph-hero) .row-text > p,body:has(.ph-hero) .row-text > ul,body:has(.ph-hero) .row-text .edge-note p,body:has(.ph-hero) .dark-card p,body:has(.ph-hero) .arch-note,body:has(.ph-hero) .arch-obs p,body:has(.ph-hero) .board-caption{max-width:78ch}
