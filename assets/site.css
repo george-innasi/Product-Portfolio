@@ -2361,8 +2361,10 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 [data-page="kural"] .k-flow{gap:26px}
 [data-page="kural"] .k-step{padding:16px 16px 16px; gap:5px}
 [data-page="kural"] .k-step-n{font-size:clamp(2.1rem,4vw,2.6rem)}
-[data-page="kural"] .k-step:not(:last-child)::after{right:-26px; width:26px; top:36px}
-[data-page="kural"] .k-step:not(:last-child)::before{top:31px; right:-27px}
+@media (min-width:561px){
+  [data-page="kural"] .k-step:not(:last-child)::after{right:-26px; width:26px; top:36px}
+  [data-page="kural"] .k-step:not(:last-child)::before{top:31px; right:-27px}
+}
 [data-page="kural"] .cx th,[data-page="kural"] .cx td{padding:10px 12px}
 [data-page="kural"] .cx thead th{padding-block:13px}
 [data-page="kural"] .cx tbody tr:nth-child(n+2) th,[data-page="kural"] .cx tbody tr:nth-child(n+2) td{padding-block:8px}
@@ -2373,8 +2375,8 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
   [data-page="kural"] .k-win{min-height:0}
   [data-page="kural"] .band{padding-block:22px}
   [data-page="kural"] .k-flow{gap:30px}
-  [data-page="kural"] .k-step:not(:last-child)::after{bottom:-30px; height:30px}
-  [data-page="kural"] .k-step:not(:last-child)::before{bottom:-32px}
+  [data-page="kural"] .k-step:not(:last-child)::after{top:auto; right:auto; left:50%; bottom:-30px; width:2px; height:30px; margin-left:-1px}
+  [data-page="kural"] .k-step:not(:last-child)::before{top:auto; right:auto; left:50%; bottom:-32px; margin-left:-6px; transform:rotate(135deg)}
   [data-page="kural"] .cx th,[data-page="kural"] .cx td{padding:9px 9px}
 }
 [data-page="kural"] .ph-hero{min-height:0; padding-block:12px 20px}
@@ -2394,3 +2396,27 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cx thead th:not(.cx-k) small{color:#fca5a5}}
 [data-page="kural"] #competitors .ev-grid{gap:12px}
 [data-page="kural"] #competitors .ev-card{padding-bottom:0}
+
+/* kural how it works: tight intro-to-pipeline gap and progressive emphasis */
+[data-page="kural"] #how-it-works{padding-block:20px}
+[data-page="kural"] #how-it-works .phase{margin-bottom:14px}
+[data-page="kural"] #how-it-works .ev-grid{gap:14px}
+[data-page="kural"] #how-it-works .ev-card{padding-bottom:0}
+[data-page="kural"] #how-it-works .k-flow{gap:24px 26px}
+@media (max-width:560px){[data-page="kural"] #how-it-works .k-flow{gap:30px}}
+[data-page="kural"] #how-it-works .k-step{--t:5%; background:linear-gradient(180deg,color-mix(in srgb,#059669 var(--t),var(--surface)) 0,var(--surface) 78%); border-top-width:3px}
+[data-page="kural"] #how-it-works .k-step:nth-child(1){--t:4%;}
+[data-page="kural"] #how-it-works .k-step:nth-child(2){--t:10%;}
+[data-page="kural"] #how-it-works .k-step:nth-child(3){--t:18%;; border-color:color-mix(in srgb,#059669 45%,var(--line))}
+[data-page="kural"] #how-it-works .k-step:nth-child(2) .k-step-n{font-size:clamp(2.25rem,4.2vw,2.8rem)}
+[data-page="kural"] #how-it-works .k-step:nth-child(3) .k-step-n{font-size:clamp(2.4rem,4.5vw,3rem)}
+[data-page="kural"] #how-it-works .k-step:nth-child(4) .k-step-n{font-size:clamp(2.6rem,4.8vw,3.2rem)}
+/* culminating step: learned memory output */
+[data-page="kural"] #how-it-works .k-step:nth-child(4){background:linear-gradient(160deg,#059669 0,#047857 55%,#064e3b 100%); border:1px solid #047857; border-top:3px solid #6ee7b7; box-shadow:0 26px 46px -26px rgba(5,150,105,.75),0 0 0 4px color-mix(in srgb,#059669 12%,transparent)}
+[data-page="kural"] #how-it-works .k-step:nth-child(4) .k-step-n{color:#ecfdf5}
+[data-page="kural"] #how-it-works .k-step:nth-child(4) .k-step-tag{color:#a7f3d0}
+[data-page="kural"] #how-it-works .k-step:nth-child(4) h4{color:#fff}
+[data-page="kural"] #how-it-works .k-step:nth-child(4) p{color:rgba(236,253,245,.9)}
+[data-page="kural"] #how-it-works .k-step:nth-child(4):hover{border-color:#6ee7b7}
+@media (min-width:1001px){[data-page="kural"] #how-it-works .k-flow{grid-template-columns:.92fr 1fr 1.08fr 1.2fr}}
+[data-page="kural"] #how-it-works .k-step-n{display:flex; align-items:flex-end; min-height:clamp(2.6rem,4.8vw,3.2rem)}
