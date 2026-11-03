@@ -1777,3 +1777,14 @@ html{scroll-padding-top:64px}
 .stat-num{flex:none; min-width:84px; font-family:var(--serif); font-weight:700; font-size:2.4rem; line-height:1; letter-spacing:-.01em; color:#059669}
 .stat-cap{color:var(--muted)}
 @media (max-width:520px){ .stat-num{min-width:72px; font-size:2rem} }
+
+/* kittii market findings: callout intro, micro-headings, spacing */
+.row-text p.intro-callout{background:rgba(5,150,105,.08); border-left:4px solid #059669; border-radius:0 12px 12px 0; padding:16px 20px; color:var(--ink)}
+.row-text ul.insight-list{gap:20px}
+.row-text ul.insight-list li > strong:first-child{color:#0F172A}
+:root[data-theme="dark"] .row-text ul.insight-list li > strong:first-child{color:var(--ink)}
+:root[data-theme="dark"] .row-text p.intro-callout{background:rgba(5,150,105,.16)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .row-text ul.insight-list li > strong:first-child{color:var(--ink)}
+  :root:not([data-theme="light"]) .row-text p.intro-callout{background:rgba(5,150,105,.16)}
+}
