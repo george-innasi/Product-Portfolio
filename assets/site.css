@@ -1745,3 +1745,22 @@ html{scroll-padding-top:64px}
 .ph-grid{gap:88px}
 .ph-grid.ph-wide{gap:72px}
 @media (max-width:900px){ .ph-grid, .ph-grid.ph-wide{gap:30px} }
+
+/* kittii hero: title block left-aligned above the prototype column */
+.ph-split{column-gap:88px; row-gap:20px; grid-template-rows:auto 1fr}
+.ph-split > .ph-head{grid-column:1; grid-row:1; text-align:left; width:100%; max-width:410px; justify-self:center; align-self:end}
+.ph-split > .ph-demo{grid-column:1; grid-row:2}
+.ph-split > .ph-info{grid-column:2; grid-row:1 / span 2; align-self:center}
+@media (max-width:900px){
+  .ph-split{row-gap:24px; grid-template-rows:none}
+  .ph-split > .ph-head{grid-column:auto; grid-row:auto; order:-2; max-width:none; justify-self:stretch}
+  .ph-split > .ph-demo, .ph-split > .ph-info{grid-column:auto; grid-row:auto}
+}
+
+/* problem statement: regular weight and open leading */
+.ph-callout .ph-problem{font-weight:400; line-height:1.65}
+.ph-split > .ph-head .kicker{font-size:.66rem; letter-spacing:.06em; white-space:nowrap}
+.ph-split .ph-device{height:clamp(440px,calc(100svh - 400px),700px)}
+@media (max-width:900px){ .ph-split > .ph-head .kicker{white-space:normal} .ph-split .ph-device{height:620px} }
+.ph-split > .ph-demo{align-self:start}
+@media (max-width:900px){ .ph-split > .ph-demo{align-self:auto} }
