@@ -1928,3 +1928,23 @@ html{scroll-padding-top:64px}
 /* kittii solution: confident MVP intro that leads into the screens */
 .mvp-intro{text-align:center; max-width:64ch; margin:0 auto 34px; font-size:clamp(1.05rem,1.8vw,1.22rem); line-height:1.7; color:var(--ink); text-wrap:balance}
 .mvp-intro + .gist-lbl{margin-top:0}
+
+/* kittii MVP section: lighter list, whiteboard peek, balanced rows */
+.row-text ul.how-list{gap:14px}
+.row-text ul.how-list li > strong:first-child{color:#0F172A}
+.ph-none{display:none}
+.band .wrap > .row:has(.traction){align-items:start}
+.peek{margin:clamp(40px,6vw,60px) 0 0; background:linear-gradient(135deg,rgba(5,150,105,.08),rgba(5,150,105,.02) 70%,var(--surface)); border:1px solid color-mix(in srgb,#059669 30%,var(--line)); border-radius:18px; padding:22px 24px 20px}
+.peek-head{text-align:center; margin-bottom:16px}
+.peek-eyebrow{font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#047857}
+.peek-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+.peek-grid figure{margin:0; display:flex; flex-direction:column; gap:8px}
+.peek-grid img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:12px; border:1px solid var(--line); cursor:zoom-in; transition:transform .25s, box-shadow .25s}
+.peek-grid img:hover{transform:translateY(-3px); box-shadow:0 16px 30px -18px rgba(6,78,59,.6)}
+.peek-grid figcaption{text-align:center; font-size:.84rem; font-weight:600; color:var(--muted)}
+.peek-cap{margin:16px auto 0; max-width:64ch; text-align:center; font-size:.95rem; line-height:1.6; color:var(--muted)}
+.band .wrap > .row.flip{margin-top:clamp(40px,6vw,60px); align-items:center}
+:root[data-theme="dark"] .row-text ul.how-list li > strong:first-child{color:var(--ink)}
+:root[data-theme="dark"] .peek-eyebrow{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .row-text ul.how-list li > strong:first-child{color:var(--ink)} :root:not([data-theme="light"]) .peek-eyebrow{color:#6ee7b7}}
+@media (max-width:760px){.peek-grid{grid-template-columns:minmax(0,1fr)}}
