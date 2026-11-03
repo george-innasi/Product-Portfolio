@@ -2052,3 +2052,16 @@ html{scroll-padding-top:64px}
 @media (max-width:760px){.next-card{flex-direction:column; align-items:flex-start; padding:24px 22px} .nx-btn{width:100%; justify-content:center}}
 
 #audit,#architecture,#pilot,#reflection{scroll-margin-top:calc(var(--nav-h) + var(--bar-h) + 12px)}
+
+/* side quest: research cards side by side, balanced origin story, steady rhythm */
+.ev-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:stretch}
+.ev-grid .ev-card{height:100%}
+.origin-row{align-items:center; gap:clamp(32px,5vw,56px)}
+.origin-row .row-text{gap:16px}
+.origin-row .row-text h3 + p{margin-top:0}
+.origin-row .shot{align-self:center}
+.ev-card{gap:16px}
+.ev-card .pl-stats{margin:2px 0}
+.band .wrap > .ev-grid{margin-top:clamp(28px,4vw,40px)}
+@media (max-width:860px){.ev-grid{grid-template-columns:minmax(0,1fr)}}
+.ev-grid .ev-card h3{font-family:var(--serif); font-weight:600; font-size:clamp(1.15rem,2.2vw,1.45rem); letter-spacing:-.01em; color:var(--ink)}
