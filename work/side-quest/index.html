@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=158">
+<link rel="stylesheet" href="/assets/site.css?v=159">
 <script src="/assets/site.js?v=14" defer></script>
 </head>
 <body data-accent="violet" data-page="side-quest">
@@ -91,20 +91,20 @@
       <div class="row-text" style="max-width:none">
         <p class="find">What I owned</p>
         <ul>
-          <li><strong>Discovery.</strong> Survey design, four user interviews, the competitor audit and the problem statement.</li>
-          <li><strong>Product decisions.</strong> How matches are worked out, how long sign-up may take, the one measure of success, and what to drop before the deadline.</li>
-          <li><strong>The build.</strong> Screens, server logic, database and deployment, without an engineering team. v0 generated the first Next.js version, and I used Claude as a coding partner to extend it, debug it, and wire in Neon Postgres and Gemini.</li>
-          <li><strong>The pilot and the pitch.</strong> Recruiting six users, running the feedback round and presenting the result.</li>
+          <li><strong>Discovery &amp; Problem Framing.</strong> Designing the survey, running four user interviews, auditing the competitors and defining the problem statement before writing any code.</li>
+          <li><strong>Product &amp; AI Architecture.</strong> Designing a rules-based matching baseline with Gemini 2.5 Flash re-ranking on top, backed by a Neon Postgres data layer, and deciding what to cut before the deadline.</li>
+          <li><strong>Full-Stack Prototyping.</strong> Building the screens, server logic, database and deployment solo, with v0 generating the first Next.js version and Claude as my coding partner to extend and debug it.</li>
+          <li><strong>Live Pilot &amp; Validation.</strong> Recruiting six users, running a live pilot on 37 listings across 12 NGOs, collecting the feedback and presenting the results.</li>
         </ul>
+        <p>I took Side Quest from first interview to a live pilot as the only builder, with no engineering team, in August and September 2026.</p>
       </div>
     </div>
   </section>
 
-  <!-- ========== 1. PROBLEM STATEMENT ========== -->
+  <!-- ========== 1. ORIGIN ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Problem Statement</h2></div>
-      <div class="row">
+      <div class="row" style="align-items:start">
         <div class="row-text">
           <h3>How it started</h3>
           <p>Charu's search raised a question we could not let go. If someone with a decade of volunteering history finds the route in this exhausting, how do first and second year students find it at all?</p>
@@ -121,7 +121,7 @@
   <!-- ========== 2. RESEARCH & INSIGHTS ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Research &amp; Insights</h2></div>
+      <div class="phase"><h2>Students Aren't Apathetic: They Can't Find the Way In</h2></div>
       <div class="evidence">
         <div class="shot" data-lightbox><img src="/assets/side-quest/discovery-findings.jpg" alt="Market and Customer Discovery: 4 interviews, 21 survey responses, 17 current students. Key findings: high-intent dead-end search, exhausting routes, schedule collisions, and discovery failure." width="1200" height="675" loading="lazy"></div>
         <div class="ev-text">
@@ -172,7 +172,7 @@
   <!-- ========== 3. SOLUTION & PROCESS ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Solution &amp; Process</h2></div>
+      <div class="phase"><h2>Rules First, AI on Top: A Quest Board That Never Waits on the Model</h2></div>
       <div class="evidence">
         <div class="shot" data-lightbox><img src="/assets/side-quest/architecture-slide.png" alt="How Side Quest was built: rules-based matching first, AI reordering on top. Five stages from sign-in through baseline ranking to model re-rank, with a tools breakdown by stage." width="1200" height="675" loading="lazy"></div>
         <div class="ev-text">
@@ -198,7 +198,7 @@
   <!-- ========== 4. IMPACT & METRICS ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Impact &amp; Metrics</h2></div>
+      <div class="phase"><h2>Six Students, Six Would Return: What the Pilot Proved and Exposed</h2></div>
       <div class="evidence">
         <div class="shot" data-lightbox><img src="/assets/side-quest/pilot-cohort.jpg" alt="What the Pilot Cohort Told Us: 6 of 6 would return within a month, 6 of 6 rated account creation very easy, 4 of 6 found quests a genuine fit, 3 of 6 said only some quests fit their free times." width="1200" height="675" loading="lazy"></div>
         <div class="ev-text">
@@ -228,7 +228,7 @@
   <!-- ========== 5. REFLECTION ========== -->
   <section class="band">
     <div class="wrap">
-      <div class="phase"><h2>Reflection</h2></div>
+      <div class="phase"><h2>Fix the First Campus Before Adding a Second</h2></div>
       <div class="evidence">
         <div class="shot" data-lightbox><img src="/assets/side-quest/whats-next-slide.png" alt="What Shipped. What's Next: four roadmap priorities. 1, Live Profile Matching. 2, Supply Side and Direct Apply. 3, Cohort Feedback. 4, AI as the Matching Engine." width="1387" height="868" loading="lazy"></div>
         <div class="ev-text">
