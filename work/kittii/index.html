@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=148">
+<link rel="stylesheet" href="/assets/site.css?v=149">
 <script src="/assets/site.js?v=14" defer></script>
 </head>
 <body data-accent="wine">
@@ -217,33 +217,74 @@
           <h3 id="biz-title">How Kittii was meant to make money</h3>
           <p class="biz-sub">A hybrid B2B2C model: transactions up front, with SaaS underneath. Financial projections and pricing tiers designed for pre-seed monetization.</p>
         </div>
-        <div class="biz-grid">
-          <article class="biz-card">
-            <p class="biz-who">Seekers</p>
-            <h4>Recovery fee</h4>
-            <p class="biz-price"><span>$6.99</span><small>to $29.99</small></p>
-            <p class="biz-note">Four tiers by item value: $6.99, $12.99, $21.99 and $29.99. Charged only once a claim is approved.</p>
-          </article>
-          <article class="biz-card">
-            <p class="biz-who">Seekers</p>
-            <h4>Paid add-ons</h4>
-            <ul class="biz-lines">
-              <li><span>Priority</span><b>$9.99</b></li>
-              <li><span>Concierge delivery</span><b>$24.99</b></li>
-              <li><span>Enhanced Protection</span><b>Price not set</b></li>
-            </ul>
-            <div class="biz-signal">
-              <p class="biz-signal-lbl">Survey signal</p>
-              <div class="biz-micro"><b>23%</b><span><strong>Would pay $10 to $25 for delivery.</strong> 52% said it depends on the item.</span></div>
-              <div class="biz-micro"><b>11%</b><span><strong>Would pay for QR tag protection.</strong> 35% might.</span></div>
-            </div>
-          </article>
-          <article class="biz-card">
-            <p class="biz-who">Partner venues</p>
-            <h4>Venue SaaS</h4>
-            <p class="biz-price"><span>$99</span><small>to $580 / month</small></p>
-            <p class="biz-note">Three monthly plans at $99, $199 and $580, the recurring layer under the transactions.</p>
-          </article>
+        <div class="biz-sub-block">
+          <div class="biz-sub-head">
+            <p class="biz-sub-eyebrow">B2C pricing</p>
+            <h4>Value-based pricing tiers</h4>
+            <p>Platform fees scale with item value, capturing maximum willingness to pay at the moment of reunion.</p>
+          </div>
+          <div class="tier-grid">
+            <article class="tier tier-t1">
+              <p class="tier-n">Tier 1</p>
+              <h5>Basic</h5>
+              <p class="tier-price">$6.99</p>
+              <p class="tier-items">Keys, clothing, bags, small accessories</p>
+              <p class="tier-feat">Auto-coordinated returns</p>
+              <p class="tier-win">Up to 4 days for claim processing</p>
+            </article>
+            <article class="tier tier-t2">
+              <p class="tier-n">Tier 2</p>
+              <h5>Mid-Value</h5>
+              <p class="tier-price">$12.99</p>
+              <p class="tier-items">Wallets, headphones, sunglasses, small electronics, IDs, pets</p>
+              <p class="tier-feat">Priority matching</p>
+              <p class="tier-win">Up to 3 days for claim processing</p>
+            </article>
+            <article class="tier tier-t3">
+              <p class="tier-n">Tier 3</p>
+              <h5>High-Value</h5>
+              <p class="tier-price">$21.99</p>
+              <p class="tier-items">Phones, laptops, tablets, cameras</p>
+              <p class="tier-feat">Priority + Safe-Zone handoffs</p>
+              <p class="tier-win">Up to 2 days for claim processing</p>
+            </article>
+            <article class="tier tier-t4">
+              <p class="tier-n">Tier 4</p>
+              <h5>Premium</h5>
+              <p class="tier-price">$29.99</p>
+              <p class="tier-items">Jewelry, luxury goods, passports</p>
+              <p class="tier-feat">Full KYC + Chain of Custody</p>
+              <p class="tier-win">Up to 2 days for claim processing</p>
+            </article>
+          </div>
+          <p class="tier-note"><strong>Priority processing</strong> is available for a charge. It reduces the window to 48 hours for Tiers 1 and 2, and 24 hours for Tiers 3 and 4.</p>
+        </div>
+
+        <div class="biz-sub-block">
+          <div class="biz-sub-head">
+            <p class="biz-sub-eyebrow">B2B SaaS revenue</p>
+            <h4>Partner venues: nominal software maintenance fee</h4>
+          </div>
+          <div class="venue-grid">
+            <article class="venue">
+              <h5>Small Businesses</h5>
+              <p class="venue-price">$99<small>/month</small></p>
+              <p class="venue-cap">Up to 200 reports</p>
+              <p class="venue-unit"><b>49¢</b> per report</p>
+            </article>
+            <article class="venue">
+              <h5>Mid-scale Businesses</h5>
+              <p class="venue-price">$199<small>/month</small></p>
+              <p class="venue-cap">Up to 500 reports</p>
+              <p class="venue-unit"><b>39¢</b> per report</p>
+            </article>
+            <article class="venue">
+              <h5>Large-scale Businesses</h5>
+              <p class="venue-price">$580<small>/month</small></p>
+              <p class="venue-cap">Up to 2,000 reports</p>
+              <p class="venue-unit"><b>29¢</b> per report</p>
+            </article>
+          </div>
         </div>
         <dl class="biz-target">
           <div><dt>$30K to $55K</dt><dd>Year 1 revenue target</dd></div>
