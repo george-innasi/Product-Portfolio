@@ -2272,3 +2272,34 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 .k-feat .k-card h4{font-size:1.04rem}
 .k-feat .k-card p{font-size:.92rem}
 @media (max-width:420px){.k-feat{grid-template-columns:minmax(0,1fr)}}
+
+/* kural: four-step pipeline cards */
+.k-flow{list-style:none; margin:0; padding:0; counter-reset:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:30px;
+  width:min(1040px,calc(100vw - 48px)); position:relative; left:50%; transform:translateX(-50%)}
+.k-step{position:relative; display:flex; flex-direction:column; gap:8px; min-width:0; padding:22px 20px 22px;
+  background:linear-gradient(180deg,color-mix(in srgb,#059669 7%,var(--surface)) 0,var(--surface) 62%);
+  border:1px solid var(--line); border-top:3px solid #059669; border-radius:16px;
+  box-shadow:0 14px 30px -26px rgba(15,23,42,.45); transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.k-step:hover{transform:translateY(-4px); box-shadow:0 22px 38px -24px rgba(5,150,105,.45); border-color:#059669}
+.k-step-n{font-family:var(--serif); font-weight:700; font-size:clamp(2.6rem,5vw,3.4rem); line-height:1; letter-spacing:-.02em; color:#059669}
+.k-step-tag{font-size:.7rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#047857}
+.k-step h4{margin:2px 0 0; font-family:var(--sans); font-size:1.08rem; font-weight:800; line-height:1.3; color:var(--ink)}
+.k-step p{margin:0; font-size:.92rem; line-height:1.6; color:var(--muted)}
+/* connectors between cards */
+.k-step:not(:last-child)::after{content:""; position:absolute; top:46px; right:-30px; width:30px; height:2px; background:linear-gradient(90deg,#059669,color-mix(in srgb,#059669 40%,transparent))}
+.k-step:not(:last-child)::before{content:""; position:absolute; top:41px; right:-31px; width:10px; height:10px; border-top:2px solid #059669; border-right:2px solid #059669; transform:rotate(45deg); z-index:1}
+.k-pipe .k-result{margin-top:4px}
+@media (max-width:1000px){
+  .k-flow{grid-template-columns:repeat(2,minmax(0,1fr)); gap:34px 30px; width:min(760px,100%); left:auto; transform:none}
+  .k-step:nth-child(2)::after,.k-step:nth-child(2)::before{display:none}
+}
+@media (max-width:560px){
+  .k-flow{grid-template-columns:minmax(0,1fr); gap:34px}
+  .k-step:not(:last-child)::after{top:auto; right:auto; left:50%; bottom:-34px; width:2px; height:34px; margin-left:-1px; background:linear-gradient(180deg,#059669,color-mix(in srgb,#059669 40%,transparent))}
+  .k-step:not(:last-child)::before{top:auto; right:auto; left:50%; bottom:-36px; margin-left:-6px; transform:rotate(135deg)}
+  .k-step:nth-child(2)::after,.k-step:nth-child(2)::before{display:block}
+}
+@media (prefers-reduced-motion:reduce){.k-step{transition:none}.k-step:hover{transform:none}}
+:root[data-theme="dark"] .k-step-n{color:#34d399}
+:root[data-theme="dark"] .k-step-tag{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .k-step-n{color:#34d399} :root:not([data-theme="light"]) .k-step-tag{color:#6ee7b7}}
