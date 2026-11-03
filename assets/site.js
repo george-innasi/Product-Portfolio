@@ -467,3 +467,39 @@
     update();
   });
 })();
+
+/* Kural: smooth open/close for the project brief disclosure */
+(function () {
+  var d = document.querySelector('details.k-brief');
+  if (!d || !d.animate) return;
+  var body = d.querySelector('.k-brief-body');
+  var sum = d.querySelector('summary');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var anim = null;
+  function run(from, to, done) {
+    if (anim) anim.cancel();
+    anim = body.animate({ height: [from + 'px', to + 'px'] }, { duration: reduce ? 0 : 320, easing: 'cubic-bezier(.2,.7,.2,1)' });
+    anim.onfinish = anim.oncancel = function () { anim = null; body.style.height = ''; if (done) done(); };
+  }
+  sum.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (d.open && !d.classList.contains('is-closing')) {
+      var h = body.offsetHeight;
+      d.classList.add('is-closing');
+      body.style.height = h + 'px';
+      run(h, 0, function () { d.open = false; d.classList.remove('is-closing'); });
+    } else if (!d.open) {
+      d.open = true;
+      var h2 = body.scrollHeight;
+      run(0, h2);
+    }
+  });
+  /* open when a link targets the brief or something inside it */
+  function openForHash() {
+    var id = location.hash.slice(1);
+    var t = id && document.getElementById(id);
+    if (t && d.contains(t)) d.open = true;
+  }
+  window.addEventListener('hashchange', openForHash);
+  openForHash();
+})();

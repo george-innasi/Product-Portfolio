@@ -2244,3 +2244,24 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 #ks2:checked ~ .k-win .k-skel{display:flex}
 #ks3:checked ~ .k-win .k-badge{display:inline-block}
 @media (max-width:560px){.k-win{padding:14px 14px 18px; min-height:0}.k-tabs label{padding:7px 12px; font-size:.8rem}}
+
+/* kural: collapsible project brief */
+.k-brief{border:1px solid var(--line); border-radius:18px; background:var(--surface); box-shadow:0 14px 30px -26px rgba(15,23,42,.45); overflow:hidden}
+.k-brief summary{list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 22px}
+.k-brief summary::-webkit-details-marker{display:none}
+.k-brief summary:focus-visible{outline:3px solid var(--deep); outline-offset:-3px; border-radius:18px}
+.k-brief-txt{display:flex; flex-direction:column; gap:4px; min-width:0}
+.k-brief-txt b{font-family:var(--serif); font-size:clamp(1.05rem,2vw,1.22rem); font-weight:700; color:var(--ink); line-height:1.3}
+.k-brief-txt small{font-size:.88rem; color:var(--muted); line-height:1.4}
+.k-brief-ico{flex:none; position:relative; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--bg); transition:background .2s,border-color .2s}
+.k-brief-ico::before,.k-brief-ico::after{content:""; position:absolute; left:50%; top:50%; width:14px; height:2px; margin:-1px 0 0 -7px; background:#059669; border-radius:2px; transition:transform .25s ease,background .2s}
+.k-brief-ico::after{transform:rotate(90deg)}
+.k-brief summary:hover .k-brief-ico{border-color:#059669}
+.k-brief[open] .k-brief-ico{background:#059669; border-color:#059669}
+.k-brief[open] .k-brief-ico::before,.k-brief[open] .k-brief-ico::after{background:#fff}
+.k-brief[open] .k-brief-ico::after{transform:rotate(0)}
+.k-brief-body{overflow:hidden}
+.k-brief-in{display:flex; flex-direction:column; gap:clamp(40px,6vw,56px); padding:6px 22px 30px; border-top:1px solid var(--line); padding-top:30px}
+.k-brief-in .ev-card{margin:0}
+@media (max-width:560px){.k-brief summary{padding:16px 16px}.k-brief-in{padding:24px 16px 24px}}
+@media (prefers-reduced-motion:reduce){.k-brief-ico,.k-brief-ico::before,.k-brief-ico::after{transition:none}}

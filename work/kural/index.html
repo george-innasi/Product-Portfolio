@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=190">
-<script src="/assets/site.js?v=19" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=191">
+<script src="/assets/site.js?v=20" defer></script>
 </head>
 <body data-accent="violet" data-page="kural">
 <a class="skip" href="#main">Skip to content</a>
@@ -105,30 +105,6 @@
       <div class="phase"><h2>Why Polished Drafts Still Get Rewritten</h2></div>
       <div class="ev-grid pilot-stack">
         <div class="ev-card">
-          <p class="ev-eyebrow">Origin</p>
-          <h3>How it started</h3>
-          <p class="ev-key"><strong>The brief.</strong> Stop deconstructing products and start building one: pick a product I use often, find one real friction, and prototype an AI fix.</p>
-          <p class="ev-key"><strong>The friction.</strong> An AI assistant hands me a clean draft and I rewrite it anyway. The sentences are correct but not mine, and they read the same to a customer as to my manager.</p>
-          <p class="ev-key"><strong>The gap.</strong> Between a polished draft and a sendable one. That gap became the project.</p>
-          <p class="ev-key"><strong>What I built.</strong> Kural classifies who you are writing to and why, holds a persistent model of your voice, and drafts something you can send without a rewrite. I built it solo and shipped it at <a href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">kural-iota.vercel.app</a>.</p>
-          <figure class="k-figure">
-            <div class="k-frame">
-              <div class="k-frame-bar"><span class="kd kd-r"></span><span class="kd kd-y"></span><span class="kd kd-g"></span><em>kural-iota.vercel.app</em></div>
-              <div class="shot" data-lightbox><img src="/assets/covers/kural.jpg?v=4" alt="Kural landing page: hey, I'm Kural, with a rough note turned into a polished, tone-matched email" width="1200" height="675" loading="lazy"></div>
-            </div>
-            <figcaption>The landing page of the live prototype.</figcaption>
-          </figure>
-        </div>
-
-        <div class="ev-card">
-          <p class="ev-eyebrow">The assignment</p>
-          <h3>Design and prototype an AI-powered feature</h3>
-          <p class="ev-key"><strong>The ask.</strong> Act as the PM of a product I use often and find one meaningful opportunity to improve it with AI.</p>
-          <p class="ev-key"><strong>My scope.</strong> One P0 problem and a demonstrable prototype.</p>
-          <p class="ev-key"><strong>The requirement.</strong> Validate the thinking with PMs from that industry, outside the assignment.</p>
-        </div>
-
-        <div class="ev-card">
           <p class="ev-eyebrow">The P0 problem</p>
           <h3>Professionals rewrite the drafts they are given</h3>
           <p>Even people who already use AI email tools rewrite what they get: the tools polish sentences but do not read people.</p>
@@ -139,16 +115,48 @@
           <p class="ev-key"><strong>The root cause.</strong> Generic assistants hold no persistent model of your voice and no structured read of the situation.</p>
         </div>
 
-        <div class="ev-card">
-          <p class="ev-eyebrow">Role and build</p>
-          <h3>Solo, from spec to shipped</h3>
-          <div class="k-cards">
-            <div class="k-card k-fact"><span class="k-src">Role</span><p>Solo product manager and builder, end to end</p></div>
-            <div class="k-card k-fact"><span class="k-src">Stage</span><p>Live prototype, v1.2</p></div>
-            <div class="k-card k-fact"><span class="k-src">Evidence</span><p>36-person survey and four interviews</p></div>
-          </div>
-          <p class="ev-key"><strong>How it was built.</strong> I wrote the spec and directed Claude Code to generate the Next.js app end to end, then tested it myself before shipping it on Vercel.</p>
-        </div>
+        <details class="k-brief" id="brief">
+          <summary>
+            <span class="k-brief-txt"><b>View project brief, origin &amp; role</b><small>How it started, the assignment and my role</small></span>
+            <span class="k-brief-ico" aria-hidden="true"></span>
+          </summary>
+          <div class="k-brief-body"><div class="k-brief-in">
+            <div class="ev-card">
+              <p class="ev-eyebrow">Origin</p>
+              <h3>How it started</h3>
+              <p class="ev-key"><strong>The brief.</strong> Stop deconstructing products and start building one: pick a product I use often, find one real friction, and prototype an AI fix.</p>
+              <p class="ev-key"><strong>The friction.</strong> An AI assistant hands me a clean draft and I rewrite it anyway. The sentences are correct but not mine, and they read the same to a customer as to my manager.</p>
+              <p class="ev-key"><strong>The gap.</strong> Between a polished draft and a sendable one. That gap became the project.</p>
+              <p class="ev-key"><strong>What I built.</strong> Kural classifies who you are writing to and why, holds a persistent model of your voice, and drafts something you can send without a rewrite. I built it solo and shipped it at <a href="https://kural-iota.vercel.app/" target="_blank" rel="noopener">kural-iota.vercel.app</a>.</p>
+              <figure class="k-figure">
+                <div class="k-frame">
+                  <div class="k-frame-bar"><span class="kd kd-r"></span><span class="kd kd-y"></span><span class="kd kd-g"></span><em>kural-iota.vercel.app</em></div>
+                  <div class="shot" data-lightbox><img src="/assets/covers/kural.jpg?v=4" alt="Kural landing page: hey, I'm Kural, with a rough note turned into a polished, tone-matched email" width="1200" height="675" loading="lazy"></div>
+                </div>
+                <figcaption>The landing page of the live prototype.</figcaption>
+              </figure>
+            </div>
+
+            <div class="ev-card">
+              <p class="ev-eyebrow">The assignment</p>
+              <h3>Design and prototype an AI-powered feature</h3>
+              <p class="ev-key"><strong>The ask.</strong> Act as the PM of a product I use often and find one meaningful opportunity to improve it with AI.</p>
+              <p class="ev-key"><strong>My scope.</strong> One P0 problem and a demonstrable prototype.</p>
+              <p class="ev-key"><strong>The requirement.</strong> Validate the thinking with PMs from that industry, outside the assignment.</p>
+            </div>
+
+            <div class="ev-card">
+              <p class="ev-eyebrow">Role and build</p>
+              <h3>Solo, from spec to shipped</h3>
+              <div class="k-cards">
+                <div class="k-card k-fact"><span class="k-src">Role</span><p>Solo product manager and builder, end to end</p></div>
+                <div class="k-card k-fact"><span class="k-src">Stage</span><p>Live prototype, v1.2</p></div>
+                <div class="k-card k-fact"><span class="k-src">Evidence</span><p>36-person survey and four interviews</p></div>
+              </div>
+              <p class="ev-key"><strong>How it was built.</strong> I wrote the spec and directed Claude Code to generate the Next.js app end to end, then tested it myself before shipping it on Vercel.</p>
+            </div>
+          </div></div>
+        </details>
       </div>
     </div>
   </section>
