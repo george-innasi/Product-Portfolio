@@ -2304,36 +2304,41 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 :root[data-theme="dark"] .k-step-tag{color:#6ee7b7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .k-step-n{color:#34d399} :root:not([data-theme="light"]) .k-step-tag{color:#6ee7b7}}
 
-/* kural: competitor comparison cards */
-.cc-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.22fr); gap:16px; align-items:stretch;
-  width:min(1040px,calc(100vw - 48px)); position:relative; left:50%; transform:translateX(-50%)}
-.cc-card{display:flex; flex-direction:column; gap:12px; min-width:0; padding:22px 18px 18px; background:var(--surface); border:1px solid var(--line); border-radius:18px; box-shadow:0 14px 30px -26px rgba(15,23,42,.45)}
-.cc-tag,.cc-badge{margin:0; font-size:.7rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
-.cc-card h4{margin:0; font-family:var(--serif); font-size:1.35rem; font-weight:700; line-height:1.2; color:var(--ink)}
-.cc-card p.cc-good,.cc-card p.cc-gap{margin:0; font-size:.92rem; line-height:1.5; color:var(--ink)}
-.cc-card p b{display:block; margin-bottom:2px; font-size:.68rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase}
-.cc-good b{color:#047857}
-.cc-gap{padding:11px 12px; border-radius:10px; background:color-mix(in srgb,#dc2626 8%,var(--surface)); border:1px solid color-mix(in srgb,#dc2626 22%,var(--line))}
-.cc-gap b{color:#b91c1c}
-.cc-list{list-style:none; margin:auto 0 0; padding:0; display:flex; flex-direction:column}
-.cc-list li{display:flex; align-items:center; gap:10px; min-height:46px; padding:6px 0; border-top:1px solid var(--line); font-size:.88rem; line-height:1.3; color:var(--ink)}
-.cc-t{flex:none; display:grid; place-items:center; width:22px; height:22px; border-radius:50%; font-size:.78rem; font-weight:800; line-height:1}
-.cc-t.n{color:var(--muted); background:color-mix(in srgb,var(--muted) 14%,transparent)}
-.cc-t.y{color:#fff; background:#059669}
-/* featured Kural card */
-.cc-kural{position:relative; transform:translateY(-10px); padding:26px 22px 20px; border:2px solid #059669;
-  background:linear-gradient(180deg,color-mix(in srgb,#059669 13%,var(--surface)) 0,var(--surface) 70%);
-  box-shadow:0 30px 56px -28px rgba(5,150,105,.6),0 0 0 4px color-mix(in srgb,#059669 10%,transparent)}
-.cc-kural .cc-badge{align-self:flex-start; padding:5px 11px; border-radius:999px; background:#059669; color:#fff; letter-spacing:.1em}
-.cc-kural h4{font-size:1.75rem}
-.cc-kural p.cc-good{font-size:.98rem; font-weight:600}
-.cc-kural .cc-list li{border-top-color:color-mix(in srgb,#059669 28%,var(--line)); font-weight:700; font-size:.92rem}
-.cc-kural .cc-t.y{width:24px; height:24px}
-@media (max-width:1000px){
-  .cc-grid{grid-template-columns:repeat(2,minmax(0,1fr)); width:min(760px,100%); left:auto; transform:none}
-  .cc-kural{grid-column:1 / -1; order:-1; transform:none}
+/* kural: unified competitor matrix */
+.cx-wrap{width:min(1000px,calc(100vw - 48px)); position:relative; left:50%; transform:translateX(-50%); overflow-x:auto;
+  background:var(--surface); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px -30px rgba(15,23,42,.5)}
+.cx{width:100%; min-width:640px; border-collapse:separate; border-spacing:0; table-layout:fixed; font-size:.9rem}
+.cx th,.cx td{padding:14px 14px; text-align:left; vertical-align:middle; border-bottom:1px solid var(--line); line-height:1.4; color:var(--ink)}
+.cx tbody tr:last-child th,.cx tbody tr:last-child td{border-bottom:0}
+.cx col.c0,.cx thead th:first-child,.cx tbody th{width:19%}
+.cx thead th{font-family:var(--serif); font-size:1.08rem; font-weight:700; padding-block:18px; border-bottom:1px solid var(--line)}
+.cx tbody th{font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.cx tbody tr:nth-child(n+3) th{font-size:.88rem; letter-spacing:0; text-transform:none; font-weight:600; color:var(--ink)}
+.cx tr.cx-good td{font-weight:600}
+.cx tr.cx-gap td{color:#b91c1c; background:color-mix(in srgb,#dc2626 5%,var(--surface))}
+.cx tr.cx-gap th{color:#b91c1c; background:color-mix(in srgb,#dc2626 5%,var(--surface))}
+.cx td:not(.cx-k) .cc-t{display:inline-grid}
+.cx tbody tr:nth-child(n+3) td{text-align:center}
+.cx thead th:last-child,.cx td.cx-k{text-align:center}
+.cx tbody tr:nth-child(-n+2) td.cx-k{text-align:left}
+/* emerald winning column */
+.cx td.cx-k,.cx th.cx-k{background:color-mix(in srgb,#059669 12%,var(--surface)); border-inline:2px solid #059669}
+.cx tr.cx-gap td.cx-k{color:var(--ink); font-weight:600}
+.cx thead th.cx-k{background:#059669; color:#fff; border-top:0; border-bottom-color:#059669; font-size:1.2rem}
+.cx tbody tr:last-child td.cx-k{border-bottom:2px solid #059669}
+.cx tr.cx-good td.cx-k{color:var(--ink); font-weight:700}
+.cc-t{flex:none; width:24px; height:24px; place-items:center; border-radius:50%; font-size:.8rem; font-weight:800; line-height:1}
+.cc-t.n{display:inline-grid; color:var(--muted); background:color-mix(in srgb,var(--muted) 14%,transparent)}
+.cc-t.y{display:inline-grid; color:#fff; background:#059669}
+@media (max-width:1000px){.cx-wrap{width:min(760px,100%); left:auto; transform:none}}
+@media (max-width:560px){.cx th,.cx td{padding:12px 10px; font-size:.84rem}.cx tbody th{position:sticky; left:0; z-index:1; background:var(--surface)}.cx tr.cx-gap th{background:color-mix(in srgb,#dc2626 5%,var(--surface))}}
+:root[data-theme="dark"] .cx tr.cx-gap td,:root[data-theme="dark"] .cx tr.cx-gap th{color:#fca5a5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cx tr.cx-gap td,:root:not([data-theme="light"]) .cx tr.cx-gap th{color:#fca5a5}}
+:root .cx tr.cx-gap td.cx-k{color:var(--ink); background:color-mix(in srgb,#059669 12%,var(--surface))}
+@media (max-width:560px){
+  .cx{min-width:600px}
+  .cx thead th:first-child,.cx tbody th{width:96px}
+  .cx thead th.cx-k,.cx td.cx-k{width:108px}
+  .cx td.cx-k,.cx th.cx-k{position:sticky; right:0; z-index:2}
+  .cx thead th:first-child{position:sticky; left:0; z-index:2; background:var(--surface)}
 }
-@media (max-width:560px){.cc-grid{grid-template-columns:minmax(0,1fr)}}
-:root[data-theme="dark"] .cc-good b{color:#6ee7b7}
-:root[data-theme="dark"] .cc-gap b{color:#fca5a5}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cc-good b{color:#6ee7b7} :root:not([data-theme="light"]) .cc-gap b{color:#fca5a5}}

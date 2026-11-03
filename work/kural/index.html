@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=194">
+<link rel="stylesheet" href="/assets/site.css?v=196">
 <script src="/assets/site.js?v=20" defer></script>
 </head>
 <body data-accent="violet" data-page="kural">
@@ -283,54 +283,20 @@
           <p>Capable tools exist. Each solves a nearby problem, and each leaves the voice-and-situation gap open.</p>
         </div>
 
-        <div class="cc-grid">
-          <article class="cc-card">
-            <p class="cc-tag">Competitor</p>
-            <h4>Superhuman</h4>
-            <p class="cc-good"><b>Strength</b>Fast</p>
-            <p class="cc-gap"><b>The gap</b>Asks you to replace your whole inbox</p>
-            <ul class="cc-list">
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Voice-first by default</span></li>
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Reads the situation</span></li>
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>No inbox switch needed</span></li>
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Voice without a premium tier</span></li>
-            </ul>
-          </article>
-          <article class="cc-card">
-            <p class="cc-tag">Competitor</p>
-            <h4>Ellie</h4>
-            <p class="cc-good"><b>Strength</b>Can train on your voice</p>
-            <p class="cc-gap"><b>The gap</b>Voice-trained tier is the expensive one</p>
-            <ul class="cc-list">
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Voice-first by default</span></li>
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Reads the situation</span></li>
-              <li><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span><span>No inbox switch needed</span></li>
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Voice without a premium tier</span></li>
-            </ul>
-          </article>
-          <article class="cc-card">
-            <p class="cc-tag">Competitor</p>
-            <h4>Gemini in Gmail</h4>
-            <p class="cc-good"><b>Strength</b>Cheap and close at hand</p>
-            <p class="cc-gap"><b>The gap</b>Stays generic unless you prompt it hard every time</p>
-            <ul class="cc-list">
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Voice-first by default</span></li>
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Reads the situation</span></li>
-              <li><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span><span>No inbox switch needed</span></li>
-              <li><span class="cc-t n" role="img" aria-label="No">&#10007;</span><span>Voice without a premium tier</span></li>
-            </ul>
-          </article>
-          <article class="cc-card cc-kural">
-            <p class="cc-badge">The gap Kural takes</p>
-            <h4>Kural</h4>
-            <p class="cc-good"><b>The advantage</b>Voice and situation built in, with no switch and no paywall</p>
-            <ul class="cc-list">
-              <li><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span><span>Voice-first by default</span></li>
-              <li><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span><span>Reads the situation</span></li>
-              <li><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span><span>No inbox switch needed</span></li>
-              <li><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span><span>Voice without a premium tier</span></li>
-            </ul>
-          </article>
+        <div class="cx-wrap">
+          <table class="cx">
+            <thead>
+              <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Superhuman</th><th scope="col">Ellie</th><th scope="col">Gemini in Gmail</th><th scope="col" class="cx-k">Kural</th></tr>
+            </thead>
+            <tbody>
+              <tr class="cx-good"><th scope="row">Strength</th><td>Fast</td><td>Can train on your voice</td><td>Cheap and close at hand</td><td class="cx-k">Voice and situation built in</td></tr>
+              <tr class="cx-gap"><th scope="row">The gap</th><td>Asks you to replace your whole inbox</td><td>Voice-trained tier is the expensive one</td><td>Stays generic unless you prompt it hard every time</td><td class="cx-k">Covers all four checks below</td></tr>
+              <tr><th scope="row">Voice-first by default</th><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td class="cx-k"><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span></td></tr>
+              <tr><th scope="row">Reads the situation</th><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td class="cx-k"><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span></td></tr>
+              <tr><th scope="row">No inbox switch needed</th><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span></td><td><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span></td><td class="cx-k"><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span></td></tr>
+              <tr><th scope="row">Voice without a premium tier</th><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td><span class="cc-t n" role="img" aria-label="No">&#10007;</span></td><td class="cx-k"><span class="cc-t y" role="img" aria-label="Yes">&#10003;</span></td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
