@@ -1608,8 +1608,8 @@ html{scroll-padding-top:64px}
 .q-card-body .cv-item.has-logo .l{grid-column:2; align-self:center}
 .q-card-body .cv-item.has-logo .when{grid-column:2; grid-row:2; text-align:left; margin-top:1px; font-size:.82rem}
 
-/* ---------- project card badges: gold, centred ---------- */
-.pj-badge{left:50%; right:auto; transform:translateX(-50%); background:linear-gradient(90deg,#ffd27a,#f4b000); color:#3d2a00; border:1px solid rgba(255,255,255,.4); box-shadow:0 6px 16px -8px rgba(160,110,0,.55)}
+/* ---------- project card badges: white, centred ---------- */
+.pj-badge{left:50%; right:auto; transform:translateX(-50%); background:#fff; color:#1a1a2e; border:1px solid rgba(0,0,0,.08); box-shadow:0 4px 14px -4px rgba(0,0,0,.25); font-size:.73rem; letter-spacing:.03em}
 
 /* ---------- qualifications: icon + logo-preview summaries ---------- */
 .q-card summary{flex-direction:column; align-items:stretch; gap:12px; padding:16px 20px}
