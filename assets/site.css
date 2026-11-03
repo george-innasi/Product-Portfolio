@@ -2342,3 +2342,52 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
   .cx td.cx-k,.cx th.cx-k{position:sticky; right:0; z-index:2}
   .cx thead th:first-child{position:sticky; left:0; z-index:2; background:var(--surface)}
 }
+
+/* kural: compact editorial density (page-scoped) */
+[data-page="kural"] .band{padding-block:26px}
+[data-page="kural"] .phase{margin-bottom:20px}
+[data-page="kural"] .phase h2{font-size:clamp(1.45rem,3vw,2.05rem)}
+[data-page="kural"] .ev-grid{gap:clamp(26px,3.4vw,36px)}
+[data-page="kural"] .ev-grid .ev-card{gap:9px; padding-top:16px}
+[data-page="kural"] .ev-grid .ev-card h3{font-size:clamp(1.2rem,2.3vw,1.45rem); line-height:1.25}
+[data-page="kural"] .ev-grid .ev-card > p{font-size:1rem; line-height:1.6}
+[data-page="kural"] .ev-grid .ev-key{line-height:1.55}
+[data-page="kural"] .ev-grid .ev-key strong{margin-bottom:0; font-size:1rem}
+[data-page="kural"] .pilot-stack .ev-card .shot{margin-top:4px}
+[data-page="kural"] .k-cards{gap:10px; margin:0}
+[data-page="kural"] .k-card{padding:15px 16px 14px; gap:5px}
+[data-page="kural"] .k-card .k-num{font-size:clamp(2.1rem,4.4vw,2.7rem)}
+[data-page="kural"] .k-card p{line-height:1.45}
+[data-page="kural"] .k-feat .k-card{padding:13px 15px 13px; gap:3px}
+[data-page="kural"] .k-figure{margin:2px 0 0; gap:6px}
+[data-page="kural"] .k-tabs{margin:0 0 8px}
+[data-page="kural"] .k-win{min-height:340px; padding-bottom:18px}
+[data-page="kural"] .k-brief summary{padding:14px 18px}
+[data-page="kural"] .k-brief-in{gap:26px; padding:20px 18px 20px}
+[data-page="kural"] .k-flow{gap:26px}
+[data-page="kural"] .k-step{padding:16px 16px 16px; gap:5px}
+[data-page="kural"] .k-step-n{font-size:clamp(2.1rem,4vw,2.6rem)}
+[data-page="kural"] .k-step:not(:last-child)::after{right:-26px; width:26px; top:36px}
+[data-page="kural"] .k-step:not(:last-child)::before{top:31px; right:-27px}
+[data-page="kural"] .cx th,[data-page="kural"] .cx td{padding:10px 12px}
+[data-page="kural"] .cx thead th{padding-block:13px}
+[data-page="kural"] .cx tbody tr:nth-child(n+3) th,[data-page="kural"] .cx tbody tr:nth-child(n+3) td{padding-block:8px}
+[data-page="kural"] .pilot-stack .prio-list{gap:12px}
+@media (max-width:1000px){[data-page="kural"] .k-flow{gap:22px 26px}}
+[data-page="kural"] .cmp th,[data-page="kural"] .cmp td{padding-block:9px}
+@media (max-width:560px){
+  [data-page="kural"] .k-win{min-height:0}
+  [data-page="kural"] .band{padding-block:22px}
+  [data-page="kural"] .k-flow{gap:30px}
+  [data-page="kural"] .k-step:not(:last-child)::after{bottom:-30px; height:30px}
+  [data-page="kural"] .k-step:not(:last-child)::before{bottom:-32px}
+  [data-page="kural"] .cx th,[data-page="kural"] .cx td{padding:9px 9px}
+}
+[data-page="kural"] .ph-hero{min-height:0; padding-block:12px 20px}
+[data-page="kural"] .ph-grid{gap:36px; margin-top:12px}
+[data-page="kural"] .sec-head{margin-bottom:0}
+[data-page="kural"] .sec-head p{margin-top:4px}
+[data-page="kural"] .xb{gap:12px; margin-top:14px}
+[data-page="kural"] .xb-hero{padding:22px 24px; gap:8px; min-height:0}
+[data-page="kural"] .xb-docs{gap:8px}
+[data-page="kural"] .xb-doc{padding:11px 14px}
