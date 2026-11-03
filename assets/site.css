@@ -1814,3 +1814,21 @@ html{scroll-padding-top:64px}
 .trap-head h3{font-family:var(--serif); font-weight:600; font-size:clamp(1.3rem,2.6vw,1.75rem); letter-spacing:-.01em; margin:0}
 .trap-head .lede{font-family:var(--serif); font-style:italic; color:var(--muted); font-size:1.02rem; line-height:1.6; margin:0}
 .trap-head .intro-callout{max-width:none}
+
+/* kittii business model: balanced cards, micro-stats, bolder targets */
+.biz-card{padding-block:22px 24px; gap:8px}
+.biz-grid{align-items:stretch}
+.biz-signal{margin-top:auto; padding-top:14px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:10px}
+.biz-signal-lbl{margin:0; font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.biz-micro{display:flex; align-items:center; gap:12px; background:rgba(5,150,105,.08); border-radius:10px; padding:10px 12px}
+.biz-micro b{flex:none; min-width:52px; font-family:var(--serif); font-weight:700; font-size:1.6rem; line-height:1; color:#059669}
+.biz-micro span{font-size:.84rem; line-height:1.45; color:var(--muted)}
+.biz-micro strong{color:var(--ink); font-weight:700}
+.biz-target{background:#fff; border:1px solid color-mix(in srgb,#059669 28%,var(--line)); box-shadow:0 10px 26px -18px rgba(6,78,59,.5)}
+.biz-target dt{font-weight:700; font-size:clamp(1.7rem,3.4vw,2.3rem); color:#064e3b}
+.biz-target dd{font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:.72rem; color:var(--muted)}
+:root[data-theme="dark"] .biz-target{background:var(--surface)}
+:root[data-theme="dark"] .biz-target dt{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .biz-target{background:var(--surface)} :root:not([data-theme="light"]) .biz-target dt{color:#6ee7b7}}
+:root[data-theme="dark"] .biz-micro b{color:#34d399}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .biz-micro b{color:#34d399}}
