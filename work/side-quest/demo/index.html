@@ -19,6 +19,7 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(-
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 input,select{font:inherit;color:var(--ink)}
 .app{max-width:440px;min-height:100%;margin:0 auto;display:flex;flex-direction:column}
+.demo-bar[hidden]{display:none}
 .demo-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 14px;font-size:11.5px;color:var(--mut);background:rgba(0,0,0,.22);border-bottom:1px solid var(--line)}
 .demo-bar b{color:var(--gold2);font-weight:700}
 .demo-bar a{color:var(--gold1);font-weight:700;text-decoration:none;white-space:nowrap}
@@ -513,5 +514,6 @@ select.inp option{background:#1d1a44}
   renderStep();
 })();
 </script>
+<script>try{if(window.top!==window.self){var b=document.querySelector(".demo-bar");if(b)b.setAttribute("hidden","");}}catch(e){}</script>
 </body>
 </html>

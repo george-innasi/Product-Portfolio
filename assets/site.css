@@ -2065,3 +2065,20 @@ html{scroll-padding-top:64px}
 .band .wrap > .ev-grid{margin-top:clamp(28px,4vw,40px)}
 @media (max-width:860px){.ev-grid{grid-template-columns:minmax(0,1fr)}}
 .ev-grid .ev-card h3{font-family:var(--serif); font-weight:600; font-size:clamp(1.15rem,2.2vw,1.45rem); letter-spacing:-.01em; color:var(--ink)}
+
+/* side quest hero: prominent demo notice above the phone */
+.ph-notice{display:flex; align-items:center; gap:10px; flex-wrap:wrap; width:100%; max-width:410px; margin:0 0 12px; padding:10px 12px; background:rgba(250,204,21,.18); border:1px solid color-mix(in srgb,#e0b100 55%,transparent); border-radius:14px}
+.ph-notice-ico{flex:none; width:30px; height:30px; border-radius:50%; background:#FACC15; color:#3d2e00; display:grid; place-items:center}
+.ph-notice-ico svg{width:16px; height:16px}
+.ph-notice-txt{flex:1 1 150px; min-width:0; font-size:.84rem; line-height:1.3; color:#3d2e00}
+.ph-notice-txt strong{font-weight:800}
+.ph-notice-link{flex:none; margin-left:auto; padding:7px 13px; border-radius:999px; background:#0F172A; color:#fff; font-weight:700; font-size:.8rem; text-decoration:none; white-space:nowrap; transition:background .2s, transform .2s}
+.ph-notice-link span{display:inline-block; transition:transform .2s}
+.ph-notice-link:hover{background:#059669; color:#fff; transform:translateY(-1px)}
+.ph-notice-link:hover span{transform:translateX(3px)}
+.ph-split .ph-demo:has(.ph-notice) .ph-device{height:clamp(460px,calc(100svh - 440px),700px)}
+:root[data-theme="dark"] .ph-notice-txt{color:#fde68a}
+:root[data-theme="dark"] .ph-notice-link{background:#FACC15; color:#3d2e00}
+:root[data-theme="dark"] .ph-notice-link:hover{background:#fde68a; color:#3d2e00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ph-notice-txt{color:#fde68a} :root:not([data-theme="light"]) .ph-notice-link{background:#FACC15; color:#3d2e00}}
+@media (max-width:900px){.ph-split .ph-demo:has(.ph-notice) .ph-device{height:620px} .ph-notice{max-width:none}}
