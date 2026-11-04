@@ -3371,3 +3371,18 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .l-assess-row p{padding:0 0 18px}
 @media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .l-assess-c{transition:none}}
 @media (min-width:861px){[data-page="lumi-cards"] #recognition .ev-card > .l-assess{margin-top:4px}}
+
+/* lumi reflection: takeaways as toggle rows */
+[data-page="lumi-cards"] .l-take{justify-content:flex-start}
+[data-page="lumi-cards"] .l-take-card{flex:none; display:block; padding:0}
+[data-page="lumi-cards"] .l-take-card summary{list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 20px; cursor:pointer; border-radius:14px}
+[data-page="lumi-cards"] .l-take-card summary::-webkit-details-marker{display:none}
+[data-page="lumi-cards"] .l-take-card summary:focus-visible{outline:2px solid #059669; outline-offset:2px}
+[data-page="lumi-cards"] .l-take-c{flex:none; width:8px; height:8px; border-right:2px solid #059669; border-bottom:2px solid #059669; transform:rotate(45deg) translate(-2px,-2px); transition:transform .22s}
+[data-page="lumi-cards"] .l-take-card[open] .l-take-c{transform:rotate(-135deg) translate(-2px,-2px)}
+[data-page="lumi-cards"] .l-take-card[open]{border-color:color-mix(in srgb,#059669 40%,var(--line))}
+[data-page="lumi-cards"] .l-take-card p{padding:0 20px 18px}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-take-c{border-color:#34d399}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-take-c{border-color:#34d399}}
+@media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .l-take-c{transition:none}}
+@media (min-width:861px){[data-page="lumi-cards"] .l-take{justify-content:center}}
