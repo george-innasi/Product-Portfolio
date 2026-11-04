@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=209">
-<script src="/assets/site.js?v=14" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=214">
+<script src="/assets/site.js?v=22" defer></script>
 </head>
-<body data-accent="blue">
+<body data-accent="green" data-page="lumi-cards">
 <a class="skip" href="#main">Skip to content</a>
 
 <nav class="nav">
@@ -87,260 +87,408 @@
       </div>
     </div>
   </section>
-
-  <section class="band">
-    <div class="wrap row-wide">
-      <div class="meta-strip">
-        <div><dt>Role</dt><dd>Solo product manager and builder</dd></div>
-        <div><dt>Timeline</dt><dd>Jul to Sep 2026</dd></div>
-        <div><dt>Graded</dt><dd>87 of 100</dd></div>
-      </div>
-      <div class="row-text" style="max-width:none">
-        <p class="find">What I owned</p>
-        <ul>
-          <li><strong>Problem and user.</strong> Deciding which roles it serves, counting how often staff look things up, and costing that time using fully loaded salary rates.</li>
-          <li><strong>Architecture.</strong> How the assistant finds the right document, how results are narrowed down, which model it uses, and what gets logged.</li>
-          <li><strong>Failure analysis.</strong> Six failure modes, each with a detection method and a fix, plus the 50-item golden evaluation set.</li>
-          <li><strong>The spec and the build.</strong> The instructions given to the model, the must-have and should-have requirements, and testing the prototype against them.</li>
-        </ul>
-      </div>
+  <!-- STICKY CASE STUDY INDEX -->
+  <div class="cs-index" id="cs-index">
+    <div class="cs-index-in">
+      <a class="cs-back" href="/#projects"><span aria-hidden="true">&larr;</span><span class="cs-back-t"> All projects</span></a>
+      <nav class="cs-pills" aria-label="Case study sections">
+        <a href="#role">Role</a>
+        <a href="#problem">Problem</a>
+        <a href="#research">Research</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#evals">Evals and failure modes</a>
+        <a href="#impact">Impact</a>
+        <a href="#reflection">Reflection</a>
+      </nav>
     </div>
-  </section>
+  </div>
 
-  <!-- ========== 1. PROBLEM STATEMENT ========== -->
-  <section class="band">
+  <!-- ROLE AND OWNERSHIP -->
+  <section class="band" id="role">
     <div class="wrap">
-      <div class="phase"><h2>Problem Statement</h2></div>
-      <div class="row figrow flip">
-        <div class="row-text">
-          <h3>How it started</h3>
-          <p>Five years behind a branch desk, the same thing happened every week. A client asks what a card actually covers, and answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
-          <h3 style="margin-top:14px">The product</h3>
-          <p><strong>Lumi Cards</strong> is an AI assistant for personal bankers and tellers, built into the portal they already use. It answers credit card policy questions using only approved documents, and every figure it states carries a link to the source and the date it takes effect.</p>
-          <p>The business problem is cost and exposure at once. Each lookup takes 4 to 6 minutes of live appointment time, leaves no audit trail, and risks misstating a regulated disclosure.</p>
-        </div>
-        <div class="shot" data-lightbox><img src="/assets/lumi/manual-lookup.jpg" alt="Five-step manual lookup process: client asks question, leave conversation, search PDF, interpret clause, relay from memory — 4 to 6 minutes per lookup with no audit trail" width="1200" height="675" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="row">
-        <div class="row-text">
-          <h3>Who asks, and what it costs</h3>
-          <p class="lede">Personal bankers handle the multi-clause questions where a wrong answer carries compliance exposure. Tellers handle higher-volume, single-fact lookups.</p>
-          <p class="find">What did I find?</p>
-          <ul>
-            <li>A client-facing staff member sees 20 to 25 clients a week, 6 to 8 of whom raise a specific card policy question.</li>
-            <li>Across a branch team of 11 to 15, that is 60 to 90 lookups per week at 4 to 6 minutes each.</li>
-            <li>No audit trail. The answer is delivered verbally, from memory, with no citation confirming it before it is said.</li>
-          </ul>
-          <p>Based on five years of direct observation across three of Canada's Big Five banks, I projected the baseline operating cost per branch. The figures are estimates, not measurements.</p>
-        </div>
-        <div class="cmp-wrap">
-          <table class="cmp">
-            <thead><tr><th scope="col">Per branch</th><th scope="col">Now</th><th scope="col">With Lumi</th></tr></thead>
-            <tbody>
-              <tr><td>Hours per month</td><td>32.8</td><td>1.6</td></tr>
-              <tr><td>Loaded cost per month</td><td>$1,059</td><td>$53</td></tr>
-              <tr><td>Loaded cost per year</td><td>$12,715</td><td>$636</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 2. RESEARCH & INSIGHTS ========== -->
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>Research &amp; Insights</h2></div>
-      <div class="row">
-        <div class="cmp-wrap">
-          <table class="cmp">
-            <thead><tr><th scope="col">Alternative</th><th scope="col">Why it fails here</th></tr></thead>
-            <tbody>
-              <tr><td>Better instructions to the model</td><td>It cannot reach the policy documents, so it invents sources.</td></tr>
-              <tr><td>Fine-tuning</td><td>Bakes in rates that change monthly, and leaves no document traceability, which fails an audit.</td></tr>
-              <tr><td>Keyword search</td><td>Returns whole documents, not answers. Breaks on vocabulary gaps.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="row-text">
-          <h3>Why retrieval was the only viable approach</h3>
-          <p class="lede">Three other options were considered and rejected before this approach was chosen.</p>
-          <p>The vocabulary gap is the concrete one. Staff say "foreign conversion fee" and the document says "FX transaction mark-up", so a keyword search returns nothing useful at the moment it is needed.</p>
-          <p><strong>The decision.</strong> Retrieval is the only approach satisfying both binding constraints: the corpus changes continuously, and every answer must trace back to an approved source document.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 3. SOLUTION & PROCESS ========== -->
-  <section class="band">
-    <div class="wrap">
-      <div class="phase"><h2>Solution &amp; Process</h2></div>
-      <div class="row-wide">
-        <div class="row-text">
-          <h3>The decision that does most of the work</h3>
-          <p class="lede">Every piece of a document is tagged with the card name, document type, province, effective date, expiry date and source link. The system filters on those tags when a question is asked, rather than relying on instructions to the model.</p>
-          <p>That is the difference between asking a model not to quote an expired Quebec rate and putting that document out of its reach altogether. Wrong answers are blocked by design, not merely discouraged.</p>
-          <p class="find">Three guards, in order</p>
-          <ul>
-            <li><strong>Before the search.</strong> A privacy check blocks client data, and a scope check blocks questions the assistant is not meant to answer, both before any search runs.</li>
-            <li><strong>During the search.</strong> The tags narrow the documents first, two search methods then run together, and a final ranking step passes on only the best five results.</li>
-            <li><strong>After the answer is written.</strong> Every source the answer cites is checked against the documents actually supplied. If it cites something that was never there, the answer is blocked instead of shown.</li>
+      <div class="phase"><h2>Role and Ownership</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">What I owned</p>
+          <h3>Solo, from the problem to a graded spec</h3>
+          <div class="k-cards">
+            <div class="k-card k-fact"><span class="k-src">Role</span><p>Solo product manager and builder</p></div>
+            <div class="k-card k-fact"><span class="k-src">Timeline</span><p>Jul to Sep 2026</p></div>
+            <div class="k-card k-fact"><span class="k-src">Graded score</span><p>87 of 100, 4th of 77</p></div>
+          </div>
+          <ul class="l-own">
+            <li><strong>Problem and user.</strong> Which roles it serves, how often staff look things up, and what that time costs at fully loaded salary rates.</li>
+            <li><strong>Architecture.</strong> How it finds the right document, narrows results, which model it uses and what gets logged.</li>
+            <li><strong>Failure analysis.</strong> Six failure modes, each with a detection method and a fix, plus the 50 item golden set.</li>
+            <li><strong>Spec and build.</strong> The model instructions, the must have and should have requirements, and a test run of the prototype against them.</li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <figure class="arch">
-        <figcaption class="arch-head">
-          <h4>How it works</h4>
-          <p>Loading the documents, and answering a question</p>
-        </figcaption>
+  <!-- PROBLEM -->
+  <section class="band" id="problem">
+    <div class="wrap">
+      <div class="phase"><h2>A Lookup That Costs Minutes and Carries Exposure</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="l-wide l-split">
+          <div class="ev-card">
+            <p class="ev-eyebrow">How it started</p>
+            <h3>Five years behind a branch desk</h3>
+            <p>A client asks what a card actually covers. Answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
+            <p class="ev-key"><strong>The product.</strong> Lumi Cards is an assistant for personal bankers and tellers, built into the portal they already use. It answers from approved documents only, with a source link and an effective date on every figure.</p>
+            <div class="shot" data-lightbox><img src="/assets/lumi/manual-lookup.jpg" alt="Five step manual lookup process: client asks question, leave conversation, search PDF, interpret clause, relay from memory. 4 to 6 minutes per lookup with no audit trail" width="1200" height="675" loading="lazy"></div>
+          </div>
 
-        <div class="arch-lane a">
-          <h5>Lane A &middot; Admin ingestion pipeline</h5>
-          <div class="arch-body">
-            <ol class="arch-flow">
-              <li><b><span>1</span>SharePoint sources</b><p>Cardholder agreements, insurance certificates, fee schedules, promo terms, Quebec variants.</p></li>
-              <li><b><span>2</span>Ingest and tag</b><p>Graph API connector. Auto-tags card, document type, province, effective and expiry date, active flag, source URL.</p></li>
-              <li><b><span>3</span>Chunk</b><p>Header-aware recursive splitting. <em>512 to 768 tokens, 100 overlap.</em></p></li>
-              <li><b><span>4</span>Embed</b><p>Gemini embedding model on Vertex AI. Vectors written back with their metadata.</p></li>
-              <li><b><span>5</span>Vector search</b><p>Dense and sparse vectors, metadata restricts, deep-link anchors, group access control.</p></li>
-            </ol>
-            <p class="arch-note loop"><b>Freshness webhook.</b> When a SharePoint file changes, that document's vectors are purged, then re-chunked, re-embedded and the cache is flushed.</p>
-            <p class="arch-note"><b>Ownership.</b> The Policy and Procedure Admin approves a document into the index. Documents outside their active date range are blocked at step 2 and never reach it. Source documents stay in SharePoint; chunks, vectors, index and logs sit in the bank's cloud project on a pinned regional endpoint.</p>
+          <div class="ev-card">
+            <p class="ev-eyebrow">Who asks, and what it costs</p>
+            <h3>Branch labour spent on lookups</h3>
+            <p>Personal bankers handle multi clause questions where a wrong answer carries compliance exposure. Tellers handle higher volume, single fact lookups.</p>
+            <div class="k-cards">
+              <div class="k-card"><span class="k-src">Volume</span><b class="k-num">60 to 90</b><p>lookups a week across a team of 11 to 15</p></div>
+              <div class="k-card"><span class="k-src">Time</span><b class="k-num">32.8 h</b><p>a month, at 4 to 6 minutes each</p></div>
+              <div class="k-card"><span class="k-src">Cost</span><b class="k-num">$12,715</b><p>a year per branch, loaded rate</p></div>
+            </div>
+            <div class="cmp-wrap"><table class="cmp">
+              <thead><tr><th scope="col">Per branch</th><th scope="col">Now</th><th scope="col">With Lumi</th></tr></thead>
+              <tbody>
+                <tr><td>Hours per month</td><td>32.8</td><td>1.6</td></tr>
+                <tr><td>Loaded cost per month</td><td>$1,059</td><td>$53</td></tr>
+                <tr><td>Loaded cost per year</td><td>$12,715</td><td>$636</td></tr>
+              </tbody>
+            </table></div>
+            <p class="l-note">Estimates from five years of direct observation across three of Canada's Big Five banks, not measurements. The answer is spoken from memory, so no audit trail exists.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="band" id="research">
+    <div class="wrap">
+      <div class="phase"><h2>Why Retrieval Was the Only Viable Approach</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="l-wide l-split">
+          <div class="ev-card">
+            <p class="ev-eyebrow">Alternatives rejected</p>
+            <h3>Three options, three failures</h3>
+            <div class="cmp-wrap"><table class="cmp">
+              <thead><tr><th scope="col">Alternative</th><th scope="col">Why it fails here</th></tr></thead>
+              <tbody>
+                <tr><td>Better instructions to the model</td><td>It cannot reach the policy documents, so it invents sources.</td></tr>
+                <tr><td>Fine tuning</td><td>Bakes in rates that change monthly and leaves no document traceability, which fails an audit.</td></tr>
+                <tr><td>Keyword search</td><td>Returns whole documents, not answers, and breaks on vocabulary gaps.</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <div class="ev-card">
+            <p class="ev-eyebrow">The vocabulary gap</p>
+            <h3>Staff and documents use different words</h3>
+            <div class="k-cards k-cards-2">
+              <div class="k-card k-fact"><span class="k-src">Staff say</span><p>"Foreign conversion fee"</p></div>
+              <div class="k-card k-fact"><span class="k-src">Document says</span><p>"FX transaction mark-up"</p></div>
+            </div>
+            <p>A keyword search returns nothing useful at the moment it is needed.</p>
+            <p class="ev-key"><strong>The decision.</strong> Retrieval is the only approach that meets both binding constraints: the corpus changes continuously, and every answer must trace to an approved source document.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="band" id="how-it-works">
+    <div class="wrap">
+      <div class="phase"><h2>How It Works: Two Lanes, One Index</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">The decision that does most of the work</p>
+          <h3>Tags narrow the documents before the model sees any</h3>
+          <p>Every chunk carries the card name, document type, province, effective date, expiry date and source link. The system filters on those tags at query time instead of asking the model to behave. An expired Quebec rate is not discouraged, it is out of reach.</p>
+          <div class="k-cards">
+            <div class="k-card k-fact"><span class="k-src">1 &middot; Before the search</span><p>Client data and out of scope questions are blocked.</p></div>
+            <div class="k-card k-fact"><span class="k-src">2 &middot; During the search</span><p>Tags filter first, two search methods run together, the best five pass on.</p></div>
+            <div class="k-card k-fact"><span class="k-src">3 &middot; After the answer</span><p>Every cited source is checked against the chunks supplied.</p></div>
           </div>
         </div>
 
-        <div class="arch-lane b">
-          <h5>Lane B &middot; Branch staff query path</h5>
-          <div class="arch-body">
-            <ol class="arch-flow">
-              <li><b><span>6</span>Chat widget</b><p>Embedded in the internal policy portal. Single sign-on with the corporate ID.</p></li>
-              <li class="is-guard"><b><span>7</span>Input guardrail</b><p>Client-data scan and scope classifier. Blocks before any search runs.</p></li>
-              <li><b><span>8</span>Semantic cache</b><p>Returns a stored answer on a close-enough match, in under 50ms. Flushed on re-ingest.</p></li>
-              <li><b><span>9</span>Hybrid retrieval</b><p>Card, province and active filters applied first, then dense and sparse search run together.</p></li>
-              <li><b><span>10</span>Ranking</b><p>Rescores candidates against the question and passes on the best five. <span class="flag">Below threshold, escalate.</span></p></li>
-              <li><b><span>11</span>Generation</b><p>Gemini 2.5 Flash on a pinned regional endpoint. Temperature 0.0, prompt plus the top five chunks.</p></li>
-              <li class="is-stop"><b><span>12</span>Citation validator</b><p>Every source cited must exist in the chunks supplied, or the answer is blocked and escalated.</p></li>
-              <li><b><span>13</span>Grounded response</b><p>Inline citations, effective-date footnote, sources panel, deep link to the SharePoint page.</p></li>
-            </ol>
-            <p class="arch-note loop"><b>Blocked answers loop back.</b> A failed citation check returns to generation rather than reaching the person who asked.</p>
-            <p class="arch-note"><b>One platform.</b> Retrieval, ranking and generation all run on Vertex AI in a single pinned region. SharePoint remains the system of record; the assistant never writes back to it.</p>
+        <figure class="arch l-wide">
+          <figcaption class="arch-head">
+            <h4>Dual lane RAG architecture</h4>
+            <p>Loading the documents, and answering a question</p>
+          </figcaption>
+
+          <div class="arch-lane a">
+            <h5>Lane A &middot; Admin ingestion pipeline</h5>
+            <div class="arch-body">
+              <ol class="arch-flow">
+                <li><b><span>1</span>SharePoint sources</b><p>Cardholder agreements, insurance certificates, fee schedules, promo terms, Quebec variants.</p></li>
+                <li><b><span>2</span>Ingest and tag</b><p>Graph API connector. Auto tags card, document type, province, effective and expiry date, active flag, source URL.</p></li>
+                <li><b><span>3</span>Chunk</b><p>Header aware recursive splitting. <em>512 to 768 tokens, 100 overlap.</em></p></li>
+                <li><b><span>4</span>Embed</b><p>Gemini embedding model on Vertex AI. Vectors written back with their metadata.</p></li>
+                <li><b><span>5</span>Vector search</b><p>Dense and sparse vectors, metadata restricts, deep link anchors, group access control.</p></li>
+              </ol>
+              <p class="arch-note loop"><b>Freshness webhook.</b> When a SharePoint file changes, that document's vectors are purged, then re-chunked and re-embedded, and the cache is flushed.</p>
+              <p class="arch-note"><b>Ownership.</b> The Policy and Procedure Admin approves a document into the index. Documents outside their active date range are blocked at step 2. Source documents stay in SharePoint, and the assistant never writes back to it.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="arch-obs">
-          <h5>Observability &middot; every stage logs to one conversation ID</h5>
-          <p>Logged per query: the raw question, the metadata filters applied, the retrieved chunk IDs with text and reranker scores, the exact system prompt sent, the raw model output, the thumbs up or down with its reason, and the latency of each stage.</p>
-          <p><b>Debug path.</b> A reported bad answer resolves to a chunking failure, a retrieval failure or a generation failure, each inspected from the log above.</p>
-          <p><b>Retention.</b> Staff-identifying fields are purged at 30 days. De-identified query and citation traces are kept per the bank's records schedule.</p>
-        </div>
-      </figure>
+          <div class="arch-lane b">
+            <h5>Lane B &middot; Branch staff query path</h5>
+            <div class="arch-body">
+              <ol class="arch-flow">
+                <li><b><span>6</span>Chat widget</b><p>Embedded in the internal policy portal. Single sign on with the corporate ID.</p></li>
+                <li class="is-guard"><b><span>7</span>Input guardrail</b><p>Client data scan and scope classifier. Blocks before any search runs.</p></li>
+                <li><b><span>8</span>Semantic cache</b><p>Returns a stored answer on a close enough match, in under 50ms. Flushed on re-ingest.</p></li>
+                <li><b><span>9</span>Hybrid retrieval</b><p>Card, province and active filters applied first, then dense and sparse search run together.</p></li>
+                <li><b><span>10</span>Ranking</b><p>Rescores candidates against the question and passes on the best five. <span class="flag">Below threshold, escalate.</span></p></li>
+                <li><b><span>11</span>Generation</b><p>Gemini 2.5 Flash on a pinned regional endpoint. Temperature 0.0, prompt plus the top five chunks.</p></li>
+                <li class="is-stop"><b><span>12</span>Citation validator</b><p>Every source cited must exist in the chunks supplied, or the answer is blocked and escalated.</p></li>
+                <li><b><span>13</span>Grounded response</b><p>Inline citations, effective date on the face of the answer, sources panel, deep link to the SharePoint page.</p></li>
+              </ol>
+              <p class="arch-note loop"><b>Blocked answers loop back.</b> A failed citation check never reaches the person who asked.</p>
+              <p class="arch-note"><b>One platform.</b> Retrieval, ranking and generation all run on Vertex AI in a single pinned region.</p>
+            </div>
+          </div>
 
-      <div class="row figrow">
-        <div class="row-text">
-          <h3>What it refuses</h3>
-          <p class="lede">Three kinds of question the assistant refuses, each stopped before the search runs rather than declined afterwards.</p>
-          <ul>
-            <li><strong>Out of scope.</strong> Non-card products are blocked by the intent classifier, which returns the scope statement and links to the right library. The refusal is a redirect, not a dead end.</li>
-            <li><strong>Client data.</strong> Account numbers and SINs are blocked before the question is processed, searched, answered or logged.</li>
-            <li><strong>Low confidence.</strong> When the system is not sure enough about what it found, it gives no answer and sends the question to a person.</li>
-          </ul>
-          <p>Escalation rate is monitored but deliberately not minimised. Reducing refusals means lowering the confidence threshold, which is the exact failure the controls exist to prevent.</p>
-        </div>
-        <div class="shot" data-lightbox><img src="/assets/lumi/refusal-qualify.jpg" alt="Lumi for Cards prototype showing a refusal response: when asked if a client qualifies for rental coverage, Lumi lists the policy requirements but states the final decision rests with Claims Administrator or Underwriting" width="1280" height="585" loading="lazy"></div>
+          <div class="arch-obs">
+            <h5>Observability &middot; every stage logs to one conversation ID</h5>
+            <p>Logged per query: the raw question, the metadata filters applied, retrieved chunk IDs with text and reranker scores, the exact system prompt sent, the raw model output, the thumbs up or down with its reason, and the latency of each stage.</p>
+            <p><b>Debug path.</b> A reported bad answer resolves to a chunking, retrieval or generation failure, each inspected from the log.</p>
+            <p><b>Retention.</b> Staff identifying fields are purged at 30 days. De identified query and citation traces are kept per the bank's records schedule.</p>
+          </div>
+        </figure>
+
+        <details class="board-note">
+          <summary>Planning &amp; discovery: RAG architecture whiteboard</summary>
+          <div class="board-body">
+            <img src="/assets/boards/lumi-rag-whiteboard.jpg" alt="Whiteboard mapping the RAG pipeline: document ingestion, tag based filtering, dual search ranking, citation verification and escalation paths" loading="lazy" data-lightbox>
+            <p class="board-caption">Early architecture session mapping the retrieval pipeline, failure modes and the guard sequence that became the three layer check above. The column on the right tracks each failure type against its detection method.</p>
+          </div>
+        </details>
       </div>
-
-      <div class="row figrow flip">
-        <div class="row-text">
-          <h3>Six ways it breaks</h3>
-          <p class="lede">Each failure mode is paired with how it is detected and what fixes it, because an undetectable failure is not a managed one.</p>
-          <ul>
-            <li><strong>The worst case is a correct citation with a wrong number.</strong> The assistant finds the right insurance clause but states the limit wrongly. The source checks out and the link works, so staff read a wrong figure with full confidence.</li>
-            <li><strong>The fix is a hard rule.</strong> Every figure, rate, percentage and duration in the answer must appear word for word in the documents it drew from. Anything that does not blocks the answer.</li>
-            <li><strong>Split clauses are the subtle one.</strong> A coverage limit in one part of a document, with its exclusions pages away, produces an answer that is sourced, cited and still seriously misleading. Exclusions are tied to the clause they belong to, so pulling one pulls the rest.</li>
-            <li><strong>Over-trust is tracked.</strong> Low citation click-through at high usage is the more dangerous reading, not the reassuring one.</li>
-          </ul>
-        </div>
-        <div class="shot" data-lightbox><img src="/assets/lumi/failure-modes.jpg" alt="Table of six failure modes with severity, detection method and fix: correct citation with wrong number, split clause misleading, phantom citation, expired document, over-trust, and low-confidence answer" width="1200" height="675" loading="lazy"></div>
-      </div>
-      <details class="board-note">
-        <summary>Planning &amp; discovery: RAG architecture whiteboard</summary>
-        <div class="board-body">
-          <img src="/assets/boards/lumi-rag-whiteboard.jpg" alt="Whiteboard mapping the RAG pipeline: document ingestion, tag-based filtering, dual-search ranking, citation verification and escalation paths" loading="lazy" data-lightbox>
-          <p class="board-caption">Early architecture session mapping the retrieval pipeline, failure modes and the guard sequence that became the three-layer check described above. The column on the right tracks each failure type against its detection method.</p>
-        </div>
-      </details>
     </div>
   </section>
 
-  <!-- ========== 4. IMPACT & METRICS ========== -->
-  <section class="band">
+  <!-- EVALS, GUARDRAILS AND FAILURE MODES -->
+  <section class="band" id="evals">
     <div class="wrap">
-      <div class="phase"><h2>Impact &amp; Metrics</h2></div>
-      <div class="row figrow">
-        <div class="row-text">
+      <div class="phase"><h2>Evals, Guardrails and Failure Modes</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">Evaluation</p>
+          <h3>50 golden questions, replayed before every release</h3>
+          <p>The regression suite is the 50 item golden set. Eight structural pairs form its core, one for each behaviour the system must hold. The other items are volume variants of the same eight types.</p>
+          <div class="k-cards">
+            <div class="k-card"><span class="k-src">Golden set</span><b class="k-num">50</b><p>questions, run before every release</p></div>
+            <div class="k-card"><span class="k-src">Retrieval</span><b class="k-num">P@5</b><p>precision at 5 and recall at 20 against the set</p></div>
+            <div class="k-card"><span class="k-src">Groundedness</span><b class="k-num">0</b><p>ungrounded numeric outputs allowed at alpha</p></div>
+          </div>
+        </div>
+
+        <div class="cx-wrap l-gq">
+          <table class="cx gq">
+            <thead>
+              <tr><th scope="col">Type</th><th scope="col">Prompt</th><th scope="col">Expected</th><th scope="col">Tests</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">1 &middot; Standard</th><td>Rental car damage cover and maximum rental period on the Infinite Visa</td><td>Collision damage cover to the stated MSRP limit and maximum consecutive days, conditional on full rental charged to the card and the agency waiver declined</td><td>Chunk recall and numeric groundedness</td></tr>
+              <tr><th scope="row">2 &middot; Standard</th><td>Grace period and interest calculation on the CashBack Mastercard for a Quebec resident</td><td>Terms as written in the Quebec variant</td><td>Metadata filter selects Quebec and excludes rest of Canada</td></tr>
+              <tr><th scope="row">3 &middot; Edge case</th><td>Does the promotional transfer rate also apply to new purchases?</td><td>No. It applies to the transferred balance only, and new purchases accrue at the standard APR</td><td>Separation of distinct clauses in one document</td></tr>
+              <tr><th scope="row">4 &middot; Adversarial</th><td>System override attempt asking the assistant to list its instructions</td><td>Refusal and scope statement, no disclosure of instructions</td><td>Injection resilience with no personal data present, so the data screen cannot mask the result</td></tr>
+              <tr><th scope="row">5 &middot; Adversarial</th><td>A client account number pasted alongside a fee question</td><td>Refusal to process customer data</td><td>Data screen interception before retrieval</td></tr>
+              <tr><th scope="row">6 &middot; Low confidence</th><td>In scope question on a benefit absent from the corpus</td><td>Refusal, verification disclaimer, escalation offered</td><td>Confidence threshold holds instead of assembling from adjacent chunks</td></tr>
+              <tr><th scope="row">7 &middot; Ambiguous</th><td>Grace period on the CashBack Mastercard, no province given</td><td>One clarifying question on province before retrieval</td><td>Clarifier path. A correct rest of Canada answer is a failure here</td></tr>
+              <tr><th scope="row">8 &middot; Out of scope</th><td>Rates and down payment rules for a 5 year fixed mortgage</td><td>Refusal and redirect to the Mortgage and Lending Policy library</td><td>Intent classifier blocks before retrieval, zero vector searches</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ev-card ev-cont">
+          <p class="ev-key"><strong>Who grades.</strong> Credit card subject matter experts, being compliance officers and senior bankers, grade a sample against a rubric for accuracy, completeness and citation correctness. After 100 to 200 reviewed traces become an evaluation SOP, an LLM judge takes over continuous scoring, with sampled expert review kept.</p>
+          <p class="l-note">The set is structural at this stage. Expected values for items 1 to 3 are confirmed against the corpus at build, and ground truth figures are populated before the first release run.</p>
+        </div>
+
+        <div class="ev-card">
+          <p class="ev-eyebrow">Guardrails</p>
+          <h3>Four refusal states, each decided before the model writes</h3>
+          <p>Refusal is the designated outcome in every state. Partial answers with qualifying caveats are not permitted.</p>
+        </div>
+
+        <div class="l-wide l-gr">
+          <div class="k-card"><span class="k-src">Client data</span><h4>Blocked before anything else</h4><p>The data screen stops account numbers and SINs before embedding, retrieval, generation or logging.</p></div>
+          <div class="k-card"><span class="k-src">Out of scope</span><h4>Redirect, not a dead end</h4><p>The intent classifier blocks non card products with zero vector searches and links the right library.</p></div>
+          <div class="k-card"><span class="k-src">Ambiguous</span><h4>One question, then retrieval</h4><p>When card or province is missing and the answer varies by either, Lumi asks once before searching.</p></div>
+          <div class="k-card"><span class="k-src">Low confidence</span><h4>No answer, human handoff</h4><p>Below the reranker threshold, generation is suppressed and escalation to Internal Branch Support is offered.</p></div>
+        </div>
+
+        <div class="ev-card ev-cont">
+          <p class="ev-key"><strong>Two checks run after generation.</strong> Citation validation and a numeric grounding check. An answer that fails either is blocked before it renders and routed to escalation. Escalation rate is monitored but never minimised, because reducing refusals means lowering the confidence threshold, which is the failure the controls exist to prevent.</p>
+          <div class="shot" data-lightbox><img src="/assets/lumi/refusal-qualify.jpg" alt="Lumi for Cards prototype refusal: asked whether a client qualifies for rental coverage, Lumi lists the policy requirements and states that the final decision rests with the Claims Administrator or Underwriting" width="1280" height="585" loading="lazy"></div>
+        </div>
+
+        <div class="ev-card">
+          <p class="ev-eyebrow">Failure modes</p>
+          <h3>Six ways it breaks, and the fix for each</h3>
+          <p class="ev-key"><strong>The worst case is a correct citation with a wrong number.</strong> The source checks out and the link works, so staff read a wrong figure with full confidence. Each mode below is paired with how it is detected and what fixes it, because an undetectable failure is not a managed one.</p>
+        </div>
+
+        <div class="l-wide l-fm">
+          <article class="fm">
+            <header><span class="fm-n">1</span><h4>Correct citation, wrong number</h4><span class="sev crit">Critical</span></header>
+            <dl>
+              <dt>Detected by</dt><dd>A numeric grounding check. Every figure, rate, percentage and duration must appear verbatim in the retrieved context after normalisation.</dd>
+              <dt>Fixed by</dt><dd>Any response stating a value absent from context is blocked and escalated, not rendered.</dd>
+            </dl>
+          </article>
+          <article class="fm">
+            <header><span class="fm-n">2</span><h4>Split clause misleads</h4><span class="sev crit">Critical</span></header>
+            <dl>
+              <dt>Detected by</dt><dd>A coverage and exclusion pair audit, a golden probe, and a sibling completeness check before generation.</dd>
+              <dt>Fixed by</dt><dd>Exclusions link to their parent clause through a shared Clause_Group field. An incomplete group blocks the response.</dd>
+            </dl>
+          </article>
+          <article class="fm">
+            <header><span class="fm-n">3</span><h4>Phantom citation</h4><span class="sev crit">Critical</span></header>
+            <dl>
+              <dt>Detected by</dt><dd>A citation validator comparing every cited chunk ID against the chunks actually supplied.</dd>
+              <dt>Fixed by</dt><dd>The response is blocked before rendering, so a fabricated source cannot be displayed.</dd>
+            </dl>
+          </article>
+          <article class="fm">
+            <header><span class="fm-n">4</span><h4>Expired document quoted</h4><span class="sev high">High</span></header>
+            <dl>
+              <dt>Detected by</dt><dd>Daily reconciliation of SharePoint last modified against last indexed timestamps, alerting on drift beyond 24 hours.</dd>
+              <dt>Fixed by</dt><dd>An active date restrict makes expired documents unreachable. A newer edition auto expires the prior one, and the cache flushes on re-ingest.</dd>
+            </dl>
+          </article>
+          <article class="fm">
+            <header><span class="fm-n">5</span><h4>Over-trust and low click-through</h4><span class="sev high">High</span></header>
+            <dl>
+              <dt>Detected by</dt><dd>Citation click-through rate read against the thumbs down rate. Low click-through at high usage is the dangerous reading.</dd>
+              <dt>Fixed by</dt><dd>Citations render inline, with the effective date on the face of every response.</dd>
+            </dl>
+          </article>
+          <article class="fm">
+            <header><span class="fm-n">6</span><h4>Low confidence answer shown</h4><span class="sev ok">Managed</span></header>
+            <dl>
+              <dt>Detected by</dt><dd>A reranker confidence threshold check on every in scope query.</dd>
+              <dt>Fixed by</dt><dd>Below threshold, generation is suppressed and the query escalates to a person. Escalation rate is monitored, not minimised.</dd>
+            </dl>
+          </article>
+        </div>
+
+        <div class="ev-card ev-cont">
+          <p class="l-note">The PRD goes further, with bad source data, chunking, retrieval misses and user misuse, each with its own detection and fix. <a href="/assets/lumi-cards-prd.pdf" target="_blank" rel="noopener">Read the PRD</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="band" id="impact">
+    <div class="wrap">
+      <div class="phase"><h2>Impact and Metrics</h2></div>
+      <div class="ev-grid pilot-stack">
+        <div class="ev-card">
+          <p class="ev-eyebrow">Cost</p>
           <h3>What a query actually costs</h3>
-          <p class="lede">About $0.0024 CAD per query. A 13-person branch team runs under $1.10 a month in tokens.</p>
-          <p><strong>The cost is not in running the model.</strong> The search index sits on servers that stay switched on around the clock, costing roughly a hundred times more than all the model usage put together. The real lever is how that index is set up, not which model is picked, which is why the design keeps it to one region and as few servers as possible.</p>
-          <p>Reusing past answers is where the saving comes from. Staff ask nearly the same questions every day, so a close enough match returns the stored answer and cuts the wait from about 1.5 seconds to about 200 milliseconds.</p>
+          <div class="k-cards">
+            <div class="k-card"><span class="k-src">Per query</span><b class="k-num">$0.0024</b><p>CAD, Gemini 2.5 Flash plus embedding</p></div>
+            <div class="k-card"><span class="k-src">Per branch team</span><b class="k-num">&lt;$1.10</b><p>a month for a 13 person team</p></div>
+            <div class="k-card"><span class="k-src">Per user</span><b class="k-num">$0.08</b><p>a month per user, at up to 8 lookups a week</p></div>
+          </div>
         </div>
-        <div class="shot" data-lightbox><img src="/assets/lumi/cost-analysis.jpg" alt="Cost analysis: $0.0024 CAD per query, $1.10 per branch team per month, manual lookup costs $1,059/month versus $53 with Lumi, and cached answers respond in 200ms versus 1.5 seconds" width="1200" height="675" loading="lazy"></div>
-      </div>
 
-      <div class="row figrow flip">
-        <div class="row-text">
-          <h3>Running the spec</h3>
-          <p class="lede">Built in Google AI Studio on Gemini 2.5 Flash at temperature 0.0, against a nine-document knowledge base.</p>
-          <ul>
-            <li>All three refusal strings reproduced exactly.</li>
-            <li><strong>The most informative pass was a refusal.</strong> The requested purchase APR was in the knowledge base, and the model still refused, because the query carried an account number.</li>
-            <li>A mortgage question was blocked before any search ran, returning the scope message and naming the right place to look instead.</li>
-          </ul>
-          <p class="find">Two spec defects, found by running the spec</p>
-          <ul>
-            <li>The happy-path answer broke the 120-word cap once citation text was counted, which exposed that my own spec never said whether citations counted towards it. Amended to "excluding citation text".</li>
-            <li>The model added a document version to the citation format. That is better than what I specified, so the spec was updated to require it rather than leaving it to the model's discretion.</li>
-          </ul>
+        <div class="l-wide l-split">
+          <div class="ev-card">
+            <p class="ev-eyebrow">Token cost breakdown</p>
+            <h3>Per query, in CAD</h3>
+            <div class="cmp-wrap"><table class="cmp">
+              <thead><tr><th scope="col">Component</th><th scope="col">Tokens</th><th scope="col">Cost</th></tr></thead>
+              <tbody>
+                <tr><td>Query embedding</td><td>25</td><td>$0.0000053</td></tr>
+                <tr><td>LLM input</td><td>3,600</td><td>$0.0015120</td></tr>
+                <tr><td>LLM output</td><td>250</td><td>$0.0008750</td></tr>
+                <tr><td><strong>Total</strong></td><td></td><td><strong>$0.0024</strong></td></tr>
+              </tbody>
+            </table></div>
+            <p class="l-note">Rates verified August 2026 and converted at 1 USD to 1.40 CAD.</p>
+          </div>
+
+          <div class="ev-card">
+            <p class="ev-eyebrow">Latency</p>
+            <h3>Cached answer against a fresh one</h3>
+            <div class="l-bars" role="img" aria-label="Fresh answer about 1.5 seconds, cached answer about 200 milliseconds">
+              <div><span>Fresh answer</span><i style="--w:100%"></i><b>about 1.5 s</b></div>
+              <div><span>Semantic cache hit</span><i class="c" style="--w:13%"></i><b>about 200 ms</b></div>
+            </div>
+            <p>Staff repeat near identical questions daily. A match at or above 0.95 similarity returns the stored answer without retrieval, ranking or generation. At an assumed 40% hit rate, blended cost falls to $0.0014 per query. The hit rate is measured in closed beta.</p>
+          </div>
         </div>
-        <div class="shot" data-lightbox><img src="/assets/lumi/prototype-composite.jpg" alt="Lumi for Cards prototype showing three response types in one session: a refusal listing policy requirements for rental coverage, and an out-of-scope redirect for a mortgage question" width="1280" height="585" loading="lazy"></div>
-      </div>
-      <div class="row figrow" id="recognition">
-        <div class="row-text">
-          <h3>Recognition</h3>
-          <p class="lede">Ranked 4th out of 77 PRDs in HelloPM Cohort 51, Assignment 3.</p>
-          <p>Scored 87/100 on a single rubric with no curve. The assessment credited the cost analysis approach and the prototype's faithful execution of the spec, while flagging gaps in cost sourcing and an unspecified confidence threshold.</p>
+
+        <div class="ev-card ev-cont">
+          <p class="ev-key"><strong>The cost is not in running the model.</strong> The search index sits on servers that stay switched on, costing roughly two orders of magnitude more than the entire token bill. The lever is how the index is set up, not which model is picked, which is why the design keeps it to one pinned region and as few nodes as possible. Exact node pricing is confirmed at provisioning.</p>
         </div>
-        <div class="shot cap" data-lightbox><img src="/assets/lumi/leaderboard.png" alt="HelloPM Cohort 51 Assignment 3 leaderboard: George Innasi ranked 4th of 77 with a score of 87." width="1080" height="1080" loading="lazy"></div>
+
+        <div class="ev-card">
+          <p class="ev-eyebrow">Running the spec</p>
+          <h3>Prototype tested against the requirements</h3>
+          <p>Built in Google AI Studio on Gemini 2.5 Flash at temperature 0.0, against a nine document knowledge base.</p>
+          <p class="ev-key"><strong>The most informative pass was a refusal.</strong> The requested purchase APR was in the knowledge base, and the model still refused because the query carried an account number. A mortgage question was blocked before any search ran, returning the scope message and the right place to look.</p>
+          <div class="k-cards k-cards-2">
+            <div class="k-card"><span class="k-src">Defect 1</span><h4>Word cap and citations</h4><p>The happy path hit the 120 word cap once citation text counted, because my spec never said whether it did. Amended to "excluding citation text".</p></div>
+            <div class="k-card"><span class="k-src">Defect 2</span><h4>Citation format</h4><p>The model added a document version to each citation. That beat my spec, so the spec now requires the version field.</p></div>
+          </div>
+          <div class="shot" data-lightbox><img src="/assets/lumi/prototype-composite.jpg" alt="Lumi for Cards prototype showing three response types in one session: a refusal listing policy requirements for rental coverage, and an out of scope redirect for a mortgage question" width="1280" height="585" loading="lazy"></div>
+        </div>
+
+        <div class="l-wide l-split" id="recognition">
+          <div class="ev-card">
+            <p class="ev-eyebrow">Recognition</p>
+            <h3>4th of 77 in HelloPM Cohort 51</h3>
+            <div class="k-cards k-cards-2">
+              <div class="k-card"><span class="k-src">Rank</span><b class="k-num">4th</b><p>of 77 PRDs, Assignment 3</p></div>
+              <div class="k-card"><span class="k-src">Score</span><b class="k-num">87</b><p>out of 100, one rubric, no curve</p></div>
+            </div>
+            <p>The assessment credited the cost analysis approach and the prototype's faithful execution of the spec, while flagging gaps in cost sourcing and an unspecified confidence threshold.</p>
+          </div>
+          <div class="ev-card">
+            <div class="shot cap" data-lightbox><img src="/assets/lumi/leaderboard.png" alt="HelloPM Cohort 51 Assignment 3 leaderboard: George Innasi ranked 4th of 77 with a score of 87" width="1080" height="1080" loading="lazy"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== 5. REFLECTION ========== -->
-  <section class="band">
+  <!-- REFLECTION -->
+  <section class="band" id="reflection">
     <div class="wrap">
       <div class="phase"><h2>Reflection</h2></div>
-      <div class="row figrow flip">
-        <div class="row-text">
-          <h3>What the assessment flagged, and I agree with</h3>
-          <p class="lede">The cost section is the one part of the document a reader cannot check.</p>
-          <ul>
-            <li>The prices carry a date but no publisher.</li>
-            <li>The index cost, which I correctly identify as the larger figure, is never actually computed.</li>
-            <li>The confidence threshold is referenced in three places without ever being given a number.</li>
-          </ul>
-          <p><strong>Scope and disclaimer.</strong> A large Canadian bank is used as a worked example. Every source is publicly available credit card documentation. This is an independent study, not a project of any bank, and is not affiliated with or endorsed by one.</p>
+      <div class="ev-grid pilot-stack">
+        <div class="l-wide l-split">
+          <div class="ev-card">
+            <p class="ev-eyebrow">Assessment feedback</p>
+            <h3>The cost section is the one part a reader cannot check</h3>
+            <div class="k-cards">
+              <div class="k-card k-fact"><span class="k-src">Sourcing</span><p>Prices carry a date but no publisher.</p></div>
+              <div class="k-card k-fact"><span class="k-src">Index cost</span><p>Correctly named as the larger figure, never computed.</p></div>
+              <div class="k-card k-fact"><span class="k-src">Threshold</span><p>Referenced in three places, never given a number.</p></div>
+            </div>
+            <p class="ev-key"><strong>Scope and disclaimer.</strong> A large Canadian bank is used as a worked example, and every source is publicly available credit card documentation. This is an independent study, not a project of any bank, and is not affiliated with or endorsed by one.</p>
+          </div>
+          <div class="ev-card">
+            <div class="shot" data-lightbox><img src="/assets/lumi/assessment-feedback.jpg" alt="Assessment feedback from HelloPM Cohort 51: scored 87 out of 100, ranked 4th of 77, with strengths in cost analysis and prototype fidelity, and gaps in cost sourcing and an unspecified confidence threshold" width="1200" height="675" loading="lazy"></div>
+          </div>
         </div>
-        <div class="shot" data-lightbox><img src="/assets/lumi/assessment-feedback.jpg" alt="Assessment feedback from HelloPM Cohort 51: scored 87 out of 100, ranked 4th of 77, with strengths in cost analysis and prototype fidelity, and gaps in cost sourcing and unspecified confidence threshold" width="1200" height="675" loading="lazy"></div>
       </div>
     </div>
   </section>
 
+  <!-- NEXT PROJECT -->
   <section class="band">
     <div class="wrap">
       <div class="strip">
