@@ -2902,3 +2902,12 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   [data-page="lumi-cards"] .l-flow li{padding:12px}
   [data-page="lumi-cards"] .l-flow li:not(:last-child)::after{opacity:.4; bottom:-15px}
 }
+
+/* lumi problem: exposure and cost grid constrained to match the Manual Lookup card */
+[data-page="lumi-cards"] #problem .l-split.l-wide{width:min(880px,calc(100vw - 48px)); gap:32px}
+[data-page="lumi-cards"] #problem .l-split .cmp th:first-child,[data-page="lumi-cards"] #problem .l-split .cmp td:first-child{width:46%}
+[data-page="lumi-cards"] #problem .l-split .cmp th:not(:first-child),[data-page="lumi-cards"] #problem .l-split .cmp td:not(:first-child){width:27%}
+[data-page="lumi-cards"] #problem .l-split .cmp th,[data-page="lumi-cards"] #problem .l-split .cmp td{padding-inline:8px}
+[data-page="lumi-cards"] #problem .l-split .cmp th:first-child,[data-page="lumi-cards"] #problem .l-split .cmp td:first-child{padding-left:0}
+[data-page="lumi-cards"] #problem .l-split .ev-card > .l-risk{margin-top:auto}
+[data-page="lumi-cards"] #problem .l-split .ev-card > .ev-key:nth-last-of-type(2){margin-bottom:14px}
