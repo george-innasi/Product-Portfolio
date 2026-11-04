@@ -2933,7 +2933,7 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] #evals .ev-card.ev-cont.l-w5{padding-inline:0; background:none; border:0; box-shadow:none}
 
 /* lumi impact: token-cost + latency cards — visible boxes with green hover */
-[data-page="lumi-cards"] #impact .l-split-eq .ev-card{background:var(--surface); border:1px solid var(--line); border-top:4px solid #059669; border-radius:16px; box-shadow:0 2px 12px -6px rgba(0,0,0,.08); transition:background .25s, border-color .25s, box-shadow .25s, transform .25s, color .25s}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card{background:var(--surface); border:1px solid var(--line); border-top:4px solid #059669; border-radius:16px; padding:28px 28px 24px; box-shadow:0 2px 12px -6px rgba(0,0,0,.08); transition:background .25s, border-color .25s, box-shadow .25s, transform .25s, color .25s}
 [data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover{background:#064e3b; border-color:#064e3b; box-shadow:0 16px 32px -16px rgba(6,78,59,.55); transform:translateY(-3px); color:#fff}
 [data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover h3,
 [data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover p,
@@ -2972,7 +2972,7 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 
 /* lumi recognition: shared 1024px container */
 [data-page="lumi-cards"] #recognition.l-w5{gap:32px}
-[data-page="lumi-cards"] #recognition > .ev-card{padding:34px 32px 28px}
+[data-page="lumi-cards"] #impact #recognition > .ev-card{padding:34px 32px 28px; border-top:1px solid var(--line); box-shadow:0 2px 12px -6px rgba(0,0,0,.08)}
 
 /* ===== lumi refactor: scannable primitives (bento, pipeline, matrix, guardrails, dock) ===== */
 [data-page="lumi-cards"]{--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
