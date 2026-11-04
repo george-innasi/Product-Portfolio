@@ -3316,3 +3316,26 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   :root:not([data-theme="light"]) [data-page="lumi-cards"] .sc-all:hover{border-color:var(--lumi-vio-dk)}
 }
 @media (min-width:761px){[data-page="lumi-cards"] .sc-exp{align-self:start}}
+
+/* lumi evals: "Who grades" as an optional disclosure, same violet family as Expected result */
+[data-page="lumi-cards"] .l-grade{display:block; padding:0; background:var(--lumi-vio-bg); border:1px solid var(--lumi-vio-line); border-left:4px solid var(--lumi-vio); border-radius:0 14px 14px 0}
+[data-page="lumi-cards"] .l-grade-h{list-style:none; display:flex; align-items:flex-start; gap:14px; padding:16px 18px 16px 20px; cursor:pointer}
+[data-page="lumi-cards"] .l-grade-h::-webkit-details-marker{display:none}
+[data-page="lumi-cards"] .l-grade-t{flex:1; min-width:0}
+[data-page="lumi-cards"] .l-grade-c{flex:none; width:8px; height:8px; margin-top:.6em; border-right:2px solid var(--lumi-vio); border-bottom:2px solid var(--lumi-vio); transform:rotate(45deg); transition:transform .22s}
+[data-page="lumi-cards"] .l-grade[open] .l-grade-c{transform:rotate(-135deg)}
+[data-page="lumi-cards"] .l-grade-h:focus-visible{outline:2px solid var(--lumi-vio); outline-offset:-2px; border-radius:0 12px 12px 0}
+[data-page="lumi-cards"] .l-grade .l-phases{padding:0 20px 20px}
+[data-page="lumi-cards"] .l-phase-k{color:var(--lumi-vio)}
+[data-page="lumi-cards"] .l-phase-k span{background:var(--lumi-vio)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-grade{background:rgba(185,172,240,.08); border-color:rgba(185,172,240,.22); border-left-color:var(--lumi-vio-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-grade-c{border-color:var(--lumi-vio-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-phase-k{color:var(--lumi-vio-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-phase-k span{background:var(--lumi-vio-dk); color:#14122b}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-grade{background:rgba(185,172,240,.08); border-color:rgba(185,172,240,.22); border-left-color:var(--lumi-vio-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-grade-c{border-color:var(--lumi-vio-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-phase-k{color:var(--lumi-vio-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-phase-k span{background:var(--lumi-vio-dk); color:#14122b}
+}
+@media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .l-grade-c{transition:none}}

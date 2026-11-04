@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=282">
+<link rel="stylesheet" href="/assets/site.css?v=283">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -414,8 +414,8 @@
         </div>
 
         <div class="ev-card ev-cont">
-          <div class="l-grade">
-            <p class="l-grade-h"><strong>Who grades.</strong> Credit card subject matter experts grade in two phases, moving from manual review to an automated judge as the evidence accumulates.</p>
+          <details class="l-grade">
+            <summary class="l-grade-h"><span class="l-grade-t"><strong>Who grades.</strong> Credit card subject matter experts grade in two phases, moving from manual review to an automated judge as the evidence accumulates.</span><span class="l-grade-c" aria-hidden="true"></span></summary>
             <div class="l-phases">
               <div class="l-phase">
                 <span class="l-phase-k"><span>1</span>HITL calibration</span>
@@ -426,7 +426,7 @@
                 <p>After 100 to 200 reviewed traces become an evaluation SOP, an automated LLM judge takes over continuous scoring and regression, supported by sampled expert audits.</p>
               </div>
             </div>
-          </div>
+          </details>
           <p class="l-note">The set is structural at this stage. Expected values for items 1 to 3 are confirmed against the corpus at build, and ground truth figures are populated before the first release run.</p>
         </div>
 
