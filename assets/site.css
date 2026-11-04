@@ -3403,3 +3403,9 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   [data-page="lumi-cards"] .l-bento > .bn-col:last-child{display:flex; flex-direction:column; align-self:start; gap:12px}
   [data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-kpi{flex:none; align-self:auto; justify-content:flex-start}
 }
+
+/* lumi ROI column: box width follows its content (equal-width cards, label and footnote follow the same width) */
+[data-page="lumi-cards"] .l-bento > .bn-col:last-child{display:flex; flex-direction:column; width:max-content; max-width:100%; justify-self:start; align-self:start; gap:12px}
+[data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-kpi{flex:none; align-self:stretch; justify-content:flex-start; padding:14px 28px 15px 20px}
+[data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-k,
+[data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-foot{width:0; min-width:100%}
