@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=249">
+<link rel="stylesheet" href="/assets/site.css?v=252">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -462,12 +462,12 @@
           <h3>What a query actually costs</h3>
           <div class="k-cards">
             <div class="k-card"><span class="k-src">Per query</span><b class="k-num">$0.0024</b><p>CAD, Gemini 2.5 Flash plus embedding</p></div>
-            <div class="k-card"><span class="k-src">Per branch team</span><b class="k-num">&lt;$1.10</b><p>a month for a 13 person team</p></div>
-            <div class="k-card"><span class="k-src">Per user</span><b class="k-num">$0.08</b><p>a month per user, at up to 8 lookups a week</p></div>
+            <div class="k-card"><span class="k-src">Per branch team</span><b class="k-num">&lt;$1.10</b><p>A month for a 13-person team</p></div>
+            <div class="k-card"><span class="k-src">Per user</span><b class="k-num">$0.08</b><p>A month per user, at up to 8 lookups a week</p></div>
           </div>
         </div>
 
-        <div class="l-wide l-split">
+        <div class="l-wide l-split l-split-eq">
           <div class="ev-card">
             <p class="ev-eyebrow">Token cost breakdown</p>
             <h3>Per query, in CAD</h3>
@@ -494,8 +494,11 @@
           </div>
         </div>
 
-        <div class="ev-card ev-cont">
-          <p class="ev-key"><strong>The cost is not in running the model.</strong> The search index sits on servers that stay switched on, costing roughly two orders of magnitude more than the entire token bill. The lever is how the index is set up, not which model is picked, which is why the design keeps it to one pinned region and as few nodes as possible. Exact node pricing is confirmed at provisioning.</p>
+        <div class="l-wide l-infra">
+          <span class="l-infra-k">Where the cost sits</span>
+          <h3>The cost is not in running the model: Index servers vs. token consumption</h3>
+          <p>The search index sits on servers that stay switched on, costing roughly two orders of magnitude more than the entire token bill. The real engineering lever is how that index is provisioned, keeping it to one pinned region and minimizing active nodes.</p>
+          <p class="l-infra-note">Exact node pricing is confirmed at provisioning.</p>
         </div>
 
         <div class="ev-card">

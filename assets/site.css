@@ -2774,3 +2774,32 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .fm dd{margin-top:4px}
 :root[data-theme="dark"] [data-page="lumi-cards"] .fm dt{color:#6ee7b7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .fm dt{color:#6ee7b7}}
+
+/* lumi impact: metric cards, balanced split, infrastructure callout */
+[data-page="lumi-cards"] #impact .ev-card > .k-cards .k-card{border-radius:14px; padding:10px 12px; gap:6px; box-shadow:none; transition:border-color .2s, box-shadow .2s, transform .2s}
+[data-page="lumi-cards"] #impact .ev-card > .k-cards .k-card:hover{border-color:color-mix(in srgb,#059669 45%,var(--line)); box-shadow:0 12px 24px -18px rgba(6,78,59,.5); transform:translateY(-2px)}
+[data-page="lumi-cards"] #impact .k-cards .k-card .k-src{font-size:.68rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#047857}
+[data-page="lumi-cards"] #impact .k-cards .k-card .k-num{color:#059669}
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .k-cards .k-card .k-num{color:#34d399}
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .k-cards .k-card .k-src{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .k-cards .k-card .k-num{color:#34d399} :root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .k-cards .k-card .k-src{color:#6ee7b7}}
+
+[data-page="lumi-cards"] #impact .l-bars{gap:20px; margin:8px 0 6px}
+[data-page="lumi-cards"] #impact .l-bars i{height:16px; border-radius:8px}
+@media (min-width:861px){
+  [data-page="lumi-cards"] #impact .l-split-eq .ev-card > .l-bars{margin-block:auto}
+}
+
+[data-page="lumi-cards"] .l-infra{background:#f0fdf4; border:1px solid color-mix(in srgb,#059669 22%,var(--line)); border-left:5px solid #059669; border-radius:0 16px 16px 0; padding:22px 28px 24px; display:flex; flex-direction:column; gap:8px}
+[data-page="lumi-cards"] .l-infra-k{font-size:.7rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#047857}
+[data-page="lumi-cards"] .l-infra h3{margin:0; font-family:var(--serif); font-weight:600; font-size:clamp(1.2rem,2.3vw,1.5rem); line-height:1.3; letter-spacing:-.01em; color:var(--ink)}
+[data-page="lumi-cards"] .l-infra p{margin:0; max-width:100ch; font-size:1rem; line-height:1.65; color:var(--muted)}
+[data-page="lumi-cards"] .l-infra .l-infra-note{font-size:.88rem}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-infra{background:rgba(5,150,105,.12)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-infra-k{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-infra{background:rgba(5,150,105,.12)} :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-infra-k{color:#6ee7b7}}
+@media (max-width:700px){
+  [data-page="lumi-cards"] .l-bars > div{grid-template-columns:minmax(0,1fr) auto; row-gap:6px}
+  [data-page="lumi-cards"] .l-bars i{grid-column:1 / -1; grid-row:2}
+  [data-page="lumi-cards"] .l-bars b{justify-self:end}
+}
