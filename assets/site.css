@@ -2831,3 +2831,41 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 }
 [data-page="lumi-cards"] #recognition .l-board{width:100%; max-width:450px; margin-inline:auto}
 [data-page="lumi-cards"] .l-assess-row{padding:18px 0 19px} [data-page="lumi-cards"] .l-assess-h{padding:14px 0 12px}
+
+/* lumi reflection, scope panel, next project */
+[data-page="lumi-cards"] .l-eyebrow{margin:0 0 6px; text-align:center; font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#059669}
+[data-page="lumi-cards"] .l-sub{margin:0 auto 26px; text-align:center; max-width:64ch; font-size:clamp(1.05rem,1.8vw,1.22rem); line-height:1.6; color:var(--ink)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-eyebrow{color:#34d399}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-eyebrow{color:#34d399}}
+[data-page="lumi-cards"] .l-reflect{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,3vw,44px); align-items:stretch}
+[data-page="lumi-cards"] .l-take{display:flex; flex-direction:column; gap:12px}
+[data-page="lumi-cards"] .l-take-card{flex:1; background:var(--surface); border:1px solid var(--line); border-left:3px solid #059669; border-radius:14px; padding:16px 20px 17px; display:flex; flex-direction:column; justify-content:center; gap:6px}
+[data-page="lumi-cards"] .l-take-k{font-size:.7rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#059669}
+[data-page="lumi-cards"] .l-take-card p{margin:0; font-size:.95rem; line-height:1.6; color:var(--muted)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-take-k{color:#34d399}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-take-k{color:#34d399}}
+[data-page="lumi-cards"] .l-sheet{background:#fff; border:1px solid var(--line); border-radius:18px; padding:10px; box-shadow:0 22px 44px -30px rgba(15,23,42,.5); display:flex; align-items:center}
+[data-page="lumi-cards"] .l-sheet img{display:block; width:100%; height:auto; border-radius:12px; cursor:zoom-in}
+@media (max-width:860px){[data-page="lumi-cards"] .l-reflect{grid-template-columns:minmax(0,1fr)}}
+
+[data-page="lumi-cards"] .l-scope{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:16px 4px}
+[data-page="lumi-cards"] .l-scope p{margin:0; font-size:.84rem; line-height:1.65; color:var(--muted); max-width:120ch}
+[data-page="lumi-cards"] .l-scope strong{color:var(--ink); font-weight:700}
+
+[data-page="lumi-cards"] .l-next .strip{background:#ecfdf5; border:1px solid color-mix(in srgb,#059669 28%,var(--line)); border-radius:18px; padding:26px 30px}
+[data-page="lumi-cards"] .l-next .strip h3{color:#064e3b}
+[data-page="lumi-cards"] .l-next .strip p{color:#3f5f55}
+[data-page="lumi-cards"] .l-next .strip .btn-primary{background:#064e3b; color:#fff; padding:13px 24px; border-radius:999px; font-weight:700; box-shadow:0 10px 22px -12px rgba(6,78,59,.8)}
+[data-page="lumi-cards"] .l-next .strip .btn-primary:hover{background:#053f2f; color:#fff; filter:none}
+[data-page="lumi-cards"] .l-next .strip .btn-primary span{display:inline-block; transition:transform .2s}
+[data-page="lumi-cards"] .l-next .strip .btn-primary:hover span{transform:translateX(3px)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-next .strip{background:rgba(5,150,105,.14)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-next .strip h3{color:var(--ink)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-next .strip p{color:var(--muted)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-next .strip .btn-primary{background:#047857}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-next .strip{background:rgba(5,150,105,.14)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-next .strip h3{color:var(--ink)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-next .strip p{color:var(--muted)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-next .strip .btn-primary{background:#047857}
+}

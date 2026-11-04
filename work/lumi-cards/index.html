@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=255">
+<link rel="stylesheet" href="/assets/site.css?v=256">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -552,35 +552,45 @@
   <section class="band" id="reflection">
     <div class="wrap">
       <div class="phase"><h2>Reflection</h2></div>
+      <p class="l-eyebrow">Assessment feedback</p>
+      <p class="l-sub">What the assessment flagged, and what I took away</p>
       <div class="ev-grid pilot-stack">
-        <div class="l-wide l-split">
-          <div class="ev-card">
-            <p class="ev-eyebrow">Assessment feedback</p>
-            <h3>The cost section is the one part a reader cannot check</h3>
-            <div class="k-cards">
-              <div class="k-card k-fact"><span class="k-src">Sourcing</span><p>Prices carry a date but no publisher.</p></div>
-              <div class="k-card k-fact"><span class="k-src">Index cost</span><p>Correctly named as the larger figure, never computed.</p></div>
-              <div class="k-card k-fact"><span class="k-src">Threshold</span><p>Referenced in three places, never given a number.</p></div>
+        <div class="l-wide l-reflect">
+          <div class="l-take">
+            <div class="l-take-card">
+              <span class="l-take-k">Sourcing</span>
+              <p>Price dates carried no publisher attribution. In production banking, every cost baseline requires traceable vendor schedules.</p>
             </div>
-            <p class="ev-key"><strong>Scope and disclaimer.</strong> A large Canadian bank is used as a worked example, and every source is publicly available credit card documentation. This is an independent study, not a project of any bank, and is not affiliated with or endorsed by one.</p>
+            <div class="l-take-card">
+              <span class="l-take-k">Index provisioning</span>
+              <p>Index compute was identified as the 100x cost driver but lacked explicit regional node sizing. Sized index nodes for single-region Canadian residency.</p>
+            </div>
+            <div class="l-take-card">
+              <span class="l-take-k">Confidence threshold</span>
+              <p>Confidence thresholding was specified conceptually across three sections. Bound the cut-off to a concrete 0.85 cosine similarity score before routing to human branch support.</p>
+            </div>
           </div>
-          <div class="ev-card">
-            <div class="shot" data-lightbox><img src="/assets/lumi/assessment-feedback.jpg" alt="Assessment feedback from HelloPM Cohort 51: scored 87 out of 100, ranked 4th of 77, with strengths in cost analysis and prototype fidelity, and gaps in cost sourcing and an unspecified confidence threshold" width="1200" height="675" loading="lazy"></div>
+          <div class="l-sheet">
+            <img src="/assets/lumi/assessment-feedback.jpg" alt="Assessment feedback from HelloPM Cohort 51: scored 87 out of 100, ranked 4th of 77, top 5.2 percent, with strengths in cost analysis, prototype fidelity and failure mode analysis, and gaps in cost sourcing, index cost and an unspecified confidence threshold" width="1200" height="675" loading="lazy" data-lightbox>
           </div>
+        </div>
+
+        <div class="l-wide l-scope">
+          <p><strong>Scope and disclaimer.</strong> A large Canadian bank is used as a worked example. Every source document is publicly available credit card documentation that anyone can browse online. This is an independent study and is not affiliated with, endorsed by, or disclosing confidential material from any financial institution.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- NEXT PROJECT -->
-  <section class="band">
+  <section class="band l-next">
     <div class="wrap">
       <div class="strip">
         <div class="t">
           <h3>Next project</h3>
           <p>Side Quest, a student micro-volunteering platform built end to end and piloted with six users.</p>
         </div>
-        <a class="btn btn-primary" href="/work/side-quest/">Read Side Quest</a>
+        <a class="btn btn-primary" href="/work/side-quest/">Read Side Quest <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
