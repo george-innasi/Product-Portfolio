@@ -2920,3 +2920,14 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] #research .cmp th:last-child,[data-page="lumi-cards"] #research .cmp td:last-child{width:65%}
 [data-page="lumi-cards"] .l-fm.l-w5{gap:20px}
 [data-page="lumi-cards"] #evals .ev-card.ev-cont.l-w5{padding-inline:0; background:none; border:0; box-shadow:none}
+
+/* lumi impact: shared 1024px container for metrics, token and latency split, infrastructure callout */
+[data-page="lumi-cards"] #impact .l-split.l-w5{gap:32px}
+[data-page="lumi-cards"] #impact .l-cost .k-cards{gap:20px}
+[data-page="lumi-cards"] #impact .cmp{table-layout:fixed}
+[data-page="lumi-cards"] #impact .cmp th:first-child,[data-page="lumi-cards"] #impact .cmp td:first-child{width:44%}
+[data-page="lumi-cards"] #impact .cmp th:nth-child(2),[data-page="lumi-cards"] #impact .cmp td:nth-child(2){width:20%}
+[data-page="lumi-cards"] #impact .cmp th:nth-child(3),[data-page="lumi-cards"] #impact .cmp td:nth-child(3){width:36%}
+[data-page="lumi-cards"] #impact .cmp th,[data-page="lumi-cards"] #impact .cmp td{padding-inline:8px}
+[data-page="lumi-cards"] #impact .cmp th:first-child,[data-page="lumi-cards"] #impact .cmp td:first-child{padding-left:0}
+[data-page="lumi-cards"] #impact .l-infra.l-w5 p{max-width:none}
