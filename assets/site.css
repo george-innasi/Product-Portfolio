@@ -3386,3 +3386,9 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-take-c{border-color:#34d399}}
 @media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .l-take-c{transition:none}}
 @media (min-width:861px){[data-page="lumi-cards"] .l-take{justify-content:center}}
+
+/* lumi problem: tighter header block (shorter rules, smaller gap, narrower intro) */
+[data-page="lumi-cards"] #problem .phase{margin-bottom:18px; gap:clamp(12px,2.4vw,18px)}
+[data-page="lumi-cards"] #problem .phase::before,[data-page="lumi-cards"] #problem .phase::after{width:clamp(20px,4vw,48px)}
+[data-page="lumi-cards"] #problem .phase h2{font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.2}
+[data-page="lumi-cards"] #problem .mvp-intro{max-width:66ch; font-size:clamp(1rem,1.5vw,1.1rem); line-height:1.6; margin:0 auto 22px}
