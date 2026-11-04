@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=246">
+<link rel="stylesheet" href="/assets/site.css?v=249">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -372,16 +372,27 @@
         </div>
 
         <div class="l-wide l-gr">
-          <div class="k-card"><span class="k-src">Client data</span><h4>Blocked before anything else</h4><p>The data screen stops account numbers and SINs before embedding, retrieval, generation or logging.</p></div>
-          <div class="k-card"><span class="k-src">Out of scope</span><h4>Redirect, not a dead end</h4><p>The intent classifier blocks non card products with zero vector searches and links the right library.</p></div>
-          <div class="k-card"><span class="k-src">Ambiguous</span><h4>One question, then retrieval</h4><p>When card or province is missing and the answer varies by either, Lumi asks once before searching.</p></div>
-          <div class="k-card"><span class="k-src">Low confidence</span><h4>No answer, human handoff</h4><p>Below the reranker threshold, generation is suppressed and escalation to Internal Branch Support is offered.</p></div>
+          <div class="k-card"><span class="k-src">1 &middot; Client data</span><h4>Blocked before anything else</h4><p>The data screen stops account numbers and SINs before embedding, retrieval, generation or logging.</p></div>
+          <div class="k-card"><span class="k-src">2 &middot; Out of scope</span><h4>Redirect, not a dead end</h4><p>The intent classifier blocks non card products with zero vector searches and links the right library.</p></div>
+          <div class="k-card"><span class="k-src">3 &middot; Ambiguous</span><h4>One question, then retrieval</h4><p>When card or province is missing and the answer varies by either, Lumi asks once before searching.</p></div>
+          <div class="k-card"><span class="k-src">4 &middot; Low confidence</span><h4>No answer, human handoff</h4><p>Below the reranker threshold, generation is suppressed and escalation to Internal Branch Support is offered.</p></div>
         </div>
 
-        <div class="ev-card ev-cont">
-          <p class="ev-key"><strong>Two checks run after generation.</strong> Citation validation and a numeric grounding check. An answer that fails either is blocked before it renders and routed to escalation. Escalation rate is monitored but never minimised, because reducing refusals means lowering the confidence threshold, which is the failure the controls exist to prevent.</p>
-          <div class="shot" data-lightbox><img src="/assets/lumi/refusal-qualify.jpg" alt="Lumi for Cards prototype refusal: asked whether a client qualifies for rental coverage, Lumi lists the policy requirements and states that the final decision rests with the Claims Administrator or Underwriting" width="1280" height="585" loading="lazy"></div>
+        <div class="l-wide l-post">
+          <span class="l-post-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Post-generation validation</span>
+          <div class="l-post-copy">
+            <p><strong>Programmatic citation check and numeric grounding verification block any unverified token before render.</strong> A failed answer is routed to escalation.</p>
+            <p class="l-post-sub">Escalation rate is monitored but never minimised, because reducing refusals means lowering the confidence threshold, which is the failure the controls exist to prevent.</p>
+          </div>
         </div>
+
+        <figure class="l-proto">
+          <div class="l-device">
+            <div class="ph-bar"><span></span><span></span><span></span><em>lumi-for-cards.vercel.app</em></div>
+            <img src="/assets/lumi/refusal-qualify.jpg" alt="Lumi for Cards prototype refusal: asked whether a client qualifies for rental coverage, Lumi lists the policy requirements and states that the final decision rests with the Claims Administrator or Underwriting" width="1280" height="585" loading="lazy" data-lightbox>
+          </div>
+          <figcaption><strong>Live prototype pass:</strong> the model correctly enforces the boundary on rental coverage qualification, citing underwriting conditions rather than hallucinating an approval decision.</figcaption>
+        </figure>
 
         <div class="ev-card">
           <p class="ev-eyebrow">Failure modes</p>
@@ -393,43 +404,43 @@
           <article class="fm">
             <header><span class="fm-n">1</span><h4>Correct citation, wrong number</h4><span class="sev crit">Critical</span></header>
             <dl>
-              <dt>Detected by</dt><dd>A numeric grounding check. Every figure, rate, percentage and duration must appear verbatim in the retrieved context after normalisation.</dd>
-              <dt>Fixed by</dt><dd>Any response stating a value absent from context is blocked and escalated, not rendered.</dd>
+              <div class="fm-d"><dt>Detected by</dt><dd>A <strong>numeric grounding check</strong>. Every figure, rate, percentage and duration must appear verbatim in the retrieved context after normalisation.</dd></div>
+              <div class="fm-f"><dt>Fixed by</dt><dd>Any response stating a value absent from context is blocked and escalated, not rendered.</dd></div>
             </dl>
           </article>
           <article class="fm">
             <header><span class="fm-n">2</span><h4>Split clause misleads</h4><span class="sev crit">Critical</span></header>
             <dl>
-              <dt>Detected by</dt><dd>A coverage and exclusion pair audit, a golden probe, and a sibling completeness check before generation.</dd>
-              <dt>Fixed by</dt><dd>Exclusions link to their parent clause through a shared Clause_Group field. An incomplete group blocks the response.</dd>
+              <div class="fm-d"><dt>Detected by</dt><dd>A coverage and exclusion pair audit, a golden probe, and a sibling completeness check before generation.</dd></div>
+              <div class="fm-f"><dt>Fixed by</dt><dd>Exclusions link to their parent clause through a <strong>shared Clause_Group field</strong>. An incomplete group blocks the response.</dd></div>
             </dl>
           </article>
           <article class="fm">
             <header><span class="fm-n">3</span><h4>Phantom citation</h4><span class="sev crit">Critical</span></header>
             <dl>
-              <dt>Detected by</dt><dd>A citation validator comparing every cited chunk ID against the chunks actually supplied.</dd>
-              <dt>Fixed by</dt><dd>The response is blocked before rendering, so a fabricated source cannot be displayed.</dd>
+              <div class="fm-d"><dt>Detected by</dt><dd>A <strong>citation validator</strong> comparing every cited chunk ID against the chunks actually supplied.</dd></div>
+              <div class="fm-f"><dt>Fixed by</dt><dd>The response is blocked before rendering, so a fabricated source cannot be displayed.</dd></div>
             </dl>
           </article>
           <article class="fm">
             <header><span class="fm-n">4</span><h4>Expired document quoted</h4><span class="sev high">High</span></header>
             <dl>
-              <dt>Detected by</dt><dd>Daily reconciliation of SharePoint last modified against last indexed timestamps, alerting on drift beyond 24 hours.</dd>
-              <dt>Fixed by</dt><dd>An active date restrict makes expired documents unreachable. A newer edition auto expires the prior one, and the cache flushes on re-ingest.</dd>
+              <div class="fm-d"><dt>Detected by</dt><dd>Daily reconciliation of SharePoint last modified against last indexed timestamps, alerting on drift beyond 24 hours.</dd></div>
+              <div class="fm-f"><dt>Fixed by</dt><dd>An <strong>active date restrict</strong> makes expired documents unreachable. A newer edition auto expires the prior one, and the cache flushes on re-ingest.</dd></div>
             </dl>
           </article>
           <article class="fm">
             <header><span class="fm-n">5</span><h4>Over-trust and low click-through</h4><span class="sev high">High</span></header>
             <dl>
-              <dt>Detected by</dt><dd>Citation click-through rate read against the thumbs down rate. Low click-through at high usage is the dangerous reading.</dd>
-              <dt>Fixed by</dt><dd>Citations render inline, with the effective date on the face of every response.</dd>
+              <div class="fm-d"><dt>Detected by</dt><dd>Citation click-through rate read against the thumbs down rate. Low click-through at high usage is the dangerous reading.</dd></div>
+              <div class="fm-f"><dt>Fixed by</dt><dd><strong>Citations render inline</strong>, with the effective date on the face of every response.</dd></div>
             </dl>
           </article>
           <article class="fm">
             <header><span class="fm-n">6</span><h4>Low confidence answer shown</h4><span class="sev ok">Managed</span></header>
             <dl>
-              <dt>Detected by</dt><dd>A reranker confidence threshold check on every in scope query.</dd>
-              <dt>Fixed by</dt><dd>Below threshold, generation is suppressed and the query escalates to a person. Escalation rate is monitored, not minimised.</dd>
+              <div class="fm-d"><dt>Detected by</dt><dd>A reranker confidence threshold check on every in scope query.</dd></div>
+              <div class="fm-f"><dt>Fixed by</dt><dd><strong>Below threshold, generation is suppressed</strong> and the query escalates to a person. Escalation rate is monitored, not minimised.</dd></div>
             </dl>
           </article>
         </div>
