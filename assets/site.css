@@ -2665,3 +2665,60 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 @container (max-width:860px){
   [data-page="lumi-cards"] .obs-grid{grid-template-columns:minmax(0,1fr)}
 }
+
+/* lumi evals: metric cards match the hero highlight cards */
+[data-page="lumi-cards"] .ph-hl div{transition:border-color .2s, box-shadow .2s, transform .2s}
+[data-page="lumi-cards"] #evals .ev-card > .k-cards .k-card{border-radius:14px; padding:10px 12px; gap:6px; box-shadow:none; transition:border-color .2s, box-shadow .2s, transform .2s}
+[data-page="lumi-cards"] .ph-hl div:hover,
+[data-page="lumi-cards"] #evals .ev-card > .k-cards .k-card:hover{border-color:color-mix(in srgb,#059669 45%,var(--line)); box-shadow:0 12px 24px -18px rgba(6,78,59,.5); transform:translateY(-2px)}
+[data-page="lumi-cards"] #evals .k-cards .k-card .k-src{font-size:.68rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#047857}
+[data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:#059669}
+:root[data-theme="dark"] [data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:#34d399}
+:root[data-theme="dark"] [data-page="lumi-cards"] #evals .k-cards .k-card .k-src{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:#34d399} :root:not([data-theme="light"]) [data-page="lumi-cards"] #evals .k-cards .k-card .k-src{color:#6ee7b7}}
+
+/* lumi evals: golden set table */
+[data-page="lumi-cards"] .cx-wrap.l-gq{border-radius:16px; -webkit-overflow-scrolling:touch}
+[data-page="lumi-cards"] .cx-wrap.l-gq:focus-visible{outline:2px solid #059669; outline-offset:2px}
+[data-page="lumi-cards"] .cx.gq{table-layout:fixed; min-width:1020px}
+[data-page="lumi-cards"] .cx.gq .gq-c1{width:12%}
+[data-page="lumi-cards"] .cx.gq .gq-c2{width:28%}
+[data-page="lumi-cards"] .cx.gq .gq-c3{width:38%}
+[data-page="lumi-cards"] .cx.gq .gq-c4{width:22%}
+[data-page="lumi-cards"] .cx.gq thead th{background:var(--surface-2); font-weight:700; padding-block:14px}
+[data-page="lumi-cards"] .cx.gq tbody th,
+[data-page="lumi-cards"] .cx.gq tbody td{padding:16px 14px; vertical-align:top}
+[data-page="lumi-cards"] .cx.gq tbody tr:nth-child(n+1) th{font-size:inherit; letter-spacing:normal; text-transform:none; font-weight:400; display:table-cell}
+[data-page="lumi-cards"] .cx.gq th[scope="row"] .gq-n{display:block; font-size:.72rem; font-weight:700; color:var(--muted); letter-spacing:.06em; margin-bottom:6px}
+[data-page="lumi-cards"] .cx.gq .gq-t{display:inline-block; padding:3px 10px; border-radius:999px; font-size:.72rem; font-weight:700; letter-spacing:.02em; line-height:1.35; border:1px solid transparent; white-space:nowrap}
+[data-page="lumi-cards"] .cx.gq .gq-t.t-ok{background:#e6f4ee; color:#166a4a; border-color:#bfe3d1}
+[data-page="lumi-cards"] .cx.gq .gq-t.t-warn{background:#fef3c7; color:#92400e; border-color:#fcd9a0}
+[data-page="lumi-cards"] .cx.gq .gq-t.t-rose{background:#fde8ea; color:#9f1d2c; border-color:#f6c4ca}
+[data-page="lumi-cards"] .cx.gq .gq-t.t-neutral{background:#eef2f6; color:#475569; border-color:#d9e0e8}
+:root[data-theme="dark"] [data-page="lumi-cards"] .cx.gq .gq-t.t-ok{background:rgba(52,211,153,.12); color:#6ee7b7; border-color:rgba(52,211,153,.32)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .cx.gq .gq-t.t-warn{background:rgba(245,158,11,.14); color:#fcd34d; border-color:rgba(245,158,11,.35)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .cx.gq .gq-t.t-rose{background:rgba(244,114,127,.13); color:#fda4af; border-color:rgba(244,114,127,.34)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .cx.gq .gq-t.t-neutral{background:rgba(148,163,184,.14); color:#cbd5e1; border-color:rgba(148,163,184,.3)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .cx.gq .gq-t.t-ok{background:rgba(52,211,153,.12); color:#6ee7b7; border-color:rgba(52,211,153,.32)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .cx.gq .gq-t.t-warn{background:rgba(245,158,11,.14); color:#fcd34d; border-color:rgba(245,158,11,.35)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .cx.gq .gq-t.t-rose{background:rgba(244,114,127,.13); color:#fda4af; border-color:rgba(244,114,127,.34)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .cx.gq .gq-t.t-neutral{background:rgba(148,163,184,.14); color:#cbd5e1; border-color:rgba(148,163,184,.3)}
+}
+
+/* lumi evals: who grades callout */
+[data-page="lumi-cards"] .l-grade{background:rgba(5,150,105,.06); border:1px solid color-mix(in srgb,#059669 22%,var(--line)); border-left:4px solid #059669; border-radius:0 14px 14px 0; padding:18px 20px 20px; display:flex; flex-direction:column; gap:14px}
+[data-page="lumi-cards"] .l-grade-h{margin:0; color:var(--ink); line-height:1.6}
+[data-page="lumi-cards"] .l-phases{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
+[data-page="lumi-cards"] .l-phase{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px 15px; display:flex; flex-direction:column; gap:7px}
+[data-page="lumi-cards"] .l-phase-k{display:flex; align-items:center; gap:9px; font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#047857}
+[data-page="lumi-cards"] .l-phase-k span{width:22px; height:22px; border-radius:50%; background:#059669; color:#fff; display:grid; place-items:center; font-size:.72rem; letter-spacing:0; flex:none}
+[data-page="lumi-cards"] .l-phase p{margin:0; font-size:.93rem; line-height:1.55; color:var(--muted)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-grade{background:rgba(5,150,105,.12)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-phase-k{color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-grade{background:rgba(5,150,105,.12)} :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-phase-k{color:#6ee7b7}}
+@media (max-width:640px){[data-page="lumi-cards"] .l-phases{grid-template-columns:minmax(0,1fr)}}
+[data-page="lumi-cards"] .cx.gq thead th:first-child,[data-page="lumi-cards"] .cx.gq tbody th{width:12%}
+[data-page="lumi-cards"] .cx.gq thead th:nth-child(2){width:28%}
+[data-page="lumi-cards"] .cx.gq thead th:nth-child(3){width:38%}
+[data-page="lumi-cards"] .cx.gq thead th:nth-child(4){width:22%}
