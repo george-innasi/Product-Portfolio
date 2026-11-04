@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=264">
+<link rel="stylesheet" href="/assets/site.css?v=266">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -159,29 +159,35 @@
           <p class="l-flow-bar"><span aria-hidden="true">&#9201;</span> 4&ndash;6 minutes per lookup &middot; 60&ndash;90 lookups per branch per week &middot; Zero audit trail</p>
         </div>
 
-        <div class="l-wide l-split l-split-eq">
-          <div class="ev-card">
-            <p class="ev-eyebrow">Compliance exposure</p>
-            <h3>Who asks, and what is at stake</h3>
-            <p class="ev-key"><strong>Personal Bankers.</strong> Handle high-consequence questions that span multiple clauses, such as insurance eligibility and promotional term interactions.</p>
-            <p class="ev-key"><strong>Tellers.</strong> Handle a high volume of single-fact lookups.</p>
-            <p class="l-risk"><strong>Regulatory consequence.</strong> Risk of quoting expired rates or misstating mandatory consumer disclosures under federal and provincial rules.</p>
+        <div class="l-wide l-w4 l-bento">
+          <div class="bn-col">
+            <p class="bn-k">Persona risk</p>
+            <article class="bn-persona">
+              <header><h3>Personal Banker</h3><span class="bn-pill">High consequence</span></header>
+              <p class="bn-row"><span class="bn-l">Lookups</span><span>Multi-clause policies: insurance eligibility, promotional terms</span></p>
+              <p class="bn-row risk"><span class="bn-l">Risk</span><span>Client churn and regulatory misstatements</span></p>
+            </article>
+            <article class="bn-persona">
+              <header><h3>Teller</h3><span class="bn-pill">High volume</span></header>
+              <p class="bn-row"><span class="bn-l">Lookups</span><span>Single-fact lookups: FX rates, annual fees</span></p>
+              <p class="bn-row risk"><span class="bn-l">Risk</span><span>Extended lobby queue and transaction bottlenecks</span></p>
+            </article>
+            <p class="bn-stake"><code>Regulatory stake</code>Mandatory consumer disclosures, expired provincial promo rates</p>
           </div>
 
-          <div class="ev-card">
-            <p class="ev-eyebrow">The cost</p>
-            <h3>What it costs per branch</h3>
-            <div class="l-bottom">
-              <div class="cmp-wrap"><table class="cmp">
-                <thead><tr><th scope="col">Per branch</th><th scope="col">Now</th><th scope="col">With Lumi</th></tr></thead>
-                <tbody>
-                  <tr><td>Hours per month</td><td>32.8 hrs</td><td>1.6 hrs</td></tr>
-                  <tr><td>Loaded cost per month</td><td>$1,059</td><td>$53</td></tr>
-                  <tr><td>Loaded cost per year</td><td>$12,715</td><td>$636</td></tr>
-                </tbody>
-              </table></div>
-              <p class="l-note">Loaded rate calculated at $32.28/hr (1.30 employer loading factor) across 13&#8209;person branch teams.</p>
+          <div class="bn-col">
+            <p class="bn-k">Per branch, with Lumi</p>
+            <div class="bn-kpi">
+              <b class="bn-num">&minus;95%</b>
+              <span class="bn-lbl">Time spent</span>
+              <code>32.8 hrs &rarr; 1.6 hrs / mo</code>
             </div>
+            <div class="bn-kpi">
+              <b class="bn-num">$12,079</b>
+              <span class="bn-lbl">Annual savings per branch</span>
+              <code>$12,715 &rarr; $636 / yr</code>
+            </div>
+            <p class="bn-foot">Modeled across 13&#8209;person branch teams at $32.28/hr loaded rate (1.30 employer loading factor).</p>
           </div>
         </div>
       </div>
@@ -193,29 +199,25 @@
     <div class="wrap">
       <div class="phase"><h2>Why Retrieval Was the Only Viable Approach</h2></div>
       <div class="ev-grid pilot-stack">
-        <div class="l-wide l-w5 l-split l-split-eq">
-          <div class="ev-card">
-            <p class="ev-eyebrow">Alternatives rejected</p>
-            <h3>Three options, three failures</h3>
-            <div class="cmp-wrap"><table class="cmp">
-              <thead><tr><th scope="col">Alternative</th><th scope="col">Why it fails here</th></tr></thead>
-              <tbody>
-                <tr><td>Better instructions to the model</td><td>It cannot reach the policy documents, so it invents sources.</td></tr>
-                <tr><td>Fine tuning</td><td>Bakes in rates that change monthly and leaves no document traceability, which fails an audit.</td></tr>
-                <tr><td>Keyword search</td><td>Returns whole documents, not answers, and breaks on vocabulary gaps.</td></tr>
-              </tbody>
-            </table></div>
-          </div>
-
-          <div class="ev-card">
-            <p class="ev-eyebrow">The vocabulary gap</p>
-            <h3>Staff and documents use different words</h3>
-            <div class="k-cards k-cards-2">
-              <div class="k-card k-fact"><span class="k-src">Staff say</span><p>"Foreign conversion fee"</p></div>
-              <div class="k-card k-fact"><span class="k-src">Document says</span><p>"FX transaction mark-up"</p></div>
-            </div>
-            <p>A keyword search returns nothing useful at the moment it is needed.</p>
-            <p class="ev-key"><strong>The decision.</strong> Retrieval is the only approach that meets both binding constraints: the corpus changes continuously, and every answer must trace to an approved source document.</p>
+        <div class="l-wide l-w5 mx-card">
+          <header class="mx-head">
+            <p class="ev-eyebrow">Alternatives evaluated</p>
+            <h3>Four approaches, one passes</h3>
+          </header>
+          <table class="mx">
+            <thead><tr><th scope="col">Approach</th><th scope="col">Verdict</th><th scope="col">Why</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Prompt engineering</th><td><span class="vd no">Fails</span></td><td>Cannot access dynamic policy docs; invents citations</td></tr>
+              <tr><th scope="row">Fine-tuning</th><td><span class="vd no">Fails</span></td><td>Bakes in volatile interest rates; no audit trail for regulatory compliance</td></tr>
+              <tr><th scope="row">Keyword / lexical search</th><td><span class="vd no">Fails</span></td><td>Vocabulary gap between colloquial staff terms and legal clauses</td></tr>
+              <tr class="win"><th scope="row">Hybrid RAG <em>Selected</em></th><td><span class="vd yes">Passes</span></td><td>Dynamic document updates with verifiable chunk citations</td></tr>
+            </tbody>
+          </table>
+          <div class="mx-vocab">
+            <code>Why keyword search fails</code>
+            <span class="mx-chip"><i>Staff say</i>&ldquo;Foreign conversion fee&rdquo;</span>
+            <span class="mx-arr" aria-hidden="true">&rarr;</span>
+            <span class="mx-chip"><i>Document says</i>&ldquo;FX transaction mark-up&rdquo;</span>
           </div>
         </div>
       </div>
@@ -227,54 +229,40 @@
     <div class="wrap">
       <div class="phase"><h2>How It Works: Two Lanes, One Index</h2></div>
       <div class="ev-grid pilot-stack">
-        <div class="ev-card">
-          <p class="ev-eyebrow">The decision that does most of the work</p>
-          <h3>Tags narrow the documents before the model sees any</h3>
-          <p>Every chunk carries the card name, document type, province, effective date, expiry date and source link. The system filters on those tags at query time instead of asking the model to behave. An expired Quebec rate is not discouraged, it is out of reach.</p>
-          <div class="k-cards">
-            <div class="k-card k-fact"><span class="k-src">1 &middot; Before the search</span><p>Client data and out of scope questions are blocked.</p></div>
-            <div class="k-card k-fact"><span class="k-src">2 &middot; During the search</span><p>Tags filter first, two search methods run together, the best five pass on.</p></div>
-            <div class="k-card k-fact"><span class="k-src">3 &middot; After the answer</span><p>Every cited source is checked against the chunks supplied.</p></div>
-          </div>
+        <div class="l-wide l-w5 pl-callout">
+          <span class="pl-badge">Core decision</span>
+          <p><strong>Hard metadata pre-filtering</strong> blocks out-of-scope or expired documents before vector similarity search runs.</p>
         </div>
 
-        <figure class="arch l-wide">
+        <figure class="arch l-wide l-w5">
           <figcaption class="arch-head">
             <h4>Dual lane RAG architecture</h4>
             <p>Loading the documents, and answering a question</p>
           </figcaption>
 
-          <div class="arch-lane a">
-            <h5>Lane A &middot; Admin ingestion pipeline</h5>
-            <div class="arch-body">
-              <ol class="arch-flow">
-                <li><b><span>1</span>SharePoint sources</b><p>Cardholder agreements, insurance certificates, fee schedules, promo terms, Quebec variants.</p></li>
-                <li><b><span>2</span>Ingest and tag</b><p>Graph API connector. Auto tags card, document type, province, effective and expiry date, active flag, source URL.</p></li>
-                <li><b><span>3</span>Chunk</b><p>Header aware recursive splitting. <em>512 to 768 tokens, 100 overlap.</em></p></li>
-                <li><b><span>4</span>Embed</b><p>Gemini embedding model on Vertex AI. Vectors written back with their metadata.</p></li>
-                <li><b><span>5</span>Vector search</b><p>Dense and sparse vectors, metadata restricts, deep link anchors, group access control.</p></li>
-              </ol>
-              <p class="arch-note loop"><b>Freshness webhook.</b> When a SharePoint file changes, that document's vectors are purged, then re-chunked and re-embedded, and the cache is flushed.</p>
-              <p class="arch-note"><b>Ownership.</b> The Policy and Procedure Admin approves a document into the index. Documents outside their active date range are blocked at step 2. Source documents stay in SharePoint, and the assistant never writes back to it.</p>
-            </div>
+          <div class="pl-lane a">
+            <header><span class="pl-tag">Lane A</span><h5>Admin ingestion</h5></header>
+            <ol class="pl-flow">
+              <li class="step"><span class="pl-n">1</span><b>SharePoint Docs</b><code>Source of truth</code></li>
+              <li class="step"><span class="pl-n">2</span><b>Metadata Tagging</b><code>Card &middot; Province &middot; Effective Date</code></li>
+              <li class="step"><span class="pl-n">3</span><b>Header-aware Split</b><code>512&ndash;768 tokens &middot; 100 overlap</code></li>
+              <li class="step"><span class="pl-n">4</span><b>Gemini Embeddings</b><code>Vertex AI</code></li>
+              <li class="step"><span class="pl-n">5</span><b>Vector DB</b><code>Vertex AI Vector Search</code></li>
+              <li class="pl-hook"><b>Freshness webhook</b><code>File changes &rarr; purge, re-embed, flush cache</code></li>
+            </ol>
           </div>
 
-          <div class="arch-lane b">
-            <h5>Lane B &middot; Branch staff query path</h5>
-            <div class="arch-body">
-              <ol class="arch-flow">
-                <li><b><span>6</span>Chat widget</b><p>Embedded in the internal policy portal. Single sign on with the corporate ID.</p></li>
-                <li class="is-guard"><b><span>7</span>Input guardrail</b><p>Client data scan and scope classifier. Blocks before any search runs.</p></li>
-                <li><b><span>8</span>Semantic cache</b><p>Returns a stored answer on a close enough match, in under 50ms. Flushed on re-ingest.</p></li>
-                <li><b><span>9</span>Hybrid retrieval</b><p>Card, province and active filters applied first, then dense and sparse search run together.</p></li>
-                <li><b><span>10</span>Ranking</b><p>Rescores candidates against the question and passes on the best five. <span class="flag">Below threshold, escalate.</span></p></li>
-                <li><b><span>11</span>Generation</b><p>Gemini 2.5 Flash on a pinned regional endpoint. Temperature 0.0, prompt plus the top five chunks.</p></li>
-                <li class="is-stop"><b><span>12</span>Citation validator</b><p>Every source cited must exist in the chunks supplied, or the answer is blocked and escalated.</p></li>
-                <li><b><span>13</span>Grounded response</b><p>Inline citations, effective date on the face of the answer, sources panel, deep link to the SharePoint page.</p></li>
-              </ol>
-              <p class="arch-note loop"><b>Blocked answers loop back.</b> A failed citation check never reaches the person who asked.</p>
-              <p class="arch-note"><b>One platform.</b> Retrieval, ranking and generation all run on Vertex AI in a single pinned region.</p>
-            </div>
+          <div class="pl-lane b">
+            <header><span class="pl-tag">Lane B</span><h5>Staff query runtime</h5></header>
+            <ol class="pl-flow">
+              <li class="step"><span class="pl-n">1</span><b>Portal UI</b><code>SSO, internal policy portal</code></li>
+              <li class="step guard"><span class="pl-n">2</span><b>PII / Scope Filter</b><em class="pl-flag">Blocks</em></li>
+              <li class="step key"><span class="pl-n">3</span><b>Metadata Pre-Filter</b><code>Active &middot; Province</code><em class="pl-flag ok">Hard filter</em></li>
+              <li class="step"><span class="pl-n">4</span><b>Hybrid Search</b><code>Dense + sparse keyword</code></li>
+              <li class="step guard"><span class="pl-n">5</span><b>Reranker</b><code>Top 5</code><em class="pl-flag">Low score escalates</em></li>
+              <li class="step"><span class="pl-n">6</span><b>Gemini 2.5 Flash</b><code>Temp 0.0</code></li>
+              <li class="step stop"><span class="pl-n">7</span><b>Source Citation Validator</b><em class="pl-flag stop">Blocks</em></li>
+            </ol>
           </div>
 
           <div class="arch-obs">
@@ -394,60 +382,21 @@
           <figcaption><strong>Live prototype pass:</strong> the model correctly enforces the boundary on rental coverage qualification, citing underwriting conditions rather than hallucinating an approval decision.</figcaption>
         </figure>
 
-        <div class="ev-card">
-          <p class="ev-eyebrow">Failure modes</p>
-          <h3>Six ways it breaks, and the fix for each</h3>
-          <p class="ev-key"><strong>The worst case is a correct citation with a wrong number.</strong> The source checks out and the link works, so staff read a wrong figure with full confidence. Each mode below is paired with how it is detected and what fixes it, because an undetectable failure is not a managed one.</p>
+        <div class="l-wide l-w5 fb-head">
+          <p class="ev-eyebrow">Failure modes and guardrails</p>
+          <h3>Six ways it breaks, each with a guardrail</h3>
         </div>
 
-        <div class="l-wide l-w5 l-fm">
-          <article class="fm">
-            <header><span class="fm-n">1</span><h4>Correct citation, wrong number</h4><span class="sev crit">Critical</span></header>
-            <dl>
-              <div class="fm-d"><dt>Detected by</dt><dd>A <strong>numeric grounding check</strong>. Every figure, rate, percentage and duration must appear verbatim in the retrieved context after normalisation.</dd></div>
-              <div class="fm-f"><dt>Fixed by</dt><dd>Any response stating a value absent from context is blocked and escalated, not rendered.</dd></div>
-            </dl>
-          </article>
-          <article class="fm">
-            <header><span class="fm-n">2</span><h4>Split clause misleads</h4><span class="sev crit">Critical</span></header>
-            <dl>
-              <div class="fm-d"><dt>Detected by</dt><dd>A coverage and exclusion pair audit, a golden probe, and a sibling completeness check before generation.</dd></div>
-              <div class="fm-f"><dt>Fixed by</dt><dd>Exclusions link to their parent clause through a <strong>shared Clause_Group field</strong>. An incomplete group blocks the response.</dd></div>
-            </dl>
-          </article>
-          <article class="fm">
-            <header><span class="fm-n">3</span><h4>Phantom citation</h4><span class="sev crit">Critical</span></header>
-            <dl>
-              <div class="fm-d"><dt>Detected by</dt><dd>A <strong>citation validator</strong> comparing every cited chunk ID against the chunks actually supplied.</dd></div>
-              <div class="fm-f"><dt>Fixed by</dt><dd>The response is blocked before rendering, so a fabricated source cannot be displayed.</dd></div>
-            </dl>
-          </article>
-          <article class="fm">
-            <header><span class="fm-n">4</span><h4>Expired document quoted</h4><span class="sev high">High</span></header>
-            <dl>
-              <div class="fm-d"><dt>Detected by</dt><dd>Daily reconciliation of SharePoint last modified against last indexed timestamps, alerting on drift beyond 24 hours.</dd></div>
-              <div class="fm-f"><dt>Fixed by</dt><dd>An <strong>active date restrict</strong> makes expired documents unreachable. A newer edition auto expires the prior one, and the cache flushes on re-ingest.</dd></div>
-            </dl>
-          </article>
-          <article class="fm">
-            <header><span class="fm-n">5</span><h4>Over-trust and low click-through</h4><span class="sev high">High</span></header>
-            <dl>
-              <div class="fm-d"><dt>Detected by</dt><dd>Citation click-through rate read against the thumbs down rate. Low click-through at high usage is the dangerous reading.</dd></div>
-              <div class="fm-f"><dt>Fixed by</dt><dd><strong>Citations render inline</strong>, with the effective date on the face of every response.</dd></div>
-            </dl>
-          </article>
-          <article class="fm">
-            <header><span class="fm-n">6</span><h4>Low confidence answer shown</h4><span class="sev ok">Managed</span></header>
-            <dl>
-              <div class="fm-d"><dt>Detected by</dt><dd>A reranker confidence threshold check on every in scope query.</dd></div>
-              <div class="fm-f"><dt>Fixed by</dt><dd><strong>Below threshold, generation is suppressed</strong> and the query escalates to a person. Escalation rate is monitored, not minimised.</dd></div>
-            </dl>
-          </article>
+        <div class="l-wide l-w5 fb">
+          <article class="fb-card"><div class="fb-top"><span class="fb-n">1</span><h4>Hallucination</h4></div><div class="fb-g"><code>Validator</code><b>Citation validator</b></div><p>Every source matched to a chunk</p></article>
+          <article class="fb-card"><div class="fb-top"><span class="fb-n">2</span><h4>Expired promo</h4></div><div class="fb-g"><code>Filter</code><b>Date tag filter</b></div><p>Pre-retrieval block</p></article>
+          <article class="fb-card"><div class="fb-top"><span class="fb-n">3</span><h4>Regional bleed <small>e.g., Quebec rules</small></h4></div><div class="fb-g"><code>Gate</code><b>Province metadata gate</b></div><p>Regional editions never mixed with rest of Canada</p></article>
+          <article class="fb-card"><div class="fb-top"><span class="fb-n">4</span><h4>PII leakage</h4></div><div class="fb-g"><code>Guardrail</code><b>Input regex / classifier</b></div><p>Client data blocked before retrieval and the model</p></article>
+          <article class="fb-card"><div class="fb-top"><span class="fb-n">5</span><h4>Low similarity score</h4></div><div class="fb-g"><code>Escalation</code><b>Branch specialist path</b></div><p>Generation suppressed, query routed to a person</p></article>
+          <article class="fb-card"><div class="fb-top"><span class="fb-n">6</span><h4>Ambiguous policy</h4></div><div class="fb-g"><code>Clarifier</code><b>Semantic clarification prompt</b></div><p>One question on card and province, then retrieval</p></article>
         </div>
 
-        <div class="ev-card ev-cont l-wide l-w5">
-          <p class="l-note">The PRD goes further, with bad source data, chunking, retrieval misses and user misuse, each with its own detection and fix. <a href="/assets/lumi-cards-prd.pdf" target="_blank" rel="noopener">Read the PRD</a>.</p>
-        </div>
+        <p class="l-wide l-w5 l-note fb-foot">The PRD goes further, with bad source data, chunking, retrieval misses and user misuse, each with its own detection and fix. <a href="/assets/lumi-cards-prd.pdf" target="_blank" rel="noopener">Read the PRD</a>.</p>
       </div>
     </div>
   </section>
@@ -578,6 +527,30 @@
         <div class="l-wide l-scope">
           <p><strong>Scope and disclaimer.</strong> A large Canadian bank is used as a worked example. Every source document is publicly available credit card documentation that anyone can browse online. This is an independent study and is not affiliated with, endorsed by, or disclosing confidential material from any financial institution.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHIPPED ARTIFACTS -->
+  <section class="band l-dock-band" id="artifacts">
+    <div class="wrap">
+      <p class="l-eyebrow">Shipped artifacts</p>
+      <div class="l-wide l-w5 dock">
+        <a class="dock-a primary" href="https://lumi-for-cards.vercel.app/" target="_blank" rel="noopener">
+          <span class="dock-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+          <span class="dock-tx"><b>Live prototype</b><code>lumi-for-cards.vercel.app</code></span>
+          <span class="dock-go" aria-hidden="true">&nearr;</span>
+        </a>
+        <a class="dock-a" href="/assets/lumi-cards-prd.pdf" target="_blank" rel="noopener">
+          <span class="dock-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>
+          <span class="dock-tx"><b>Complete PRD</b><code>PDF, 11 pages</code></span>
+          <span class="dock-go" aria-hidden="true">&darr;</span>
+        </a>
+        <a class="dock-a" href="https://github.com/george-innasi/lumi-for-cards" target="_blank" rel="noopener">
+          <span class="dock-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3z"/></svg></span>
+          <span class="dock-tx"><b>GitHub repository</b><code>george-innasi/lumi-for-cards</code></span>
+          <span class="dock-go" aria-hidden="true">&nearr;</span>
+        </a>
       </div>
     </div>
   </section>
