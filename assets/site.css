@@ -2931,3 +2931,6 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] #impact .cmp th,[data-page="lumi-cards"] #impact .cmp td{padding-inline:8px}
 [data-page="lumi-cards"] #impact .cmp th:first-child,[data-page="lumi-cards"] #impact .cmp td:first-child{padding-left:0}
 [data-page="lumi-cards"] #impact .l-infra.l-w5 p{max-width:none}
+
+/* lumi recognition: shared 1024px container */
+[data-page="lumi-cards"] #recognition.l-w5{gap:32px}
