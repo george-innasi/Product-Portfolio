@@ -2855,9 +2855,13 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .l-sheet img{display:block; width:100%; height:auto; border-radius:12px; cursor:zoom-in}
 @media (max-width:860px){[data-page="lumi-cards"] .l-reflect{grid-template-columns:minmax(0,1fr)}}
 
-[data-page="lumi-cards"] .l-scope{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:16px 4px}
-[data-page="lumi-cards"] .l-scope p{margin:0; font-size:.84rem; line-height:1.65; color:var(--muted); max-width:120ch}
+[data-page="lumi-cards"] .l-scope{border:1px solid var(--line); border-left:4px solid var(--lumi-blue); border-radius:0 12px 12px 0; background:color-mix(in srgb, var(--lumi-blue) 5%, var(--surface)); padding:20px 24px 20px 22px; display:flex; align-items:flex-start; gap:14px}
+[data-page="lumi-cards"] .l-scope::before{content:""; flex:none; width:22px; height:22px; margin-top:1px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' fill='none' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' stroke='%231d4f91' stroke-width='1.8'/%3E%3Cpath d='M12 8v0m0 8V11' stroke='%231d4f91' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/contain}
+[data-page="lumi-cards"] .l-scope p{margin:0; font-size:.84rem; line-height:1.7; color:var(--muted); max-width:120ch}
 [data-page="lumi-cards"] .l-scope strong{color:var(--ink); font-weight:700}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-scope{background:color-mix(in srgb, var(--lumi-blue-dk) 8%, var(--surface)); border-color:var(--line); border-left-color:var(--lumi-blue-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-scope::before{filter:brightness(1.8)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-scope{background:color-mix(in srgb, var(--lumi-blue-dk) 8%, var(--surface)); border-color:var(--line); border-left-color:var(--lumi-blue-dk)} :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-scope::before{filter:brightness(1.8)}}
 
 [data-page="lumi-cards"] .l-next .strip{background:#ecfdf5; border:1px solid color-mix(in srgb,#059669 28%,var(--line)); border-radius:18px; padding:26px 30px}
 [data-page="lumi-cards"] .l-next .strip h3{color:#064e3b}
