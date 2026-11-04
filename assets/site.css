@@ -2640,3 +2640,18 @@ body[data-page="lumi-cards"] .ph-head .kicker{margin-inline:auto; text-align:cen
 [data-page="lumi-cards"] .ph-foot > .ph-solution{padding-inline:20px}
 @media (min-width:901px){[data-page="lumi-cards"] .ph-foot-tools{grid-template-columns:max-content minmax(0,1fr)}}
 @media (min-width:901px){[data-page="lumi-cards"] .ph-foot-tools{grid-template-columns:300px minmax(0,1fr); column-gap:24px}}
+
+/* lumi hero: structured problem card (who, struggle, because, cost) */
+[data-page="lumi-cards"] .ph-prob{margin:0; display:grid; grid-auto-rows:1fr; flex:1}
+[data-page="lumi-cards"] .ph-prob > div{display:grid; grid-template-columns:104px minmax(0,1fr); column-gap:18px; align-items:center; padding:12px 0; border-top:1px solid color-mix(in srgb,var(--pc) 22%,transparent)}
+[data-page="lumi-cards"] .ph-prob dt{font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--pc)}
+[data-page="lumi-cards"] .ph-prob dd{margin:0; font-family:var(--serif); font-size:clamp(1.05rem,1.45vw,1.28rem); line-height:1.4; color:#14213d}
+:root[data-theme="dark"] [data-page="lumi-cards"] .ph-prob dd{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .ph-prob dd{color:var(--ink)}}
+[data-page="lumi-cards"] .ph-info .ph-callout{justify-content:flex-start; gap:6px; padding:20px 26px 8px}
+@media (max-width:560px){[data-page="lumi-cards"] .ph-prob > div{grid-template-columns:minmax(0,1fr); row-gap:3px}}
+@media (min-width:901px){
+  [data-page="lumi-cards"] .ph-split .ph-device{height:auto; min-height:clamp(420px,calc(100svh - 440px),460px); align-self:stretch}
+}
+:root[data-theme="dark"] [data-page="lumi-cards"] .ph-prob dt{color:#8db8ea}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .ph-prob dt{color:#8db8ea}}
