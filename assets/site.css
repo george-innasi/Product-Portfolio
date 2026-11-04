@@ -2928,6 +2928,33 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .l-fm.l-w5{gap:20px}
 [data-page="lumi-cards"] #evals .ev-card.ev-cont.l-w5{padding-inline:0; background:none; border:0; box-shadow:none}
 
+/* lumi impact: token-cost + latency cards — visible boxes with green hover */
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card{background:var(--surface); border:1px solid var(--line); border-top:4px solid #059669; border-radius:16px; box-shadow:0 2px 12px -6px rgba(0,0,0,.08); transition:background .25s, border-color .25s, box-shadow .25s, transform .25s, color .25s}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover{background:#064e3b; border-color:#064e3b; box-shadow:0 16px 32px -16px rgba(6,78,59,.55); transform:translateY(-3px); color:#fff}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover h3,
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover p,
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .ev-eyebrow,
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .cmp th,
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .cmp td,
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .cmp td strong,
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .l-note,
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .l-bars span,
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .l-bars b{color:#fff}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .ev-eyebrow{color:#a7f3d0}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .cmp td strong{color:#a7f3d0}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .l-note{color:rgba(255,255,255,.6)}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .l-bars i{background:rgba(255,255,255,.25)}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .l-bars i.c{background:#a7f3d0}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .cmp{border-color:rgba(255,255,255,.15)}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .cmp th{border-color:rgba(255,255,255,.15)}
+[data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover .cmp td{border-color:rgba(255,255,255,.08)}
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .l-split-eq .ev-card{background:var(--surface); border-color:var(--line); border-top-color:#34d399}
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover{background:#047857; border-color:#047857}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .l-split-eq .ev-card{background:var(--surface); border-color:var(--line); border-top-color:#34d399}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .l-split-eq .ev-card:hover{background:#047857; border-color:#047857}
+}
+
 /* lumi impact: shared 1024px container for metrics, token and latency split, infrastructure callout */
 [data-page="lumi-cards"] #impact .l-split.l-w5{gap:32px}
 [data-page="lumi-cards"] #impact .l-cost .k-cards{gap:20px}
@@ -3305,17 +3332,17 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 }
 
 /* lumi evals: beat the older #evals green rule; labels neutral */
-[data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:var(--lumi-blue)}
+[data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:#059669}
 [data-page="lumi-cards"] #evals .k-cards .k-card .k-src{color:var(--muted)}
-:root[data-theme="dark"] [data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:var(--lumi-blue-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:#34d399}
 :root[data-theme="dark"] [data-page="lumi-cards"] #evals .k-cards .k-card .k-src{color:var(--muted)}
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) [data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:var(--lumi-blue-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:#34d399}
   :root:not([data-theme="light"]) [data-page="lumi-cards"] #evals .k-cards .k-card .k-src{color:var(--muted)}
 }
 
 /* lumi scenario cards: Expected result in a muted violet that sits beside the theme blue */
-[data-page="lumi-cards"]{--lumi-vio:#5b4a9b; --lumi-vio-bg:#f4f1fb; --lumi-vio-line:#ddd6f0; --lumi-vio-dk:#b9acf0}
+[data-page="lumi-cards"]{--lumi-vio:var(--lumi-blue); --lumi-vio-bg:#e0eaf5; --lumi-vio-line:#b3cde0; --lumi-vio-dk:var(--lumi-blue-dk)}
 [data-page="lumi-cards"] .sc-exp{background:var(--lumi-vio-bg); border-top-color:var(--lumi-vio-line)}
 [data-page="lumi-cards"] .sc-arr{color:var(--lumi-vio)}
 [data-page="lumi-cards"] .sc-tl{color:var(--lumi-vio)}
@@ -3326,7 +3353,7 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .sc-all{color:var(--lumi-vio)}
 [data-page="lumi-cards"] .sc-all:hover{border-color:var(--lumi-vio)}
 [data-page="lumi-cards"] .sc-all:focus-visible,[data-page="lumi-cards"] .sc-tg:focus-visible{outline-color:var(--lumi-vio)}
-:root[data-theme="dark"] [data-page="lumi-cards"] .sc-exp{background:rgba(185,172,240,.08); border-top-color:rgba(185,172,240,.22)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .sc-exp{background:rgba(29,79,145,.12); border-top-color:rgba(29,79,145,.3)}
 :root[data-theme="dark"] [data-page="lumi-cards"] :is(.sc-arr,.sc-tl,.sc-all,.sc-js .sc-tg:hover .sc-tl){color:var(--lumi-vio-dk)}
 :root[data-theme="dark"] [data-page="lumi-cards"] .sc-chev{border-right-color:var(--lumi-vio-dk); border-bottom-color:var(--lumi-vio-dk)}
 :root[data-theme="dark"] [data-page="lumi-cards"] .sc-js .sc-card.open{border-color:color-mix(in srgb,var(--lumi-vio-dk) 45%,var(--l-neutral-line,#e5e7eb))}
@@ -3351,12 +3378,12 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .l-grade .l-phases{padding:0 20px 20px}
 [data-page="lumi-cards"] .l-phase-k{color:var(--lumi-vio)}
 [data-page="lumi-cards"] .l-phase-k span{background:var(--lumi-vio)}
-:root[data-theme="dark"] [data-page="lumi-cards"] .l-grade{background:rgba(185,172,240,.08); border-color:rgba(185,172,240,.22); border-left-color:var(--lumi-vio-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-grade{background:rgba(29,79,145,.12); border-color:rgba(29,79,145,.3); border-left-color:var(--lumi-vio-dk)}
 :root[data-theme="dark"] [data-page="lumi-cards"] .l-grade-c{border-color:var(--lumi-vio-dk)}
 :root[data-theme="dark"] [data-page="lumi-cards"] .l-phase-k{color:var(--lumi-vio-dk)}
-:root[data-theme="dark"] [data-page="lumi-cards"] .l-phase-k span{background:var(--lumi-vio-dk); color:#14122b}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-phase-k span{background:var(--lumi-vio-dk); color:#0a1e3d}
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-grade{background:rgba(185,172,240,.08); border-color:rgba(185,172,240,.22); border-left-color:var(--lumi-vio-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-grade{background:rgba(29,79,145,.12); border-color:rgba(29,79,145,.3); border-left-color:var(--lumi-vio-dk)}
   :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-grade-c{border-color:var(--lumi-vio-dk)}
   :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-phase-k{color:var(--lumi-vio-dk)}
   :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-phase-k span{background:var(--lumi-vio-dk); color:#14122b}
