@@ -3392,3 +3392,8 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] #problem .phase::before,[data-page="lumi-cards"] #problem .phase::after{width:clamp(20px,4vw,48px)}
 [data-page="lumi-cards"] #problem .phase h2{font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.2}
 [data-page="lumi-cards"] #problem .mvp-intro{max-width:66ch; font-size:clamp(1rem,1.5vw,1.1rem); line-height:1.6; margin:0 auto 22px}
+
+/* lumi personas: consequence/volume tags in the same amber as the Risk label */
+[data-page="lumi-cards"] .bn-pill{background:#fef3c7; border-color:#fde68a; color:#b45309}
+:root[data-theme="dark"] [data-page="lumi-cards"] .bn-pill{background:rgba(245,158,11,.14); border-color:rgba(245,158,11,.35); color:#fbbf24}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .bn-pill{background:rgba(245,158,11,.14); border-color:rgba(245,158,11,.35); color:#fbbf24}}
