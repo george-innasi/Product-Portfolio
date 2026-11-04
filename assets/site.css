@@ -2418,7 +2418,7 @@ html.cs-collapsed #problem,html.cs-collapsed #research,html.cs-collapsed #demo,h
 [data-page="kural"] #how-it-works .k-step:nth-child(4) h4{color:#fff}
 [data-page="kural"] #how-it-works .k-step:nth-child(4) p{color:rgba(236,253,245,.9)}
 [data-page="kural"] #how-it-works .k-step:nth-child(4):hover{border-color:#6ee7b7}
-@media (min-width:1001px){[data-page="kural"] #how-it-works .k-flow{grid-template-columns:.92fr 1fr 1.08fr 1.2fr}}
+@media (min-width:1001px){[data-page="kural"] #how-it-works .k-flow{grid-template-columns:1fr 1fr 1.04fr 1.14fr}}
 [data-page="kural"] #how-it-works .k-step-n{display:flex; align-items:flex-end; min-height:clamp(2.6rem,4.8vw,3.2rem)}
 
 /* case studies: use wide desktops, keep reading columns narrow */
@@ -2466,3 +2466,17 @@ body:has(.ph-hero) .row-text > p,body:has(.ph-hero) .row-text > ul,body:has(.ph-
 @media (prefers-reduced-motion:reduce){.io-step{transition:none}.io-step:hover{transform:none}}
 [data-page="kural"] #demo .k-figure{margin-top:0}
 [data-page="kural"] #demo .ev-card{gap:10px}
+
+/* kural engine: lighter cards with more whitespace */
+[data-page="kural"] #how-it-works{padding-block:26px 30px}
+[data-page="kural"] #how-it-works .ev-grid{gap:30px}
+[data-page="kural"] #how-it-works .k-flow{gap:34px}
+[data-page="kural"] #how-it-works .k-step{padding:24px 22px 26px; gap:8px}
+[data-page="kural"] #how-it-works .k-step h4{font-size:1.12rem}
+[data-page="kural"] #how-it-works .k-step p{font-size:.95rem; line-height:1.55}
+@media (min-width:561px){
+  [data-page="kural"] #how-it-works .k-step:not(:last-child)::after{right:-34px; width:34px}
+  [data-page="kural"] #how-it-works .k-step:not(:last-child)::before{right:-35px}
+}
+@media (max-width:1000px) and (min-width:561px){[data-page="kural"] #how-it-works .k-flow{gap:28px 34px}}
+@media (max-width:560px){[data-page="kural"] #how-it-works .k-flow{gap:30px}[data-page="kural"] #how-it-works .k-step{padding:20px 18px 22px}}
