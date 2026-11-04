@@ -2602,3 +2602,41 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   [data-page="lumi-cards"] .ph-foot .ph-disclaimer{border-top:1px solid var(--line); padding-top:10px}
 }
 body[data-page="lumi-cards"] .ph-head .kicker{margin-inline:0; max-width:none; text-align:left}
+
+/* lumi hero v3: centered header, problem card beside the prototype, one unified meta panel below */
+body[data-page="lumi-cards"] .ph-head,body[data-page="lumi-cards"] .ph-split .ph-demo .ph-head{text-align:center}
+body[data-page="lumi-cards"] .ph-head .kicker{margin-inline:auto; text-align:center}
+@media (min-width:901px){
+  [data-page="lumi-cards"] .ph-info{justify-content:stretch}
+  [data-page="lumi-cards"] .ph-split .ph-demo .ph-head{margin-bottom:20px}
+  [data-page="lumi-cards"] .ph-split .ph-device{height:clamp(380px,calc(100svh - 430px),460px)}
+}
+[data-page="lumi-cards"] .ph-info .ph-callout{flex:1; justify-content:center; padding:24px 30px}
+[data-page="lumi-cards"] .ph-info .ph-problem{font-size:clamp(1.25rem,1.9vw,1.6rem); line-height:1.5}
+[data-page="lumi-cards"] .ph-split .ph-demo .ph-cap{text-align:center}
+[data-page="lumi-cards"] .ph-foot{display:flex; flex-direction:column; gap:0; padding:0; overflow:hidden}
+[data-page="lumi-cards"] .ph-foot > *{padding:14px 20px; margin:0}
+[data-page="lumi-cards"] .ph-foot > * + *{border-top:1px solid var(--line)}
+[data-page="lumi-cards"] .ph-foot > .ph-solution{padding-block:13px; font-size:.98rem; max-width:none}
+[data-page="lumi-cards"] .ph-foot .ph-hl{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px}
+[data-page="lumi-cards"] .ph-foot .ph-hl div{background:var(--surface-2); padding:11px 14px 10px}
+[data-page="lumi-cards"] .ph-foot-row{display:grid; grid-template-columns:minmax(0,1fr); gap:0; padding:0}
+[data-page="lumi-cards"] .ph-foot-row > *{padding:14px 20px}
+[data-page="lumi-cards"] .ph-foot-row > * + *{border-top:1px solid var(--line)}
+[data-page="lumi-cards"] .ph-foot-tools{display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px 40px; flex:none}
+[data-page="lumi-cards"] .ph-foot .ph-links{grid-column:auto}
+[data-page="lumi-cards"] .ph-foot > .ph-disclaimer{border-top:1px solid var(--line); padding-block:11px; font-size:.78rem}
+@media (max-width:900px){
+  [data-page="lumi-cards"] .ph-foot .ph-hl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  [data-page="lumi-cards"] .ph-foot-tools{grid-template-columns:minmax(0,1fr)}
+}
+[data-page="lumi-cards"] .ph-foot > *{width:auto; max-width:none; margin:0; box-sizing:border-box}
+[data-page="lumi-cards"] .ph-foot > .ph-solution{text-align:left}
+[data-page="lumi-cards"] .ph-foot .ph-hl{margin:0}
+[data-page="lumi-cards"] .ph-foot-tools{align-items:start}
+[data-page="lumi-cards"] .ph-foot-tools .ph-tools{margin:0}
+[data-page="lumi-cards"] .ph-foot > .ph-disclaimer{max-width:none; margin:0; width:auto}
+[data-page="lumi-cards"] .ph-foot{align-items:stretch; justify-content:flex-start}
+[data-page="lumi-cards"] .ph-foot > .ph-solution{padding-inline:20px}
+@media (min-width:901px){[data-page="lumi-cards"] .ph-foot-tools{grid-template-columns:max-content minmax(0,1fr)}}
+@media (min-width:901px){[data-page="lumi-cards"] .ph-foot-tools{grid-template-columns:300px minmax(0,1fr); column-gap:24px}}
