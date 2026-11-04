@@ -3196,3 +3196,10 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   [data-page="lumi-cards"] .sc-head{align-self:start}
   [data-page="lumi-cards"] .sc-exp{margin-top:0; align-self:stretch}
 }
+
+/* roi bento: row-aligned columns (persona card N sits level with KPI card N, stake strip level with footnote) */
+[data-page="lumi-cards"] .l-bento{grid-template-rows:auto auto auto auto; row-gap:12px; align-items:stretch}
+[data-page="lumi-cards"] .bn-col{display:grid; grid-row:span 4; grid-template-rows:subgrid; row-gap:12px}
+[data-page="lumi-cards"] .bn-col > .bn-persona,[data-page="lumi-cards"] .bn-col > .bn-kpi{align-self:stretch}
+[data-page="lumi-cards"] .bn-kpi{justify-content:center}
+[data-page="lumi-cards"] .bn-foot{margin-top:0; align-self:center}
