@@ -2553,3 +2553,52 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 @media (max-width:560px){.cx.gq th[scope="row"]{white-space:normal}}
 @media (max-width:520px){.l-bars span{white-space:normal}}
 @media (max-width:520px){.l-bars b{justify-self:end}}
+
+/* lumi hero: title spans the top, prototype and problem share one height, metadata moves to a full width banner */
+@media (min-width:901px){
+  [data-page="lumi-cards"] .ph-grid.ph-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-rows:auto auto auto; column-gap:44px; row-gap:0; align-items:stretch}
+  [data-page="lumi-cards"] .ph-split .ph-demo{display:contents}
+  [data-page="lumi-cards"] .ph-split .ph-demo .ph-head{grid-column:1 / -1; grid-row:1; max-width:none; margin-bottom:16px}
+  [data-page="lumi-cards"] .ph-split .ph-device{grid-column:1; grid-row:2; width:100%; height:clamp(440px,calc(100svh - 400px),560px)}
+  [data-page="lumi-cards"] .ph-split .ph-demo .ph-cap{grid-column:1; grid-row:3; max-width:none; text-align:left; margin-top:10px}
+  [data-page="lumi-cards"] .ph-info{grid-column:2; grid-row:2; max-width:none; gap:14px; justify-content:space-between}
+}
+[data-page="lumi-cards"] .ph-info .ph-callout{flex:1; justify-content:center; padding:20px 24px}
+[data-page="lumi-cards"] .ph-info .ph-problem{font-size:clamp(1.12rem,1.5vw,1.3rem); line-height:1.55}
+[data-page="lumi-cards"] .ph-info .ph-solution{font-size:.98rem; line-height:1.55}
+[data-page="lumi-cards"] .ph-info .ph-lbl:not(.ph-callout .ph-lbl){display:none}
+[data-page="lumi-cards"] .ph-info .ph-hl{grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px}
+[data-page="lumi-cards"] .ph-info .ph-hl div{padding:11px 12px 10px}
+@media (max-width:1100px) and (min-width:901px){[data-page="lumi-cards"] .ph-info .ph-hl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){[data-page="lumi-cards"] .ph-info .ph-hl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+[data-page="lumi-cards"] .ph-foot{margin-top:18px; padding:14px 18px 12px; background:var(--surface); border:1px solid var(--line); border-radius:16px; display:flex; flex-direction:column; gap:8px}
+[data-page="lumi-cards"] .ph-foot-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 28px}
+[data-page="lumi-cards"] .ph-foot-tools{display:flex; flex-wrap:wrap; gap:10px 32px; flex:1 1 560px; min-width:0}
+[data-page="lumi-cards"] .ph-foot .ph-tools{margin:0; gap:6px 10px; align-items:center}
+[data-page="lumi-cards"] .ph-foot .ph-tools .chip-row-lbl{flex:0 0 100%}
+[data-page="lumi-cards"] .ph-foot .ph-links{margin:0; flex:0 0 auto}
+[data-page="lumi-cards"] .ph-foot .ph-link{padding:8px 15px; font-size:.85rem}
+[data-page="lumi-cards"] .ph-foot .ph-disclaimer{margin:0; max-width:none; padding-top:8px; border-top:1px solid var(--line); font-size:.78rem}
+@media (max-width:700px){
+  [data-page="lumi-cards"] .ph-foot-tools{flex:1 1 100%}
+  [data-page="lumi-cards"] .ph-foot .ph-links{flex:1 1 100%}
+}
+
+/* lumi hero: tighter proportions */
+[data-page="lumi-cards"] .ph-head .kicker{margin-inline:0; max-width:none}
+@media (min-width:901px){
+  [data-page="lumi-cards"] .ph-split .ph-device{height:clamp(420px,calc(100svh - 440px),500px)}
+}
+[data-page="lumi-cards"] .ph-info .ph-problem{font-size:clamp(1.2rem,1.75vw,1.5rem); line-height:1.5}
+[data-page="lumi-cards"] .ph-foot{display:grid; grid-template-columns:auto minmax(0,1fr); gap:12px 28px; align-items:center}
+[data-page="lumi-cards"] .ph-foot-row{display:contents}
+[data-page="lumi-cards"] .ph-foot-tools{grid-column:1 / -1; flex:none; gap:10px 36px}
+[data-page="lumi-cards"] .ph-foot .ph-links{grid-column:1}
+[data-page="lumi-cards"] .ph-foot .ph-disclaimer{grid-column:2; border-top:0; padding-top:0}
+@media (max-width:900px){
+  [data-page="lumi-cards"] .ph-foot{grid-template-columns:minmax(0,1fr)}
+  [data-page="lumi-cards"] .ph-foot .ph-links,[data-page="lumi-cards"] .ph-foot .ph-disclaimer{grid-column:1}
+  [data-page="lumi-cards"] .ph-foot .ph-disclaimer{border-top:1px solid var(--line); padding-top:10px}
+}
+body[data-page="lumi-cards"] .ph-head .kicker{margin-inline:0; max-width:none; text-align:left}
