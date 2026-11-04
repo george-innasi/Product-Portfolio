@@ -2621,7 +2621,7 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] #how-it-works .ev-grid{gap:0}
 [data-page="lumi-cards"] #how-it-works .ev-grid > .ev-card{margin-bottom:2.5rem}
 [data-page="lumi-cards"] #how-it-works .ev-card > .k-cards{margin-top:8px}
-[data-page="lumi-cards"] #how-it-works .arch{margin-top:0}
+[data-page="lumi-cards"] #how-it-works .arch{margin-top:1.75rem}
 
 /* lumi architecture: banners, matched card widths, state tints, observability cards */
 [data-page="lumi-cards"] .arch{--arch-warn-bg:#fef3c7; --arch-warn-line:#d97706; --arch-stop-bg:#fee2e2; --arch-stop-line:#ef4444}
@@ -2647,11 +2647,18 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   [data-page="lumi-cards"] .arch-flow li:nth-child(n)::after{right:50%; bottom:-21px}
 }
 
-[data-page="lumi-cards"] .arch-obs{border:1px solid color-mix(in srgb,#059669 28%,var(--line)); background:rgba(5,150,105,.04); border-radius:16px; padding:20px 22px 22px}
-[data-page="lumi-cards"] .arch-obs > h5{color:#047857; letter-spacing:.14em; margin-bottom:14px}
-:root[data-theme="dark"] [data-page="lumi-cards"] .arch-obs > h5{color:#6ee7b7}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .arch-obs > h5{color:#6ee7b7}}
-[data-page="lumi-cards"] .obs-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+[data-page="lumi-cards"] .arch-obs{border:1px solid var(--line); background:var(--surface); border-radius:16px; padding:20px 22px 22px}
+[data-page="lumi-cards"] .arch-obs > summary{list-style:none; cursor:pointer; user-select:none; display:flex; align-items:center}
+[data-page="lumi-cards"] .arch-obs > summary::-webkit-details-marker{display:none}
+[data-page="lumi-cards"] .arch-obs > summary::after{content:""; width:16px; height:16px; margin-left:auto; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat center/contain; transition:transform .2s}
+[data-page="lumi-cards"] .arch-obs[open] > summary::after{transform:rotate(180deg)}
+[data-page="lumi-cards"] .arch-obs > summary h5{color:#047857; letter-spacing:.14em; margin:0}
+:root[data-theme="dark"] [data-page="lumi-cards"] .arch-obs > summary h5{color:#6ee7b7}
+:root[data-theme="dark"] [data-page="lumi-cards"] .arch-obs > summary::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236ee7b7' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .arch-obs > summary h5{color:#6ee7b7}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .arch-obs > summary::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236ee7b7' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")}
+}
+[data-page="lumi-cards"] .obs-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:14px}
 [data-page="lumi-cards"] .obs-card{background:var(--arch-node); border:1px solid var(--line); border-radius:12px; padding:16px 18px 17px; display:flex; flex-direction:column; gap:9px}
 [data-page="lumi-cards"] .obs-card h6{margin:0; font-size:.88rem; font-weight:800; color:var(--ink); line-height:1.3; display:flex; align-items:center; gap:8px}
 [data-page="lumi-cards"] .obs-card h6 span{width:22px; height:22px; border-radius:50%; background:#059669; color:#fff; display:grid; place-items:center; font-size:.72rem; font-weight:800; flex:none}
@@ -2953,7 +2960,7 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .bn-row.risk{margin-top:auto; padding-top:10px; border-top:1px solid var(--line); color:var(--ink); font-weight:600}
 [data-page="lumi-cards"] .bn-row.risk .bn-l{color:#b45309}
 [data-page="lumi-cards"] .bn-stake{margin:0; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 10px; padding:10px 14px; border-radius:12px; background:#fef3c7; border:1px solid #fde68a; color:#78350f; font-size:.86rem; line-height:1.4; font-weight:600}
-[data-page="lumi-cards"] .bn-stake code{font-size:.64rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase}
+[data-page="lumi-cards"] .bn-stake code{display:block; width:100%; font-size:.64rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase}
 [data-page="lumi-cards"] .bn-kpi{flex:1; display:flex; flex-direction:column; justify-content:center; gap:4px; background:#ecfdf5; border:1px solid color-mix(in srgb,#059669 28%,var(--line)); border-radius:16px; padding:16px 20px}
 [data-page="lumi-cards"] .bn-num{font-family:var(--serif); font-weight:600; font-size:clamp(2.2rem,4vw,2.9rem); line-height:1; letter-spacing:-.02em; color:#059669}
 [data-page="lumi-cards"] .bn-lbl{font-weight:700; color:var(--ink); font-size:.98rem}
@@ -2978,9 +2985,13 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .pl-callout p{margin:0; font-size:1rem; line-height:1.5; color:#064e3b}
 [data-page="lumi-cards"] .pl-badge{font-family:var(--mono); font-size:.66rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; background:#064e3b; color:#fff; padding:4px 10px; border-radius:999px; white-space:nowrap}
 [data-page="lumi-cards"] .pl-lane{background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; padding-bottom:18px}
-[data-page="lumi-cards"] .pl-lane > header{display:flex; align-items:center; gap:10px; padding:10px 18px; color:#fff}
-[data-page="lumi-cards"] .pl-lane.a > header{background:#0f172a}
-[data-page="lumi-cards"] .pl-lane.b > header{background:#064e3b}
+[data-page="lumi-cards"] .pl-lane > summary{display:flex; align-items:center; gap:10px; padding:10px 18px; color:#fff; cursor:pointer; list-style:none; user-select:none}
+[data-page="lumi-cards"] .pl-lane > summary::-webkit-details-marker{display:none}
+[data-page="lumi-cards"] .pl-lane > summary::after{content:""; width:18px; height:18px; margin-left:auto; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat center/contain; transition:transform .2s}
+[data-page="lumi-cards"] .pl-lane[open] > summary::after{transform:rotate(180deg)}
+[data-page="lumi-cards"] .pl-lane:not([open]){padding-bottom:0}
+[data-page="lumi-cards"] .pl-lane.a > summary{background:#0f172a}
+[data-page="lumi-cards"] .pl-lane.b > summary{background:#064e3b}
 [data-page="lumi-cards"] .pl-lane h5{margin:0; font-size:.76rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase}
 [data-page="lumi-cards"] .pl-tag{font-family:var(--mono); font-size:.66rem; font-weight:700; padding:2px 8px; border-radius:999px; background:rgba(255,255,255,.16)}
 [data-page="lumi-cards"] .pl-flow{list-style:none; margin:18px 18px 0; padding:0; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:22px}
@@ -3120,11 +3131,23 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 :root[data-theme="dark"] [data-page="lumi-cards"]{--l-neutral-line:rgba(255,255,255,.14)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"]{--l-neutral-line:rgba(255,255,255,.14)}}
 
-[data-page="lumi-cards"] .bn-kpi{flex:none; background:var(--surface); border:1px solid var(--l-neutral-line); padding:12px 18px 13px; gap:3px}
-[data-page="lumi-cards"] .bn-num{font-size:clamp(2rem,3.4vw,2.5rem)}
-[data-page="lumi-cards"] .bn-foot{margin-top:auto}
-:root[data-theme="dark"] [data-page="lumi-cards"] .bn-kpi{background:var(--surface)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .bn-kpi{background:var(--surface)}}
+/* lumi KPI cards: theme blue with white text, numbers pop in lighter accent */
+[data-page="lumi-cards"] .bn-kpi{flex:none; background:var(--lumi-blue); border:1px solid var(--lumi-blue); border-radius:16px; padding:14px 20px 15px; gap:3px}
+[data-page="lumi-cards"] .bn-num{font-size:clamp(2rem,3.4vw,2.5rem); color:#fff !important}
+[data-page="lumi-cards"] .bn-lbl{color:#fff}
+[data-page="lumi-cards"] .bn-kpi code{color:rgba(255,255,255,.7)}
+[data-page="lumi-cards"] .bn-foot{margin-top:auto; color:rgba(255,255,255,.65)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .bn-kpi{background:var(--lumi-blue-dk); border-color:var(--lumi-blue-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .bn-num{color:#fff !important}
+:root[data-theme="dark"] [data-page="lumi-cards"] .bn-lbl{color:#fff}
+:root[data-theme="dark"] [data-page="lumi-cards"] .bn-kpi code{color:rgba(255,255,255,.7)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .bn-foot{color:rgba(255,255,255,.65)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .bn-kpi{background:var(--lumi-blue-dk); border-color:var(--lumi-blue-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .bn-num{color:#fff !important}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .bn-lbl{color:#fff}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .bn-kpi code{color:rgba(255,255,255,.7)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .bn-foot{color:rgba(255,255,255,.65)}
+}
 [data-page="lumi-cards"] .bn-persona{padding:14px 16px; border-color:var(--l-neutral-line)}
 
 [data-page="lumi-cards"] .mx-card{padding:18px 20px 18px; gap:10px}
@@ -3398,17 +3421,11 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 :root[data-theme="dark"] [data-page="lumi-cards"] .bn-pill{background:rgba(245,158,11,.14); border-color:rgba(245,158,11,.35); color:#fbbf24}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .bn-pill{background:rgba(245,158,11,.14); border-color:rgba(245,158,11,.35); color:#fbbf24}}
 
-/* lumi ROI column: cards sized to their content, not stretched to the persona rows */
+/* lumi ROI column: KPI cards stretch to match persona card rows */
 @media (min-width:761px){
-  [data-page="lumi-cards"] .l-bento > .bn-col:last-child{display:flex; flex-direction:column; align-self:start; gap:12px}
-  [data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-kpi{flex:none; align-self:auto; justify-content:flex-start}
+  [data-page="lumi-cards"] .l-bento > .bn-col:last-child{display:grid; grid-row:span 4; grid-template-rows:subgrid; row-gap:12px}
+  [data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-kpi{align-self:stretch; justify-content:center; padding:18px 24px}
 }
-
-/* lumi ROI column: box width follows its content (equal-width cards, label and footnote follow the same width) */
-[data-page="lumi-cards"] .l-bento > .bn-col:last-child{display:flex; flex-direction:column; width:max-content; max-width:100%; justify-self:start; align-self:start; gap:12px}
-[data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-kpi{flex:none; align-self:stretch; justify-content:flex-start; padding:14px 28px 15px 20px}
-[data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-k,
-[data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-foot{width:0; min-width:100%}
 
 /* lumi full-page rhythm: text 760, callouts 880, grids and diagrams 1024 (guardrails, reflection and scope joined the 1024 set) */
 [data-page="lumi-cards"] .l-scope p{max-width:none}

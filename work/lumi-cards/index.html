@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=297">
+<link rel="stylesheet" href="/assets/site.css?v=298">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -240,8 +240,8 @@
             <p>Loading the documents, and answering a question</p>
           </figcaption>
 
-          <div class="pl-lane a">
-            <header><span class="pl-tag">Lane A</span><h5>Admin ingestion</h5></header>
+          <details class="pl-lane a" open>
+            <summary><span class="pl-tag">Lane A</span><h5>Admin ingestion</h5></summary>
             <ol class="pl-flow">
               <li class="step"><span class="pl-n">1</span><b>SharePoint Docs</b><code>Source of truth</code></li>
               <li class="step"><span class="pl-n">2</span><b>Metadata Tagging</b><code>Card &middot; Province &middot; Effective Date</code></li>
@@ -250,10 +250,10 @@
               <li class="step"><span class="pl-n">5</span><b>Vector DB</b><code>Vertex AI Vector Search</code></li>
               <li class="pl-hook"><b>Freshness webhook</b><code>File changes &rarr; purge, re-embed, flush cache</code></li>
             </ol>
-          </div>
+          </details>
 
-          <div class="pl-lane b">
-            <header><span class="pl-tag">Lane B</span><h5>Staff query runtime</h5></header>
+          <details class="pl-lane b" open>
+            <summary><span class="pl-tag">Lane B</span><h5>Staff query runtime</h5></summary>
             <ol class="pl-flow">
               <li class="step"><span class="pl-n">1</span><b>Portal UI</b><code>SSO, internal policy portal</code></li>
               <li class="step guard"><span class="pl-n">2</span><b>PII / Scope Filter</b><em class="pl-flag">Blocks</em></li>
@@ -263,10 +263,10 @@
               <li class="step"><span class="pl-n">6</span><b>Gemini 2.5 Flash</b><code>Temp 0.0</code></li>
               <li class="step stop"><span class="pl-n">7</span><b>Source Citation Validator</b><em class="pl-flag stop">Blocks</em></li>
             </ol>
-          </div>
+          </details>
 
-          <div class="arch-obs">
-            <h5>Observability &middot; every stage logs to one conversation ID</h5>
+          <details class="arch-obs" open>
+            <summary><h5>Observability &middot; every stage logs to one conversation ID</h5></summary>
             <div class="obs-grid">
               <div class="obs-card">
                 <h6><span>1</span>Logged parameters</h6>
@@ -295,7 +295,7 @@
                 <p><b>Audit traces.</b> De identified query and citation traces are kept per the bank's records schedule.</p>
               </div>
             </div>
-          </div>
+          </details>
         </figure>
       </div>
     </div>
