@@ -503,3 +503,49 @@
   window.addEventListener('hashchange', openForHash);
   openForHash();
 })();
+
+/* Kural: system lifecycle timeline, sweeps stages 01 to 04 once in view, hover or focus previews a stage */
+(function () {
+  var lc = document.querySelector('.lc');
+  if (!lc) return;
+  var stages = [].slice.call(lc.querySelectorAll('.lc-stage'));
+  var rest = stages.length - 1;
+  var vertical = function () { return window.matchMedia('(max-width: 700px)').matches; };
+  function progress(i) {
+    var node = stages[i].querySelector('.lc-node');
+    var lr = lc.getBoundingClientRect(), nr = node.getBoundingClientRect();
+    var lastNr = stages[rest].querySelector('.lc-node').getBoundingClientRect();
+    lc.style.setProperty('--end', Math.max(0, lastNr.top - lr.top + 7.5 - 7) + 'px');
+    if (vertical()) { lc.style.setProperty('--p', Math.max(0, nr.top - lr.top + 8 - 7) + 'px'); }
+    else { lc.style.setProperty('--p', Math.max(0, nr.left - lr.left + 8 - 7) + 'px'); }
+  }
+  function set(i) {
+    stages.forEach(function (s, k) {
+      s.classList.toggle('is-active', k === i);
+      s.classList.toggle('is-done', k < i);
+    });
+    progress(i);
+  }
+  stages.forEach(function (s, k) {
+    s.addEventListener('mouseenter', function () { set(k); });
+    s.addEventListener('focus', function () { set(k); });
+    s.addEventListener('click', function () { set(k); });
+  });
+  lc.addEventListener('mouseleave', function () { set(rest); });
+  lc.addEventListener('focusout', function () { setTimeout(function () { if (!lc.contains(document.activeElement)) set(rest); }, 0); });
+  window.addEventListener('resize', function () { var a = stages.findIndex(function (s) { return s.classList.contains('is-active'); }); set(a < 0 ? rest : a); });
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function sweep() {
+    if (reduce) { set(rest); return; }
+    var i = 0;
+    set(0);
+    var t = setInterval(function () { i++; set(i); if (i >= rest) clearInterval(t); }, 750);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { io.disconnect(); sweep(); }
+    }, { threshold: 0.6 });
+    io.observe(lc);
+  } else { set(rest); }
+  set(0);
+})();
