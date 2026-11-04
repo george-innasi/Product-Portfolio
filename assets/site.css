@@ -2869,3 +2869,16 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-next .strip p{color:var(--muted)}
   :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-next .strip .btn-primary{background:#047857}
 }
+
+/* lumi hero: title block lives in the left column (same hierarchy as Kittii and Side Quest);
+   both columns start on the same top edge */
+[data-page="lumi-cards"] .ph-split{align-items:start}
+[data-page="lumi-cards"] .ph-split .ph-demo{align-self:stretch}
+[data-page="lumi-cards"] .ph-split .ph-info{align-self:start}
+[data-page="lumi-cards"] .ph-split .ph-demo .ph-head{width:100%; max-width:none; text-align:left; margin-bottom:16px}
+[data-page="lumi-cards"] .ph-split .ph-head .kicker{margin-inline:0; max-width:none; text-align:left}
+[data-page="lumi-cards"] .ph-split .ph-head h1{text-align:left}
+[data-page="lumi-cards"] .ph-split .ph-head .tagline{text-align:left}
+@media (max-width:900px){
+  [data-page="lumi-cards"] .ph-split .ph-demo .ph-head{margin-bottom:0}
+}
