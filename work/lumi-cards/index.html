@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=285">
+<link rel="stylesheet" href="/assets/site.css?v=286">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -523,7 +523,10 @@
         <div class="l-wide l-w5 l-infra">
           <span class="l-infra-k">Where the cost sits</span>
           <h3>The cost is not in running the model: Index servers vs. token consumption</h3>
-          <p>The search index sits on servers that stay switched on, costing roughly two orders of magnitude more than the entire token bill. The real engineering lever is how that index is provisioned, keeping it to one pinned region and minimizing active nodes.</p>
+          <div class="l-tog-list">
+            <details class="l-tog"><summary><span>Index servers</span><i aria-hidden="true"></i></summary><p>The search index sits on servers that stay switched on, costing roughly two orders of magnitude more than the entire token bill.</p></details>
+            <details class="l-tog"><summary><span>Provisioning</span><i aria-hidden="true"></i></summary><p>The real engineering lever is how that index is provisioned, keeping it to one pinned region and minimizing active nodes.</p></details>
+          </div>
           <p class="l-infra-note">Exact node pricing is confirmed at provisioning.</p>
         </div>
 

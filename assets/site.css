@@ -3346,3 +3346,17 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .l-post-copy{gap:10px; max-width:640px}
 [data-page="lumi-cards"] .l-post-copy p{text-wrap:balance}
 [data-page="lumi-cards"] .l-post-copy .l-post-sub{max-width:560px; line-height:1.6}
+
+/* lumi impact: "Where the cost sits" as a toggle list */
+[data-page="lumi-cards"] .l-tog-list{display:flex; flex-direction:column; gap:8px; margin:6px 0 4px}
+[data-page="lumi-cards"] .l-tog{background:var(--surface); border:1px solid color-mix(in srgb,#059669 20%,var(--line)); border-radius:12px}
+[data-page="lumi-cards"] .l-tog summary{list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 16px; cursor:pointer; font-weight:700; font-size:.98rem; color:var(--ink); border-radius:12px}
+[data-page="lumi-cards"] .l-tog summary::-webkit-details-marker{display:none}
+[data-page="lumi-cards"] .l-tog summary:focus-visible{outline:2px solid #059669; outline-offset:2px}
+[data-page="lumi-cards"] .l-tog summary i{flex:none; width:8px; height:8px; border-right:2px solid #059669; border-bottom:2px solid #059669; transform:rotate(45deg) translate(-2px,-2px); transition:transform .22s}
+[data-page="lumi-cards"] .l-tog[open] summary i{transform:rotate(-135deg) translate(-2px,-2px)}
+[data-page="lumi-cards"] .l-tog[open]{border-color:color-mix(in srgb,#059669 40%,var(--line))}
+[data-page="lumi-cards"] .l-infra .l-tog p{padding:0 16px 15px; font-size:.95rem; line-height:1.6}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-tog summary i{border-color:#6ee7b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-tog summary i{border-color:#6ee7b7}}
+@media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .l-tog summary i{transition:none}}
