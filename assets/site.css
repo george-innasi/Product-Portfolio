@@ -2882,3 +2882,23 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 @media (max-width:900px){
   [data-page="lumi-cards"] .ph-split .ph-demo .ph-head{margin-bottom:0}
 }
+
+/* lumi manual lookup: compact, centered, denser steps */
+[data-page="lumi-cards"] #problem{padding-block:36px 32px}
+[data-page="lumi-cards"] #problem .phase{margin-bottom:14px}
+[data-page="lumi-cards"] #problem .mvp-intro{margin-bottom:0}
+[data-page="lumi-cards"] #problem .ev-grid{margin-top:22px}
+[data-page="lumi-cards"] .l-flow-card.l-wide{width:min(880px,calc(100vw - 48px)); padding:20px 22px 18px; gap:14px}
+[data-page="lumi-cards"] .l-flow{gap:22px}
+[data-page="lumi-cards"] .l-flow li{padding:12px; gap:4px; border-radius:12px}
+[data-page="lumi-cards"] .l-flow li:not(:last-child)::after{right:-19px; width:16px; opacity:.4}
+[data-page="lumi-cards"] .l-step-n{width:26px; height:26px; font-size:.78rem; margin-bottom:2px}
+[data-page="lumi-cards"] .l-step-t{font-size:.9rem; line-height:1.28}
+[data-page="lumi-cards"] .l-step-d{font-size:13px; line-height:1.4}
+[data-page="lumi-cards"] .l-flow-bar{padding:9px 14px; font-size:.86rem}
+@media (max-width:860px){
+  [data-page="lumi-cards"] .l-flow-card.l-wide{padding:18px 16px}
+  [data-page="lumi-cards"] .l-flow{gap:14px}
+  [data-page="lumi-cards"] .l-flow li{padding:12px}
+  [data-page="lumi-cards"] .l-flow li:not(:last-child)::after{opacity:.4; bottom:-15px}
+}
