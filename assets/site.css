@@ -3339,3 +3339,7 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   :root:not([data-theme="light"]) [data-page="lumi-cards"] .l-phase-k span{background:var(--lumi-vio-dk); color:#14122b}
 }
 @media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .l-grade-c{transition:none}}
+
+/* lumi: post-generation validation, centred 880px callout with badge above the copy */
+[data-page="lumi-cards"] .l-post{flex-direction:column; align-items:center; gap:12px; padding:20px 28px 22px; text-align:center}
+[data-page="lumi-cards"] .l-post-copy{align-items:center; max-width:680px}
