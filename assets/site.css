@@ -3290,3 +3290,29 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   :root:not([data-theme="light"]) [data-page="lumi-cards"] #evals .k-cards .k-card .k-num{color:var(--lumi-blue-dk)}
   :root:not([data-theme="light"]) [data-page="lumi-cards"] #evals .k-cards .k-card .k-src{color:var(--muted)}
 }
+
+/* lumi scenario cards: Expected result in a muted violet that sits beside the theme blue */
+[data-page="lumi-cards"]{--lumi-vio:#5b4a9b; --lumi-vio-bg:#f4f1fb; --lumi-vio-line:#ddd6f0; --lumi-vio-dk:#b9acf0}
+[data-page="lumi-cards"] .sc-exp{background:var(--lumi-vio-bg); border-top-color:var(--lumi-vio-line)}
+[data-page="lumi-cards"] .sc-arr{color:var(--lumi-vio)}
+[data-page="lumi-cards"] .sc-tl{color:var(--lumi-vio)}
+[data-page="lumi-cards"] .sc-js .sc-tg:hover .sc-tl{color:var(--lumi-vio)}
+[data-page="lumi-cards"] .sc-chev{border-right-color:var(--lumi-vio); border-bottom-color:var(--lumi-vio)}
+[data-page="lumi-cards"] .sc-x p{color:var(--ink)}
+[data-page="lumi-cards"] .sc-js .sc-card.open{border-color:color-mix(in srgb,var(--lumi-vio) 45%,var(--l-neutral-line,#e5e7eb))}
+[data-page="lumi-cards"] .sc-all{color:var(--lumi-vio)}
+[data-page="lumi-cards"] .sc-all:hover{border-color:var(--lumi-vio)}
+[data-page="lumi-cards"] .sc-all:focus-visible,[data-page="lumi-cards"] .sc-tg:focus-visible{outline-color:var(--lumi-vio)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .sc-exp{background:rgba(185,172,240,.08); border-top-color:rgba(185,172,240,.22)}
+:root[data-theme="dark"] [data-page="lumi-cards"] :is(.sc-arr,.sc-tl,.sc-all,.sc-js .sc-tg:hover .sc-tl){color:var(--lumi-vio-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .sc-chev{border-right-color:var(--lumi-vio-dk); border-bottom-color:var(--lumi-vio-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] .sc-js .sc-card.open{border-color:color-mix(in srgb,var(--lumi-vio-dk) 45%,var(--l-neutral-line,#e5e7eb))}
+:root[data-theme="dark"] [data-page="lumi-cards"] .sc-all:hover{border-color:var(--lumi-vio-dk)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .sc-exp{background:rgba(185,172,240,.08); border-top-color:rgba(185,172,240,.22)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] :is(.sc-arr,.sc-tl,.sc-all,.sc-js .sc-tg:hover .sc-tl){color:var(--lumi-vio-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .sc-chev{border-right-color:var(--lumi-vio-dk); border-bottom-color:var(--lumi-vio-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .sc-js .sc-card.open{border-color:color-mix(in srgb,var(--lumi-vio-dk) 45%,var(--l-neutral-line,#e5e7eb))}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] .sc-all:hover{border-color:var(--lumi-vio-dk)}
+}
+@media (min-width:761px){[data-page="lumi-cards"] .sc-exp{align-self:start}}
