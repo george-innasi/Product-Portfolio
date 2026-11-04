@@ -2972,6 +2972,7 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 
 /* lumi recognition: shared 1024px container */
 [data-page="lumi-cards"] #recognition.l-w5{gap:32px}
+[data-page="lumi-cards"] #recognition > .ev-card{padding:34px 32px 28px}
 
 /* ===== lumi refactor: scannable primitives (bento, pipeline, matrix, guardrails, dock) ===== */
 [data-page="lumi-cards"]{--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
