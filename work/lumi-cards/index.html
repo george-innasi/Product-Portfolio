@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=230">
+<link rel="stylesheet" href="/assets/site.css?v=232">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -104,24 +104,37 @@
 
   <!-- ROLE AND OWNERSHIP -->
   <section class="band" id="role">
-    <div class="wrap">
-      <div class="phase"><h2>Role &amp; Ownership</h2></div>
-      <p class="phase-sub">Solo, from problem to graded spec</p>
-      <div class="ev-grid pilot-stack">
-        <div class="l-wide l-role">
-          <div class="k-cards">
-            <div class="k-card k-fact"><span class="k-src">Role</span><p>Solo product manager and builder</p></div>
-            <div class="k-card k-fact"><span class="k-src">Timeline</span><p>Jul to Sep 2026</p></div>
-            <div class="k-card k-fact"><span class="k-src">Graded score</span><p>87 of 100, 4th of 77</p></div>
-          </div>
-          <ul class="l-own">
-            <li><strong>Problem and user</strong>Which roles it serves, how often staff look things up, and what that time costs at fully loaded salary rates.</li>
-            <li><strong>Architecture</strong>How it finds the right document, narrows results, which model it uses and what gets logged.</li>
-            <li><strong>Failure analysis</strong>Six failure modes, each with a detection method and a fix, plus the 50 item golden set.</li>
-            <li><strong>Spec and build</strong>The model instructions, the must have and should have requirements, and a test run of the prototype against them.</li>
-          </ul>
-        </div>
+    <div class="wrap row-wide">
+      <div class="meta-strip">
+        <div><dt>Role</dt><dd>Solo Product Manager &amp; Builder</dd></div>
+        <div><dt>Timeline</dt><dd>Jul to Sep 2026</dd></div>
+        <div><dt>Graded score</dt><dd>87 of 100, 4th of 77</dd></div>
       </div>
+      <div class="row-text" style="max-width:none">
+        <p class="find">What I owned</p>
+        <ul>
+          <li><strong>Problem and user.</strong> Deciding which roles it serves, counting how often staff look things up, and costing that time using fully loaded salary rates.</li>
+          <li><strong>Architecture.</strong> How the assistant finds the right document, narrows results, which model it uses, and what gets logged.</li>
+          <li><strong>Failure analysis.</strong> Six failure modes, each with a detection method and a fix, plus the 50-item golden evaluation set.</li>
+          <li><strong>Spec and build.</strong> The model instructions, the must-have and should-have requirements, and a test run of the prototype against them.</li>
+        </ul>
+        <p>As a solo product manager and builder, I translated five years of retail branch compliance experience into a production-grade RAG specification, evaluating it against 50 golden benchmark queries.</p>
+      </div>
+      <details class="board-note gtm-card" id="whiteboard">
+        <summary>
+          <span class="gtm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+          <span class="gtm-copy">
+            <span class="gtm-kicker">Discovery &amp; Architecture</span>
+            <strong class="gtm-title">Mapping the Retrieval Flow: RAG Whiteboard &amp; Failure Modes</strong>
+            <span class="gtm-sub">Explore our actual whiteboard sessions mapping out document chunking, tag-based filtering, and the 6 failure mode mitigations.</span>
+          </span>
+          <span class="gtm-btn"><span class="gtm-btn-open">View Whiteboard Strategy</span><span class="gtm-btn-close">Hide Whiteboard Strategy</span><span aria-hidden="true" class="gtm-arrow">&rarr;</span></span>
+        </summary>
+        <div class="board-body">
+          <img src="/assets/boards/lumi-rag-whiteboard.jpg" alt="Whiteboard mapping the RAG pipeline: document ingestion, tag based filtering, dual search ranking, citation verification and escalation paths" loading="lazy" data-lightbox>
+          <p class="board-caption">Early architecture session mapping the retrieval pipeline, failure modes and the guard sequence that became the three layer check. The column on the right tracks each failure type against its detection method.</p>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -257,14 +270,6 @@
             <p><b>Retention.</b> Staff identifying fields are purged at 30 days. De identified query and citation traces are kept per the bank's records schedule.</p>
           </div>
         </figure>
-
-        <details class="board-note">
-          <summary>Planning &amp; discovery: RAG architecture whiteboard</summary>
-          <div class="board-body">
-            <img src="/assets/boards/lumi-rag-whiteboard.jpg" alt="Whiteboard mapping the RAG pipeline: document ingestion, tag based filtering, dual search ranking, citation verification and escalation paths" loading="lazy" data-lightbox>
-            <p class="board-caption">Early architecture session mapping the retrieval pipeline, failure modes and the guard sequence that became the three layer check above. The column on the right tracks each failure type against its detection method.</p>
-          </div>
-        </details>
       </div>
     </div>
   </section>
