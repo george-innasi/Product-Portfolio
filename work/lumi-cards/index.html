@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=232">
+<link rel="stylesheet" href="/assets/site.css?v=234">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -142,31 +142,45 @@
   <section class="band" id="problem">
     <div class="wrap">
       <div class="phase"><h2>A Lookup That Costs Minutes and Carries Exposure</h2></div>
+      <p class="mvp-intro">Personal bankers and tellers face 60 to 90 policy lookups per branch weekly. Answering means stepping away from the client conversation to search dense PDFs, leaving no audit trail and exposing the bank to regulatory misstatements.</p>
       <div class="ev-grid pilot-stack">
+        <div class="l-wide l-flow-card">
+          <div class="l-flow-head">
+            <span class="l-flow-eyebrow">The Manual Lookup</span>
+            <span class="l-flow-sub">Five steps while a client waits at the desk</span>
+          </div>
+          <ol class="l-flow">
+            <li><span class="l-step-n" aria-hidden="true">1</span><span class="l-step-t">Client asks a policy question</span><span class="l-step-d">&ldquo;Does my card cover rental insurance?&rdquo;</span></li>
+            <li><span class="l-step-n" aria-hidden="true">2</span><span class="l-step-t">Leave the conversation</span><span class="l-step-d">Open the internal PDF portal</span></li>
+            <li><span class="l-step-n" aria-hidden="true">3</span><span class="l-step-t">Search dense documents</span><span class="l-step-d">Ctrl+F through 40+ pages</span></li>
+            <li><span class="l-step-n" aria-hidden="true">4</span><span class="l-step-t">Interpret complex clauses</span><span class="l-step-d">Regional variants and exceptions</span></li>
+            <li><span class="l-step-n" aria-hidden="true">5</span><span class="l-step-t">Relay verbally from memory</span><span class="l-step-d">No citation, zero audit trail</span></li>
+          </ol>
+          <p class="l-flow-bar"><span aria-hidden="true">&#9201;</span> 4&ndash;6 minutes per lookup &middot; 60&ndash;90 lookups per branch per week &middot; Zero audit trail</p>
+        </div>
+
         <div class="l-wide l-split l-split-eq">
           <div class="ev-card">
-            <p class="ev-eyebrow">How it started</p>
-            <h3>Five years behind a branch desk</h3>
-            <p>A client asks what a card actually covers. Answering means leaving the conversation to search a dense PDF, then saying a number out loud from memory with nothing to back it up.</p>
-            <p class="ev-key"><strong>The product.</strong> Lumi Cards is an assistant for personal bankers and tellers, built into the portal they already use. It answers from approved documents only, with a source link and an effective date on every figure.</p>
-            <div class="shot" data-lightbox><img src="/assets/lumi/manual-lookup.jpg" alt="Five step manual lookup process: client asks question, leave conversation, search PDF, interpret clause, relay from memory. 4 to 6 minutes per lookup with no audit trail" width="1200" height="675" loading="lazy"></div>
+            <p class="ev-eyebrow">Compliance exposure</p>
+            <h3>Who asks, and what is at stake</h3>
+            <p class="ev-key"><strong>Personal Bankers.</strong> Handle high-consequence questions that span multiple clauses, such as insurance eligibility and promotional term interactions.</p>
+            <p class="ev-key"><strong>Tellers.</strong> Handle a high volume of single-fact lookups.</p>
+            <p class="l-risk"><strong>Regulatory consequence.</strong> Risk of quoting expired rates or misstating mandatory consumer disclosures under federal and provincial rules.</p>
           </div>
 
           <div class="ev-card">
             <p class="ev-eyebrow">The cost</p>
-            <h3>Who asks, and what it costs</h3>
-            <p>Personal bankers handle multi clause questions where a wrong answer carries compliance exposure. Tellers handle higher volume, single fact lookups.</p>
-            <p class="ev-key"><strong>60 to 90 lookups a week.</strong> A client facing staff member sees 20 to 25 clients a week, and 6 to 8 raise a card policy question. Across a branch team of 11 to 15, each lookup takes 4 to 6 minutes.</p>
+            <h3>What it costs per branch</h3>
             <div class="l-bottom">
               <div class="cmp-wrap"><table class="cmp">
                 <thead><tr><th scope="col">Per branch</th><th scope="col">Now</th><th scope="col">With Lumi</th></tr></thead>
                 <tbody>
-                  <tr><td>Hours per month</td><td>32.8</td><td>1.6</td></tr>
+                  <tr><td>Hours per month</td><td>32.8 hrs</td><td>1.6 hrs</td></tr>
                   <tr><td>Loaded cost per month</td><td>$1,059</td><td>$53</td></tr>
                   <tr><td>Loaded cost per year</td><td>$12,715</td><td>$636</td></tr>
                 </tbody>
               </table></div>
-              <p class="l-note">Estimates from five years of direct observation across three of Canada's Big Five banks, not measurements. The answer is spoken from memory, so no audit trail exists.</p>
+              <p class="l-note">Loaded rate calculated at $32.28/hr (1.30 employer loading factor) across 13&#8209;person branch teams.</p>
             </div>
           </div>
         </div>
