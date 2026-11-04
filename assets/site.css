@@ -3246,3 +3246,24 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 @media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .sc-js .sc-x,[data-page="lumi-cards"] .sc-js .sc-x > p,[data-page="lumi-cards"] .sc-chev{transition:none}}
 :root[data-theme="dark"] [data-page="lumi-cards"] .sc-all{color:#6ee7b7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .sc-all{color:#6ee7b7}}
+
+/* impact: data points in the Lumi theme blue instead of green */
+[data-page="lumi-cards"]{--lumi-blue:#1d4f91; --lumi-blue-dk:#7dabe0}
+[data-page="lumi-cards"] #impact .k-cards .k-card .k-num{color:var(--lumi-blue)}
+[data-page="lumi-cards"] #impact .k-cards .k-card .k-src{color:var(--muted)}
+[data-page="lumi-cards"] #impact .l-bars i.c{background:var(--lumi-blue)}
+[data-page="lumi-cards"] #impact .l-bars i{background:color-mix(in srgb,var(--lumi-blue) 16%,var(--line))}
+[data-page="lumi-cards"] #impact .l-bars b{color:var(--lumi-blue)}
+[data-page="lumi-cards"] #impact .cmp tbody tr:last-child td:last-child strong{color:var(--lumi-blue)}
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .k-cards .k-card .k-num,
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .l-bars b,
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .cmp tbody tr:last-child td:last-child strong{color:var(--lumi-blue-dk)}
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .k-cards .k-card .k-src{color:var(--muted)}
+:root[data-theme="dark"] [data-page="lumi-cards"] #impact .l-bars i.c{background:var(--lumi-blue-dk)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .k-cards .k-card .k-num,
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .l-bars b,
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .cmp tbody tr:last-child td:last-child strong{color:var(--lumi-blue-dk)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .k-cards .k-card .k-src{color:var(--muted)}
+  :root:not([data-theme="light"]) [data-page="lumi-cards"] #impact .l-bars i.c{background:var(--lumi-blue-dk)}
+}
