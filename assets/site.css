@@ -3343,3 +3343,6 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 /* lumi: post-generation validation, centred 880px callout with badge above the copy */
 [data-page="lumi-cards"] .l-post{flex-direction:column; align-items:center; gap:12px; padding:20px 28px 22px; text-align:center}
 [data-page="lumi-cards"] .l-post-copy{align-items:center; max-width:680px}
+[data-page="lumi-cards"] .l-post-copy{gap:10px; max-width:640px}
+[data-page="lumi-cards"] .l-post-copy p{text-wrap:balance}
+[data-page="lumi-cards"] .l-post-copy .l-post-sub{max-width:560px; line-height:1.6}
