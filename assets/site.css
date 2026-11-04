@@ -3409,3 +3409,22 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-kpi{flex:none; align-self:stretch; justify-content:flex-start; padding:14px 28px 15px 20px}
 [data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-k,
 [data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-foot{width:0; min-width:100%}
+
+/* lumi full-page rhythm: text 760, callouts 880, grids and diagrams 1024 (guardrails, reflection and scope joined the 1024 set) */
+[data-page="lumi-cards"] .l-scope p{max-width:none}
+/* problem bento: personas flex, ROI column a fixed content-sized rail, no dead space on the right */
+@media (min-width:761px){
+  [data-page="lumi-cards"] .l-bento{grid-template-columns:minmax(0,1fr) 280px; column-gap:20px}
+  [data-page="lumi-cards"] .l-bento > .bn-col:last-child{width:auto; justify-self:stretch}
+  [data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-k,
+  [data-page="lumi-cards"] .l-bento > .bn-col:last-child > .bn-foot{width:auto; min-width:0}
+}
+
+/* guardrail cards: label, title and body rows align across the four cards */
+@media (min-width:1001px){
+  [data-page="lumi-cards"] .l-gr{grid-template-rows:auto auto 1fr}
+  [data-page="lumi-cards"] .l-gr .k-card{display:grid; grid-row:span 3; grid-template-rows:subgrid; row-gap:6px; height:auto; align-content:start}
+}
+[data-page="lumi-cards"] .l-gr .k-card h4{text-wrap:balance}
+/* next project strip joins the 1024 column of the dock above it */
+[data-page="lumi-cards"] .l-next .strip{max-width:1024px; margin-inline:auto}
