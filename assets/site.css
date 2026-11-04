@@ -2803,3 +2803,31 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   [data-page="lumi-cards"] .l-bars i{grid-column:1 / -1; grid-row:2}
   [data-page="lumi-cards"] .l-bars b{justify-self:end}
 }
+
+/* lumi: running the spec and recognition */
+[data-page="lumi-cards"] #running-spec .ev-eyebrow,
+[data-page="lumi-cards"] #recognition .ev-eyebrow{color:#059669}
+:root[data-theme="dark"] [data-page="lumi-cards"] #running-spec .ev-eyebrow,:root[data-theme="dark"] [data-page="lumi-cards"] #recognition .ev-eyebrow{color:#34d399}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] #running-spec .ev-eyebrow,:root:not([data-theme="light"]) [data-page="lumi-cards"] #recognition .ev-eyebrow{color:#34d399}}
+[data-page="lumi-cards"] #running-spec .k-cards-2{align-items:stretch}
+[data-page="lumi-cards"] #running-spec .l-proto{margin-top:8px}
+
+[data-page="lumi-cards"] .l-assess{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:6px 18px; display:flex; flex-direction:column}
+[data-page="lumi-cards"] .l-assess-h{margin:0; padding:12px 0 10px; font-size:.7rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--line)}
+[data-page="lumi-cards"] .l-assess-row{display:flex; flex-direction:column; gap:6px; padding:14px 0 15px}
+[data-page="lumi-cards"] .l-assess-row + .l-assess-row{border-top:1px solid var(--line)}
+[data-page="lumi-cards"] .l-assess-k{display:inline-flex; align-items:center; gap:8px; font-size:.82rem; font-weight:800; color:var(--ink)}
+[data-page="lumi-cards"] .l-assess-k i{font-style:normal; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; font-size:.78rem; line-height:1; color:#fff; flex:none}
+[data-page="lumi-cards"] .l-assess-k.ok i{background:#059669}
+[data-page="lumi-cards"] .l-assess-k.flag i{background:#d97706}
+[data-page="lumi-cards"] .l-assess-row p{margin:0; font-size:.95rem; line-height:1.55; color:var(--muted)}
+
+[data-page="lumi-cards"] .l-board{border:2px solid #0f172a; border-radius:18px; overflow:hidden; background:#fff; box-shadow:0 26px 50px -28px rgba(15,23,42,.55); margin-top:4px}
+[data-page="lumi-cards"] .l-board img{display:block; width:100%; height:auto; cursor:zoom-in}
+:root[data-theme="dark"] [data-page="lumi-cards"] .l-board{border-color:#334155}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-board{border-color:#334155}}
+@media (min-width:861px){
+  [data-page="lumi-cards"] #recognition .ev-card > .l-assess{margin-top:auto}
+}
+[data-page="lumi-cards"] #recognition .l-board{width:100%; max-width:450px; margin-inline:auto}
+[data-page="lumi-cards"] .l-assess-row{padding:18px 0 19px} [data-page="lumi-cards"] .l-assess-h{padding:14px 0 12px}

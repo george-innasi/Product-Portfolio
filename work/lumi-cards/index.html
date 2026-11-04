@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=252">
+<link rel="stylesheet" href="/assets/site.css?v=255">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -501,7 +501,7 @@
           <p class="l-infra-note">Exact node pricing is confirmed at provisioning.</p>
         </div>
 
-        <div class="ev-card">
+        <div class="ev-card" id="running-spec">
           <p class="ev-eyebrow">Running the spec</p>
           <h3>Prototype tested against the requirements</h3>
           <p>Built in Google AI Studio on Gemini 2.5 Flash at temperature 0.0, against a nine document knowledge base.</p>
@@ -510,10 +510,16 @@
             <div class="k-card"><span class="k-src">Defect 1</span><h4>Word cap and citations</h4><p>The happy path hit the 120 word cap once citation text counted, because my spec never said whether it did. Amended to "excluding citation text".</p></div>
             <div class="k-card"><span class="k-src">Defect 2</span><h4>Citation format</h4><p>The model added a document version to each citation. That beat my spec, so the spec now requires the version field.</p></div>
           </div>
-          <div class="shot" data-lightbox><img src="/assets/lumi/prototype-composite.jpg" alt="Lumi for Cards prototype showing three response types in one session: a refusal listing policy requirements for rental coverage, and an out of scope redirect for a mortgage question" width="1280" height="585" loading="lazy"></div>
+          <figure class="l-proto">
+            <div class="l-device">
+              <div class="ph-bar"><span></span><span></span><span></span><em>lumi-for-cards.vercel.app</em></div>
+              <img src="/assets/lumi/prototype-composite.jpg" alt="Lumi for Cards prototype showing three response types in one session: a refusal listing policy requirements for rental coverage, and an out of scope redirect for a mortgage question" width="1280" height="585" loading="lazy" data-lightbox>
+            </div>
+            <figcaption><strong>Live prototype pass:</strong> mortgage query intercepted pre-retrieval by the intent classifier, redirecting to the lending portal with zero vector lookups.</figcaption>
+          </figure>
         </div>
 
-        <div class="l-wide l-split" id="recognition">
+        <div class="l-wide l-split l-split-eq" id="recognition">
           <div class="ev-card">
             <p class="ev-eyebrow">Recognition</p>
             <h3>4th of 77 in HelloPM Cohort 51</h3>
@@ -521,10 +527,21 @@
               <div class="k-card"><span class="k-src">Rank</span><b class="k-num">4th</b><p>of 77 PRDs, Assignment 3</p></div>
               <div class="k-card"><span class="k-src">Score</span><b class="k-num">87</b><p>out of 100, one rubric, no curve</p></div>
             </div>
-            <p>The assessment credited the cost analysis approach and the prototype's faithful execution of the spec, while flagging gaps in cost sourcing and an unspecified confidence threshold.</p>
+            <div class="l-assess">
+              <p class="l-assess-h">Assessment feedback</p>
+              <div class="l-assess-row">
+                <span class="l-assess-k ok"><i aria-hidden="true">+</i>Positive highlights</span>
+                <p>Credited cost analysis approach and high prototype fidelity to the spec.</p>
+              </div>
+              <div class="l-assess-row">
+                <span class="l-assess-k flag"><i aria-hidden="true">!</i>Assessment flags</span>
+                <p>Flagged gaps in index node pricing sources and unspecified confidence threshold.</p>
+              </div>
+            </div>
           </div>
           <div class="ev-card">
-            <div class="shot cap" data-lightbox><img src="/assets/lumi/leaderboard.png" alt="HelloPM Cohort 51 Assignment 3 leaderboard: George Innasi ranked 4th of 77 with a score of 87" width="1080" height="1080" loading="lazy"></div>
+            <p class="ev-eyebrow">The board</p>
+            <div class="l-board"><img src="/assets/lumi/leaderboard.png" alt="HelloPM Cohort 51 Assignment 3 leaderboard: George Innasi ranked 4th of 77 with a score of 87" width="1080" height="1080" loading="lazy" data-lightbox></div>
           </div>
         </div>
       </div>
