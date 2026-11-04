@@ -2911,3 +2911,12 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 [data-page="lumi-cards"] #problem .l-split .cmp th:first-child,[data-page="lumi-cards"] #problem .l-split .cmp td:first-child{padding-left:0}
 [data-page="lumi-cards"] #problem .l-split .ev-card > .l-risk{margin-top:auto}
 [data-page="lumi-cards"] #problem .l-split .ev-card > .ev-key:nth-last-of-type(2){margin-bottom:14px}
+
+/* lumi: shared 1024px container for Research and Failure Modes */
+[data-page="lumi-cards"] .l-wide.l-w5{width:min(1024px,calc(100vw - 48px))}
+[data-page="lumi-cards"] #research .l-split.l-w5{gap:32px}
+[data-page="lumi-cards"] #research .cmp{table-layout:fixed}
+[data-page="lumi-cards"] #research .cmp th:first-child,[data-page="lumi-cards"] #research .cmp td:first-child{width:35%}
+[data-page="lumi-cards"] #research .cmp th:last-child,[data-page="lumi-cards"] #research .cmp td:last-child{width:65%}
+[data-page="lumi-cards"] .l-fm.l-w5{gap:20px}
+[data-page="lumi-cards"] #evals .ev-card.ev-cont.l-w5{padding-inline:0; background:none; border:0; box-shadow:none}
