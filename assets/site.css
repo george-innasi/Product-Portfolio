@@ -2603,3 +2603,22 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 @media (min-width:861px){
   [data-page="lumi-cards"] .l-split-eq .ev-card > .l-risk{margin-top:auto}
 }
+
+/* lumi: tables, vocabulary gap cards, guard phase cards */
+[data-page="lumi-cards"] .cmp thead th{color:var(--muted); font-weight:700}
+[data-page="lumi-cards"] #research .cmp th,
+[data-page="lumi-cards"] #research .cmp td{padding-top:15px; padding-bottom:15px}
+[data-page="lumi-cards"] #research .cmp td:first-child{font-weight:600; color:var(--ink)}
+[data-page="lumi-cards"] #research .k-cards-2{align-items:stretch; margin-top:6px}
+[data-page="lumi-cards"] #research .k-cards-2 .k-card.k-fact{border-color:color-mix(in srgb,var(--ink) 14%,var(--line)); box-shadow:none; gap:9px}
+[data-page="lumi-cards"] #research .k-cards-2 .k-card.k-fact .k-src{align-self:flex-start; padding:3px 10px; border-radius:999px; background:var(--surface-2); border:1px solid var(--line); color:var(--muted); font-size:.66rem; letter-spacing:.12em}
+@media (min-width:861px){
+  [data-page="lumi-cards"] #research .l-split-eq .ev-card > .ev-key{margin-top:auto}
+}
+[data-page="lumi-cards"] #how-it-works .k-card .k-src{color:#059669}
+:root[data-theme="dark"] [data-page="lumi-cards"] #how-it-works .k-card .k-src{color:#34d399}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] #how-it-works .k-card .k-src{color:#34d399}}
+[data-page="lumi-cards"] #how-it-works .ev-grid{gap:0}
+[data-page="lumi-cards"] #how-it-works .ev-grid > .ev-card{margin-bottom:2.5rem}
+[data-page="lumi-cards"] #how-it-works .ev-card > .k-cards{margin-top:8px}
+[data-page="lumi-cards"] #how-it-works .arch{margin-top:0}
