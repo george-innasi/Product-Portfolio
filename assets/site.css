@@ -3360,3 +3360,14 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
 :root[data-theme="dark"] [data-page="lumi-cards"] .l-tog summary i{border-color:#6ee7b7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-page="lumi-cards"] .l-tog summary i{border-color:#6ee7b7}}
 @media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .l-tog summary i{transition:none}}
+
+/* lumi recognition: assessment feedback rows as toggles */
+[data-page="lumi-cards"] .l-assess-row{display:block; padding:0}
+[data-page="lumi-cards"] .l-assess-row summary{list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 0; cursor:pointer}
+[data-page="lumi-cards"] .l-assess-row summary::-webkit-details-marker{display:none}
+[data-page="lumi-cards"] .l-assess-row summary:focus-visible{outline:2px solid #059669; outline-offset:2px; border-radius:6px}
+[data-page="lumi-cards"] .l-assess-c{flex:none; width:8px; height:8px; border-right:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(45deg) translate(-2px,-2px); transition:transform .22s}
+[data-page="lumi-cards"] .l-assess-row[open] .l-assess-c{transform:rotate(-135deg) translate(-2px,-2px)}
+[data-page="lumi-cards"] .l-assess-row p{padding:0 0 18px}
+@media (prefers-reduced-motion:reduce){[data-page="lumi-cards"] .l-assess-c{transition:none}}
+@media (min-width:861px){[data-page="lumi-cards"] #recognition .ev-card > .l-assess{margin-top:4px}}
