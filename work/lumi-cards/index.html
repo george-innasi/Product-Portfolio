@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=238">
+<link rel="stylesheet" href="/assets/site.css?v=243">
 <script src="/assets/site.js?v=22" defer></script>
 </head>
 <body data-accent="green" data-page="lumi-cards">
@@ -279,9 +279,34 @@
 
           <div class="arch-obs">
             <h5>Observability &middot; every stage logs to one conversation ID</h5>
-            <p>Logged per query: the raw question, the metadata filters applied, retrieved chunk IDs with text and reranker scores, the exact system prompt sent, the raw model output, the thumbs up or down with its reason, and the latency of each stage.</p>
-            <p><b>Debug path.</b> A reported bad answer resolves to a chunking, retrieval or generation failure, each inspected from the log.</p>
-            <p><b>Retention.</b> Staff identifying fields are purged at 30 days. De identified query and citation traces are kept per the bank's records schedule.</p>
+            <div class="obs-grid">
+              <div class="obs-card">
+                <h6><span>1</span>Logged parameters</h6>
+                <ul>
+                  <li>Raw question</li>
+                  <li>Metadata filters applied</li>
+                  <li>Retrieved chunk IDs with text and reranker scores</li>
+                  <li>Exact system prompt sent</li>
+                  <li>Raw model output</li>
+                  <li>User feedback, thumbs up or down with its reason</li>
+                  <li>Latency of each stage</li>
+                </ul>
+              </div>
+              <div class="obs-card">
+                <h6><span>2</span>Debug path</h6>
+                <p>A reported bad answer resolves to one of three failure types, each inspected from the log.</p>
+                <ul class="obs-triage">
+                  <li><b>Chunking</b> failure</li>
+                  <li><b>Retrieval</b> failure</li>
+                  <li><b>Generation</b> failure</li>
+                </ul>
+              </div>
+              <div class="obs-card">
+                <h6><span>3</span>Data retention</h6>
+                <p><b>Staff identifiers.</b> Identifying fields are purged at 30 days.</p>
+                <p><b>Audit traces.</b> De identified query and citation traces are kept per the bank's records schedule.</p>
+              </div>
+            </div>
           </div>
         </figure>
       </div>
