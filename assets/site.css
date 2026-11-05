@@ -3526,3 +3526,11 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   #contact .ct-grid{max-width:640px; margin-inline:auto; grid-template-columns:minmax(0,1fr); gap:20px}
   #contact .ct-panel{grid-template-rows:none; grid-auto-rows:auto}
 }
+
+/* Contact email tile on narrow phones: copy button drops below so the full address stays visible */
+@media (max-width:440px){
+  .ct-email{flex-wrap:wrap; row-gap:10px}
+  .ct-email .ct-tile-body{flex:1 1 calc(100% - 54px)}
+  .ct-email .ct-tile-val{overflow:visible; text-overflow:clip; white-space:normal; overflow-wrap:anywhere}
+  .ct-email .ct-copy-email{flex:1 1 100%; margin-top:0}
+}
