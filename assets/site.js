@@ -129,38 +129,46 @@
   });
 })();
 
-/* Copy-email button on the contact page. */
+/* Copy buttons on the contact page (email address, profile link).
+   Click: icon becomes a check, label reads "Copied!", light emerald background;
+   reverts after 2.5 seconds. */
 (function () {
+  var RESET_MS = 2500;
+  function copyText(text, onDone) {
+    var fallback = function () {
+      var inp = document.createElement('input');
+      inp.value = text; document.body.appendChild(inp);
+      inp.select(); try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(inp);
+      onDone();
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(onDone).catch(fallback);
+    } else {
+      fallback();
+    }
+  }
   document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.querySelector('.ct-copy-email');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      var email = btn.getAttribute('data-email');
+    document.querySelectorAll('.ct-copy-email, .ct-share-copy').forEach(function (btn) {
       var label = btn.querySelector('.ct-copy-label');
-      var original = label ? label.textContent : '';
-      if (!email) return;
-      var done = function () {
-        btn.classList.add('copied');
-        if (label) label.textContent = 'Copied';
-        setTimeout(function () {
-          btn.classList.remove('copied');
-          if (label) label.textContent = original;
-        }, 1800);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(email).then(done).catch(function () {
-          /* fallback: select from a temporary input */
-          var inp = document.createElement('input');
-          inp.value = email; document.body.appendChild(inp);
-          inp.select(); document.execCommand('copy'); document.body.removeChild(inp);
-          done();
+      var defaultLabel = label ? (label.getAttribute('data-default') || label.textContent) : '';
+      var defaultAria = btn.getAttribute('aria-label') || '';
+      var timer = null;
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-email') || btn.getAttribute('data-link');
+        if (!text) return;
+        copyText(text, function () {
+          btn.classList.add('copied');
+          btn.setAttribute('aria-label', 'Copied');
+          if (label) label.textContent = 'Copied!';
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            btn.classList.remove('copied');
+            btn.setAttribute('aria-label', defaultAria);
+            if (label) label.textContent = defaultLabel;
+          }, RESET_MS);
         });
-      } else {
-        var inp = document.createElement('input');
-        inp.value = email; document.body.appendChild(inp);
-        inp.select(); document.execCommand('copy'); document.body.removeChild(inp);
-        done();
-      }
+      });
     });
   });
 })();
