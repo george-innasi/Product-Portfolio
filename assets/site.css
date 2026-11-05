@@ -1510,8 +1510,8 @@ html{scroll-padding-top:64px}
 .pj-cover{container-type:inline-size}
 .pj-cover .pj-badge{left:var(--bx,auto); top:var(--by,14px); right:auto; transform:translate(var(--tx,-50%),-50%); white-space:nowrap; font-size:clamp(.56rem,2.2cqi,.74rem); padding:.45em 1em}
 /* HelloPM watermark, bottom-right of program project covers */
-.pj-mark{position:absolute; z-index:1; right:2.4%; bottom:3.2%; font-size:clamp(.42rem,1.5cqi,.62rem); font-weight:700; letter-spacing:.06em; color:rgba(30,27,75,.62); pointer-events:none; user-select:none}
-.pj-mark--light{color:rgba(255,255,255,.78)}
+.pj-mark{position:absolute; z-index:1; right:2.4%; bottom:3.2%; font-size:clamp(.42rem,1.5cqi,.62rem); font-weight:700; letter-spacing:.06em; color:rgba(30,27,75,.88); pointer-events:none; user-select:none}
+.pj-mark--light{color:rgba(255,255,255,.96)}
 .pj-mark--kural{right:auto; left:3.2%}
 .pj-cover .pj-badge--sm{font-size:clamp(.4rem,1.7cqi,.64rem); padding:.4em .85em}
 
