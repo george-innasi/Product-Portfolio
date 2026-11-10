@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>HelloFresh retention study, George Innasi</title>
-<meta name="description" content="A retention study of HelloFresh: a 132 response survey, six user interviews, four scored problems, a full PRD and four clickable prototypes.">
+<meta name="description" content="A retention study of HelloFresh: four scored problems, a P0 on bad, missing and undersized ingredients, a full PRD and four clickable prototypes.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=224">
+<link rel="stylesheet" href="/assets/site.css?v=226">
 <script src="/assets/site.js?v=19" defer></script>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){try{if(localStorage.getItem("va-disable"))return null}catch(x){}return e});try{if(localStorage.getItem("gi-notrack"))window["ga-disable-G-ZMF8Z3ZW0Y"]=true}catch(x){}</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -44,7 +44,7 @@
           <div class="ph-head">
             <p class="kicker">HelloPM Cohort 51 &middot; Retention study &middot; Built solo</p>
             <h1>HelloFresh</h1>
-            <p class="tagline">Keeping the subscribers who leave quietly</p>
+            <p class="tagline">Quality failures, reported at the source</p>
           </div>
           <div class="ph-device">
             <div class="ph-bar"><span></span><span></span><span></span><em>george-innasi.github.io</em></div>
@@ -56,16 +56,16 @@
         <div class="ph-info">
           <div class="ph-callout" data-proj="hellofresh-retention">
             <p class="ph-lbl">Problem statement</p>
-            <p class="ph-problem">Long-tenured HelloFresh subscribers, the ones who have only just become profitable to keep, leave quietly: skipping, then cancelling, without a complaint. Price is the loudest signal, but it is rarely the root cause.</p>
+            <p class="ph-problem">Long-tenured HelloFresh subscribers, the ones who have only just become profitable to keep, leave quietly. Ingredients arrive bad, missing or undersized, quality declines week after week, and the only recourse is a support ticket that typically ends in a small credit.</p>
           </div>
-          <p class="ph-solution ph-subtitle">A retention study that runs from research to a full PRD and four clickable prototypes. The primary build turns an unstructured support ticket into data the business can act on.</p>
+          <p class="ph-solution ph-subtitle">A retention study that scored four problems and prototyped four solutions, backed by a full PRD. The primary build, Food Quality Feedback, turns an unstructured support ticket into per-ingredient data traced to the supplier.</p>
 
           <p class="ph-lbl">Highlights</p>
           <dl class="ph-hl">
             <div><dt>132</dt><dd>Survey respondents</dd></div>
             <div><dt>6</dt><dd>User interviews</dd></div>
             <div><dt>4</dt><dd>Problems scored</dd></div>
-            <div><dt>4</dt><dd>Clickable prototypes</dd></div>
+            <div><dt>4</dt><dd>Solutions prototyped</dd></div>
           </dl>
 
           <div class="ph-tools"><span class="chip-row-lbl">Tools used</span><div class="chip-set">
@@ -95,7 +95,7 @@
         <a href="#whiteboard">Whiteboard</a>
         <a href="#problem">Problem</a>
         <a href="#research">Research</a>
-        <a href="#causes">Root Causes</a>
+        <a href="#causes">P0 &amp; Causes</a>
         <a href="#prototypes">Prototypes</a>
         <a href="#scoring">Scoring</a>
         <a href="#reflection">Reflection</a>
@@ -140,8 +140,6 @@
         <div class="row-text">
           <h3>How it started</h3>
           <p>The brief was to pick a product, investigate it like a detective, learn from real users, find the one problem worth solving, and design the answer end to end. It ran across three phases: the product and its category, primary research with real users, then a working solution backed by a complete PRD.</p>
-          <h3 style="margin-top:14px">The problem</h3>
-          <p>A retention study of <strong>HelloFresh</strong>, a meal-kit subscription. The audience is existing subscribers, not prospects. The business problem is that long-standing subscribers, the ones who got past the risky early months and have only just become profitable to keep, leave without ever making a complaint.</p>
         </div>
         <div class="churn" role="figure" aria-label="The silent churn: long-tenured subscribers get past the risky early months, become profitable, then skip and cancel without a complaint.">
           <p class="churn-kicker">The silent churn</p>
@@ -176,7 +174,7 @@
   <!-- ========== 2. RESEARCH ========== -->
   <section class="band" id="research">
     <div class="wrap">
-      <div class="phase"><h2>Price Is the Loudest Complaint, Not the Root Cause</h2></div>
+      <div class="phase"><h2>Subscribers Cited Price, but the Value Was Lost to Bad Ingredients, Missing Items and No Recourse</h2></div>
       <div class="ev-grid">
         <div class="ev-card">
           <p class="ev-eyebrow">Product and category</p>
@@ -190,12 +188,12 @@
           <h3>What subscribers said</h3>
           <p>132 survey respondents, six user interviews and a Reddit thread of cancellation posts.</p>
           <div class="pl-stats">
-            <div class="pl-stat"><b>53%</b><span>Charged for at least one delivery they did not intend to receive</span></div>
+            <div class="pl-stat"><b>7+</b><span>Independent Reddit respondents raised declining ingredient quality</span></div>
+            <div class="pl-stat"><b>41%</b><span>Were already skipping at least monthly</span></div>
             <div class="pl-stat"><b>48%</b><span>Named a lower price as the single fix they wanted</span></div>
-            <div class="pl-stat"><b>18%</b><span>Actively compared the box against grocery costs</span></div>
-            <div class="pl-stat"><b>15%</b><span>Gamed the cancel and resubscribe cycle for new-customer pricing</span></div>
+            <div class="pl-stat"><b>53%</b><span>Charged for at least one delivery they did not intend to receive</span></div>
           </div>
-          <p class="ev-key"><strong>Price was the loudest complaint.</strong> It was not the root cause, and the rest of the study is about why.</p>
+          <p class="ev-key"><strong>Price was the loudest signal, not the cause.</strong> Underneath it were ingredients that arrived bad, missing or undersized, quality that declined over time, and a support process that rarely made it right.</p>
           <p class="src-note">Primary survey, 132 respondents. <a href="/assets/hellofresh-ux-survey.pdf" target="_blank" rel="noopener">Read the survey results &nearr;</a> &middot; <a href="https://www.reddit.com/r/hellofresh/s/T0OpkcO8mG" target="_blank" rel="noopener">Reddit thread &nearr;</a></p>
         </div>
       </div>
@@ -206,7 +204,7 @@
           <p class="ev-eyebrow">Survey</p>
           <h3>If HelloFresh could fix one thing</h3>
           <p>Respondents named the single most important improvement without prompting. Among the 128 who answered, a lower price per serving led at 48 per cent, ahead of more menu variety at 13, bigger portions at 12, an easier skip or cancel at 4 and better instructions at 2.</p>
-          <p class="ev-key"><strong>The complaint is price. The cause is not.</strong> Price sits on top of five separate causes, set out next.</p>
+          <p class="ev-key"><strong>The complaint is price. The failure is quality.</strong> The P0 problem and its five root causes are set out next.</p>
         </div>
       </div>
 
@@ -227,10 +225,27 @@
   <!-- ========== 3. ROOT CAUSES ========== -->
   <section class="band" id="causes">
     <div class="wrap">
+      <div class="phase"><h2>P0: Ingredients Fall Short and Subscribers Get No Real Recourse</h2></div>
+      <div class="ev-grid">
+        <div class="ev-card">
+          <p class="ev-eyebrow">P0 problem</p>
+          <h3>When the box falls short</h3>
+          <p>The highest scoring problem is a quality failure the subscriber cannot verify and cannot get made right. It shows up five ways.</p>
+          <ul class="arch-list">
+            <li><strong>Bad ingredients.</strong> Wilted, bruised, spoiled or not fresh produce and protein arrives in the box.</li>
+            <li><strong>Missing items.</strong> One subscriber churned after a $13 credit for a box missing 40 per cent of its ingredients.</li>
+            <li><strong>Smaller quantities.</strong> Undersized ingredients and smaller portions.</li>
+            <li><strong>Declining quality.</strong> Quality erodes quietly over time. A 247-box subscriber began buying ingredients independently rather than trust the box.</li>
+            <li><strong>No real compensation.</strong> Claims go through Customer Care within five to seven days, with photo proof emailed on request, and typically end in a small credit with no published formula or timeline.</li>
+          </ul>
+          <p class="ev-key"><strong>Why it drives churn.</strong> An ingredient problem is logged as a recipe rating or a vague ticket. The supplier never sees the cause, the subscriber hears nothing back, and the next box is skipped.</p>
+          <p class="src-note">Sources: <a href="/assets/hellofresh-prd.pdf" target="_blank" rel="noopener">PRD &nearr;</a> &middot; <a href="/assets/hellofresh-feedback-comparison.pdf" target="_blank" rel="noopener">Current state vs. proposed solution &nearr;</a></p>
+        </div>
+      </div>
       <div class="row">
         <div class="row-text">
           <h3>Five causes under one complaint</h3>
-          <p class="lede">Subscribers struggle to keep feeling the per-serving price is worth paying, week after week.</p>
+          <p class="lede">Subscribers stop feeling the box is worth it as quality declines and the price gap versus groceries widens, week after week.</p>
           <p class="find">What drives it?</p>
           <ul class="audit-list">
             <li><strong>Unverifiable quality.</strong> Ingredient quality quietly declines and the subscriber cannot verify it.</li>
@@ -267,7 +282,7 @@
           <p class="ev-eyebrow">The build</p>
           <h3>Four prototypes, each mapped to a root cause</h3>
           <ul class="arch-list">
-            <li><strong>Food Quality Feedback.</strong> Subscribers report a specific ingredient issue, wilted, bruised or spoiled, traced to the supplier batch.</li>
+            <li><strong>Food Quality Feedback.</strong> Subscribers report a specific ingredient issue, wilted, bruised, spoiled, undersized or missing, traced to the supplier batch.</li>
             <li><strong>Accumulated value dashboard.</strong> Meals cooked, time saved, money saved and waste avoided, shown at the moment of the weekly skip decision.</li>
             <li><strong>Basil, a proactive assistant.</strong> In-app check-ins with subscribers who are disengaging, rather than waiting for the cancellation flow.</li>
             <li><strong>Milestone recognition.</strong> Rewards at three, six, nine and twelve months for the long-tenured subscribers sitting beside discounted new customers.</li>
@@ -282,6 +297,7 @@
           <h3>Food Quality Feedback</h3>
           <p><strong>What it is.</strong> A report flow that replaces the vague support ticket. When a meal misses the mark, the subscriber reports exactly which ingredient fell short and what was wrong: wilted, bruised, spoiled, too small or missing.</p>
           <p><strong>What the business gets.</strong> Each report is traced to its supplier batch, which turns an unstructured ticket into data the business can act on.</p>
+          <p><strong>Compensation, deliberately deferred.</strong> An automatic credit is out of scope for this phase, because it cannot be proposed responsibly without understanding the financial model. The structured reports are the input a future credit model needs.</p>
           <p class="ev-key"><strong>Why it came first.</strong> Ingredient quality is the one cause the subscriber has no way to check. It scored highest of the four problems, and a discount would not answer it.</p>
         </div>
       </div>
@@ -303,7 +319,7 @@
         <div class="cmp-wrap cmp-card"><p class="cmp-eyebrow">Prioritisation &middot; PIF scoring</p><table class="cmp">
           <thead><tr><th scope="col">Problem</th><th scope="col">Score</th></tr></thead>
           <tbody>
-            <tr><td><span class="pri-badge">P0</span>Cannot justify per-serving price as quality declines and the grocery gap widens</td><td class="pif-score"><strong>13</strong><span class="pif-of">/15</span></td></tr>
+            <tr><td><span class="pri-badge">P0</span>Ingredient quality declines: bad, missing and undersized items with no real compensation, so the per-serving price stops feeling worth it</td><td class="pif-score"><strong>13</strong><span class="pif-of">/15</span></td></tr>
             <tr><td><span class="pri-badge">P1</span>Charged for deliveries not intended, due to a narrow opt-out skip window</td><td class="pif-score"><strong>11</strong><span class="pif-of">/15</span></td></tr>
             <tr><td><span class="pri-badge">P2</span>AI-generated recipe content eroding trust in what subscribers pay for</td><td class="pif-score"><strong>11</strong><span class="pif-of">/15</span></td></tr>
             <tr><td><span class="pri-badge">P3</span>Weekly menu offering too few genuinely appealing recipes</td><td class="pif-score"><strong>10</strong><span class="pif-of">/15</span></td></tr>

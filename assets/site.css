@@ -3554,3 +3554,9 @@ html.cs-collapsed #causes,html.cs-collapsed #prototypes,html.cs-collapsed #scori
 @media (max-width:700px){#research .reddit-wrap{flex:none; width:100%}}
 #whiteboard{scroll-margin-top:calc(var(--nav-h) + var(--bar-h) + 12px)}
 html.cs-collapsed #whiteboard{scroll-margin-top:calc(var(--bar-h) + 12px)}
+
+/* HelloFresh hero: more air between highlights, tools and links */
+[data-page="hellofresh"] .ph-info{gap:16px}
+[data-page="hellofresh"] .ph-tools{margin-top:12px}
+[data-page="hellofresh"] .ph-links{margin-top:20px; gap:12px}
+#causes .ev-grid + .row{margin-top:clamp(56px,8vw,88px)}
