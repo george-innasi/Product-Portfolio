@@ -3552,3 +3552,5 @@ html.cs-collapsed #causes,html.cs-collapsed #prototypes,html.cs-collapsed #scori
 #research .reddit-wrap .reddit-embed-bq{margin:0}
 #research .evidence + .evidence{margin-top:clamp(48px,7vw,80px)}
 @media (max-width:700px){#research .reddit-wrap{flex:none; width:100%}}
+#whiteboard{scroll-margin-top:calc(var(--nav-h) + var(--bar-h) + 12px)}
+html.cs-collapsed #whiteboard{scroll-margin-top:calc(var(--bar-h) + 12px)}
