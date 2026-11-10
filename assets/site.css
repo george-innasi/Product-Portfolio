@@ -3534,3 +3534,21 @@ html.cs-collapsed #role,html.cs-collapsed #evals,html.cs-collapsed #impact,html.
   .ct-email .ct-tile-val{overflow:visible; text-overflow:clip; white-space:normal; overflow-wrap:anywhere}
   .ct-email .ct-copy-email{flex:1 1 100%; margin-top:0}
 }
+
+/* HelloFresh case study: section ids, flat build blocks, three-up phone gallery */
+#causes,#prototypes,#scoring{scroll-margin-top:calc(var(--nav-h) + var(--bar-h) + 12px)}
+html.cs-collapsed #causes,html.cs-collapsed #prototypes,html.cs-collapsed #scoring{scroll-margin-top:calc(var(--bar-h) + 12px)}
+#prototypes .ev-card,#research .evidence .ev-card{background:none; border:0; border-radius:0; box-shadow:none; padding:0; gap:14px}
+#prototypes .evidence,#research .evidence{gap:clamp(32px,5vw,64px); align-items:center}
+#prototypes .evidence + .evidence{margin-top:clamp(48px,7vw,80px)}
+#research .ev-grid + .evidence{margin-top:clamp(48px,7vw,80px)}
+#prototypes .ev-card .ev-key,#research .evidence .ev-card .ev-key{background:rgba(5,150,105,.08); border-left:4px solid #059669; border-radius:0 12px 12px 0; padding:14px 18px; margin:4px 0 0}
+#research .evidence .shot{flex:0 1 380px}
+.shot-gallery.phones.three{grid-template-columns:repeat(3,minmax(0,1fr)); max-width:640px}
+@media (max-width:560px){.shot-gallery.phones.three{grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-width:none} .shot-gallery.phones.three figcaption{font-size:.74rem}}
+#prototypes .evidence,#research .evidence{justify-content:space-between}
+#prototypes .shot-phone > img{display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:18px; box-shadow:0 22px 44px -26px rgba(15,23,42,.55)}
+#research .reddit-wrap{flex:0 1 540px; min-width:0}
+#research .reddit-wrap .reddit-embed-bq{margin:0}
+#research .evidence + .evidence{margin-top:clamp(48px,7vw,80px)}
+@media (max-width:700px){#research .reddit-wrap{flex:none; width:100%}}
